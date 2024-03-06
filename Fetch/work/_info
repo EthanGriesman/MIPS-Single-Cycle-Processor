@@ -1,0 +1,216 @@
+m255
+K4
+z2
+!s11e MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/hpeacher/cpr381/WIP/Fetch
+Eadder
+Z1 w1706325346
+Z2 DPx3 std 6 textio 0 22 LS[?81n5ZHWBI9JkBZTV<2
+Z3 DPx4 ieee 14 std_logic_1164 0 22 6<US`=mgl_dFdCEFF7J=m1
+!i122 3
+R0
+Z4 8/home/hpeacher/cpr381/WIP/Fetch/Adder.vhd
+Z5 F/home/hpeacher/cpr381/WIP/Fetch/Adder.vhd
+l0
+L19 1
+VRzAAe]DRLU3:9z1oK5M610
+!s100 `F?Y@aC6hDH<1PS20KP=I3
+Z6 OL;C;2023.2_2;77
+32
+Z7 !s110 1709764921
+!i10b 1
+Z8 !s108 1709764921.000000
+Z9 !s90 -reportprogress|300|-work|work|/home/hpeacher/cpr381/WIP/Fetch/Adder.vhd|
+Z10 !s107 /home/hpeacher/cpr381/WIP/Fetch/Adder.vhd|
+!i113 0
+Z11 o-work work
+Z12 tExplicit 1 CvgOpt 0
+Astructural
+R2
+R3
+DEx4 work 5 adder 0 22 RzAAe]DRLU3:9z1oK5M610
+!i122 3
+l53
+L29 54
+VM>0UHkZ@[<VJGkCF5`PWM3
+!s100 Pn<Zn]96`SSz>fbgk3W3J1
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 0
+R11
+R12
+Eadder_n
+Z13 w1706679109
+R2
+R3
+!i122 4
+R0
+Z14 8/home/hpeacher/cpr381/WIP/Fetch/adder_N.vhd
+Z15 F/home/hpeacher/cpr381/WIP/Fetch/adder_N.vhd
+l0
+L18 1
+VlaTzO<I9a=IBaPa@lcFbS2
+!s100 Zem81gOE8Pb^4b:D0>cI32
+R6
+32
+Z16 !s110 1709764922
+!i10b 1
+Z17 !s108 1709764922.000000
+Z18 !s90 -reportprogress|300|-work|work|/home/hpeacher/cpr381/WIP/Fetch/adder_N.vhd|
+Z19 !s107 /home/hpeacher/cpr381/WIP/Fetch/adder_N.vhd|
+!i113 0
+R11
+R12
+Astructural
+R2
+R3
+DEx4 work 7 adder_n 0 22 laTzO<I9a=IBaPa@lcFbS2
+!i122 4
+l38
+L28 38
+VS0<4PA7S:MISEg[EIOBjn2
+!s100 a=IGJ`JknW3OKB;fjjkzK3
+R6
+32
+R16
+!i10b 1
+R17
+R18
+R19
+!i113 0
+R11
+R12
+Eandg2
+Z20 w1705520868
+R2
+R3
+!i122 2
+R0
+Z21 8/home/hpeacher/cpr381/WIP/Fetch/andg2.vhd
+Z22 F/home/hpeacher/cpr381/WIP/Fetch/andg2.vhd
+l0
+Z23 L23 1
+VQf>?20ho>9XHGTg4:jo373
+!s100 0e<Rg^QbB^Y@JP[zKSc0[3
+R6
+32
+Z24 !s110 1709764919
+!i10b 1
+Z25 !s108 1709764919.000000
+Z26 !s90 -reportprogress|300|-work|work|/home/hpeacher/cpr381/WIP/Fetch/andg2.vhd|
+Z27 !s107 /home/hpeacher/cpr381/WIP/Fetch/andg2.vhd|
+!i113 0
+R11
+R12
+Adataflow
+R2
+R3
+DEx4 work 5 andg2 0 22 Qf>?20ho>9XHGTg4:jo373
+!i122 2
+l32
+Z28 L31 6
+VHdBJDB9no8cjMZ2eVYWH;1
+!s100 CbBW?3Q;N[15?`QCEQ<@f2
+R6
+32
+R24
+!i10b 1
+R25
+R26
+R27
+!i113 0
+R11
+R12
+Efetch
+Z29 w1709765229
+R2
+R3
+!i122 12
+R0
+Z30 8/home/hpeacher/cpr381/WIP/Fetch/fetch.vhd
+Z31 F/home/hpeacher/cpr381/WIP/Fetch/fetch.vhd
+l0
+L16 1
+VDNl^L=CB@WY0Xk0>@I4mK3
+!s100 <=@ok9fK:m:72;BKX]Gb^1
+R6
+32
+Z32 !s110 1709765234
+!i10b 1
+Z33 !s108 1709765234.000000
+Z34 !s90 -reportprogress|300|-work|work|/home/hpeacher/cpr381/WIP/Fetch/fetch.vhd|
+!s107 /home/hpeacher/cpr381/WIP/Fetch/fetch.vhd|
+!i113 0
+R11
+R12
+Amixed
+R2
+R3
+DEx4 work 5 fetch 0 22 DNl^L=CB@WY0Xk0>@I4mK3
+!i122 12
+l53
+L28 65
+Vi<c<NgQkU5ZJ6bi=2d0hK0
+!s100 n5[fzFj8c@U2C[S?f]dGV1
+R6
+32
+R32
+!i10b 1
+R33
+R34
+Z35 !s107 /home/hpeacher/cpr381/WIP/Fetch/fetch.vhd|
+!i113 0
+R11
+R12
+Eorg2
+R20
+R2
+R3
+!i122 1
+R0
+Z36 8/home/hpeacher/cpr381/WIP/Fetch/org2.vhd
+Z37 F/home/hpeacher/cpr381/WIP/Fetch/org2.vhd
+l0
+R23
+VhOiEZ0HVFKUfoceE;g4CN1
+!s100 hJAZ>EB8bm_e<^5IFaP9e1
+R6
+32
+Z38 !s110 1709764918
+!i10b 1
+Z39 !s108 1709764918.000000
+Z40 !s90 -reportprogress|300|-work|work|/home/hpeacher/cpr381/WIP/Fetch/org2.vhd|
+Z41 !s107 /home/hpeacher/cpr381/WIP/Fetch/org2.vhd|
+!i113 0
+R11
+R12
+Adataflow
+R2
+R3
+DEx4 work 4 org2 0 22 hOiEZ0HVFKUfoceE;g4CN1
+!i122 1
+l32
+R28
+VeLGLG944lJMT]Df59N0F92
+!s100 nma>Pa=mMW`KzzjeW=1[d1
+R6
+32
+R38
+!i10b 1
+R39
+R40
+R41
+!i113 0
+R11
+R12
