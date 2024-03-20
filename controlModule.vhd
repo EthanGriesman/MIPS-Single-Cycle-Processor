@@ -32,8 +32,6 @@ port(iOpcode    : in std_logic_vector(5 downto 0); --opcode
      oHalt      : out std_logic);
 end controlModule;
 
-
-
 architecture dataflow of controlModule is
 
 signal s_aluOp1   : std_logic_vector(3 downto 0);
@@ -55,7 +53,6 @@ signal s_ofe1     : std_logic;
 signal s_ofe2     : std_logic;
 
 --Uses spreadsheet to write select statements
-
 
 begin
 
@@ -115,13 +112,14 @@ with opCode select
 --MemtoReg--
 -- writes to memory --
 with opCode select
-     MemtoReg <= '1' when "0001111" | "100011" | "100000" | "100001" | "100101" |
+--lui, lw, lb, lh, lbu, lhu
+     MemtoReg <= '1' when "0001111" | "100011" | "100000" | "100001" | "100101" | --lui, lw, lb, lh, lbu, lhu
                  '0' when others;
 
 --MemWrite--
 -- writes back to register --
 with opCode select
-     MemWrite <= '1' when "101011" --
+     MemWrite <= '1' when "101011" --sw
                  '0' when others;
 
 -- RegWrite--
@@ -131,7 +129,7 @@ with opCode select
               '1' when others;
 
 with funct select
-     s_rw2 <= '0' when "001000",
+     s_rw2 <= '0' when "100000" | "100001" | "100100" | "100111" | "100110" | "100101" | "101010" | "000000" | "000010" | "000100" | "000110" | "000111" |
               '1' when others;
 
 with opCode select
@@ -146,7 +144,7 @@ with opCode select
                     "00" when others;
 
 with funct select
-     s_Rds2 <= "01" when "100000" | "100001" | "100100" | "110000" | "100111" | "100110" | "100101" | "101010" | "100010" | "111111" | "100011",
+     s_Rds2 <= "01" when "100000" | "100001" | "100100" | "110000" | "100111" | "100110" | "100101" | "101010" | "100010" | "111111" | "100011" |
                "01" when others;
 
 with opCode select
