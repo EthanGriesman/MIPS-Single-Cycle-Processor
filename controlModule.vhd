@@ -14,9 +14,9 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 
 entity controlModule is  --Separate File for ALUControl?
-port(iOpcode    : in std_logic_vector(5 downto 0);
-     iFunct     : in std_logic_vector(5 downto 0);
-     oAl        : out std_logic;
+port(iOpcode    : in std_logic_vector(5 downto 0); --opcode
+     iFunct     : in std_logic_vector(5 downto 0); --ifunct
+     oAl        : out std_logic;                   --
      oALUSrc    : out std_logic;
      oALUOp     : out std_logic_vector(3 downto 0);
      oMemtoReg  : out std_logic;
@@ -60,46 +60,48 @@ signal s_ofe2     : std_logic;
 begin
 
 --ALUSrc--
+-- all that have no funt --
 with opCode select
-     ALUSrc <= '1' when "001000",  -- addi
+     ALUSrc <= '1' when "001000",  -- addi 
                '1' when "001001",  -- addiu
                '1' when "001100",  -- andi
                '1' when "001111",  -- lui
-               '1' when "001110",  -- lw
+               '1' when "100011",  -- lw
+               '1' when "001110",  -- xori
                '1' when "001101",  -- ori
                '1' when "001010",  -- slti
-               '1' when "101000",  -- 
                '1' when "101011",  -- sw
                '1' when "011111",  -- lui
                '1' when "100011",  -- lw
+               '1' when "000100",  -- beq
+               '1' when "000101",  -- bne
                '0' when others;
 
 --ALUControl--
 with opCode select
-     s_aluOp1 <= "1111" when "000000",
-                 "0000" when "001100", -- andi
-                 "0001" when "001101",
-                 "0010" when "001000" | "001001" | "101011" | "100011",
-                 "0100" when "001110",
-                 "0110" when "001010",
-                 "1010" when "011111",
-                 "1100" when "001111",
-                 "0011" when "000100" | "000101",
+     s_aluOp1 <= "00000010" when "001000", --addi
+                 "00000010" when "001001", --addiu
+                 "00000000" when "000000", --and
+                 "00001100" when "001111", --lui
+                 '00000010' when "100011", --lw
+                 '00010010' when "001110", --xori
+                 '00000100' when "001101", --ori
+                 '00000100' when "101011", --sw
+                 '00000110' when "000101", --beq
                  "1111" when others;
 
 with funct select
-     s_aluOp2 <= "0000" when "100100",
-                 "0001" when "100101",
-                 "0010" when "100000" | "100001",
-                 "0011" when "100010" | "100011",
-                 "0100" when "100110",
-                 "0101" when "100111",
-                 "0110" when "101010",
-                 "0111" when "000000",
-                 "1000" when "000010",
-                 "1001" when "000011",
-                 "1010" when "111111",
-                 "1011" when "110000",
+     s_aluOp2 <= "00000010" when "100000",
+                 "00000010" when "100001",
+                 "00000000" when "100100",
+                 "00010010" when "100111",
+                 "00000100" when "100110",
+                 "00000010" when "100101",
+                 "01000110" when "101010",
+                 "00000110" when "100010",
+                 "00000110" when "100011",
+                 "1011" when "100011",
+                 "1011" when "100011",
                  "1111" when others;
 
        
