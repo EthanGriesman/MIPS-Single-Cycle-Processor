@@ -79,9 +79,9 @@ with opCode select
 
 --ALUControl--
 with opCode select
-     s_aluOp1 <= "00000010" when "001000", --addi
-                 "00000010" when "001001", --addiu
-                 "00000000" when "000000", --and
+     s_aluOp1 <= "00000000" when "001000", --addi
+                 "00000000" when "001001", --addiu
+                 "00000011" when "000000", --and
                  "00001100" when "001111", --lui
                  '00000010' when "100011", --lw
                  '00010010' when "001110", --xori
@@ -91,17 +91,20 @@ with opCode select
                  "1111" when others;
 
 with funct select
-     s_aluOp2 <= "00000010" when "100000",
-                 "00000010" when "100001",
-                 "00000000" when "100100",
-                 "00010010" when "100111",
-                 "00000100" when "100110",
-                 "00000010" when "100101",
-                 "01000110" when "101010",
-                 "00000110" when "100010",
-                 "00000110" when "100011",
-                 "1011" when "100011",
-                 "1011" when "100011",
+     s_aluOp2 <= "00000000" when "100000", --add
+                 "00000000" when "100001", --addu
+                 "00000011" when "100100", --and
+                 "00010010" when "100111", --nor
+                 "00000100" when "100110", --xor
+                 "00000010" when "100101", --or
+                 "01000110" when "101010", --sra
+                 "00100111" when "000000", --sll
+                 "01001001" when "000010", --srl
+                 "01001001" when "000011", --sra
+                 "00000000" when "100010", --sub
+                 "00000000" when "100011", --subu
+                 "00000100" when "000100", --sllv
+                 "01001000" when "000111", --srav
                  "1111" when others;
 
        
@@ -110,21 +113,19 @@ with opCode select
               s_aluOp1 when others;
 
 --MemtoReg--
+-- writes to memory --
 with opCode select
-     MemtoReg <= '1' when "100011",
+     MemtoReg <= '1' when "0001111" | "100011" | "100000" | "100001" | "100101" |
                  '0' when others;
 
 --MemWrite--
+-- writes back to register --
 with opCode select
-     MemWrite <= '1' when "101011",
+     MemWrite <= '1' when "101011" --
                  '0' when others;
 
---MemRead--
-with opCode select
-     MemRead <= '1' when "100011",
-                '0' when others;
-
---RegWrite--
+-- RegWrite--
+-- writes back to register --
 with opCode select
      s_rw1 <= '0' when "101011" | "000100" | "000101" | "000010",
               '1' when others;
@@ -139,6 +140,7 @@ with opCode select
 
 
 --RegDst--
+-- uses rd, tr, or rs as destination register --
 with opCode select
      s_Rds1 <= "10" when "000011",
                     "00" when others;
