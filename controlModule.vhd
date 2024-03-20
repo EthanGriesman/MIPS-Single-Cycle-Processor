@@ -71,8 +71,8 @@ with opCode select
                '1' when "100011",  -- lw
                '1' when "000100",  -- beq
                '1' when "000101",  -- bne
-               '1' when "100100",  -- bne
-               '1' when "100101",  -- bne
+               '1' when "100100",  -- lbu
+               '1' when "100101",  -- lhu
                '0' when others;
 
 --ALUControl--
