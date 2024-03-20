@@ -68,10 +68,11 @@ with opCode select
                '1' when "001101",  -- ori
                '1' when "001010",  -- slti
                '1' when "101011",  -- sw
-               '1' when "011111",  -- lui
                '1' when "100011",  -- lw
                '1' when "000100",  -- beq
                '1' when "000101",  -- bne
+               '1' when "100100",  -- bne
+               '1' when "100101",  -- bne
                '0' when others;
 
 --ALUControl--
@@ -156,7 +157,7 @@ with opCode select
              '0' when others;
 
 with funct select
-     s_j2 <= '1' when "001000",
+     s_j2 <= '01' when "001000",
              '0' when others;
 
 with opCode select
