@@ -20,7 +20,8 @@ entity fetch is
 	iSignExtendImm	: in std_logic_vector(31 downto 0);
 	iBranch		: in std_logic;
 	iALUZero	: in std_logic;
-	iJump		: in std_logic;
+	iJump		: in std_logic_vector(1 downto 0); --bit 1->Jump    bit 2->Jr
+	irs			: in std_logic_vector(31 downto 0); --used for jr
 	oPC		: out std_logic_vector(31 downto 0);
 	oPCPlus4	: out std_logic_vector(31 downto 0));
 end fetch;
@@ -84,9 +85,12 @@ architecture mixed of fetch is
 			   s_PCplusImm when s_mux1Ctl = '1' else
 			   (others => '0');
 
-	s_newPC		<= s_mux1Out when iJump = '0' else
-			   s_jumpAddr when iJump = '1' else
-			   (others => '0');
+	s_newPC	<= s_mux1Out when iJump = "00" else
+				s_jumpAddr when iJump = "01" else
+				irs	when iJump = "10" else
+				(others => '0');
+
+	
 
 
 end mixed;
