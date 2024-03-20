@@ -1,5 +1,5 @@
 -------------------------------------------------------------------------
--- Bruce Bitwayiki
+-- Ethan Griesman
 -- CPR E 381 Spring 21
 -- Iowa State University
 -------------------------------------------------------------------------
@@ -8,7 +8,7 @@
 -- DESCRIPTION: This file contains a testbench for a fetch_logic.
 --  
 --Notes            
--- 03/24/2021 by Bruce Bitwayiki::Design created.
+by Ethan Griesman
 -------------------------------------------------------------------------
 library IEEE;
 use IEEE.std_logic_1164.all;
