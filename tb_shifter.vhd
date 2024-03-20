@@ -1,6 +1,5 @@
 -------------------------------------------------------------------------
--- Bruce Bitwayiki
--- CPR E 381 Spring 21
+-- Ethan Griesman
 -- Iowa State University
 -------------------------------------------------------------------------
 -- tb_shifter.vhd
@@ -9,7 +8,6 @@
 --32-bit Barrel Shifter with srl, sll, and sra
 --  
 --Notes            
--- 03/08/2021 by Bruce Bitwayiki:Design created.
 -------------------------------------------------------------------------
 
 library IEEE;
