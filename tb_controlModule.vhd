@@ -106,106 +106,173 @@ architecture mixed of tb_controlModule is
     begin
         wait for gCLK_HPER;
     -- (addi)
+        s_iOpcode     <= "001000";
+        s_iFunct      <= "000000";
         
         wait for cCLK_PER;
     -- (add)
+        s_iOpcode     <= "000000";
+        s_iFunct      <= "100000";
 
         wait for cCLK_PER;
     -- (addu)
+        s_iOpcode     <= "000000";
+        s_iFunct      <= "100001";
 
         wait for cCLK_PER;
     -- (addiu)
+        s_iOpcode     <= "001001";
+        s_iFunct      <= "000000";
 
         wait for cCLK_PER;
     -- (and)
+        s_iOpcode     <= "000000";
+        s_iFunct      <= "100100";
 
         wait for cCLK_PER;
-
     -- (andi)
+        s_iOpcode     <= "001100";
+        s_iFunct      <= "000000";
 
         wait for cCLK_PER;
     -- (lui)
+        s_iOpcode     <= "001111";
+        s_iFunct      <= "000000";
 
         wait for cCLK_PER;
     -- (lw)
+        s_iOpcode     <= "100011";
+        s_iFunct      <= "000000";
 
         wait for cCLK_PER;
     -- (nor)
+        s_iOpcode     <= "000000";
+        s_iFunct      <= "100111";
 
         wait for cCLK_PER;
     -- (xor)
+        s_iOpcode     <= "000000";
+        s_iFunct      <= "100110";
 
         wait for cCLK_PER;
     -- (xori)
+        s_iOpcode     <= "001110";
+        s_iFunct      <= "000000";
 
         wait for cCLK_PER;
     -- (or)
+        s_iOpcode     <= "000000";
+        s_iFunct      <= "100101";
 
         wait for cCLK_PER;
     -- (ori)
+        s_iOpcode     <= "001101";
+        s_iFunct      <= "000000";
 
         wait for cCLK_PER;
     -- (slt)
+        s_iOpcode     <= "000000";
+        s_iFunct      <= "101010";
 
         wait for cCLK_PER;
     -- (slti)
+        s_iOpcode     <= "001010";
+        s_iFunct      <= "000000";
 
         wait for cCLK_PER;
     -- (sll)
+        s_iOpcode     <= "000000";
+        s_iFunct      <= "000000";
 
         wait for cCLK_PER;
     -- (srl)
+        s_iOpcode     <= "000000";
+        s_iFunct      <= "000010";
 
         wait for cCLK_PER;
     -- (sra)
+        s_iOpcode     <= "000000";
+        s_iFunct      <= "000011";
 
         wait for cCLK_PER;
     -- (sw)
+        s_iOpcode     <= "101011";
+        s_iFunct      <= "000000";
 
         wait for cCLK_PER;
     -- (sub)
+        s_iOpcode     <= "000000";
+        s_iFunct      <= "100010";
 
         wait for cCLK_PER;
     -- (subu)
+        s_iOpcode     <= "000000";
+        s_iFunct      <= "100011";
 
         wait for cCLK_PER;
     -- (beq)
+        s_iOpcode     <= "000100";
+        s_iFunct      <= "000000";
 
         wait for cCLK_PER;
     -- (bne)
+        s_iOpcode     <= "000101";
+        s_iFunct      <= "000000";
 
         wait for cCLK_PER;
     -- (j)
+        s_iOpcode     <= "000010";
+        s_iFunct      <= "000000";
 
         wait for cCLK_PER;
     -- (jal)
+        s_iOpcode     <= "000011";
+        s_iFunct      <= "000000";
 
         wait for cCLK_PER;
     -- (jr)
+        s_iOpcode     <= "000000";
+        s_iFunct      <= "001000";
 
         wait for cCLK_PER;
     -- (lb)
+        s_iOpcode     <= "100000";
+        s_iFunct      <= "000000";
 
         wait for cCLK_PER;
     -- (lh)
+        s_iOpcode     <= "100001";
+        s_iFunct      <= "000000";
 
         wait for cCLK_PER;
     -- (lbu)
+        s_iOpcode     <= "100100";
+        s_iFunct      <= "000000";
 
         wait for cCLK_PER;
     -- (lhu)
+        s_iOpcode     <= "100101";
+        s_iFunct      <= "000000";
 
         wait for cCLK_PER;
     -- (sllv)
+        s_iOpcode     <= "000000";
+        s_iFunct      <= "000100";
 
         wait for cCLK_PER;
     -- (srlv)
+        s_iOpcode     <= "000000";
+        s_iFunct      <= "000110";
 
         wait for cCLK_PER;
     -- (srav)
+        s_iOpcode     <= "000000";
+        s_iFunct      <= "000111";
 
         wait for cCLK_PER;
     -- (halt)
+        s_iOpcode     <= "010100";
+        s_iFunct      <= "000000";
 
         wait for cCLK_PER;
     end process;
