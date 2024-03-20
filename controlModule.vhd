@@ -125,17 +125,16 @@ with opCode select
 -- RegWrite--
 -- writes back to register --
 with opCode select
-     s_rw1 <= '0' when "101011" | "000100" | "000101" | "000010",
-              '1' when others;
+     s_rw1 <= '1' when "001000" | "001001" | "001100" | "001111" | "100011" | "001110" | "001010" | "101011" | "000011" | "100000" | "100001" | "100100" | "100101" | "010100" |
+              '0' when others;
 
 with funct select
-     s_rw2 <= '0' when "100000" | "100001" | "100100" | "100111" | "100110" | "100101" | "101010" | "000000" | "000010" | "000100" | "000110" | "000111" |
-              '1' when others;
+     s_rw2 <= '1' when "100000" | "100001" | "100100" | "100111" | "100110" | "100101" | "101010" | "000000" | "000010" | "000100" | "000110" | "000111" |
+              '0' when others;
 
 with opCode select
      RegWrite <= s_rw2 when "000000",
                  s_rw1 when others;
-
 
 --RegDst--
 -- uses rd, tr, or rs as destination register --
