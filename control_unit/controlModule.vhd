@@ -18,10 +18,10 @@ port(iOpcode    : in std_logic_vector(5 downto 0); --opcode
      iFunct     : in std_logic_vector(5 downto 0); --ifunct
      oAl        : out std_logic;                   --
      oALUSrc    : out std_logic; 
-     oALUOp     : out std_logic_vector(3 downto 0);
+     oALUOp     : out std_logic_vector(3 downto 0); 
      oMemtoReg  : out std_logic; --done
      oMemWrite  : out std_logic; --done
-     oMemRead   : out std_logic;
+     oMemRead   : out std_logic; --done
      oRegWrite  : out std_logic; --done
      oRegDst    : out std_logic_vector(1 downto 0); --done
      oJump      : out std_logic;
@@ -58,8 +58,8 @@ begin
 
 --ALUSrc--
 -- all that have no funt --
-with opCode select
-     ALUSrc <= '1' when "001000",  -- addi 
+with iOpCode select
+     oALUSrc <= '1' when "001000",  -- addi 
                '1' when "001001",  -- addiu
                '1' when "001100",  -- andi
                '1' when "001111",  -- lui
@@ -76,7 +76,7 @@ with opCode select
                '0' when others;
 
 --ALUControl--
-with opCode select
+with iOpCode select
      s_aluOp1 <= "00000000" when "001000", --addi
                  "00000000" when "001001", --addiu
                  "00000011" when "000000", --and
@@ -88,7 +88,7 @@ with opCode select
                  '00000110' when "000101", --beq
                  "1111" when others;
 
-with funct select
+with iFunct select
      s_aluOp2 <= "00000000" when "100000", --add
                  "00000000" when "100001", --addu
                  "00000011" when "100100", --and
@@ -106,117 +106,131 @@ with funct select
                  "1111" when others;
 
        
-with opCode select
+with iOpCode select
      ALUOp <= s_aluOp2 when "000000",
               s_aluOp1 when others;
 
 --MemtoReg--
 -- writes to memory --
-with opCode select
+with iOpCode select
 --lui, lw, lb, lh, lbu, lhu
      MemtoReg <= '1' when "0001111" | "100011" | "100000" | "100001" | "100101" | --lui, lw, lb, lh, lbu, lhu
                  '0' when others;
 
 --MemWrite--
 -- writes back to register --
-with opCode select
+with iOpCode select
      MemWrite <= '1' when "101011" --sw
                  '0' when others;
+
+--MemRead--
+-- reads from memory --
+with iOpCode select
+     MemRead <= '1' when "100011",
+                '0' when others;
 
 -- RegWrite--
 -- writes back to register --
 -- all except sra, sub, subu, beq, bne, j, jr
-with opCode select
+with iOpCode select
      s_rw1 <= '1' when "001000" | "001001" | "001100" | "001111" | "100011" | "001110" | "001010" | "101011" | "000011" | "100000" | "100001" | "100100" | "100101" | "010100" |
               '0' when others;
 
-with funct select
+with iFunct select
      s_rw2 <= '1' when "100000" | "100001" | "100100" | "100111" | "100110" | "100101" | "101010" | "000000" | "000010" | "000100" | "000110" | "000111" |
               '0' when others;
 
+with iOpCode select
+     RegWrite <= s_rw2 when "000000",
+                 s_rw1 when others;
+         
 --RegDst--
 -- uses rd, tr, or rs as destination register --
-with opCode select
+with iOpCode select
      s_Rds1 <= "10" when "000011",
-                    "00" when others;
+               "00" when others;
 
-with funct select
+with iFunct select
      s_Rds2 <= "01" when "100000" | "100001" | "100100" | "110000" | "100111" | "100110" | "100101" | "101010" | "100010" | "111111" | "100011" |
-               "01" when others;
---Jump--
+               "00" when others;
+
 with opCode select
+     RegDst <= s_Rds2 when "000000" | "011111",
+               s_Rds1 when others;
+
+--Jump--
+with iOpCode select
      s_j1 <= '1' when "000010" | "000011",
              '0' when others;
 
-with funct select
+with iFunct select
      s_j2 <= '01' when "001000",
              '0' when others;
 
-with opCode select
+with iOpCode select
      Jump <= s_j2 when "000000",
              s_j1 when others;
 
 --Branch--
-with opCode select
+with iOpCode select
      Branch <= '1' when "000100",
                '1' when "000101",
                '0' when others;
 --Shift--
-with opCode&funct select
+with iOpCode&funct select
      Shift <= '1' when "000000000000",
               '1' when "000000000010",
               '1' when "000000000011",
               '0' when others;
 
 --SignExtend--
-with funct select
+with iFunct select
      s_se2 <= '0' when "001101" | "001100",
      '1' when others;
 
-with opCode select
+with iOpCode select
      s_se1 <= '0' when "001101" | "001100",
      '1' when others;
 
-
-with opCode select
+with iOpCode select
      SignExtend <= s_se2 when "000000",
      s_se1 when others;
 
 --Overflow Enable--
-with funct select
+with iFunct select
      s_ofe1 <= '0' when "100001" | "100100" | "100011",
      '1' when others;
 
-with opCode select
+with iOpCode select
      s_ofe2 <= '0' when "001001",
      '1' when others;
 
-with opCode select
+with iOpCode select
      OverflowEn <= s_ofe1 when "000000",
      s_ofe2 when others;
 
 --Halt--
-with opCode select
+with iOpCode select
      Halt <= '1' when "010100",
              '0' when others;
 
 --opSlt--
-with funct select
+with iFunct select
      opSlt <= '1' when "101010",
               '0' when others;
 
 --opJal--
-with opCode select
+with iOpCode select
      opJal <= '1' when "000011",
               '0' when others;
 
 --opJr--
-with opCode & funct select
+with iOpCode & funct select
      opJr <= '1' when "000000001000",
              '0' when others;
 
 --opBne--
-with opCode select
+with iOpCode select
      opBne <= '1' when "000101",
               '0' when others;
 
