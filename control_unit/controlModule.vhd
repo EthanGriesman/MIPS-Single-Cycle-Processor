@@ -17,15 +17,15 @@ entity controlModule is  --Separate File for ALUControl?
 port(iOpcode    : in std_logic_vector(5 downto 0); --opcode
      iFunct     : in std_logic_vector(5 downto 0); --ifunct
      oAl        : out std_logic;                   --
-     oALUSrc    : out std_logic; 
-     oALUOp     : out std_logic_vector(3 downto 0); 
+     oALUSrc    : out std_logic; --done
+     oALUOp     : out std_logic_vector(3 downto 0); --done
      oMemtoReg  : out std_logic; --done
      oMemWrite  : out std_logic; --done
      oMemRead   : out std_logic; --done
      oRegWrite  : out std_logic; --done
      oRegDst    : out std_logic_vector(1 downto 0); --done
      oJump      : out std_logic;
-     oBranch    : out std_logic;
+     oBranch    : out std_logic; --done
      oLb        : out std_logic;
      oSignExtend: out std_logic;
      oOverflowEn: out std_logic;
@@ -114,19 +114,19 @@ with iOpCode select
 -- writes to memory --
 with iOpCode select
 --lui, lw, lb, lh, lbu, lhu
-     MemtoReg <= '1' when "0001111" | "100011" | "100000" | "100001" | "100101" | --lui, lw, lb, lh, lbu, lhu
+     oMemtoReg <= '1' when "0001111" | "100011" | "100000" | "100001" | "100101" | --lui, lw, lb, lh, lbu, lhu
                  '0' when others;
 
 --MemWrite--
 -- writes back to register --
 with iOpCode select
-     MemWrite <= '1' when "101011" --sw
+     oMemWrite <= '1' when "101011" --sw
                  '0' when others;
 
 --MemRead--
 -- reads from memory --
 with iOpCode select
-     MemRead <= '1' when "100011",
+     oMemRead <= '1' when "100011",
                 '0' when others;
 
 -- RegWrite--
@@ -141,7 +141,7 @@ with iFunct select
               '0' when others;
 
 with iOpCode select
-     RegWrite <= s_rw2 when "000000",
+     oRegWrite <= s_rw2 when "000000",
                  s_rw1 when others;
          
 --RegDst--
@@ -155,7 +155,7 @@ with iFunct select
                "00" when others;
 
 with opCode select
-     RegDst <= s_Rds2 when "000000" | "011111",
+     oRegDst <= s_Rds2 when "000000" | "011111",
                s_Rds1 when others;
 
 --Jump--
@@ -164,7 +164,7 @@ with iOpCode select
              '0' when others;
 
 with iFunct select
-     s_j2 <= '01' when "001000",
+     s_j2 <= '0' when "001000",
              '0' when others;
 
 with iOpCode select
@@ -173,8 +173,7 @@ with iOpCode select
 
 --Branch--
 with iOpCode select
-     Branch <= '1' when "000100",
-               '1' when "000101",
+     oBranch <= '1' when "000100" | "000101",
                '0' when others;
 --Shift--
 with iOpCode&funct select
@@ -197,21 +196,22 @@ with iOpCode select
      s_se1 when others;
 
 --Overflow Enable--
+-- all except addu, addiu, subu, 
 with iFunct select
-     s_ofe1 <= '0' when "100001" | "100100" | "100011",
+     s_ofe1 <= '0' when "100001" | "100011",
      '1' when others;
 
 with iOpCode select
-     s_ofe2 <= '0' when "001001",
+     s_ofe2 <= '0' when "001001" | "100100" | "100101",
      '1' when others;
 
 with iOpCode select
-     OverflowEn <= s_ofe1 when "000000",
+     oOverflowEn <= s_ofe1 when "000000",
      s_ofe2 when others;
 
 --Halt--
 with iOpCode select
-     Halt <= '1' when "010100",
+     Halt <= '1' when "",
              '0' when others;
 
 --opSlt--
