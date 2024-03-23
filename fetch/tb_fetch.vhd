@@ -8,7 +8,7 @@
 -- DESCRIPTION: This file contains a testbench for a fetch_logic.
 --  
 --Notes            
-by Ethan Griesman
+--by Ethan Griesman
 -------------------------------------------------------------------------
 library IEEE;
 use IEEE.std_logic_1164.all;

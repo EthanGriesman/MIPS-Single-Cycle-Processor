@@ -2,9 +2,8 @@
 -- Ethan Griesman
 -- Department of Electrical and Computer Engineering
 -- Iowa State University
+-- CPR E 381, Spring 2024
 -------------------------------------------------------------------------------------------------
-
-
 -- controlModule.vhd
 -------------------------------------------------------------------------------------------------
 -- DESCRIPTION: This file contains an implementation of the control module of the MIPS processor
