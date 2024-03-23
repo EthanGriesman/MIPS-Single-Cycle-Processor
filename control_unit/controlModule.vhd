@@ -123,7 +123,7 @@ with iOpCode select
 
 -- oRegWr --
 -- writes back to register --
--- all except sra, sub, subu, beq, bne, j, jr
+-- all except sra, sub, subu, beq, bne, j, jr --
 with iOpCode select
      s_rw1 <= '1' when "001000" | "001001" | "001100" | "001111" | "100011" | "001110" | "001010" | "101011" | "000011" | "100000" | "100001" | "100100" | "100101" | "010100" |
               '0' when others;
@@ -151,41 +151,42 @@ with opCode select
                s_Rds1 when others;
 
 -- oJump --
+-- logic for j and jr --
 with iOpCode select
-     s_j1 <= '1' when "000010" | "000011",
-             '0' when others;
+     s_j1 <= '01' when "000010", 
+             '00' when others;
 
 with iFunct select
-     s_j2 <= '0' when "001000",
-             '0' when others;
+     s_j2 <= '10' when "001000",
+             '00' when others;
 
 with iOpCode select
      Jump <= s_j2 when "000000",
              s_j1 when others;
 
--- olb --
+-- oLb --
 -- load byte -- 
 with iOpCode select
      oLb <= '1' when "100000",
-               '0' when others;
+            '0' when others;
 
--- Equal [0 -> BNE, 1 -> BEQ] -- 
+-- oEqual [0 -> BNE, 1 -> BEQ] -- 
 with iOpCode select
      oEqual <= '1' when "000100",
                '0' when others;
 
--- Branch --
+-- oBranch --
 with iOpCode select
      oBranch <= '1' when "000100" | "000101",
-               '0' when others;
-               
--- Halt --
-with iOpCode select
-     Halt <= '1' when "",
-             '0' when others;
+                '0' when others;
 
---Overflow Enable--
--- all except addu, addiu, subu, 
+-- oHalt --
+with iOpCode select
+     oHalt <= '1' when "",
+              '0' when others;
+
+-- oOverflowEn --
+-- all except addu, addiu, subu, --
 with iFunct select
      s_ofe1 <= '0' when "100001" | "100011",
      '1' when others;
@@ -197,7 +198,5 @@ with iOpCode select
 with iOpCode select
      oOverflowEn <= s_ofe1 when "000000",
      s_ofe2 when others;
-
-
 
 end dataflow;
