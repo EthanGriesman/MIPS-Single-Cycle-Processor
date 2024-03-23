@@ -17,10 +17,10 @@ entity controlModule is  --Separate File for ALUControl?
 port(iOpcode    : in std_logic_vector(5 downto 0); --opcode
      iFunct     : in std_logic_vector(5 downto 0); --ifunct
      oAl        : out std_logic;                   --
-     oALUSrc    : out std_logic;
+     oALUSrc    : out std_logic; 
      oALUOp     : out std_logic_vector(3 downto 0);
-     oMemtoReg  : out std_logic;
-     oMemWrite  : out std_logic;
+     oMemtoReg  : out std_logic; --done
+     oMemWrite  : out std_logic; --done
      oMemRead   : out std_logic;
      oRegWrite  : out std_logic;
      oRegDst    : out std_logic_vector(1 downto 0);
@@ -125,6 +125,7 @@ with opCode select
 
 -- RegWrite--
 -- writes back to register --
+-- all except sra, sub, subu, beq, bne, j, jr
 with opCode select
      s_rw1 <= '1' when "001000" | "001001" | "001100" | "001111" | "100011" | "001110" | "001010" | "101011" | "000011" | "100000" | "100001" | "100100" | "100101" | "010100" |
               '0' when others;
