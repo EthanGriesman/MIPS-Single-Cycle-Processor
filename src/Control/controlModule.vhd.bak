@@ -11,6 +11,7 @@
 
 library IEEE;
 use IEEE.std_logic_1164.all;
+use IEEE.std_logic_1164.STD_LOGIC_VECTOR;
 
 entity controlModule is  --Separate File for ALUControl?
 port(iOpcode    : in std_logic_vector(5 downto 0); --opcode
@@ -24,7 +25,7 @@ port(iOpcode    : in std_logic_vector(5 downto 0); --opcode
      oRegDst    : out std_logic_vector(1 downto 0); --done
      oJump      : out std_logic; 
      oBranch    : out std_logic; --done
-     oLb        : out std_logic; --done
+     oLb        : out std_logic_vector(1 downto 0); --done
      oEqual     : out std_logic; --done
      oHalt      : out std_logic;
      oOverflowEn: out std_logic);
@@ -32,8 +33,8 @@ end controlModule;
 
 architecture dataflow of controlModule is
 
-signal s_aluOp1   : std_logic_vector(3 downto 0);
-signal s_aluOp2   : std_logic_vector(3 downto 0);
+signal s_aluOp1   : std_logic_vector(7 downto 0);
+signal s_aluOp2   : std_logic_vector(7 downto 0);
 
 signal s_rw1      : std_logic;
 signal s_rw2      : std_logic;
@@ -41,8 +42,8 @@ signal s_rw2      : std_logic;
 signal s_Rds1     : std_logic_vector(1 downto 0);
 signal s_Rds2     : std_logic_vector(1 downto 0);
 
-signal s_j1       : std_logic;
-signal s_j2       : std_logic;
+signal s_j1       : std_logic_vector(1 downto 0);
+signal s_j2       : std_logic_vector(1 downto 0);
 
 signal s_se1      : std_logic;
 signal s_se2      : std_logic;
@@ -66,7 +67,6 @@ with iOpCode select
                '1' when "001101",  -- ori
                '1' when "001010",  -- slti
                '1' when "101011",  -- sw
-               '1' when "100011",  -- lw
                '1' when "000100",  -- beq
                '1' when "000101",  -- bne
                '1' when "100100",  -- lbu
@@ -84,7 +84,7 @@ with iOpCode select
                  "00000100" when "001101", --ori
                  "00000100" when "101011", --sw
                  "00000110" when "000101", --beq
-                 "1111" when others;
+                 "11111111" when others;
 
 with iFunct select
      s_aluOp2 <= "00000000" when "100000", --add
@@ -101,40 +101,35 @@ with iFunct select
                  "00000000" when "100011", --subu
                  "00000100" when "000100", --sllv
                  "01001000" when "000111", --srav
-                 "1111" when others;
+                 "11111111" when others;
 
        
 with iOpCode select
-     ALUOp <= s_aluOp2 when "000000",
+     oALUControl <= s_aluOp2 when "000000",
               s_aluOp1 when others;
 
 -- oMemtoReg --
 -- writes to memory --
 with iOpCode select
 --lui, lw, lb, lh, lbu, lhu
-     oMemtoReg <= '1' when "0001111" | "100011" | "100000" | "100001" | "100101" | --lui, lw, lb, lh, lbu, lhu
+     oMemtoReg <= '1' when "001111" | "100011" | "100000" | "100001" | "100101", --lui, lw, lb, lh, lbu, lhu
                  '0' when others;
 
 -- oDMemWr --
 -- writes back to register --
 with iOpCode select
-     oDMemWr <= '1' when "101011" --sw
-                 '0' when others;
-
---MemRead--
-with opCode select
-     MemRead <= '1' when "100011",
+     oDMemWr <= '1' when "101011", --sw
                 '0' when others;
 
 -- oRegWr --
 -- writes back to register --
 -- all except sra, sub, subu, beq, bne, j, jr --
 with iOpCode select
-     s_rw1 <= '1' when "001000" | "001001" | "001100" | "001111" | "100011" | "001110" | "001010" | "101011" | "000011" | "100000" | "100001" | "100100" | "100101" | "010100" |
+     s_rw1 <= '1' when "001000" | "001001" | "001100" | "001111" | "100011" | "001110" | "001010" | "101011" | "000011" | "100000" | "100001" | "100100" | "100101" | "010100",
               '0' when others;
 
 with iFunct select
-     s_rw2 <= '1' when "100000" | "100001" | "100100" | "100111" | "100110" | "100101" | "101010" | "000000" | "000010" | "000100" | "000110" | "000111" |
+     s_rw2 <= '1' when "100000" | "100001" | "100100" | "100111" | "100110" | "100101" | "101010" | "000000" | "000010" | "000100" | "000110" | "000111",
               '0' when others;
 
 with iOpCode select
@@ -148,32 +143,34 @@ with iOpCode select
                "00" when others;
 
 with iFunct select
-     s_Rds2 <= "01" when "100000" | "100001" | "100100" | "110000" | "100111" | "100110" | "100101" | "101010" | "100010" | "111111" | "100011" |
+     s_Rds2 <= "01" when "100000" | "100001" | "100100" | "110000" | "100111" | "100110" | "100101" | "101010" | "100010" | "111111" | "100011",
                "00" when others;
 
-with opCode select
+with iOpCode select
      oRegDst <= s_Rds2 when "000000" | "011111",
                s_Rds1 when others;
 
 -- oJump --
--- logic for j and jr --
 with iOpCode select
-     s_j1 <= '01' when "000010", 
-             '00' when others;
+     s_j1 <= "01" when "000010", 
+             "00" when others;
 
 with iFunct select
-     s_j2 <= '10' when "001000",
-             '00' when others;
+     s_j2 <= "10" when "001000",
+             "00" when others;
 
 with iOpCode select
-     Jump <= s_j2 when "000000",
+     oJump <= s_j2 when "000000",
              s_j1 when others;
 
 -- oLb --
 -- load byte -- 
 with iOpCode select
-     oLb <= '1' when "100000",
-            '0' when others;
+     oLb <= "10" when "100000",
+            "01" when "100001",
+            "01" when "100101",
+            "10" when "100100",
+            "00" when others;
 
 -- oEqual [0 -> BNE, 1 -> BEQ] -- 
 with iOpCode select
@@ -187,7 +184,7 @@ with iOpCode select
 
 -- oHalt --
 with iOpCode select
-     oHalt <= '1' when "",
+     oHalt <= '1' when "010100",
               '0' when others;
 
 -- oOverflowEn --

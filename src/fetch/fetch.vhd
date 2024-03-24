@@ -82,7 +82,7 @@ architecture mixed of fetch is
 	s_mux1Ctl	<= iBranch and iALUZero;
 
 	s_mux1Out 	<= s_PCPlus4 when s_mux1Ctl = '0' else
-			   s_PCplusImm when s_mux1Ctl = '1' else
+			       s_PCplusImm when s_mux1Ctl = '1' else
 			   (others => '0');
 
 	s_newPC	<= s_mux1Out when iJump = "00" else
