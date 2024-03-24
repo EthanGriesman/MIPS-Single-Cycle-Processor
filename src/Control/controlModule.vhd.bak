@@ -103,6 +103,11 @@ with iFunct select
                  "01001000" when "000111", --srav
                  "1111" when others;
 
+       
+with iOpCode select
+     ALUOp <= s_aluOp2 when "000000",
+              s_aluOp1 when others;
+
 -- oMemtoReg --
 -- writes to memory --
 with iOpCode select
