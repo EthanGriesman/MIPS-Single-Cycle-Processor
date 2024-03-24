@@ -71,23 +71,30 @@ begin
       wait for gCLK_HPER/2; 
 
       -- Test case 1:
-      iInput_tb <= x"00200000";
-      ishamt_tb <= "00011";
+      s_In <= x"00200000";
+      s_Nm <= "00011";
       wait for gCLK_HPER*2;
       wait for gCLK_HPER*2;
 
       -- Test case 2:
-      ishamt_tb <= "00010";
+      s_Nm <= "00010";
       wait for gCLK_HPER*2;
       wait for gCLK_HPER*2;
 
       -- Test case 3 (Left):
-      iDir_tb <= '1';
-      ishamt_tb <= "00001";
+      s_Dr <= '1';
+      s_Nm <= "00001";
+      wait for gCLK_HPER*2;
+      wait for gCLK_HPER*2;
+
+      -- Test case 4 (Arithmetic):
+      s_In <= x"F0001000";
+      s_Md <= '1';
+      s_Dr <= '0';
+      s_Nm <= "00010";
       wait for gCLK_HPER*2;
       wait for gCLK_HPER*2;
 
     end process;
 
 end tb_arch;
-
