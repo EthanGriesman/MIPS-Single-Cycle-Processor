@@ -121,6 +121,11 @@ with iOpCode select
      oDMemWr <= '1' when "101011" --sw
                  '0' when others;
 
+--MemRead--
+with opCode select
+     MemRead <= '1' when "100011",
+                '0' when others;
+
 -- oRegWr --
 -- writes back to register --
 -- all except sra, sub, subu, beq, bne, j, jr --
