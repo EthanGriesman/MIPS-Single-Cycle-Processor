@@ -1,0 +1,285 @@
+# //  Questa Sim-64
+# //  Version 2023.2_2 linux_x86_64 Jun  9 2023
+# //
+# //  Copyright 1991-2023 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+cd /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/tests
+vlib work
+vcom -reportprogress 300 -work work /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/tests/tb_controlModule.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 15:54:44 on Mar 24,2024
+# vcom -reportprogress 300 -work work /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/tests/tb_controlModule.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Compiling entity tb_controlModule
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/tests/tb_controlModule.vhd(20): near ":": (vcom-1576) expecting ';' or ')'.
+# ** Note: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/tests/tb_controlModule.vhd(20): VHDL Compiler exiting
+# End time: 15:54:44 on Mar 24,2024, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vcom -reportprogress 300 -work work /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/tests/tb_controlModule.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 15:55:10 on Mar 24,2024
+# vcom -reportprogress 300 -work work /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/tests/tb_controlModule.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Compiling entity tb_controlModule
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/tests/tb_controlModule.vhd(20): near ":": (vcom-1576) expecting ';' or ')'.
+# ** Note: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/tests/tb_controlModule.vhd(20): VHDL Compiler exiting
+# End time: 15:55:10 on Mar 24,2024, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vcom -reportprogress 300 -work work /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/tests/tb_controlModule.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 15:55:51 on Mar 24,2024
+# vcom -reportprogress 300 -work work /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/tests/tb_controlModule.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Compiling entity tb_controlModule
+# -- Compiling architecture mixed of tb_controlModule
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/tests/tb_controlModule.vhd(69): (vcom-1136) Unknown identifier "s_ALUControl".
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/tests/tb_controlModule.vhd(71): (vcom-1136) Unknown identifier "s_DMemWr".
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/tests/tb_controlModule.vhd(72): (vcom-1136) Unknown identifier "s_RegWr".
+# ** Note: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/tests/tb_controlModule.vhd(279): VHDL Compiler exiting
+# End time: 15:55:51 on Mar 24,2024, Elapsed time: 0:00:00
+# Errors: 3, Warnings: 0
+vcom -reportprogress 300 -work work /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/tests/tb_controlModule.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 15:56:31 on Mar 24,2024
+# vcom -reportprogress 300 -work work /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/tests/tb_controlModule.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Compiling entity tb_controlModule
+# -- Compiling architecture mixed of tb_controlModule
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/tests/tb_controlModule.vhd(71): (vcom-1136) Unknown identifier "s_DMemWr".
+# ** Note: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/tests/tb_controlModule.vhd(279): VHDL Compiler exiting
+# End time: 15:56:31 on Mar 24,2024, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vcom -reportprogress 300 -work work /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/tests/tb_controlModule.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 15:56:39 on Mar 24,2024
+# vcom -reportprogress 300 -work work /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/tests/tb_controlModule.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Compiling entity tb_controlModule
+# -- Compiling architecture mixed of tb_controlModule
+# End time: 15:56:39 on Mar 24,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.tb_controlmodule -voptargs=+acc
+# vsim work.tb_controlmodule -voptargs="+acc" 
+# Start time: 15:56:58 on Mar 24,2024
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/tests/tb_controlModule.vhd(64): (vopt-3473) Component instance "DUT0 : controlModule" is not bound.
+#         Region: /tb_controlModule
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=2.
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_controlmodule(mixed)#1
+# ** Warning: (vsim-3473) Component instance "DUT0 : controlModule" is not bound.
+#    Time: 0 ns  Iteration: 0  Instance: /tb_controlmodule File: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/tests/tb_controlModule.vhd
+quit -sim
+# End time: 15:57:20 on Mar 24,2024, Elapsed time: 0:00:22
+# Errors: 0, Warnings: 3
+cd /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor
+vlib work
+vcom -reportprogress 300 -work work /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 15:57:48 on Mar 24,2024
+# vcom -reportprogress 300 -work work /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity controlModule
+# -- Compiling architecture dataflow of controlModule
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(108): Illegal target for signal assignment.
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(108): (vcom-1136) Unknown identifier "ALUOp".
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(109): Signal "s_aluOp1" is type ieee.std_logic_1164.STD_LOGIC_VECTOR; expecting type (error).
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(116): Enumeration literal '0' is not of type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(116): near "when": (vcom-1576) expecting ';' or ','.
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(122): near "'0'": (vcom-1576) expecting ';' or ','.
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(125): (vcom-1136) Unknown identifier "opCode".
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(126): Illegal target for signal assignment.
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(126): (vcom-1136) Unknown identifier "MemRead".
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(127): Enumeration literal '0' is not of type (error).
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(134): Enumeration literal '0' is not of type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(134): near "when": (vcom-1576) expecting ';' or ','.
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(138): Enumeration literal '0' is not of type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(138): near "when": (vcom-1576) expecting ';' or ','.
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(152): near "when": (vcom-1576) expecting ';' or ','.
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(154): (vcom-1136) Unknown identifier "opCode".
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(161): String literal found where non-array type ieee.std_logic_1164.STD_LOGIC was expected.
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(162): String literal found where non-array type ieee.std_logic_1164.STD_LOGIC was expected.
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(165): String literal found where non-array type ieee.std_logic_1164.STD_LOGIC was expected.
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(166): String literal found where non-array type ieee.std_logic_1164.STD_LOGIC was expected.
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(169): Illegal target for signal assignment.
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(169): (vcom-1136) Unknown identifier "Jump".
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(170): Signal "s_j1" is type ieee.std_logic_1164.STD_LOGIC; expecting type (error).
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(175): String literal found where non-array type ieee.std_logic_1164.STD_LOGIC was expected.
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(176): String literal found where non-array type ieee.std_logic_1164.STD_LOGIC was expected.
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(177): String literal found where non-array type ieee.std_logic_1164.STD_LOGIC was expected.
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(178): String literal found where non-array type ieee.std_logic_1164.STD_LOGIC was expected.
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(179): String literal found where non-array type ieee.std_logic_1164.STD_LOGIC was expected.
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(69): (vcom-1342) Choice value "100011" duplicates prior choice value at line 64.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(78): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(79): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(80): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(81): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(82): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(83): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(84): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(85): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(86): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(90): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(91): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(92): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(93): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(94): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(95): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(96): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(97): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(98): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(99): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(100): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(101): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(102): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(103): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Note: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(210): VHDL Compiler exiting
+# End time: 15:57:48 on Mar 24,2024, Elapsed time: 0:00:00
+# Errors: 29, Warnings: 23
+vcom -reportprogress 300 -work work /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 15:58:46 on Mar 24,2024
+# vcom -reportprogress 300 -work work /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity controlModule
+# -- Compiling architecture dataflow of controlModule
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(108): Illegal target for signal assignment.
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(108): (vcom-1136) Unknown identifier "ALUOp".
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(109): Signal "s_aluOp1" is type ieee.std_logic_1164.STD_LOGIC_VECTOR; expecting type (error).
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(116): Enumeration literal '0' is not of type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(116): near "when": (vcom-1576) expecting ';' or ','.
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(122): near "'0'": (vcom-1576) expecting ';' or ','.
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(125): (vcom-1136) Unknown identifier "opCode".
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(126): Illegal target for signal assignment.
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(126): (vcom-1136) Unknown identifier "MemRead".
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(127): Enumeration literal '0' is not of type (error).
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(134): Enumeration literal '0' is not of type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(134): near "when": (vcom-1576) expecting ';' or ','.
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(138): Enumeration literal '0' is not of type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(138): near "when": (vcom-1576) expecting ';' or ','.
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(152): near "when": (vcom-1576) expecting ';' or ','.
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(154): (vcom-1136) Unknown identifier "opCode".
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(161): String literal found where non-array type ieee.std_logic_1164.STD_LOGIC was expected.
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(162): String literal found where non-array type ieee.std_logic_1164.STD_LOGIC was expected.
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(165): String literal found where non-array type ieee.std_logic_1164.STD_LOGIC was expected.
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(166): String literal found where non-array type ieee.std_logic_1164.STD_LOGIC was expected.
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(169): Illegal target for signal assignment.
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(169): (vcom-1136) Unknown identifier "Jump".
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(170): Signal "s_j1" is type ieee.std_logic_1164.STD_LOGIC; expecting type (error).
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(69): (vcom-1342) Choice value "100011" duplicates prior choice value at line 64.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(78): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(79): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(80): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(81): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(82): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(83): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(84): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(85): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(86): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(90): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(91): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(92): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(93): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(94): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(95): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(96): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(97): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(98): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(99): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(100): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(101): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(102): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(103): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Note: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(210): VHDL Compiler exiting
+# End time: 15:58:46 on Mar 24,2024, Elapsed time: 0:00:00
+# Errors: 24, Warnings: 23
+vcom -reportprogress 300 -work work /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 16:00:39 on Mar 24,2024
+# vcom -reportprogress 300 -work work /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity controlModule
+# -- Compiling architecture dataflow of controlModule
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(116): Enumeration literal '0' is not of type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(116): near "when": (vcom-1576) expecting ';' or ','.
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(122): near "'0'": (vcom-1576) expecting ';' or ','.
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(125): (vcom-1136) Unknown identifier "opCode".
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(126): Illegal target for signal assignment.
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(126): (vcom-1136) Unknown identifier "MemRead".
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(127): Enumeration literal '0' is not of type (error).
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(134): Enumeration literal '0' is not of type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(134): near "when": (vcom-1576) expecting ';' or ','.
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(138): Enumeration literal '0' is not of type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(138): near "when": (vcom-1576) expecting ';' or ','.
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(152): near "when": (vcom-1576) expecting ';' or ','.
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(154): (vcom-1136) Unknown identifier "opCode".
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(161): String literal found where non-array type ieee.std_logic_1164.STD_LOGIC was expected.
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(162): String literal found where non-array type ieee.std_logic_1164.STD_LOGIC was expected.
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(165): String literal found where non-array type ieee.std_logic_1164.STD_LOGIC was expected.
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(166): String literal found where non-array type ieee.std_logic_1164.STD_LOGIC was expected.
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(169): Illegal target for signal assignment.
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(169): (vcom-1136) Unknown identifier "Jump".
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(170): Signal "s_j1" is type ieee.std_logic_1164.STD_LOGIC; expecting type (error).
+# ** Error: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(69): (vcom-1342) Choice value "100011" duplicates prior choice value at line 64.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(78): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(79): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(80): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(81): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(82): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(83): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(84): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(85): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(86): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(90): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(91): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(92): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(93): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(94): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(95): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(96): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(97): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(98): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(99): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(100): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(101): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(102): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(103): (vcom-1272) Length of expected is 4; length of actual is 8.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(108): (vcom-1272) Length of expected is 8; length of actual is 4.
+# ** Warning: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(109): (vcom-1272) Length of expected is 8; length of actual is 4.
+# ** Note: /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd(210): VHDL Compiler exiting
+# End time: 16:00:39 on Mar 24,2024, Elapsed time: 0:00:00
+# Errors: 21, Warnings: 25

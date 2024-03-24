@@ -1,0 +1,68 @@
+m255
+K4
+z2
+!s12c _opt
+Z0 !s99 nomlopt
+!s11e MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 d/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/tests
+T_opt
+!s110 1711313818
+VF]]mzm2hc1=;clC?54CGf0
+04 16 5 work tb_controlmodule mixed 1
+=1-7486e228ae47-6600939a-afd8f-45e3
+R0
+!s12b OEM100
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work +acc
+tCvgOpt 0
+n@_opt
+OL;O;2023.2_2;77
+Etb_controlmodule
+Z2 w1711313796
+Z3 DPx4 ieee 16 std_logic_textio 0 22 C8j>g0lzF^EAA]5<S6PY32
+Z4 DPx3 std 6 textio 0 22 LS[?81n5ZHWBI9JkBZTV<2
+Z5 DPx4 ieee 14 std_logic_1164 0 22 6<US`=mgl_dFdCEFF7J=m1
+!i122 2
+R1
+Z6 8/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/tests/tb_controlModule.vhd
+Z7 F/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/tests/tb_controlModule.vhd
+l0
+L19 1
+VU4h[efZV590:A<eHglQQ[2
+!s100 T8]Cz0<=S@7KZFH<FNNLG3
+Z8 OL;C;2023.2_2;77
+32
+Z9 !s110 1711313799
+!i10b 1
+Z10 !s108 1711313799.000000
+Z11 !s90 -reportprogress|300|-work|work|/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/tests/tb_controlModule.vhd|
+Z12 !s107 /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/tests/tb_controlModule.vhd|
+!i113 0
+Z13 o-work work
+Z14 tExplicit 1 CvgOpt 0
+Amixed
+R3
+R4
+R5
+DEx4 work 16 tb_controlmodule 0 22 U4h[efZV590:A<eHglQQ[2
+!i122 2
+l63
+L23 257
+VS]:`5KXg:k;@C1mXP5S;=0
+!s100 MejHa=WR9^kB<;>j;W]9J3
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 0
+R13
+R14
