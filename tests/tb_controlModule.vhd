@@ -17,7 +17,7 @@ library std;
 use std.textio.all;             -- For basic I/O
 
 entity tb_controlModule is
-    generic(gCLK_HPER   : time : 50 ns);
+    generic(gCLK_HPER   : time := 50 ns);
 end tb_controlModule;
 
 architecture mixed of tb_controlModule is
@@ -66,10 +66,10 @@ architecture mixed of tb_controlModule is
                  iFunct     => s_iFunct,
                  oAl        => s_oAl,
                  oALUSrc    => s_oALUSrc,
-                 oALUControl => s_ALUControl,
+                 oALUControl => s_oALUControl,
                  oMemtoReg  => s_oMemtoReg,
-                 oDMemWr    => s_DMemWr,
-                 oRegWr     => s_RegWr,
+                 oDMemWr    => s_oDMemWr,
+                 oRegWr     => s_oRegWr,
                  oRegDst    => s_oRegDst,
                  oJump      => s_oJump,
                  oBranch    => s_oBranch,

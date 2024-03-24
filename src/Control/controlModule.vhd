@@ -24,7 +24,7 @@ port(iOpcode    : in std_logic_vector(5 downto 0); --opcode
      oRegDst    : out std_logic_vector(1 downto 0); --done
      oJump      : out std_logic; 
      oBranch    : out std_logic; --done
-     oLb        : out std_logic; --done
+     oLb        : out std_logic_vector(1 downto 0); --done
      oEqual     : out std_logic; --done
      oHalt      : out std_logic;
      oOverflowEn: out std_logic);
@@ -84,6 +84,11 @@ with iOpCode select
                  "00000100" when "001101", --ori
                  "00000100" when "101011", --sw
                  "00000110" when "000101", --beq
+                 "00000010" when "100011", --lw
+                 "00010010" when "001110", --xori
+                 "00000100" when "001101", --ori
+                 "00000100" when "101011", --sw
+                 "00000110" when "000101", --beq
                  "1111" when others;
 
 with iFunct select
@@ -102,6 +107,11 @@ with iFunct select
                  "00000100" when "000100", --sllv
                  "01001000" when "000111", --srav
                  "1111" when others;
+
+       
+with iOpCode select
+     oALUControl <= s_aluOp2 when "000000",
+              s_aluOp1 when others;
 
 -- oMemtoReg --
 -- writes to memory --
@@ -153,12 +163,12 @@ with opCode select
 -- oJump --
 -- logic for j and jr --
 with iOpCode select
-     s_j1 <= '01' when "000010", 
-             '00' when others;
+     s_j1 <= "01" when "000010", 
+             "00" when others;
 
 with iFunct select
-     s_j2 <= '10' when "001000",
-             '00' when others;
+     s_j2 <= "10" when "001000",
+             "00" when others;
 
 with iOpCode select
      Jump <= s_j2 when "000000",
@@ -167,8 +177,11 @@ with iOpCode select
 -- oLb --
 -- load byte -- 
 with iOpCode select
-     oLb <= '1' when "100000",
-            '0' when others;
+     oLb <= "10" when "100000",
+            "01" when "100001",
+            "01" when "100101",
+            "10" when "100100",
+            "00" when others;
 
 -- oEqual [0 -> BNE, 1 -> BEQ] -- 
 with iOpCode select
@@ -182,7 +195,7 @@ with iOpCode select
 
 -- oHalt --
 with iOpCode select
-     oHalt <= '1' when "",
+     oHalt <= '1' when "010100",
               '0' when others;
 
 -- oOverflowEn --
