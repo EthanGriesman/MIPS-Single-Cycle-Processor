@@ -42,10 +42,9 @@ architecture arch of tb_fetch is
   end component;
 
   -- Create signals for all of the inputs and outputs of the file that you are testing
-  signal iCLK, reset : std_logic := '0';
+  signal iCLK, s_Rst : std_logic := '0';
 
   -- Inputs
-  signal s_Rst 		 : std_logic := '0'; 
   signal s_RstVal 	 : std_logic_vector(31 downto 0) := (others => '0');
   signal s_Addr 	 : std_logic_vector(25 downto 0) := (others => '0');
   signal s_SignExtendImm : std_logic_vector(31 downto 0) := (others => '0');
@@ -83,38 +82,61 @@ begin
     wait for gCLK_HPER;  -- After half a cycle, process begins evaluation again
   end process;
   
-  -- This process resets the sequential components of the design.
-  -- It is held to be 1 across both the negative and positive edges of the clock
-  -- so it works regardless of whether the design uses synchronous (pos or neg edge)
-  -- or asynchronous resets.
+  -- Reser process
   P_RST: process
   begin
-    reset <= '0';   
-    wait for gCLK_HPER/2;
-    reset <= '1';
-    wait for gCLK_HPER*2;
-    reset <= '0';
+    s_Rst <= '1';   
+    wait for cCLK_PER * 5;
+    s_Rst <= '0';
     wait;
   end process;
   
   -- Assign inputs for each test case.
   P_TEST_CASES: process
   begin
-    wait for gCLK_HPER/2;  -- For waveform clarity, NOT changing inputs on clock edges
-    
-    -- Test case 1:
-    s_Addr <= "00000000000000000000101000"; -- Assign the value only to the lower 26 bits
-    s_Rst <= '0';          -- Assign a bit literal
-    s_RstVal <= (others => '0');
-    s_SignExtendImm <= (others => '0');
-    s_Branch <= '0';       -- Assign a bit literal
-    s_ALUZero <= '0';      -- Assign a bit literal
-    s_Jump <= "00";         -- Assign a bit literal
-    wait for cCLK_PER;     -- Wait for one clock cycle
+    wait for cCLK_PER * 10;  -- Wait for the system to stabilize
 
-    -- Assign the outputs to s_PC and s_PCPlus4
-    s_PC <= "00000000000000000000000000000000"; -- Assign a value based on the expected output
-    s_PCPlus4 <= "00000000000000000000000000000000"; -- Assign a value based on the expected output
+    -- Test Case 1: Sequential Execution
+    -- No branch or jump, just sequential execution
+    s_RstVal <= (others => '0');
+    s_Addr <= (others => '0');
+    s_SignExtendImm <= (others => '0');
+    s_Branch <= '0';
+    s_ALUZero <= '0';
+    s_Jump <= "00";
+    wait for cCLK_PER * 2;  -- Wait for two clock cycles
+
+    -- Test Case 2: Branch Taken
+    -- Assuming current PC is 0, and branch offset is 4
+    s_RstVal <= "00000000000000000000000000000000";
+    s_Addr <= (others => '0');
+    s_SignExtendImm <= "00000000000000000000000000000100";
+    s_Branch <= '1';
+    s_ALUZero <= '1';  -- ALU condition for branch is true
+    s_Jump <= "00";
+    wait for cCLK_PER;  -- Wait for a clock cycle
+
+    -- Test Case 3: Branch Not Taken
+    s_Branch <= '1';
+    s_ALUZero <= '0';  -- ALU condition for branch is false
+    s_Jump <= "00";
+    wait for cCLK_PER;
+
+    -- Test Case 4: Jump
+    -- Jump to address formed by concatenating upper 4 bits of next PC and address
+    s_Branch <= '0';
+    s_ALUZero <= '0';
+    s_Jump <= "01";
+    s_Addr <= "00000000000000000000001000";  -- Jump address (lower 26 bits)
+    wait for cCLK_PER;
+
+    -- Test Case 5: Jump Register (JR)
+    s_irs <= "00000000000000000000000000001010";  -- Address to jump to
+    s_Jump <= "10";
+    wait for cCLK_PER;
+
+    -- End simulation
+    wait;  -- Wait indefinitely - simulation will stop here
   end process;
   
 end arch;
