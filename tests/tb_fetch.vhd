@@ -12,9 +12,7 @@
 -------------------------------------------------------------------------
 library IEEE;
 use IEEE.std_logic_1164.all;
-use IEEE.std_logic_textio.all;  -- For logic types I/O
-library std;
-use std.env.all;                -- For hierarchical/external signals
+use IEEE.std_logic_textio.all;  -- For logic types I/O           -- For hierarchical/external signals
 use std.textio.all;             -- For basic I/O
 
 entity tb_fetch is
@@ -94,7 +92,7 @@ begin
     wait for gCLK_HPER/2;  -- For waveform clarity, NOT changing inputs on clock edges
     
     -- Test case 1:
-    s_Addr(25 downto 0) <= x"00000a0"; -- Assign the value only to the lower 26 bits
+    s_Addr <= "00000000000000000000101000"; -- Assign the value only to the lower 26 bits
     s_Rst <= '0';          -- Assign a bit literal
     s_RstVal <= (others => '0');
     s_SignExtendImm <= (others => '0');
