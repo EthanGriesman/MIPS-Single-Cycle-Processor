@@ -71,37 +71,67 @@ begin
       -- Test case 1:
       iInput_tb <= x"00200000";
       ishamt_tb <= "00011";
-      wait for gCLK_HPER*2;
-      wait for gCLK_HPER*2;
+      wait for cCLK_PER; -- Wait for one clock cycle
 
       -- Test case 2:
       ishamt_tb <= "00010";
-      wait for gCLK_HPER*2;
-      wait for gCLK_HPER*2;
+      wait for cCLK_PER; -- Wait for one clock cycle
 
       -- Test case 3 (Left):
       iDir_tb <= '1';
       ishamt_tb <= "00001";
-      wait for gCLK_HPER*2;
-      wait for gCLK_HPER*2;
+      wait for cCLK_PER; -- Wait for one clock cycle
 
       -- Test case 4 (Right):
       iDir_tb <= '0';
       ishamt_tb <= "00010";
-      wait for gCLK_HPER*2;
-      wait for gCLK_HPER*2;
+      wait for cCLK_PER; -- Wait for one clock cycle
 
       -- Additional test case 5 (Right):
       iInput_tb <= x"FFFFFFFF"; -- All ones
       ishamt_tb <= "00000";     -- No shift
-      wait for gCLK_HPER*2;
-      wait for gCLK_HPER*2;
+      wait for cCLK_PER; -- Wait for one clock cycle
 
       -- Additional test case 6 (Left):
       iInput_tb <= x"00000001"; -- Only the least significant bit is 1
       ishamt_tb <= "00010";     -- Shift by 2 to the left
-      wait for gCLK_HPER*2;
-      wait for gCLK_HPER*2;
+      wait for cCLK_PER; -- Wait for one clock cycle
+
+      -- Additional test case 5:
+      iInput_tb <= x"0000000F"; -- Last nibble is all ones
+      ishamt_tb <= "00011";     -- Shift by 3 to the left
+      iDir_tb   <= '0'; -- Left shift
+      wait for cCLK_PER; -- Wait for one clock cycle
+
+      -- Additional test case 6:
+      iInput_tb <= x"ABCDEF00"; -- Arbitrary data
+      ishamt_tb <= "00010";     -- Shift by 2 to the right
+      iDir_tb   <= '1'; -- Right shift
+      wait for cCLK_PER; -- Wait for one clock cycle
+
+      -- Additional test case 7:
+      iInput_tb <= x"12345678"; -- Arbitrary data
+      ishamt_tb <= "00000";     -- No shift
+      iDir_tb   <= '0'; -- Left shift
+      wait for cCLK_PER; -- Wait for one clock cycle
+
+      -- Additional test case 8:
+      iInput_tb <= x"FFFFFFFF"; -- All ones
+      ishamt_tb <= "11111";     -- Shift by 31 to the right
+      iDir_tb   <= '1'; -- Right shift
+      wait for cCLK_PER; -- Wait for one clock cycle
+
+      -- Additional test case 9:
+      iInput_tb <= x"FFFFFFFF"; -- All ones
+      ishamt_tb <= "11111";     -- Shift by 31 to the right
+      iDir_tb   <= '0'; -- Left shift
+      wait for cCLK_PER; -- Wait for one clock cycle
+
+      -- Additional test case 10:
+      iInput_tb <= x"00000000"; -- All zeros
+      ishamt_tb <= "11111";     -- Shift by 31 to the right
+      iDir_tb   <= '1'; -- Right shift
+      wait for cCLK_PER; -- Wait for one clock cycle
 
     end process;
 
