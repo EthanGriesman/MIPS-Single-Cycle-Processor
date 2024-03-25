@@ -23,6 +23,7 @@ o-quiet -auto_acc_if_foreign -work work +acc
 tCvgOpt 0
 n@_opt
 OL;O;2023.2_2;77
+R1
 Eadder
 Z2 w1711214989
 Z3 DPx3 std 6 textio 0 22 LS[?81n5ZHWBI9JkBZTV<2
@@ -229,11 +230,11 @@ R33
 R12
 R13
 Etb_fetch
-Z34 w1711395698
+Z34 w1711396846
 Z35 DPx4 ieee 16 std_logic_textio 0 22 C8j>g0lzF^EAA]5<S6PY32
 R3
 R4
-!i122 6
+!i122 7
 R1
 Z36 8/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/tb_fetch.vhd
 Z37 F/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/tb_fetch.vhd
@@ -243,9 +244,9 @@ V0ie:0m6V?g]8?M5SdgHHS1
 !s100 K:iQDRm`lWMgoF5PUjIPR3
 R7
 32
-R8
+!s110 1711396868
 !i10b 1
-R9
+!s108 1711396868.000000
 Z38 !s90 -reportprogress|300|-work|work|/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/tb_fetch.vhd|
 Z39 !s107 /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/tb_fetch.vhd|
 !i113 0

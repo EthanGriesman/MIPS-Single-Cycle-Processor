@@ -250,3 +250,33 @@ run
 # ** Error (suppressible): (vsim-3601) Iteration limit 10000000 reached at time 0 ns.
 run 400
 # ** Error (suppressible): (vsim-3601) Iteration limit 10000000 reached at time 0 ns.
+vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/tb_fetch.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 15:01:08 on Mar 25,2024
+# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/tb_fetch.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Compiling entity tb_fetch
+# -- Compiling architecture arch of tb_fetch
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/tb_fetch.vhd(27): near "/": (vcom-1576) expecting ':'.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/tb_fetch.vhd(89): (vcom-1136) Unknown identifier "gCLK_PER".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/tb_fetch.vhd(89): (vcom-1590) Bad expression in left operand of infix expression '*'.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/tb_fetch.vhd(89): Type error resolving infix expression "*" as type std.STANDARD.TIME.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/tb_fetch.vhd(97): (vcom-1136) Unknown identifier "gCLK_PER".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/tb_fetch.vhd(97): (vcom-1590) Bad expression in left operand of infix expression '*'.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/tb_fetch.vhd(97): Type error resolving infix expression "*" as type std.STANDARD.TIME.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/tb_fetch.vhd(107): (vcom-1136) Unknown identifier "gCLK_PER".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/tb_fetch.vhd(107): Type error resolving infix expression "/" as type std.STANDARD.TIME.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/tb_fetch.vhd(117): (vcom-1136) Unknown identifier "gCLK_PER".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/tb_fetch.vhd(117): Type error resolving infix expression "/" as type std.STANDARD.TIME.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/tb_fetch.vhd(123): (vcom-1136) Unknown identifier "gCLK_PER".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/tb_fetch.vhd(123): Type error resolving infix expression "/" as type std.STANDARD.TIME.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/tb_fetch.vhd(131): (vcom-1136) Unknown identifier "gCLK_PER".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/tb_fetch.vhd(131): Type error resolving infix expression "/" as type std.STANDARD.TIME.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/tb_fetch.vhd(136): (vcom-1136) Unknown identifier "gCLK_PER".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/tb_fetch.vhd(136): Type error resolving infix expression "/" as type std.STANDARD.TIME.
+# ** Note: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/tb_fetch.vhd(142): VHDL Compiler exiting
+# End time: 15:01:08 on Mar 25,2024, Elapsed time: 0:00:00
+# Errors: 17, Warnings: 0
