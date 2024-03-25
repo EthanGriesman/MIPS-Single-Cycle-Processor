@@ -6,6 +6,8 @@ entity tb_fetch is
 end tb_fetch;
 
 architecture testbench of tb_fetch is
+
+  constant cCLK_PER  : time := gCLK_HPER * 2;
     -- Component Declaration
     component fetch is
         port(
@@ -76,7 +78,7 @@ begin
     process
     begin
         wait for gCLK_HPER/2;
-        
+
         -- Test Case 1: No operation, just sequential execution
         wait for 10 ns;
         s_RstVal <= (others => '0');
