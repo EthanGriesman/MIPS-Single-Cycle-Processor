@@ -42,6 +42,15 @@ port(i_A      : in std_logic_vector(31 downto 0);
 end component;
 
 
+
+-- barrelShifter
+component barrelShifter is
+     port(iDir      : in std_logic;
+          ishamt : in std_logic_vector(4 downto 0);
+          iInput : in std_logic_vector(31 downto 0);
+          oOutput: out std_logic_vector(31 downto 0));
+end component;
+
 --OR
 component org2 is
      port(i_A	: in std_logic;
