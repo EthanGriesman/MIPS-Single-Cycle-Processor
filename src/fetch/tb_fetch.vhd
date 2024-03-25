@@ -2,6 +2,7 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 
 entity tb_fetch is
+  generic(gCLK_HPER   : time := 10 ns);
 end tb_fetch;
 
 architecture testbench of tb_fetch is
@@ -21,6 +22,8 @@ architecture testbench of tb_fetch is
         );
     end component;
 
+    signal CLK : std_logic := '0';
+
     -- Signal Declarations
     signal s_Rst           : std_logic := '0';
     signal s_RstVal        : std_logic_vector(31 downto 0) := (others => '0');
@@ -35,8 +38,8 @@ architecture testbench of tb_fetch is
 
 begin
     -- UUT Instantiation
-    uut: fetch
-        port map (
+    UUT: fetch
+    port map (
             iRST           => s_Rst,
             iRSTVAL        => s_RstVal,
             iAddr          => s_Addr,
@@ -47,7 +50,7 @@ begin
             irs            => s_irs,
             oPC            => s_PC,
             oPCPlus4       => s_PCPlus4
-        );
+    );
 
     --This first process is to setup the clock for the test bench
     P_CLK: process
@@ -60,23 +63,20 @@ begin
 
     P_RST: process
     begin
-  	  reset <= '0';   
+  	  s_Rst <= '0';   
       wait for gCLK_HPER/2;
-	  reset <= '1';
+	    s_Rst <= '1';
       wait for gCLK_HPER*2;
-	  reset <= '0';
-	  wait;
+	    s_Rst <= '0';
+	    wait;
     end process;  
 
 
     -- Test Process
     process
     begin
-        -- Reset
-        s_Rst <= '1';
-        wait for 10 ns;
-        s_Rst <= '0';
-
+        wait for gCLK_HPER/2;
+        
         -- Test Case 1: No operation, just sequential execution
         wait for 10 ns;
         s_RstVal <= (others => '0');
@@ -87,6 +87,7 @@ begin
         s_Jump <= "00";
         -- Expected Output: PC should increment by 4 due to sequential execution.
         -- PCPlus4 should be the next instruction address.
+        wait for cCLK_PER; -- Wait for one clock cycle
 
         -- Test Case 2: Branch Taken
         wait for 10 ns;
@@ -95,6 +96,8 @@ begin
         s_SignExtendImm <= "00000000000000000000000000001000";  -- Simulate branch offset
         -- Expected Output: PC should be updated to PC + 4 + BranchOffset (if branch condition is met).
         -- PCPlus4 should be the next instruction address.
+        wait for cCLK_PER; -- Wait for one clock cycle
+
 
         -- Test Case 3: Jump Execution
         wait for 10 ns;
@@ -102,13 +105,15 @@ begin
         s_Addr <= "00000000000000000000001000";  -- Simulate jump address
         -- Expected Output: PC should be updated to the specified jump address.
         -- PCPlus4 should be the next instruction address.
+        wait for cCLK_PER; -- Wait for one clock cycle
+
 
         -- Test Case 4: Jump Register (JR) Execution
         wait for 10 ns;
         s_Jump <= "10";
         s_irs <= "00000000000000000000000000001010";  -- Simulate address in register
+        wait for cCLK_PER; -- Wait for one clock cycle
 
-        -- Finish test
-        wait;
     end process;
+
 end testbench;
