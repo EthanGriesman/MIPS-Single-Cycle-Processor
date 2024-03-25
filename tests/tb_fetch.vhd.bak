@@ -12,9 +12,7 @@
 -------------------------------------------------------------------------
 library IEEE;
 use IEEE.std_logic_1164.all;
-use IEEE.std_logic_textio.all;  -- For logic types I/O
-library std;
-use std.env.all;                -- For hierarchical/external signals
+use IEEE.std_logic_textio.all;  -- For logic types I/O           -- For hierarchical/external signals
 use std.textio.all;             -- For basic I/O
 
 entity tb_fetch is
@@ -102,6 +100,10 @@ begin
     s_ALUZero <= '0';      -- Assign a bit literal
     s_Jump <= '0';         -- Assign a bit literal
     wait for cCLK_PER;     -- Wait for one clock cycle
+
+    -- Assign the outputs to s_PC and s_PCPlus4
+    s_PC <= "00000000000000000000000000000000"; -- Assign a value based on the expected output
+    s_PCPlus4 <= "00000000000000000000000000000000"; -- Assign a value based on the expected output
   end process;
   
 end arch;

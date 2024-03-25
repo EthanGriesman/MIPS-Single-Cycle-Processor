@@ -35,6 +35,7 @@ architecture arch of tb_fetch is
       iBranch        : in std_logic;
       iALUZero       : in std_logic;
       iJump          : in std_logic;
+      irs	     : in std_logic_vector(31 downto 0);
       oPC            : out std_logic_vector(31 downto 0);
       oPCPlus4       : out std_logic_vector(31 downto 0)
     );
@@ -42,11 +43,20 @@ architecture arch of tb_fetch is
 
   -- Create signals for all of the inputs and outputs of the file that you are testing
   signal iCLK, reset : std_logic := '0';
-  signal s_Rst : std_logic := '0'; -- Change from std_logic_vector to std_logic
-  signal s_Addr : std_logic_vector(25 downto 0);
-  signal s_RstVal, s_SignExtendImm : std_logic_vector(31 downto 0);
-  signal s_Branch, s_ALUZero, s_Jump : std_logic;
-  signal s_PC, s_PCPlus4 : std_logic_vector(31 downto 0);
+
+  -- Inputs
+  signal s_Rst 		 : std_logic := '0'; 
+  signal s_RstVal 	 : std_logic_vector(31 downto 0) := (others => '0');
+  signal s_Addr 	 : std_logic_vector(25 downto 0) := (others => '0');
+  signal s_SignExtendImm : std_logic_vector(31 downto 0) := (others => '0');
+  signal s_Branch 	 : std_logic := '0'; 
+  signal s_ALUZero 	 : std_logic := '0';
+  signal s_Jump 	 : std_logic_vector(1 downto 0) := (others => '0');
+  signal s_irs		 : std_logic_vector(31 downto 0) := (others => '0');
+
+  -- Outputs
+  signal s_PC 	   : std_logic_vector(31 downto 0);
+  signal s_PCPlus4 : std_logic_vector(31 downto 0);
 
 begin 
 
@@ -59,6 +69,7 @@ begin
       iBranch        => s_Branch,
       iALUZero       => s_ALUZero,
       iJump          => s_Jump,
+      irs	     => s_irs,
       oPC            => s_PC,
       oPCPlus4       => s_PCPlus4
     );
@@ -100,6 +111,10 @@ begin
     s_ALUZero <= '0';      -- Assign a bit literal
     s_Jump <= '0';         -- Assign a bit literal
     wait for cCLK_PER;     -- Wait for one clock cycle
+
+    -- Assign the outputs to s_PC and s_PCPlus4
+    s_PC <= "00000000000000000000000000000000"; -- Assign a value based on the expected output
+    s_PCPlus4 <= "00000000000000000000000000000000"; -- Assign a value based on the expected output
   end process;
   
 end arch;
