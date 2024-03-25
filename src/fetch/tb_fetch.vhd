@@ -24,7 +24,7 @@ end tb_fetch;
 architecture arch of tb_fetch is
 
   -- Define the total clock period time
-  constant cCLK_PER : time := gCLK_HPER * 2;
+  constant gCLK_PER / 2 : time := gCLK_HPER * 2;
 
   component fetch is 
     port (
@@ -53,7 +53,7 @@ architecture arch of tb_fetch is
   signal s_Jump 	 : std_logic_vector(1 downto 0) := (others => '0');
   signal s_irs		 : std_logic_vector(31 downto 0) := (others => '0');
 
-  -- Outputs
+  -- Outputs --
   signal s_PC 	   : std_logic_vector(31 downto 0);
   signal s_PCPlus4 : std_logic_vector(31 downto 0);
 
@@ -82,11 +82,11 @@ begin
     wait for gCLK_HPER;  -- After half a cycle, process begins evaluation again
   end process;
   
-  -- Reser process
+  -- Reset process --
   P_RST: process
   begin
     s_Rst <= '1';   
-    wait for cCLK_PER * 5;
+    wait for gCLK_PER / 2 * 5;
     s_Rst <= '0';
     wait;
   end process;
@@ -94,7 +94,7 @@ begin
   -- Assign inputs for each test case.
   P_TEST_CASES: process
   begin
-    wait for cCLK_PER * 10;  -- Wait for the system to stabilize
+    wait for gCLK_PER / 2 * 10;  -- Wait for the system to stabilize
 
     -- Test Case 1: Sequential Execution
     -- No branch or jump, just sequential execution
@@ -104,7 +104,7 @@ begin
     s_Branch <= '0';
     s_ALUZero <= '0';
     s_Jump <= "00";
-    wait for cCLK_PER * 2;  -- Wait for two clock cycles
+    wait for gCLK_PER / 2;  -- Wait for two clock cycles
 
     -- Test Case 2: Branch Taken
     -- Assuming current PC is 0, and branch offset is 4
@@ -114,13 +114,13 @@ begin
     s_Branch <= '1';
     s_ALUZero <= '1';  -- ALU condition for branch is true
     s_Jump <= "00";
-    wait for cCLK_PER;  -- Wait for a clock cycle
+    wait for gCLK_PER / 2;  -- Wait for a clock cycle
 
     -- Test Case 3: Branch Not Taken
     s_Branch <= '1';
     s_ALUZero <= '0';  -- ALU condition for branch is false
     s_Jump <= "00";
-    wait for cCLK_PER;
+    wait for gCLK_PER / 2;
 
     -- Test Case 4: Jump
     -- Jump to address formed by concatenating upper 4 bits of next PC and address
@@ -128,12 +128,12 @@ begin
     s_ALUZero <= '0';
     s_Jump <= "01";
     s_Addr <= "00000000000000000000001000";  -- Jump address (lower 26 bits)
-    wait for cCLK_PER;
+    wait for gCLK_PER / 2;
 
     -- Test Case 5: Jump Register (JR)
     s_irs <= "00000000000000000000000000001010";  -- Address to jump to
     s_Jump <= "10";
-    wait for cCLK_PER;
+    wait for gCLK_PER / 2;
 
     -- End simulation
     wait;  -- Wait indefinitely - simulation will stop here
