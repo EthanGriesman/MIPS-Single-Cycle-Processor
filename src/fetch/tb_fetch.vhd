@@ -77,7 +77,7 @@ begin
     -- Test Process
     process
     begin
-        wait for gCLK_HPER/2;
+        wait for gCLK_HPER*10;
 
         -- Test Case 1: No operation, just sequential execution
         wait for 10 ns;

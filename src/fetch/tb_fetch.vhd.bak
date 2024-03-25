@@ -1,17 +1,14 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
-use IEEE.std_logic_textio.all;
-use std.textio.all;
 
 entity tb_fetch is
-    -- Testbench doesn't require generics in this case
+  generic(gCLK_HPER   : time := 10 ns);
 end tb_fetch;
 
-architecture arch of tb_fetch is
-    -- Constants for clock period, feel free to adjust as necessary
-    constant gCLK_HPER: time := 50 ns;  -- Half period
-    constant cCLK_PER: time := gCLK_HPER * 2;  -- Full clock period
+architecture testbench of tb_fetch is
 
+  constant cCLK_PER  : time := gCLK_HPER * 2;
+    -- Component Declaration
     component fetch is
         port(
             iRST           : in std_logic;
@@ -27,9 +24,9 @@ architecture arch of tb_fetch is
         );
     end component;
 
-    signal CLK: std_logic := '0';
+    signal CLK : std_logic := '0';
 
-    -- Signal declarations
+    -- Signal Declarations
     signal s_Rst           : std_logic := '0';
     signal s_RstVal        : std_logic_vector(31 downto 0) := (others => '0');
     signal s_Addr          : std_logic_vector(25 downto 0) := (others => '0');
@@ -42,9 +39,9 @@ architecture arch of tb_fetch is
     signal s_PCPlus4       : std_logic_vector(31 downto 0);
 
 begin
-    -- Instantiate the Unit Under Test (UUT)
-    DUT0: fetch
-        port map (
+    -- UUT Instantiation
+    UUT: fetch
+    port map (
             iRST           => s_Rst,
             iRSTVAL        => s_RstVal,
             iAddr          => s_Addr,
@@ -55,72 +52,70 @@ begin
             irs            => s_irs,
             oPC            => s_PC,
             oPCPlus4       => s_PCPlus4
-        );
+    );
 
-    -- Clock process (if needed)
+    --This first process is to setup the clock for the test bench
     P_CLK: process
-     begin
-         wait for gCLK_HPER;
-         CLK <= not CLK;
-         wait for gCLK_HPER;
-         CLK <= not CLK;
-     end process;
-
-    -- Reset process
-    P_RST: process
     begin
-        s_Rst <= '1';
-        wait for 100 ns;  -- Adjust the wait time as needed
-        s_Rst <= '0';
-        wait;
+      CLK <= '1';         -- clock starts at 1
+      wait for gCLK_HPER; -- after half a cycle
+       CLK <= '0';         -- clock becomes a 0 (negative edge)
+      wait for gCLK_HPER; -- after half a cycle, process begins evaluation again
     end process;
 
-P_TEST_CASES: process
-begin
-    -- Wait for the reset to be released
-    wait for 150 ns;  -- Adjust the wait time to be after reset release
+    P_RST: process
+    begin
+  	  s_Rst <= '0';   
+      wait for gCLK_HPER/2;
+	    s_Rst <= '1';
+      wait for gCLK_HPER*2;
+	    s_Rst <= '0';
+	    wait;
+    end process;  
 
-    -- Test Case 1: Sequential Execution (already included)
-    s_RstVal        <= x"00000000";
-    s_Addr          <= (others => '0');
-    s_SignExtendImm <= "00000000000000000000000000000100";
-    s_Branch        <= '0';
-    s_ALUZero       <= '0';
-    s_Jump          <= "00";
-    wait for cCLK_PER;
 
-    -- Test Case 2: Branch Taken
-    s_Branch        <= '1';
-    s_ALUZero       <= '1';  -- Branch condition met
-    s_Jump          <= "00";  -- No jump
-    s_SignExtendImm <= "00000000000000000000000000001000";  -- Branch offset
-    wait for cCLK_PER;
+    -- Test Process
+    process
+    begin
+        wait for gCLK_HPER/2;
 
-    -- Test Case 3: Branch Not Taken
-    s_Branch        <= '1';
-    s_ALUZero       <= '0';  -- Branch condition not met
-    s_Jump          <= "00";
-    s_SignExtendImm <= "00000000000000000000000000001000";  -- Branch offset
-    wait for cCLK_PER;
+        -- Test Case 1: No operation, just sequential execution
+        wait for 10 ns;
+        s_RstVal <= (others => '0');
+        s_Addr <= (others => '0');
+        s_SignExtendImm <= (others => '0');
+        s_Branch <= '0';
+        s_ALUZero <= '0';
+        s_Jump <= "00";
+        -- Expected Output: PC should increment by 4 due to sequential execution.
+        -- PCPlus4 should be the next instruction address.
+        wait for cCLK_PER; -- Wait for one clock cycle
 
-    -- Test Case 4: Jump
-    s_Branch        <= '0';
-    s_ALUZero       <= '0';  -- Not relevant for jump
-    s_Jump          <= "01";  -- Jump instruction
-    s_Addr <= "00000000000000000000000000"; -- Adjusted to match length 26
-    wait for cCLK_PER;
+        -- Test Case 2: Branch Taken
+        wait for 10 ns;
+        s_Branch <= '1';
+        s_ALUZero <= '1';  -- Simulate branch condition met
+        s_SignExtendImm <= "00000000000000000000000000001000";  -- Simulate branch offset
+        -- Expected Output: PC should be updated to PC + 4 + BranchOffset (if branch condition is met).
+        -- PCPlus4 should be the next instruction address.
+        wait for cCLK_PER; -- Wait for one clock cycle
 
-    -- Test Case 5: Jump Register (JR)
-    s_Branch        <= '0';
-    s_ALUZero       <= '0';
-    s_Jump          <= "10";  -- JR instruction
-    s_irs           <= "00000000000000000000000000001010";  -- Register value to jump to
-    wait for cCLK_PER;
 
-    -- Add more test cases as needed...
+        -- Test Case 3: Jump Execution
+        wait for 10 ns;
+        s_Jump <= "01";
+        s_Addr <= "00000000000000000000001000";  -- Simulate jump address
+        -- Expected Output: PC should be updated to the specified jump address.
+        -- PCPlus4 should be the next instruction address.
+        wait for cCLK_PER; -- Wait for one clock cycle
 
-    -- Finish the simulation
-    wait;
-end process;
 
-end arch;
+        -- Test Case 4: Jump Register (JR) Execution
+        wait for 10 ns;
+        s_Jump <= "10";
+        s_irs <= "00000000000000000000000000001010";  -- Simulate address in register
+        wait for cCLK_PER; -- Wait for one clock cycle
+
+    end process;
+
+end testbench;

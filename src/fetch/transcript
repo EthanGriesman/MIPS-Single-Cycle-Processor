@@ -402,3 +402,7 @@ run 100
 #       Signal: /tb_fetch/s_PC @ sub-iteration 2 at Value unknown (/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/tb_fetch.vhd:38)
 ################# END OF LOOP #################
 # ** Error (suppressible): (vsim-3601) Iteration limit 10000000 reached at time 0 ns.
+quit -sim
+# End time: 16:14:42 on Mar 25,2024, Elapsed time: 0:13:18
+# Errors: 1, Warnings: 1
+vdel -all -lib work
