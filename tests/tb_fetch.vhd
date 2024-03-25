@@ -94,7 +94,7 @@ begin
     wait for gCLK_HPER/2;  -- For waveform clarity, NOT changing inputs on clock edges
     
     -- Test case 1:
-    s_Addr <= x"000000a0";
+    s_Addr(25 downto 0) <= x"00000a0"; -- Assign the value only to the lower 26 bits
     s_Rst <= '0';          -- Assign a bit literal
     s_RstVal <= (others => '0');
     s_SignExtendImm <= (others => '0');
