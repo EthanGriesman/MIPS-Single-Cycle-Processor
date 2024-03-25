@@ -89,6 +89,9 @@ end component;
 -----------
 --Signals--
 -----------
+signal s_add_sub_result : std_logic_vector(31 downto 0);
+signal s_carry_out      : std_logic;
+
 
 signal s_and  : std_logic_vector(31 downto 0);
 signal s_or   : std_logic_vector(31 downto 0);
@@ -110,7 +113,7 @@ signal s_co   : std_logic;
 signal s_of_detect: std_logic;
 
 begin
-     -- AND--
+     -- AND-- --done
      ALU_AND: for i in 0 to 31 generate
       ANDGS: andg2
       port map(i_A => inputA(i),
@@ -118,7 +121,7 @@ begin
                o_F => s_and(i));
      end generate ALU_AND;
      
-     -- OR --
+     -- OR -- --done
      ALU_OR: for i in 0 to 31 generate
       ORGS: org2
       port map(i_A => inputA(i),
@@ -126,24 +129,30 @@ begin
                o_F => s_or(i));
      end generate ALU_OR;
      
-     -- ADD --
+     -- ADD Operation
      ALU_ADD: add_sub
      generic map(32)
-     port map(i_A => inputA,
-              i_B => inputB,
-              i_nAddSub => '0',
-              o_Sum => s_add,
-              o_Cm  => s_cm,
-              o_C   => s_co);
+     port map(
+         i_C       => '0', -- Assuming a carry-in of '0' for addition
+         i_nAdd_Sub => '0', -- '0' for addition operation
+         iA        => iA,
+         iB        => iB,
+         oSum      => s_add_sub_result, -- This will hold the result for both addition and subtraction
+         oCarry    => s_carry_out      -- This will be used to detect overflow
+     );
+
      
      --SUB--
      ALU_SUB: add_sub
      generic map(32)
-     port map(i_A => inputA,
-              i_B => inputB,
-              i_AddSub => '1',
-              o_Sum => s_sub,
-              o_C   => open);
+     port map(
+         i_C       => '1', -- Assuming a carry-in of '1' for subtraction (two's complement)
+         i_nAdd_Sub=> '1', -- '1' for subtraction operation
+         iA        => iA,
+         iB        => iB,
+         oSum      => s_add_sub_result, -- Reuse the same signal for subtraction result
+         oCarry    => s_carry_out      -- Reuse the same signal for overflow detection
+     );
      
      --XOR --
      ALU_XOR: for i in 0 to 31 generate
