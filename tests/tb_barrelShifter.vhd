@@ -2,9 +2,7 @@
 
 library IEEE;
 use IEEE.std_logic_1164.all;
-use IEEE.std_logic_textio.all; 
-library std;
-use std.env.all;                
+use IEEE.std_logic_textio.all;               
 use std.textio.all;      
 
 
@@ -87,7 +85,24 @@ begin
       wait for gCLK_HPER*2;
       wait for gCLK_HPER*2;
 
+      -- Test case 4 (Right):
+      iDir_tb <= '0';
+      ishamt_tb <= "00010";
+      wait for gCLK_HPER*2;
+      wait for gCLK_HPER*2;
+
+      -- Additional test case 5 (Right):
+      iInput_tb <= x"FFFFFFFF"; -- All ones
+      ishamt_tb <= "00000";     -- No shift
+      wait for gCLK_HPER*2;
+      wait for gCLK_HPER*2;
+
+      -- Additional test case 6 (Left):
+      iInput_tb <= x"00000001"; -- Only the least significant bit is 1
+      ishamt_tb <= "00010";     -- Shift by 2 to the left
+      wait for gCLK_HPER*2;
+      wait for gCLK_HPER*2;
+
     end process;
 
 end tb_arch;
-
