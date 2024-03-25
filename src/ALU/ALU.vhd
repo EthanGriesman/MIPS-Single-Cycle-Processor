@@ -13,12 +13,11 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 
-
 entity ALU is
-port(inputA       : in std_logic_vector(31 downto 0);
-     inputB       : in std_logic_vector(31 downto 0);
+port(iA           : in std_logic_vector(31 downto 0);
+     iB           : in std_logic_vector(31 downto 0);
      overflowEn   : in std_logic;
-     opSelect     : in std_logic_vector(3 downto 0);
+     opSel        : in std_logic_vector(3 downto 0);
      zeroOut      : out std_logic; -- 1 when resultOut = 0
      overflow     : out std_logic;
      resultOut    : out std_logic_vector(31 downto 0));
@@ -30,49 +29,47 @@ architecture mixed of ALU is
 --Components--
 --------------
 
---AddSub
-component nbit_adder_subtractor is
-generic (N : integer := 16);
-port(i_A      : in std_logic_vector(31 downto 0);
-     i_B      : in std_logic_vector(31 downto 0);
-     i_AddSub : in std_logic;
-     o_Sum    : out std_logic_vector(31 downto 0);
-     o_Cm     : out std_logic;
-     o_C      : out std_logic); --Change to add previous carry as output in order to XOR for overflow
+-- n-bit adder subtractor --
+component add_sub is
+generic (N : integer := 32);
+port(i_C       : in std_logic;
+     i_nAddSub : in std_logic; 
+     i_A       : in std_logic_vector(N-1 downto 0);
+     i_B       : in std_logic_vector(N-1 downto 0);
+     o_Sum     : out std_logic_vector(N-1 downto 0);
+     o_C       : out std_logic); --Change to add previous carry as output in order to XOR for overflow
 end component;
 
-
-
--- barrelShifter
+-- barrelShifter --
 component barrelShifter is
      port(iDir      : in std_logic;
-          ishamt : in std_logic_vector(4 downto 0);
-          iInput : in std_logic_vector(31 downto 0);
-          oOutput: out std_logic_vector(31 downto 0));
+          ishamt    : in std_logic_vector(4 downto 0);
+          iInput    : in std_logic_vector(31 downto 0);
+          oOutput   : out std_logic_vector(31 downto 0));
 end component;
 
---OR
+--OR gate --
 component org2 is
      port(i_A	: in std_logic;
           i_B	: in std_logic;
           o_F	: out std_logic);
 end component;
      
---AND
+--AND gate --
 component andg2 is
      port(i_A	: in std_logic;
           i_B	: in std_logic;
           o_F	: out std_logic);
 end component;
 
---XOR
+--XOR gate --
 component xorg2 is
      port(i_A          : in std_logic;
           i_B          : in std_logic;
           o_F          : out std_logic);
 end component;
      
---One's Complementor/NOT
+--One's Complementor/NOT --
 component onesComp is
 generic(n: positive);
      port(
