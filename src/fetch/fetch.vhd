@@ -37,7 +37,7 @@ architecture mixed of fetch is
   end component;
 
   
-  signal s_newPC	: std_logic_vector(31 downto 0)	:= x"00000000";
+  signal s_newPC	: std_logic_vector(31 downto 0)	:= x"00400000";
   signal s_plus4	: std_logic_vector(31 downto 0) := x"00000004";
   signal s_PCPlus4	: std_logic_vector(31 downto 0);
   signal s_PCPlus4C	: std_logic; 				--Not used, carry out value from PC+4
