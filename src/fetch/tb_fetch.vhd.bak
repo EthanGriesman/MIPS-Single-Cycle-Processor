@@ -109,7 +109,7 @@ begin
     s_SignExtendImm <= (others => '0');
     s_Branch <= '0';       -- Assign a bit literal
     s_ALUZero <= '0';      -- Assign a bit literal
-    s_Jump <= "00";         -- Assign a bit literal
+    s_Jump := "00";         -- Assign a bit literal
     wait for cCLK_PER;     -- Wait for one clock cycle
 
     -- Assign the outputs to s_PC and s_PCPlus4
