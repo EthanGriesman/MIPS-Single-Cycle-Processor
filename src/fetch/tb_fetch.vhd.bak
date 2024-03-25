@@ -61,7 +61,7 @@ begin
 
   DUT0: fetch
     port map (
-      iRST           => reset,
+      iRST           => s_Rst,
       iRSTVAL        => s_RstVal,
       iAddr          => s_Addr,
       iSignExtendImm => s_SignExtendImm,

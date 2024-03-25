@@ -1,0 +1,53 @@
+[N
+7
+5
+8 tb_fetch
+4
+1 N
+2
+7 adder_n
+1
+102 /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/work
+6
+4 arch
+3
+10 structural
+7
+9 gCLK_HPER
+]
+[G
+1
+5
+6
+1
+7
+0
+0
+0
+0
+8 8
+-128
+-106
+-104
+0
+0
+0
+0
+0
+0
+0
+]
+[G
+1
+2
+3
+1
+4
+1
+0
+32
+0
+0 0
+0
+0
+]

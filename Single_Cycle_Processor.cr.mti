@@ -1,0 +1,58 @@
+/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/tb_fetch.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/tb_fetch.vhd
+QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_textio
+-- Compiling entity tb_fetch
+-- Compiling architecture arch of tb_fetch
+
+} {} {}} /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd
+QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity Adder
+-- Compiling architecture structural of Adder
+
+} {} {}} /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/andg2.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/andg2.vhd
+QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity andg2
+-- Compiling architecture dataflow of andg2
+
+} {} {}} /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/adder_N.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/adder_N.vhd
+QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity adder_N
+-- Compiling architecture structural of adder_N
+
+} {} {}} /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/fetch.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/fetch.vhd
+QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity fetch
+-- Compiling architecture mixed of fetch
+
+} {} {}} /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/org2.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/org2.vhd
+QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity org2
+-- Compiling architecture dataflow of org2
+
+} {} {}} /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/xorg2.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/xorg2.vhd
+QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity xorg2
+-- Compiling architecture dataflow of xorg2
+
+} {} {}}
