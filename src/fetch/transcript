@@ -95,3 +95,310 @@ vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle
 # -- Compiling architecture mixed of fetch
 # End time: 16:00:12 on Mar 25,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 16:01:18 on Mar 25,2024
+# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Adder
+# -- Compiling architecture structural of Adder
+# End time: 16:01:18 on Mar 25,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/adder_N.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 16:01:18 on Mar 25,2024
+# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/adder_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity adder_N
+# -- Compiling architecture structural of adder_N
+# End time: 16:01:18 on Mar 25,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/andg2.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 16:01:18 on Mar 25,2024
+# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/andg2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity andg2
+# -- Compiling architecture dataflow of andg2
+# End time: 16:01:18 on Mar 25,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/org2.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 16:01:18 on Mar 25,2024
+# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/org2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity org2
+# -- Compiling architecture dataflow of org2
+# End time: 16:01:18 on Mar 25,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/xorg2.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 16:01:18 on Mar 25,2024
+# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/xorg2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity xorg2
+# -- Compiling architecture dataflow of xorg2
+# End time: 16:01:18 on Mar 25,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/tb_fetch.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 16:01:18 on Mar 25,2024
+# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/tb_fetch.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity tb_fetch
+# -- Compiling architecture testbench of tb_fetch
+# End time: 16:01:18 on Mar 25,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/fetch.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 16:01:18 on Mar 25,2024
+# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/fetch.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity fetch
+# -- Compiling architecture mixed of fetch
+# End time: 16:01:18 on Mar 25,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 16:01:18 on Mar 25,2024
+# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Adder
+# -- Compiling architecture structural of Adder
+# End time: 16:01:18 on Mar 25,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/adder_N.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 16:01:18 on Mar 25,2024
+# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/adder_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity adder_N
+# -- Compiling architecture structural of adder_N
+# End time: 16:01:18 on Mar 25,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/andg2.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 16:01:18 on Mar 25,2024
+# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/andg2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity andg2
+# -- Compiling architecture dataflow of andg2
+# End time: 16:01:18 on Mar 25,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/fetch.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 16:01:19 on Mar 25,2024
+# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/fetch.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity fetch
+# -- Compiling architecture mixed of fetch
+# End time: 16:01:19 on Mar 25,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/org2.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 16:01:19 on Mar 25,2024
+# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/org2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity org2
+# -- Compiling architecture dataflow of org2
+# End time: 16:01:19 on Mar 25,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/tb_fetch.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 16:01:19 on Mar 25,2024
+# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/tb_fetch.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity tb_fetch
+# -- Compiling architecture testbench of tb_fetch
+# End time: 16:01:19 on Mar 25,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/xorg2.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 16:01:19 on Mar 25,2024
+# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/xorg2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity xorg2
+# -- Compiling architecture dataflow of xorg2
+# End time: 16:01:19 on Mar 25,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim -voptargs=+acc work.tb_fetch
+# vsim -voptargs="+acc" work.tb_fetch 
+# Start time: 16:01:24 on Mar 25,2024
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.tb_fetch(testbench)#1
+# Loading work.fetch(mixed)#1
+# Loading work.adder_n(structural)#1
+# Loading work.adder(structural)#1
+# Loading work.xorg2(dataflow)#1
+# Loading work.andg2(dataflow)#1
+# Loading work.org2(dataflow)#1
+add wave -position insertpoint  \
+sim:/tb_fetch/gCLK_HPER \
+sim:/tb_fetch/CLK \
+sim:/tb_fetch/s_Rst \
+sim:/tb_fetch/s_RstVal \
+sim:/tb_fetch/s_Addr \
+sim:/tb_fetch/s_SignExtendImm \
+sim:/tb_fetch/s_Branch \
+sim:/tb_fetch/s_ALUZero \
+sim:/tb_fetch/s_Jump \
+sim:/tb_fetch/s_irs \
+sim:/tb_fetch/s_PC \
+sim:/tb_fetch/s_PCPlus4 \
+sim:/tb_fetch/cCLK_PER
+run 100
+#############  Autofindloop Analysis  ###############
+#############  Loop found at time 0 ns ###############
+#       Signal: /tb_fetch/UUT/s_newPC @ sub-iteration 0 at Value 0 (/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/fetch.vhd:40)
+#       Signal: /tb_fetch/UUT/s_PCplusImm @ sub-iteration 0 at Value 0 (/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/fetch.vhd:52)
+#       Signal: /tb_fetch/UUT/s_PCPlus4 @ sub-iteration 0 at Value 0 (/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/fetch.vhd:42)
+#       Signal: /tb_fetch/UUT/s_PCPlus4 @ sub-iteration 0 at Value 0 (/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/fetch.vhd:42)
+#       Signal: /tb_fetch/UUT/g_adder1/carry @ sub-iteration 0 at Value 0 (/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/adder_N.vhd:37)
+#       Signal: /tb_fetch/UUT/s_PCPlus4 @ sub-iteration 0 at Value 0 (/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/fetch.vhd:42)
+#       Signal: /tb_fetch/UUT/g_adder1/carry @ sub-iteration 0 at Value 0 (/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/adder_N.vhd:37)
+#       Signal: /tb_fetch/UUT/g_adder1/carry @ sub-iteration 0 at Value 0 (/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/adder_N.vhd:37)
+#       Signal: /tb_fetch/UUT/g_adder1/carry @ sub-iteration 0 at Value 0 (/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/adder_N.vhd:37)
+#       Signal: /tb_fetch/UUT/g_adder1/carry @ sub-iteration 0 at Value 0 (/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/adder_N.vhd:37)
+#       Signal: /tb_fetch/UUT/g_adder1/carry @ sub-iteration 0 at Value 0 (/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/adder_N.vhd:37)
+#       Signal: /tb_fetch/UUT/g_adder1/carry @ sub-iteration 0 at Value 0 (/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/adder_N.vhd:37)
+#       Signal: /tb_fetch/UUT/g_adder1/carry @ sub-iteration 0 at Value 0 (/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/adder_N.vhd:37)
+#       Signal: /tb_fetch/UUT/s_mux1Out @ sub-iteration 0 at Value unknown (/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/fetch.vhd:51)
+#       Signal: /tb_fetch/UUT/g_adder2/G_NBit_ADDER1/s_1 @ sub-iteration 0 at Value Z (/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:49)
+#       Signal: /tb_fetch/s_PCPlus4 @ sub-iteration 0 at Value unknown (/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/tb_fetch.vhd:39)
+#       Signal: /tb_fetch/UUT/g_adder1/G_NBit_ADDER1/s_1 @ sub-iteration 0 at Value Z (/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:49)
+#       Signal: /tb_fetch/s_PC @ sub-iteration 0 at Value unknown (/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/tb_fetch.vhd:38)
+#       Signal: /tb_fetch/UUT/g_adder1/G_NBit_ADDER2(1)/ADDERI/s_1 @ sub-iteration 0 at Value Z (/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:49)
+#       Signal: /tb_fetch/UUT/g_adder1/G_NBit_ADDER2(2)/ADDERI/s_2 @ sub-iteration 0 at Value X (/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:50)
+#       Signal: /tb_fetch/UUT/g_adder1/G_NBit_ADDER2(2)/ADDERI/s_1 @ sub-iteration 0 at Value Z (/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:49)
+#       Signal: /tb_fetch/UUT/g_adder1/G_NBit_ADDER2(4)/ADDERI/s_3 @ sub-iteration 0 at Value Z (/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:51)
+#       Signal: /tb_fetch/UUT/g_adder1/G_NBit_ADDER2(8)/ADDERI/s_3 @ sub-iteration 0 at Value Z (/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:51)
+#       Signal: /tb_fetch/UUT/g_adder1/G_NBit_ADDER2(12)/ADDERI/s_3 @ sub-iteration 0 at Value Z (/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:51)
+#       Signal: /tb_fetch/UUT/g_adder1/G_NBit_ADDER2(16)/ADDERI/s_3 @ sub-iteration 0 at Value Z (/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:51)
+#       Signal: /tb_fetch/UUT/g_adder1/G_NBit_ADDER2(20)/ADDERI/s_3 @ sub-iteration 0 at Value Z (/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:51)
+#       Signal: /tb_fetch/UUT/g_adder1/G_NBit_ADDER2(24)/ADDERI/s_3 @ sub-iteration 0 at Value Z (/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:51)
+#       Signal: /tb_fetch/UUT/g_adder1/G_NBit_ADDER2(28)/ADDERI/s_3 @ sub-iteration 0 at Value Z (/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:51)
+#   Active process: /tb_fetch/UUT/g_adder1/G_NBit_ADDER2(28)/ADDERI/g_Or/line__34 @ sub-iteration 1
+#     Source: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:77
+#   Active process: /tb_fetch/UUT/g_adder1/G_NBit_ADDER2(24)/ADDERI/g_Or/line__34 @ sub-iteration 1
+#     Source: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:77
+#   Active process: /tb_fetch/UUT/g_adder1/G_NBit_ADDER2(20)/ADDERI/g_Or/line__34 @ sub-iteration 1
+#     Source: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:77
+#   Active process: /tb_fetch/UUT/g_adder1/G_NBit_ADDER2(16)/ADDERI/g_Or/line__34 @ sub-iteration 1
+#     Source: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:77
+#   Active process: /tb_fetch/UUT/g_adder1/G_NBit_ADDER2(12)/ADDERI/g_Or/line__34 @ sub-iteration 1
+#     Source: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:77
+#   Active process: /tb_fetch/UUT/g_adder1/G_NBit_ADDER2(8)/ADDERI/g_Or/line__34 @ sub-iteration 1
+#     Source: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:77
+#   Active process: /tb_fetch/UUT/g_adder1/G_NBit_ADDER2(4)/ADDERI/g_Or/line__34 @ sub-iteration 1
+#     Source: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:77
+#   Active process: /tb_fetch/UUT/g_adder1/G_NBit_ADDER2(2)/ADDERI/g_Xor2/line__34 @ sub-iteration 1
+#     Source: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:66
+#   Active process: /tb_fetch/UUT/g_adder1/G_NBit_ADDER2(2)/ADDERI/g_And2/line__34 @ sub-iteration 1
+#     Source: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:71
+#   Active process: /tb_fetch/UUT/g_adder1/G_NBit_ADDER2(2)/ADDERI/g_Or/line__34 @ sub-iteration 1
+#     Source: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:77
+#   Active process: /tb_fetch/UUT/g_adder1/G_NBit_ADDER2(1)/ADDERI/g_Xor2/line__34 @ sub-iteration 1
+#     Source: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:66
+#   Active process: /tb_fetch/UUT/g_adder1/G_NBit_ADDER2(1)/ADDERI/g_And2/line__34 @ sub-iteration 1
+#     Source: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:71
+#   Active process: /tb_fetch/UUT/g_adder1/G_NBit_ADDER1/g_Xor2/line__34 @ sub-iteration 1
+#     Source: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:66
+#   Active process: /tb_fetch/UUT/g_adder1/G_NBit_ADDER1/g_And2/line__34 @ sub-iteration 1
+#     Source: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:71
+#   Active process: /tb_fetch/UUT/g_adder2/G_NBit_ADDER1/g_Xor2/line__34 @ sub-iteration 1
+#     Source: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:66
+#   Active process: /tb_fetch/UUT/g_adder2/G_NBit_ADDER1/g_And2/line__34 @ sub-iteration 1
+#     Source: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:71
+#   Active process: /tb_fetch/UUT/line__88 @ sub-iteration 1
+#     Source: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/tb_fetch.vhd:43
+#   Active process: /tb_fetch/UUT/g_adder1/G_NBit_ADDER2(29)/ADDERI/g_Xor2/line__34 @ sub-iteration 1
+#     Source: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:66
+#   Active process: /tb_fetch/UUT/g_adder1/G_NBit_ADDER2(29)/ADDERI/g_And2/line__34 @ sub-iteration 1
+#     Source: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:71
+#   Active process: /tb_fetch/UUT/g_adder1/G_NBit_ADDER2(25)/ADDERI/g_Xor2/line__34 @ sub-iteration 1
+#     Source: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:66
+#   Active process: /tb_fetch/UUT/g_adder1/G_NBit_ADDER2(25)/ADDERI/g_And2/line__34 @ sub-iteration 1
+#     Source: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:71
+#   Active process: /tb_fetch/UUT/g_adder1/G_NBit_ADDER2(21)/ADDERI/g_Xor2/line__34 @ sub-iteration 1
+#     Source: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:66
+#   Active process: /tb_fetch/UUT/g_adder1/G_NBit_ADDER2(21)/ADDERI/g_And2/line__34 @ sub-iteration 1
+#     Source: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:71
+#   Active process: /tb_fetch/UUT/g_adder1/G_NBit_ADDER2(17)/ADDERI/g_Xor2/line__34 @ sub-iteration 1
+#     Source: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:66
+#   Active process: /tb_fetch/UUT/g_adder1/G_NBit_ADDER2(17)/ADDERI/g_And2/line__34 @ sub-iteration 1
+#     Source: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:71
+#   Active process: /tb_fetch/UUT/g_adder1/G_NBit_ADDER2(13)/ADDERI/g_Xor2/line__34 @ sub-iteration 1
+#     Source: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:66
+#   Active process: /tb_fetch/UUT/g_adder1/G_NBit_ADDER2(13)/ADDERI/g_And2/line__34 @ sub-iteration 1
+#     Source: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:71
+#   Active process: /tb_fetch/UUT/g_adder1/G_NBit_ADDER2(9)/ADDERI/g_Xor2/line__34 @ sub-iteration 1
+#     Source: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:66
+#   Active process: /tb_fetch/UUT/g_adder1/G_NBit_ADDER2(9)/ADDERI/g_And2/line__34 @ sub-iteration 1
+#     Source: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:71
+#   Active process: /tb_fetch/UUT/g_adder1/G_NBit_ADDER2(5)/ADDERI/g_Xor2/line__34 @ sub-iteration 1
+#     Source: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:66
+#   Active process: /tb_fetch/UUT/g_adder1/G_NBit_ADDER2(5)/ADDERI/g_And2/line__34 @ sub-iteration 1
+#     Source: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:71
+#   Active process: /tb_fetch/UUT/g_adder2/G_NBit_ADDER2(2)/ADDERI/g_Xor1/line__34 @ sub-iteration 1
+#     Source: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:55
+#   Active process: /tb_fetch/UUT/g_adder2/G_NBit_ADDER2(2)/ADDERI/g_And1/line__34 @ sub-iteration 1
+#     Source: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:60
+#   Active process: /tb_fetch/UUT/g_adder1/G_NBit_ADDER2(3)/ADDERI/g_Xor2/line__34 @ sub-iteration 1
+#     Source: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:66
+#   Active process: /tb_fetch/UUT/g_adder1/G_NBit_ADDER2(3)/ADDERI/g_And2/line__34 @ sub-iteration 1
+#     Source: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:71
+#   Active process: /tb_fetch/UUT/g_adder2/G_NBit_ADDER2(1)/ADDERI/g_Xor1/line__34 @ sub-iteration 1
+#     Source: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:55
+#   Active process: /tb_fetch/UUT/g_adder2/G_NBit_ADDER2(1)/ADDERI/g_And1/line__34 @ sub-iteration 1
+#     Source: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:60
+#   Active process: /tb_fetch/UUT/line__68 @ sub-iteration 1
+#     Source: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/tb_fetch.vhd:43
+#   Active process: /tb_fetch/UUT/g_adder2/G_NBit_ADDER1/g_Xor1/line__34 @ sub-iteration 1
+#     Source: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:55
+#   Active process: /tb_fetch/UUT/g_adder2/G_NBit_ADDER1/g_And1/line__34 @ sub-iteration 1
+#     Source: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:60
+#   Active process: /tb_fetch/UUT/line__84 @ sub-iteration 1
+#     Source: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/tb_fetch.vhd:43
+#   Active process: /tb_fetch/UUT/line__55 @ sub-iteration 1
+#     Source: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/tb_fetch.vhd:43
+#   Active process: /tb_fetch/UUT/g_adder1/G_NBit_ADDER1/g_Xor1/line__34 @ sub-iteration 1
+#     Source: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:55
+#   Active process: /tb_fetch/UUT/g_adder1/G_NBit_ADDER1/g_And1/line__34 @ sub-iteration 1
+#     Source: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:60
+#       Signal: /tb_fetch/UUT/g_adder1/G_NBit_ADDER1/s_1 @ sub-iteration 2 at Value 0 (/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd:49)
+#       Signal: /tb_fetch/s_PC @ sub-iteration 2 at Value unknown (/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/tb_fetch.vhd:38)
+################# END OF LOOP #################
+# ** Error (suppressible): (vsim-3601) Iteration limit 10000000 reached at time 0 ns.
