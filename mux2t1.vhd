@@ -39,7 +39,6 @@ architecture structure of mux2to1 is
 
 	end component;
 
-
 	-- Signal to store inverted i_S value
 	signal i_S_Inv		: std_logic := '0';
 
