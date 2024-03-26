@@ -10,7 +10,7 @@ end ALU_32_bit;
 
 architecture structure of ALU_32_bit is
 
-    component n_bit_full_adder is
+    component full_adder is
        generic(N : integer := 32);
        port(i_A	: in std_logic_vector(N-1 downto 0);
         i_B	: in std_logic_vector(N-1 downto 0);
