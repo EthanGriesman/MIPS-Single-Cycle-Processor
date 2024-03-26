@@ -13,7 +13,7 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 
-entity ALU is
+entity ALU_32_bit_barrel_Shifter is
 port(iA           : in std_logic_vector(31 downto 0);
      iB           : in std_logic_vector(31 downto 0);
      overflowEn   : in std_logic;
@@ -23,7 +23,7 @@ port(iA           : in std_logic_vector(31 downto 0);
      resultOut    : out std_logic_vector(31 downto 0));
 end ALU;
 
-architecture mixed of ALU is
+architecture mixed of ALU_32_bit_barrel_Shifter is
 
 --------------
 --Components--
