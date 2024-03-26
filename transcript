@@ -15,84 +15,84 @@
 vlib work
 vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd
 # QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
-# Start time: 16:16:12 on Mar 25,2024
+# Start time: 12:00:32 on Mar 26,2024
 # vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/Adder.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity Adder
 # -- Compiling architecture structural of Adder
-# End time: 16:16:12 on Mar 25,2024, Elapsed time: 0:00:00
+# End time: 12:00:32 on Mar 26,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/adder_N.vhd
 # QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
-# Start time: 16:16:12 on Mar 25,2024
+# Start time: 12:00:32 on Mar 26,2024
 # vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/adder_N.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity adder_N
 # -- Compiling architecture structural of adder_N
-# End time: 16:16:12 on Mar 25,2024, Elapsed time: 0:00:00
+# End time: 12:00:32 on Mar 26,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/andg2.vhd
 # QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
-# Start time: 16:16:12 on Mar 25,2024
+# Start time: 12:00:32 on Mar 26,2024
 # vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/andg2.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity andg2
 # -- Compiling architecture dataflow of andg2
-# End time: 16:16:12 on Mar 25,2024, Elapsed time: 0:00:00
+# End time: 12:00:32 on Mar 26,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/fetch.vhd
 # QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
-# Start time: 16:16:12 on Mar 25,2024
+# Start time: 12:00:32 on Mar 26,2024
 # vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/fetch.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity fetch
 # -- Compiling architecture mixed of fetch
-# End time: 16:16:12 on Mar 25,2024, Elapsed time: 0:00:00
+# End time: 12:00:32 on Mar 26,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/org2.vhd
 # QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
-# Start time: 16:16:12 on Mar 25,2024
+# Start time: 12:00:32 on Mar 26,2024
 # vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/org2.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity org2
 # -- Compiling architecture dataflow of org2
-# End time: 16:16:12 on Mar 25,2024, Elapsed time: 0:00:00
+# End time: 12:00:32 on Mar 26,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/tb_fetch.vhd
 # QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
-# Start time: 16:16:12 on Mar 25,2024
+# Start time: 12:00:32 on Mar 26,2024
 # vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/tb_fetch.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity tb_fetch
 # -- Compiling architecture testbench of tb_fetch
-# End time: 16:16:12 on Mar 25,2024, Elapsed time: 0:00:00
+# End time: 12:00:32 on Mar 26,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/xorg2.vhd
 # QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
-# Start time: 16:16:12 on Mar 25,2024
+# Start time: 12:00:32 on Mar 26,2024
 # vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/xorg2.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity xorg2
 # -- Compiling architecture dataflow of xorg2
-# End time: 16:16:12 on Mar 25,2024, Elapsed time: 0:00:00
+# End time: 12:00:32 on Mar 26,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-vsim work.tb_fetch -voptargs=+acc
-# vsim work.tb_fetch -voptargs="+acc" 
-# Start time: 16:16:26 on Mar 25,2024
+vsim -voptargs=+acc work.tb_fetch
+# vsim -voptargs="+acc" work.tb_fetch 
+# Start time: 12:00:42 on Mar 26,2024
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
 # ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
@@ -120,7 +120,7 @@ sim:/tb_fetch/s_irs \
 sim:/tb_fetch/s_PC \
 sim:/tb_fetch/s_PCPlus4 \
 sim:/tb_fetch/cCLK_PER
-run 200
+run 800
 #############  Autofindloop Analysis  ###############
 #############  Loop found at time 0 ns ###############
 #       Signal: /tb_fetch/UUT/s_newPC @ sub-iteration 0 at Value 0 (/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/fetch.vhd:40)
@@ -243,36 +243,3 @@ run 200
 #       Signal: /tb_fetch/s_PC @ sub-iteration 2 at Value unknown (/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/tb_fetch.vhd:38)
 ################# END OF LOOP #################
 # ** Error (suppressible): (vsim-3601) Iteration limit 10000000 reached at time 0 ns.
-quit -sim
-# End time: 16:21:07 on Mar 25,2024, Elapsed time: 0:04:41
-# Errors: 1, Warnings: 1
-vsim -voptargs=+acc work.tb_fetch
-# vsim -voptargs="+acc" work.tb_fetch 
-# Start time: 16:21:12 on Mar 25,2024
-# ** Note: (vsim-8009) Loading existing optimized design _opt
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading work.tb_fetch(testbench)#1
-# Loading work.fetch(mixed)#1
-# Loading work.adder_n(structural)#1
-# Loading work.adder(structural)#1
-# Loading work.xorg2(dataflow)#1
-# Loading work.andg2(dataflow)#1
-# Loading work.org2(dataflow)#1
-vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/tb_fetch.vhd
-# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
-# Start time: 16:21:21 on Mar 25,2024
-# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/tb_fetch.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity tb_fetch
-# -- Compiling architecture testbench of tb_fetch
-# End time: 16:21:21 on Mar 25,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-quit -sim
-# End time: 16:21:25 on Mar 25,2024, Elapsed time: 0:00:13
-# Errors: 0, Warnings: 0
-vdel -all -lib work
-# Error 133: Unable to remove directory "/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/work".
