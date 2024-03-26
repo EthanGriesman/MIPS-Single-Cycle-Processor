@@ -13,7 +13,7 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 
-entity ALU_32_bit_barrel_shifter is
+entity ALU_shifter is
    port(i_A, i_B		: in std_logic_vector(31 downto 0);
         i_Op			: in std_logic_vector(2 downto 0);
 	i_S     		: in std_logic_vector(4 downto 0);
@@ -22,9 +22,9 @@ entity ALU_32_bit_barrel_shifter is
 	i_ALUorShifter 		: in std_logic;  --0 is ALU, 1 is Shifter
 	o_F			: out std_logic_vector(31 downto 0);
         o_Cout, o_OF, zero 	: out std_logic);
-end ALU_32_bit_barrel_shifter;
+end ALU_shifter;
 
-architecture structural of ALU_32_bit_barrel_shifter is
+architecture structural of ALU_shifter is
 
 component ALU_32_bit
    port(i_A, i_B		: in std_logic_vector(31 downto 0);
@@ -34,11 +34,11 @@ component ALU_32_bit
 end component;
 
 component barrelShifter
-   port(i_A    : in std_logic_vector(31 downto 0);
-	i_S    : in std_logic_vector(4 downto 0);
-	i_AorL : in std_logic;
-	i_RorL : in std_logic;
-	o_F    : out std_logic_vector(31 downto 0));
+   port(
+	    iDir       : in std_logic;
+	    ishamt     : in std_logic_vector(4 downto 0);
+	    iInput     : in std_logic_vector(31 downto 0);
+	    oOutput    : out std_logic_vector(31 downto 0));
 end component;
 
 component Nmux_dataflow

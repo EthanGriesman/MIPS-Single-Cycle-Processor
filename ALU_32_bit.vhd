@@ -53,29 +53,34 @@ architecture structure of ALU_32_bit is
         o_F : out std_logic_vector(31 downto 0));
     end component;
     
+    -- 32 bit NOR gate --
     component nor32 is
        port(i_A : in std_logic_vector(31 downto 0);
         i_B : in std_logic_vector(31 downto 0);
         o_F : out std_logic_vector(31 downto 0));
     end component;
     
+    -- 32 bit XOR gate --
     component xor32 is
        port(i_A : in std_logic_vector(31 downto 0);
         i_B : in std_logic_vector(31 downto 0);
         o_F : out std_logic_vector(31 downto 0));
     end component;
     
+    -- 2 input XOR gate --
     component xorg2 is
        port(i_A : in std_logic;
         i_B : in std_logic;
         o_F : out std_logic);
     end component;
     
+    -- 32 input 1 bit nor gate --
     component norg32 is
        port(i_A : in std_logic_vector(31 downto 0);
         o_F : out std_logic);
     end component;
 
+    -- n bit 8-1 MUX --
     component mux32_8_1 is
         port(i_0, i_1, i_2, i_3, i_4, i_5, i_6, i_7	: in std_logic_vector(31 downto 0);
              i_S					: std_logic_vector(2 downto 0);
@@ -96,13 +101,12 @@ architecture structure of ALU_32_bit is
              i_B => i_B,
              o_F => s_B);
         
-        full_adder : full_adder
-        port map(i_A => i_A,
-             i_B => s_B,
-             i_Cin => i_Op(0),
-             o_Cout => s_Cout,
-             o_Cout_1 => s_Cout_1,
-             o_Sum => s_addsub);
+        adder_N : adder_N
+        port map(iA => i_A,
+             iB => s_B,       -- 
+             iC => i_Op(0),   -- carry in
+             oC => s_Cout,    --carry out
+             oS => s_addsub); --sum
         
         o_Cout <= s_Cout;
         
