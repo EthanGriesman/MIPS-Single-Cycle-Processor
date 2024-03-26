@@ -101,7 +101,7 @@ architecture structure of ALU_32_bit is
              i_B => i_B,
              o_F => s_B);
         
-        adderN : adder_N
+        adder_N : adder_N
         port map(iA => i_A,
              iB => s_B,       -- 
              iC => i_Op(0),   -- carry in
