@@ -53,7 +53,7 @@ architecture structural of ALU_shifter is
 
 begin
 
-    -- Instantiate ALU component
+    -- Instantiate 32 bit ALU component
     ALU : ALU_32_bit
     port MAP(i_A => i_A,                                 -- Input A
              i_B => i_B,                                 -- Input B
@@ -65,9 +65,10 @@ begin
 
     -- Instantiate Barrel Shifter component
     Shifter : barrelShifter
-    port MAP(iInput => i_A,                                 -- Input data
-             ishamt => i_S,                                 -- Shift amount
-             iDir => i_RorL,                           -- Right or Left shift
+    port MAP(
+             iDir => i_RorL,                                 -- Right or Left shift
+             ishamt => i_S,                                  -- Shift amount
+             iInput => i_A,                                  -- Input data
              oOutput => s_Shifter);                          -- Output from Shifter
 
     -- Instantiate MUX component to select between ALU and Shifter output
@@ -75,7 +76,7 @@ begin
     port MAP(
             i_S => i_ALUorShifter,	                    -- Select between ALU and Shifter output
             i_D0 => s_ALU,	                            -- ALU output
-            i_D1 => s_Shifter,	                        -- Shifter output
+            i_D1 => s_Shifter,	                            -- Shifter output
             o_O => o_F);	                            -- Output
 
 end structural;
