@@ -3,10 +3,6 @@
 -- Iowa State University
 -- Spring 2024
 --------------------------------------------------------------------------------------
-
-
--- ALU_32_bit_barrel_Shifter.vhd
---------------------------------------------------------------------------------------
 -- DESCRIPTION: 32 bit full ALU together with the barrel shifter
 --------------------------------------------------------------------------------------
 
@@ -14,69 +10,74 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 
 entity ALU_shifter is
-   port(i_A, i_B		: in std_logic_vector(31 downto 0);
-        i_Op			: in std_logic_vector(2 downto 0);
-	i_S     		: in std_logic_vector(4 downto 0);
-	i_AorL 			: in std_logic;
-	i_RorL 			: in std_logic;
-	i_ALUorShifter 		: in std_logic;  --0 is ALU, 1 is Shifter
-	o_F			: out std_logic_vector(31 downto 0);
-        o_Cout, o_OF, zero 	: out std_logic);
+   port(i_A, i_B		: in std_logic_vector(31 downto 0);     -- Input operands A and B
+        i_Op			: in std_logic_vector(2 downto 0);    -- Operation code for ALU
+	    i_S     		: in std_logic_vector(4 downto 0);    -- Shift amount
+	    i_AorL 			: in std_logic;                      -- Shift A or Logical
+	    i_RorL 			: in std_logic;                      -- Right or Left shift
+	    i_ALUorShifter 	: in std_logic;                      -- Choose between ALU and Shifter
+	    o_F			: out std_logic_vector(31 downto 0);  -- Output
+        o_Cout, o_OF, zero 	: out std_logic);                   -- Output flags
 end ALU_shifter;
 
 architecture structural of ALU_shifter is
 
-component ALU_32_bit
-   port(i_A, i_B		: in std_logic_vector(31 downto 0);
-        i_Op			: in std_logic_vector(2 downto 0);
-        o_F			: out std_logic_vector(31 downto 0);
-        o_Cout, o_OF, zero 	: out std_logic);
-end component;
+    -- Component declarations
+    component ALU_32_bit
+       port(i_A, i_B		: in std_logic_vector(31 downto 0);  -- Input operands A and B
+            i_Op			: in std_logic_vector(2 downto 0);  -- Operation code
+            o_F			: out std_logic_vector(31 downto 0); -- Output
+            o_Cout, o_OF, zero : out std_logic);              -- Output flags
+    end component;
 
-component barrelShifter
-   port(
-	    iDir       : in std_logic;
-	    ishamt     : in std_logic_vector(4 downto 0);
-	    iInput     : in std_logic_vector(31 downto 0);
-	    oOutput    : out std_logic_vector(31 downto 0));
-end component;
+    component barrelShifter
+       port(
+            i_A       : in std_logic_vector(31 downto 0);      -- Input data
+            i_S       : in std_logic_vector(4 downto 0);      -- Shift amount
+            i_AorL    : in std_logic;                         -- Shift A or Logical
+            i_RorL    : in std_logic;                         -- Right or Left shift
+            o_F       : out std_logic_vector(31 downto 0));   -- Output
+    end component;
 
-component mux2t1_N
-   generic(N : integer := 32);
-   port(
-	    i_S  : in std_logic;
-	    i_D0 : in std_logic_vector(N-1 downto 0);	--0
-       	i_D1 : in std_logic_vector(N-1 downto 0);	--1
-        o_O  : out std_logic_vector(N-1 downto 0));
-end component;
+    component mux2t1_N
+       generic(N : integer := 32);
+       port(
+            i_S  : in std_logic;                               -- Select input
+            i_D0 : in std_logic_vector(N-1 downto 0);          -- Data input 0
+            i_D1 : in std_logic_vector(N-1 downto 0);          -- Data input 1
+            o_O  : out std_logic_vector(N-1 downto 0));        -- Output
+    end component;
 
-signal s_ALU 	 : std_logic_vector(31 downto 0);
-signal s_Shifter : std_logic_vector(31 downto 0);
+    -- Internal signals
+    signal s_ALU     : std_logic_vector(31 downto 0);   -- Output from ALU
+    signal s_Shifter : std_logic_vector(31 downto 0);   -- Output from Shifter
 
 begin
 
-ALU : ALU_32_bit
-   port MAP(i_A => i_A,
-	    i_B => i_B,
-	    i_Op => i_Op,
-	    o_F => s_ALU,
-	    o_Cout => o_Cout,
-	    o_OF => o_OF,
-	    zero => zero);
+    -- Instantiate ALU component
+    ALU : ALU_32_bit
+    port MAP(i_A => i_A,                                 -- Input A
+             i_B => i_B,                                 -- Input B
+             i_Op => i_Op,                               -- Operation code for ALU
+             o_F => s_ALU,                               -- Output from ALU
+             o_Cout => o_Cout,                           -- Carry out from ALU
+             o_OF => o_OF,                               -- Overflow flag from ALU
+             zero => zero);                              -- Zero flag from ALU
 
-Shifter : barrelShifter
-   port MAP(i_A => i_A,
-	    i_S => i_S,
-	    i_AorL => i_AorL,
-	    i_RorL => i_RorL,
-	    o_F => s_Shifter);
+    -- Instantiate Barrel Shifter component
+    Shifter : barrelShifter
+    port MAP(i_A => i_A,                                 -- Input data
+             i_S => i_S,                                 -- Shift amount
+             i_AorL => i_AorL,                           -- Shift A or Logical
+             i_RorL => i_RorL,                           -- Right or Left shift
+             o_F => s_Shifter);                          -- Output from Shifter
 
-mux : mux2t1_N
-   port MAP(
-	    i_S => i_ALUorShifter,	
-        i_D0 => s_ALU,
-	    i_D1 => s_Shifter,
-	    o_O => o_F);
+    -- Instantiate MUX component to select between ALU and Shifter output
+    mux : mux2t1_N
+    port MAP(
+            i_S => i_ALUorShifter,	                    -- Select between ALU and Shifter output
+            i_D0 => s_ALU,	                            -- ALU output
+            i_D1 => s_Shifter,	                        -- Shifter output
+            o_O => o_F);	                            -- Output
 
 end structural;
-
