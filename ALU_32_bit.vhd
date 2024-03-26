@@ -7,17 +7,17 @@
 
 -- ALU_32_bit.vhd
 --------------------------------------------------------------------------------------
--- DESCRIPTION: 32 bit full ALU
+-- DESCRIPTION: 32 bit full ALU component 
 --------------------------------------------------------------------------------------
 
 library IEEE;
 use IEEE.std_logic_1164.all;
 
 entity ALU_32_bit is
-   port(i_A, i_B		: in std_logic_vector(31 downto 0);
-        i_Op			: in std_logic_vector(2 downto 0);
-        o_F			: out std_logic_vector(31 downto 0);
-        o_Cout, o_OF, zero 	: out std_logic);
+   port(i_A, i_B		: in std_logic_vector(31 downto 0); -- Input operands A and B
+        i_Op			: in std_logic_vector(2 downto 0); -- Operation code
+        o_F			: out std_logic_vector(31 downto 0); -- Output
+        o_Cout, o_OF, zero 	: out std_logic); -- Output flags
 end ALU_32_bit;
 
 architecture structure of ALU_32_bit is
@@ -80,57 +80,67 @@ architecture structure of ALU_32_bit is
         o_F : out std_logic);
     end component;
 
-    -- n bit 8-1 MUX --
+    -- 8-1 MUX component declaration for 32-bit inputs
     component mux32_8_1 is
         port(i_0, i_1, i_2, i_3, i_4, i_5, i_6, i_7	: in std_logic_vector(31 downto 0);
              i_S					: std_logic_vector(2 downto 0);
              o_F					: out std_logic_vector(31 downto 0));
         end component;
-        
+
+        -- Intermediate signals for ALU operations
         signal s_addsub, s_slt, s_and, s_or, s_xor, s_nand, s_nor, s_B, s_A	: std_logic_vector(31 downto 0);
         signal s_Cout_1, s_Cout, s_OF							: std_logic;
         
         begin
-        
+        -- XOR operation to invert B based on subtraction operation
         G1: for i in 0 to 31 generate
                 s_A(i) <= i_Op(0);
             end generate;
-        
+
+        -- XOR gate for B inversion (used in subtraction)
         xor0 : xor32
         port map(i_A => s_A,
              i_B => i_B,
              o_F => s_B);
-        
+
+        -- Full adder instantiation for addition or subtraction
         adderN : adder_N
         port map(iA => i_A,
-             iB => s_B,       -- 
-             iC => i_Op(0),   -- carry in
-             oC => s_Cout,    --carry out
-             oS => s_addsub); --sum
-        
+                 iB => s_B,       -- 
+                 iC => i_Op(0),   -- carry in
+                 oC => s_Cout,    -- carry out
+                 oS => s_addsub); -- sum output
+
+        -- Carry out signal
         o_Cout <= s_Cout;
         
+        -- XOR gate for overflow detection
         xor1 : xorg2
         port map(i_A => s_Cout,
              i_B => s_Cout_1,
              o_F => s_OF);
-        
+
+        -- Overflow flag
         o_OF <= s_OF;
         
         and1 : and32
         port map(i_A => i_A,
              i_B => i_B,
              o_F => s_and);
-        
+
+        -- Set the most significant bit of s_slt based on the result of 
+        -- the most significant bit comparison
         xor2 : xorg2
         port map(i_A => s_addsub(31),
              i_B => s_OF,
              o_F => s_slt(0));
-        
+
+        -- Set all other bits of s_slt to 0
         G2: for i in 1 to 31 generate
                 s_slt(i) <= '0';
             end generate;
         
+        -- NAND gate operation
         nand1 : nand32
         port map(i_A => i_A,
              i_B => i_B,
@@ -140,7 +150,8 @@ architecture structure of ALU_32_bit is
         port map(i_A => i_A,
              i_B => i_B,
              o_F => s_or);
-        
+
+        -- NOR gate operation for the 'or2' component, used for zero detection
         or2 : norg32
         port map(i_A => s_addsub,
              o_F => zero);

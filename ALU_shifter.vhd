@@ -41,12 +41,13 @@ component barrelShifter
 	    oOutput    : out std_logic_vector(31 downto 0));
 end component;
 
-component Nmux_dataflow
+component mux2t1_N
    generic(N : integer := 32);
-   port(i_A : in std_logic_vector(N-1 downto 0);	--0
-       	i_B : in std_logic_vector(N-1 downto 0);	--1
-        i_S : in std_logic;
-        o_F : out std_logic_vector(N-1 downto 0));
+   port(
+	    i_S  : in std_logic;
+	    i_D0 : in std_logic_vector(N-1 downto 0);	--0
+       	i_D1 : in std_logic_vector(N-1 downto 0);	--1
+        o_O  : out std_logic_vector(N-1 downto 0));
 end component;
 
 signal s_ALU 	 : std_logic_vector(31 downto 0);
@@ -63,18 +64,19 @@ ALU : ALU_32_bit
 	    o_OF => o_OF,
 	    zero => zero);
 
-Shifter : BarrelShifter
+Shifter : barrelShifter
    port MAP(i_A => i_A,
 	    i_S => i_S,
 	    i_AorL => i_AorL,
 	    i_RorL => i_RorL,
 	    o_F => s_Shifter);
 
-mux : Nmux_dataflow
-   port MAP(i_A => s_ALU,
-	    i_B => s_Shifter,
-	    i_S => i_ALUorShifter,
-	    o_F => o_F);
+mux : mux2t1_N
+   port MAP(
+	    i_S => i_ALUorShifter,	
+        i_D0 => s_ALU,
+	    i_D1 => s_Shifter,
+	    o_O => o_F);
 
 end structural;
 
