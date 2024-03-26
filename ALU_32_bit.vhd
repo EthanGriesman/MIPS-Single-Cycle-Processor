@@ -22,28 +22,31 @@ end ALU_32_bit;
 
 architecture structure of ALU_32_bit is
 
-    component full_adder is
+    -- N bit full adder -- 
+    component adder_N is
        generic(N : integer := 32);
-       port(i_A	: in std_logic_vector(N-1 downto 0);
-        i_B	: in std_logic_vector(N-1 downto 0);
-        i_Cin	: in std_logic;
-        o_Cout	: out std_logic;
-        o_Cout_1: out std_logic;
-        o_Sum	: out std_logic_vector(N-1 downto 0));
+       port(iA	: in std_logic_vector(N-1 downto 0);
+        iB	: in std_logic_vector(N-1 downto 0);
+        iC	: in std_logic;
+        oS	: out std_logic_vector(N-1 downto 0);
+        oC	: out std_logic);
     end component;
-    
+
+    -- 32 bit AND gate --
     component and32 is
        port(i_A : in std_logic_vector(31 downto 0);
         i_B : in std_logic_vector(31 downto 0);
         o_F : out std_logic_vector(31 downto 0));
     end component;
     
+    -- 32 bit OR gate --
     component or32 is
        port(i_A : in std_logic_vector(31 downto 0);
         i_B : in std_logic_vector(31 downto 0);
         o_F : out std_logic_vector(31 downto 0));
     end component;
     
+    -- 32 bit NAND gate --
     component nand32 is
        port(i_A : in std_logic_vector(31 downto 0);
         i_B : in std_logic_vector(31 downto 0);
