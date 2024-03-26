@@ -32,11 +32,10 @@ architecture structural of ALU_shifter is
 
     component barrelShifter
        port(
-            i_A       : in std_logic_vector(31 downto 0);      -- Input data
-            i_S       : in std_logic_vector(4 downto 0);      -- Shift amount
-            i_AorL    : in std_logic;                         -- Shift A or Logical
-            i_RorL    : in std_logic;                         -- Right or Left shift
-            o_F       : out std_logic_vector(31 downto 0));   -- Output
+            iDir    : in std_logic;                         -- Right or Left shift
+            ishamt       : in std_logic_vector(4 downto 0);      -- Shift amount
+            iInput       : in std_logic_vector(31 downto 0);      -- Input data
+            oOutput       : out std_logic_vector(31 downto 0));   -- Output
     end component;
 
     component mux2t1_N
@@ -66,11 +65,10 @@ begin
 
     -- Instantiate Barrel Shifter component
     Shifter : barrelShifter
-    port MAP(i_A => i_A,                                 -- Input data
-             i_S => i_S,                                 -- Shift amount
-             i_AorL => i_AorL,                           -- Shift A or Logical
-             i_RorL => i_RorL,                           -- Right or Left shift
-             o_F => s_Shifter);                          -- Output from Shifter
+    port MAP(iInput => i_A,                                 -- Input data
+             ishamt => i_S,                                 -- Shift amount
+             iDir => i_RorL,                           -- Right or Left shift
+             oOutput => s_Shifter);                          -- Output from Shifter
 
     -- Instantiate MUX component to select between ALU and Shifter output
     mux : mux2t1_N
