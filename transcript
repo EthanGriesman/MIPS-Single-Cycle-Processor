@@ -12,9 +12,20 @@
 # //  is prohibited from disclosure under the Trade Secrets Act,
 # //  18 U.S.C. Section 1905.
 # //
+vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU_32_bit.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 16:40:25 on Mar 27,2024
+# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU_32_bit.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ALU_32_bit
+# -- Compiling architecture structure of ALU_32_bit
+# End time: 16:40:25 on Mar 27,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
 vsim work.tb_fetch -voptargs=+acc
 # vsim work.tb_fetch -voptargs="+acc" 
-# Start time: 21:56:15 on Mar 26,2024
+# Start time: 17:08:31 on Mar 27,2024
 # ** Note: (vsim-8009) Loading existing optimized design _opt
 # Loading std.standard
 # Loading std.textio(body)
@@ -40,4 +51,4 @@ sim:/tb_fetch/s_irs \
 sim:/tb_fetch/s_PC \
 sim:/tb_fetch/s_PCPlus4 \
 sim:/tb_fetch/cCLK_PER
-run 800
+run 400

@@ -22,7 +22,7 @@ end ALU_32_bit;
 
 architecture structure of ALU_32_bit is
 
-    -- N bit full adder -- 
+    -- N bit adder -- 
     component adder_N is
        generic(N : integer := 32);
        port(iA	: in std_logic_vector(N-1 downto 0);
@@ -31,6 +31,16 @@ architecture structure of ALU_32_bit is
         oS	: out std_logic_vector(N-1 downto 0);
         oC	: out std_logic);
     end component;
+
+    component barrelShifter
+    port (
+        iDir            : in std_logic;                       -- Right or Left shift
+        ishamt          : in std_logic_vector(4 downto 0);   -- Shift amount
+        iInput          : in std_logic_vector(31 downto 0);  -- Input data
+        oOutput         : out std_logic_vector(31 downto 0)  -- Output
+    );
+    end component;
+
 
     -- 32 bit AND gate --
     component and32 is
@@ -53,7 +63,7 @@ architecture structure of ALU_32_bit is
         o_F : out std_logic_vector(31 downto 0));
     end component;
     
-    -- 32 bit NOR gate --
+    -- 32 bit NOR gate -- x
     component nor32 is
        port(i_A : in std_logic_vector(31 downto 0);
         i_B : in std_logic_vector(31 downto 0);
@@ -74,7 +84,7 @@ architecture structure of ALU_32_bit is
         o_F : out std_logic);
     end component;
     
-    -- 32 input 1 bit nor gate --
+    -- 32 input 1 bit nor gate -- x
     component norg32 is
        port(i_A : in std_logic_vector(31 downto 0);
         o_F : out std_logic);
@@ -88,8 +98,8 @@ architecture structure of ALU_32_bit is
         end component;
 
         -- Intermediate signals for ALU operations
-        signal s_addsub, s_slt, s_and, s_or, s_xor, s_nand, s_nor, s_B, s_A	: std_logic_vector(31 downto 0);
-        signal s_Cout_1, s_Cout, s_OF							: std_logic;
+        signal s_addsub, s_shift, s_or, s_and, s_xor, s_slt, s_and, s_or, s_xor, s_slt, s_nor, s_B, s_A : std_logic_vector(31 downto 0);
+        signal s_Cout_1, s_Cout, s_OF					: std_logic;
         
         begin
         -- XOR operation to invert B based on subtraction operation
@@ -97,7 +107,7 @@ architecture structure of ALU_32_bit is
                 s_A(i) <= i_Op(0);
             end generate;
 
-        -- XOR gate for B inversion (used in subtraction)
+        -- XOR gate for B inversion (used in subtraction) --
         xor0 : xor32
         port map(i_A => s_A,
              i_B => i_B,
@@ -107,7 +117,7 @@ architecture structure of ALU_32_bit is
         adderN : adder_N
         port map(iA => i_A,
                  iB => s_B,       -- 
-                 iC => i_Op(0),   -- carry in
+                 iC => i_Op(0),   -- carry in 8
                  oC => s_Cout,    -- carry out
                  oS => s_addsub); -- sum output
 
@@ -132,19 +142,13 @@ architecture structure of ALU_32_bit is
         -- the most significant bit comparison
         xor2 : xorg2
         port map(i_A => s_addsub(31),
-             i_B => s_OF,
+             i_B => s_OF, -- work on overflow
              o_F => s_slt(0));
 
         -- Set all other bits of s_slt to 0
         G2: for i in 1 to 31 generate
                 s_slt(i) <= '0';
             end generate;
-        
-        -- NAND gate operation
-        nand1 : nand32
-        port map(i_A => i_A,
-             i_B => i_B,
-             o_F => s_nand);
         
         or1 : or32
         port map(i_A => i_A,
@@ -156,6 +160,7 @@ architecture structure of ALU_32_bit is
         port map(i_A => s_addsub,
              o_F => zero);
         
+        -- 
         nor1: nor32
         port map(i_A => i_A,
              i_B => i_B,
@@ -168,13 +173,13 @@ architecture structure of ALU_32_bit is
         
         mux : mux32_8_1
         port map(i_0 => s_addsub,
-             i_1 => s_addsub,
-             i_2 => s_and,
-             i_3 => s_slt,
-             i_4 => s_or,
-             i_5 => s_xor,
-             i_6 => s_nand,
-             i_7 => s_nor,
+             i_1 => s_shift,
+             i_2 => s_or,
+             i_3 => s_and,
+             i_4 => s_xor,
+             i_5 => s_slt,
+             i_6 => s_iA,
+             i_7 => s_iB,
              i_S => i_Op,
              o_F => o_F);
         

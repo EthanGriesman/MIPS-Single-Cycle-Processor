@@ -109,10 +109,10 @@ R18
 R13
 R14
 Ealu_32_bit
-Z19 w1711487391
+Z19 w1711488218
 R4
 R5
-!i122 16
+!i122 20
 R2
 Z20 8/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU_32_bit.vhd
 Z21 F/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU_32_bit.vhd
@@ -122,9 +122,9 @@ VPT>jUEPIidF0?dlMe@GUV1
 !s100 6GBk>?F:lzCI5VChoKz@:0
 R8
 32
-Z23 !s110 1711487407
+Z23 !s110 1711575625
 !i10b 1
-Z24 !s108 1711487407.000000
+Z24 !s108 1711575625.000000
 Z25 !s90 -reportprogress|300|-work|work|/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU_32_bit.vhd|
 Z26 !s107 /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU_32_bit.vhd|
 !i113 0
@@ -133,12 +133,12 @@ R14
 Astructure
 R4
 R5
-DEx4 work 10 alu_32_bit 0 22 PT>jUEPIidF0?dlMe@GUV1
-!i122 16
-l93
-L23 148
-VJehEBJbzP4C>JGfT9anE>2
-!s100 R84GfSeLEI5hdR3>TN;@81
+Z27 DEx4 work 10 alu_32_bit 0 22 PT>jUEPIidF0?dlMe@GUV1
+!i122 20
+l94
+L23 159
+VF>[4]?LWCAjjC8;_kFe2o3
+!s100 `XmJe^SkBITD`2RO62iOk2
 R8
 32
 R23
@@ -150,31 +150,31 @@ R26
 R13
 R14
 Ealu_shifter
-Z27 w1711488992
+Z28 w1711488992
 R4
 R5
 !i122 19
 R2
-Z28 8/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU_shifter.vhd
-Z29 F/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU_shifter.vhd
+Z29 8/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU_shifter.vhd
+Z30 F/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU_shifter.vhd
 l0
 L12 1
 VmYQ4Zc`oFUiWmE2K:iO1o0
 !s100 CmWUdWdNh2bCl7Va=3@Bc0
 R8
 32
-Z30 !s110 1711489000
+Z31 !s110 1711489000
 !i10b 1
-Z31 !s108 1711489000.000000
-Z32 !s90 -reportprogress|300|-work|work|/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU_shifter.vhd|
-Z33 !s107 /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU_shifter.vhd|
+Z32 !s108 1711489000.000000
+Z33 !s90 -reportprogress|300|-work|work|/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU_shifter.vhd|
+Z34 !s107 /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU_shifter.vhd|
 !i113 0
 R13
 R14
 Astructural
 R4
 R5
-Z34 DEx4 work 11 alu_shifter 0 22 mYQ4Zc`oFUiWmE2K:iO1o0
+DEx4 work 11 alu_shifter 0 22 mYQ4Zc`oFUiWmE2K:iO1o0
 !i122 19
 l54
 L23 59
@@ -182,11 +182,11 @@ VHQIN<2<<<MeXo73AO5N`Y1
 !s100 aPUnG7=kR@73;lnoWOC>l3
 R8
 32
-R30
-!i10b 1
 R31
+!i10b 1
 R32
 R33
+R34
 !i113 0
 R13
 R14

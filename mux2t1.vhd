@@ -1,3 +1,14 @@
+-- Ethan Griesman
+-- Department of Electrical and Computer Engineering
+-- Iowa State University
+-- Spring 2024
+--------------------------------------------------------------------------------------
+
+
+-- mux2t1.vhd
+--------------------------------------------------------------------------------------
+-- DESCRIPTION: 2 to 1 multiplexor
+--------------------------------------------------------------------------------------
 library IEEE;
 use IEEE.std_logic_1164.all;
 
