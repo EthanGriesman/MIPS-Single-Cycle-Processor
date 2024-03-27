@@ -25,21 +25,21 @@ architecture mixed of tb_controlModule is
     constant cCLK_PER   : time := gCLK_HPER * 2;
 
     component controlModule is 
-      port( iOpcode     : std_logic_vector(5 downto 0);
-            iFunct      : std_logic_vector(5 downto 0);
-            oAl         : std_logic;
-            oALUSrc     : std_logic;
-            oALUControl : std_logic_vector(7 downto 0);
-            oMemtoReg   : std_logic;
-            oDMemWr     : std_logic;
-            oRegWr      : std_logic;
-            oRegDst     : std_logic_vector(1 downto 0);
-            oJump       : std_logic;
-            oBranch     : std_logic;
-            oLb         : std_logic;
-            oEqual      : std_logic;
-            oHalt       : std_logic;
-            oOverflowEn : std_logic);
+      port( iOpcode     : in std_logic_vector(5 downto 0);
+            iFunct      : in std_logic_vector(5 downto 0);
+            oAl         : out std_logic;
+            oALUSrc     : out std_logic;
+            oALUControl : out std_logic_vector(8 downto 0);
+            oMemtoReg   : out std_logic;
+            oDMemWr     : out std_logic;
+            oRegWr      : out std_logic;
+            oRegDst     : out std_logic_vector(1 downto 0);
+            oJump       : out std_logic_vector(1 downto 0);
+            oBranch     : out std_logic;
+            oLb         : out std_logic_vector(1 downto 0);
+            oEqual      : out std_logic;
+            oHalt       : out std_logic;
+            oOverflowEn : out std_logic);
     end component;
 
     signal CLK, reset   : std_logic := '0';
@@ -48,14 +48,14 @@ architecture mixed of tb_controlModule is
     signal s_iFunct      : std_logic_vector(5 downto 0);
     signal s_oAl         : std_logic;
     signal s_oALUSrc     : std_logic;
-    signal s_oALUControl : std_logic_vector(7 downto 0);
+    signal s_oALUControl : std_logic_vector(8 downto 0);
     signal s_oMemtoReg   : std_logic;
     signal s_oDMemWr     : std_logic;
     signal s_oRegWr      : std_logic;
     signal s_oRegDst     : std_logic_vector(1 downto 0);
-    signal s_oJump       : std_logic;
+    signal s_oJump       : std_logic_vector(1 downto 0);
     signal s_oBranch     : std_logic;
-    signal s_oLb         : std_logic;
+    signal s_oLb         : std_logic_vector(1 downto 0);
     signal s_oEqual      : std_logic;
     signal s_oHalt       : std_logic;
     signal s_oOverflowEn : std_logic;
