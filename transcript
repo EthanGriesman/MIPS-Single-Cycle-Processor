@@ -12,36 +12,32 @@
 # //  is prohibited from disclosure under the Trade Secrets Act,
 # //  18 U.S.C. Section 1905.
 # //
-vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU_shifter.vhd
-# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
-# Start time: 16:25:56 on Mar 26,2024
-# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU_shifter.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity ALU_shifter
-# -- Compiling architecture structural of ALU_shifter
-# End time: 16:25:56 on Mar 26,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU_shifter.vhd
-# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
-# Start time: 16:30:05 on Mar 26,2024
-# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU_shifter.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity ALU_shifter
-# -- Compiling architecture structural of ALU_shifter
-# End time: 16:30:05 on Mar 26,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU_shifter.vhd
-# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
-# Start time: 16:36:40 on Mar 26,2024
-# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU_shifter.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity ALU_shifter
-# -- Compiling architecture structural of ALU_shifter
-# End time: 16:36:40 on Mar 26,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
+vsim work.tb_fetch -voptargs=+acc
+# vsim work.tb_fetch -voptargs="+acc" 
+# Start time: 21:56:15 on Mar 26,2024
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.tb_fetch(testbench)#1
+# Loading work.fetch(mixed)#1
+# Loading work.adder_n(structural)#1
+# Loading work.adder(structural)#1
+# Loading work.xorg2(dataflow)#1
+# Loading work.andg2(dataflow)#1
+# Loading work.org2(dataflow)#1
+add wave -position insertpoint  \
+sim:/tb_fetch/gCLK_HPER \
+sim:/tb_fetch/CLK \
+sim:/tb_fetch/s_Rst \
+sim:/tb_fetch/s_RstVal \
+sim:/tb_fetch/s_Addr \
+sim:/tb_fetch/s_SignExtendImm \
+sim:/tb_fetch/s_Branch \
+sim:/tb_fetch/s_ALUZero \
+sim:/tb_fetch/s_Jump \
+sim:/tb_fetch/s_irs \
+sim:/tb_fetch/s_PC \
+sim:/tb_fetch/s_PCPlus4 \
+sim:/tb_fetch/cCLK_PER
+run 800
