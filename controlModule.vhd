@@ -33,8 +33,8 @@ end controlModule;
 
 architecture dataflow of controlModule is
 
-signal s_aluOp1   : std_logic_vector(7 downto 0);
-signal s_aluOp2   : std_logic_vector(7 downto 0);
+signal s_aluOp1   : std_logic_vector(8 downto 0);
+signal s_aluOp2   : std_logic_vector(8 downto 0);
 
 signal s_rw1      : std_logic;
 signal s_rw2      : std_logic;
