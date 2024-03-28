@@ -41,9 +41,9 @@ architecture mixed of barrelShifter is
         s_l4 <= (s_l3(15 downto 0) & "0000000000000000") when ishamt(4) = '1' else
                 s_l3(31 downto 0) when ishamt(4) = '0' else
                 (others => '0');
-                s_l0 <= (iInput(30 downto 0) & '0') when ishamt(0) = '1' else
-                iInput(31 downto 0) when ishamt(0) = '0' else
-                (others => '0');
+        -- s_l0 <= (iInput(30 downto 0) & '0') when ishamt(0) = '1' else
+        --         iInput(31 downto 0) when ishamt(0) = '0' else
+        --         (others => '0');
 
         s_r0 <= ('0' & iInput(31 downto 1)) when ishamt(0) = '1' else
                 iInput(31 downto 0) when ishamt(0) = '0' else
