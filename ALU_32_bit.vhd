@@ -22,15 +22,17 @@ end ALU_32_bit;
 
 architecture structure of ALU_32_bit is
 
-    -- N bit adder -- 
-    component adder_N is
-       generic(N : integer := 32);
-       port(iA	: in std_logic_vector(N-1 downto 0);
-        iB	: in std_logic_vector(N-1 downto 0);
-        iC	: in std_logic;
-        oS	: out std_logic_vector(N-1 downto 0);
-        oC	: out std_logic);
-    end component;
+    --AddSub
+     component nbit_adder_subtractor is
+     generic (N : integer := 16);
+     port(i_A      : in std_logic_vector(31 downto 0);
+          i_B      : in std_logic_vector(31 downto 0);
+          i_AddSub : in std_logic;
+          o_Sum    : out std_logic_vector(31 downto 0);
+          o_Cm     : out std_logic;
+          o_C      : out std_logic); --Change to add previous carry as output in order to XOR for overflow
+     end component;
+     
 
     component barrelShifter
     port (
@@ -97,7 +99,7 @@ architecture structure of ALU_32_bit is
              o_F					: out std_logic_vector(31 downto 0));
         end component;
 
-        -- Intermediate signals for ALU operations
+        -- Signals for ALU operations
         signal s_addsub, s_shift, s_or, s_and, s_xor, s_slt, s_and, s_or, s_xor, s_slt, s_nor, s_B, s_A : std_logic_vector(31 downto 0);
         signal s_Cout_1, s_Cout, s_OF					: std_logic;
         

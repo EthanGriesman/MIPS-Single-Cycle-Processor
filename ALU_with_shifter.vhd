@@ -11,7 +11,8 @@ use IEEE.std_logic_1164.all;
 
 entity ALU_shifter is
     port (
-        i_A, i_B            : in std_logic_vector(31 downto 0);     -- Input operands A and B
+        i_A,                : in std_logic_vector(31 downto 0);     -- Input operands A and B
+        i_B                 : in std_logic_vector(31 downto 0);     
         i_Op                : in std_logic_vector(2 downto 0);      -- Operation code for ALU
         i_S                 : in std_logic_vector(4 downto 0);      -- Shift amount
         i_AorL              : in std_logic;                        -- Shift A or Logical
