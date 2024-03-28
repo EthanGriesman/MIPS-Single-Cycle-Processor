@@ -18,7 +18,7 @@ port(iOpcode    : in std_logic_vector(5 downto 0); --opcode
      iFunct     : in std_logic_vector(5 downto 0); --ifunct
      oAl        : out std_logic;                
      oALUSrc    : out std_logic; --done
-     oALUControl: out std_logic_vector(7 downto 0); --done
+     oALUControl: out std_logic_vector(8 downto 0); --done
      oMemtoReg  : out std_logic; --done
      oDMemWr    : out std_logic; --done
      oRegWr     : out std_logic; --done
@@ -75,33 +75,35 @@ with iOpCode select
 
 --ALUControl--
 with iOpCode select
-     s_aluOp1 <= "00000000" when "001000", --addi
-                 "00000000" when "001001", --addiu
-                 "00000011" when "000000", --and
-                 "00001100" when "001111", --lui
-                 "00000010" when "100011", --lw
-                 "00010010" when "001110", --xori
-                 "00000100" when "001101", --ori
-                 "00000100" when "101011", --sw
-                 "00000110" when "000101", --beq
-                 "11111111" when others;
+     s_aluOp1 <= "000000000" when "001000", --addi
+                 "000000000" when "001001", --addiu
+                 "000000011" when "000000", --and
+                 "000000011" when "001100", --andi
+                 "001000001" when "001111", --lui
+                 "000000000" when "100011", --lw
+                 "000000100" when "001110", --xori
+                 "000000010" when "001101", --ori
+                 "000000100" when "101011", --sw
+                 "000000110" when "000101", --beq
+                 "100000101" when "001010", --slti
+                 "111111111" when others;
 
 with iFunct select
-     s_aluOp2 <= "00000000" when "100000", --add
-                 "00000000" when "100001", --addu
-                 "00000011" when "100100", --and
-                 "00010010" when "100111", --nor
-                 "00000100" when "100110", --xor
-                 "00000010" when "100101", --or
-                 "01000110" when "101010", --sra
-                 "00100111" when "000000", --sll
-                 "01001001" when "000010", --srl
-                 "01001001" when "000011", --sra
-                 "00000000" when "100010", --sub
-                 "00000000" when "100011", --subu
-                 "00000100" when "000100", --sllv
-                 "01001000" when "000111", --srav
-                 "11111111" when others;
+     s_aluOp2 <= "000000000" when "100000", --add
+                 "000000000" when "100001", --addu
+                 "000000011" when "100100", --and
+                 "000010010" when "100111", --nor
+                 "000000100" when "100110", --xor
+                 "000000010" when "100101", --or
+                 "100000000" when "101010", --slt
+                 "000000001" when "000000", --sll
+                 "000001001" when "000010", --srl
+                 "001001001" when "000011", --sra
+                 "100000000" when "100010", --sub
+                 "100000000" when "100011", --subu
+                 "000000100" when "000100", --sllv
+                 "001001000" when "000111", --srav
+                 "111111111" when others;
 
        
 with iOpCode select
@@ -143,7 +145,7 @@ with iOpCode select
                "00" when others;
 
 with iFunct select
-     s_Rds2 <= "01" when "100000" | "100001" | "100100" | "110000" | "100111" | "100110" | "100101" | "101010" | "100010" | "111111" | "100011",
+     s_Rds2 <= "01" when "100000" | "100001" | "100100" | "110000" | "100111" | "100110" | "100101" | "101010" | "100010" | "111111" | "100011" | "000000" | "000010",
                "00" when others;
 
 with iOpCode select
@@ -200,5 +202,9 @@ with iOpCode select
 with iOpCode select
      oOverflowEn <= s_ofe1 when "000000",
      s_ofe2 when others;
+
+with iOpCode select
+     oAl <= '1' when "000011",
+            '0' when others;
 
 end dataflow;

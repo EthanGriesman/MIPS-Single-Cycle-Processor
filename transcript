@@ -52,3 +52,5 @@ sim:/tb_fetch/s_PC \
 sim:/tb_fetch/s_PCPlus4 \
 sim:/tb_fetch/cCLK_PER
 run 400
+# End time: 18:11:46 on Mar 27,2024, Elapsed time: 1:03:15
+# Errors: 0, Warnings: 0
