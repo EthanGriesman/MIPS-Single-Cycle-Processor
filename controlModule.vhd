@@ -67,8 +67,8 @@ with iOpCode select
                '1' when "001101",  -- ori
                '1' when "001010",  -- slti
                '1' when "101011",  -- sw
-               '1' when "000100",  -- beq
-               '1' when "000101",  -- bne
+               '1' when "100000",  -- lb
+               '1' when "100001",  -- lh
                '1' when "100100",  -- lbu
                '1' when "100101",  -- lhu
                '0' when others;
@@ -83,8 +83,9 @@ with iOpCode select
                  "000000000" when "100011", --lw
                  "000000100" when "001110", --xori
                  "000000010" when "001101", --ori
-                 "000000100" when "101011", --sw
-                 "000000110" when "000101", --beq
+                 "000000000" when "101011", --sw
+                 "100000000" when "000100", --beq
+                 "100000000" when "000101", --bne
                  "100000101" when "001010", --slti
                  "111111111" when others;
 
@@ -98,11 +99,12 @@ with iFunct select
                  "100000000" when "101010", --slt
                  "000000001" when "000000", --sll
                  "000001001" when "000010", --srl
-                 "001001001" when "000011", --sra
+                 "010001001" when "000011", --sra
                  "100000000" when "100010", --sub
                  "100000000" when "100011", --subu
-                 "000000100" when "000100", --sllv
-                 "001001000" when "000111", --srav
+                 "000100001" when "000100", --sllv
+                 "000101001" when "000110", --srlv
+                 "010101001" when "000111", --srav
                  "111111111" when others;
 
        
@@ -114,7 +116,7 @@ with iOpCode select
 -- writes to memory --
 with iOpCode select
 --lui, lw, lb, lh, lbu, lhu
-     oMemtoReg <= '1' when "001111" | "100011" | "100000" | "100001" | "100101", --lui, lw, lb, lh, lbu, lhu
+     oMemtoReg <= '1' when "001111" | "100011" | "100000" | "100001" | "100100" | "100101", --lui, lw, lb, lh, lbu, lhu
                  '0' when others;
 
 -- oDMemWr --
@@ -127,11 +129,11 @@ with iOpCode select
 -- writes back to register --
 -- all except sra, sub, subu, beq, bne, j, jr --
 with iOpCode select
-     s_rw1 <= '1' when "001000" | "001001" | "001100" | "001111" | "100011" | "001110" | "001010" | "101011" | "000011" | "100000" | "100001" | "100100" | "100101" | "010100",
+     s_rw1 <= '1' when "001000" | "001001" | "001100" | "001111" | "100011" | "001110" | "001010" | "000011" | "100000" | "100001" | "100100" | "100101",
               '0' when others;
 
 with iFunct select
-     s_rw2 <= '1' when "100000" | "100001" | "100100" | "100111" | "100110" | "100101" | "101010" | "000000" | "000010" | "000100" | "000110" | "000111",
+     s_rw2 <= '1' when "100000" | "100001" | "100100" | "100111" | "100110" | "100101" | "101010" | "000000" | "000010" | "000100" | "000110" | "000111" | "100010" | "100011",
               '0' when others;
 
 with iOpCode select
@@ -145,7 +147,7 @@ with iOpCode select
                "00" when others;
 
 with iFunct select
-     s_Rds2 <= "01" when "100000" | "100001" | "100100" | "110000" | "100111" | "100110" | "100101" | "101010" | "100010" | "111111" | "100011" | "000000" | "000010",
+     s_Rds2 <= "01" when "100000" | "100001" | "100100" | "110000" | "100111" | "100110" | "100101" | "101010" | "100010" | "111111" | "100011" | "000000" | "000010" | "000011" | "000100" | "000110" | "000111",
                "00" when others;
 
 with iOpCode select
@@ -154,7 +156,7 @@ with iOpCode select
 
 -- oJump --
 with iOpCode select
-     s_j1 <= "01" when "000010", 
+     s_j1 <= "01" when "000010" | "000011", 
              "00" when others;
 
 with iFunct select
