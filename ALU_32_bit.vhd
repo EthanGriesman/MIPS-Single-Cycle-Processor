@@ -14,21 +14,22 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 
 entity ALU_32_bit is
-   port(  CLK			: in std_logic;
+   port(
           inputA       : in std_logic_vector(31 downto 0);
           inputB       : in std_logic_vector(31 downto 0);
           overflowEn   : in std_logic;
+          ishamt      : in std_logic_vector(4 downto 0);
           opSelect     : in std_logic_vector(8 downto 0);
-          zeroOut      : out std_logic; -- 1 when resultOut = 0
-          overflow     : out std_logic;
-          carryOut     : out std_logic;
-          resultOut    : out std_logic_vector(31 downto 0));
+          zeroOut      : out std_logic; -- 1 when resultOut = 0 Zero
+          overflow     : out std_logic; -- Overflow
+          carryOut     : out std_logic; -- Carry out
+          resultOut    : out std_logic_vector(31 downto 0)); -- Result F
 end ALU_32_bit;
 
 architecture structure of ALU_32_bit is
 
-    --AddSub
-     component nbit_adder_sub is
+     --AddSub
+     component nbit_addsub is
      generic (N : integer := 16);
           port(i_A      : in std_logic_vector(31 downto 0);
           i_B      : in std_logic_vector(31 downto 0);
@@ -39,6 +40,7 @@ architecture structure of ALU_32_bit is
           ); --Change to add previous carry as output in order to XOR for overflow
      end component;
 
+     --barrelShift
      component barrelShifter
           port (
             iDir            : in std_logic;                       -- Right or Left shift
@@ -70,7 +72,7 @@ architecture structure of ALU_32_bit is
                o_F          : out std_logic);
      end component;
      
-    --One's Complement/NOT
+    -- One's Complement/NOT --
      component onesComp is
           generic(n: positive);
           port(
@@ -80,7 +82,10 @@ architecture structure of ALU_32_bit is
      end component;
 
 
-        -- Signals for ALU operations
+     -----------
+     --Signals--
+     -----------
+
         signal s_addsub               :  std_logic_vector(31 downto 0);     
         signal s_or                   :  std_logic_vector(31 downto 0);
         signal s_and                  :  std_logic_vector(31 downto 0);
@@ -105,7 +110,7 @@ architecture structure of ALU_32_bit is
         
         begin
 
-          -- AND --
+          -- AND instruction --
           ALU_AND: for i in 0 to 31 generate
            ANDGS: andg2
            port map(i_A => inputA(i),
@@ -113,7 +118,7 @@ architecture structure of ALU_32_bit is
                     o_F => s_and(i));
           end generate ALU_AND;
 
-          -- OR --
+          -- OR instruction --
           ALU_OR: for i in 0 to 31 generate
            ORGS: org2
            port map(i_A => inputA(i),
@@ -121,19 +126,19 @@ architecture structure of ALU_32_bit is
                     o_F => s_or(i));
           end generate ALU_OR;
           
-          -- ADD | SUB --
-          adderN : nbit_adder_sub
+          -- ADDITION | SUBTRACTION --
+          adderN : nbit_addsub
           port map(
                  CLK => CLK,
                  i_A => inputA,
                  i_B => inputB,
-                 i_AddSub => opSelect(8),  -- Determines addition or subtraction
-                 o_Sum => s_addsub,   -- output sum/difference   
+                 i_AddSub => opSelect(8),  -- 8th bit determines addition or subtraction
+                 o_Sum => s_addsub,        -- output sum/difference   
                  o_Cm    => (others => '0') when opSelect(8) = '0' else (others => sub_borrow_in),  -- Conditional assignment based on operation
                  o_C     => add_carry_out when opSelect(8) = '0' else sub_carry_out  -- Conditional assignment based on operation
           );
 
-          -- XOR --
+          -- XOR instruction --
           ALU_XOR: for i in 0 to 31 generate
            XORGS: xorg2
            port map(i_A => inputA(i),
@@ -141,7 +146,7 @@ architecture structure of ALU_32_bit is
                     o_F => s_xor(i));
           end generate ALU_XOR;
           
-          -- NOR --
+          -- NOR instruction --
           ALU_NOR: onesComp
           generic map (32)
           port map(i_D => s_or,

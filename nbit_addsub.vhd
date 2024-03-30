@@ -6,7 +6,7 @@
 
 -- nbit_addsub.vhd
 -------------------------------------------------------------------------
--- DESCRIPTION: This file contains implementation of an N-bit ripple-carry adder
+-- DESCRIPTION: This file contains implementation of an N-bit adder subtractor
 --
 -- NOTES:
 -- 3/28/24 by EG::Design Created
