@@ -44,7 +44,7 @@ architecture structural of nbit_ripple_adder is
 	
 begin
 
-	s_carry (0) <= i_Cin;			--input on first adder
+	s_carry (0) <= i_C;			--input on first adder
 	
 	G_NBit_Adder : for i in 0 to N - 1 generate
         AdderI : full_adder
