@@ -141,18 +141,21 @@ architecture structure of ALU_32_bit is
           generic map (32)
           port map(i_D => s_or,
                    o_O => s_nor);
-
+                   
           -- SLT --
           ALU_SLT: nbit_adder_sub
           generic map(32)
-          port map(i_A => inputA,
-                   i_B => inputB,
-                   nAddSub => '1',
-                   o_Sum => s_hold,
-                   o_C => open);
-          with inputA(31) & inputB(31) & s_hold(31) select
-               s_slt <= x"00000000" when "000" | "110" | "010" | "011", 
-                        x"00000001" when others; 
+          port map(
+                    i_A => inputA,
+                    i_B => inputB,
+                    nAddSub => '1',  -- Perform subtraction: inputA - inputB
+                    o_Sum => s_hold, -- The subtraction result
+                    o_over => open   -- Overflow not used here
+          );
+
+          -- Determine if inputA is less than inputB by checking the MSB of the subtraction result
+          s_slt <= '1' when s_hold(31) = '1' else  -- If result is negative, inputA is less than inputB
+               '0';                             -- Else, inputA is not less than inputB
 
           -- SLL -- barrel shifter
 
