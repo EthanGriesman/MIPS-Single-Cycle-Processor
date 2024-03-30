@@ -7,19 +7,21 @@
 
 -- ALU_32_bit.vhd
 --------------------------------------------------------------------------------------
--- DESCRIPTION: 32 bit full ALU component 
+-- DESCRIPTION: 32 bit full ALU with barrel shifter
 --------------------------------------------------------------------------------------
 
 library IEEE;
 use IEEE.std_logic_1164.all;
 
 entity ALU_32_bit is
-   port(  inputA       : in std_logic_vector(31 downto 0);
+   port(  CLK			: in std_logic;
+          inputA       : in std_logic_vector(31 downto 0);
           inputB       : in std_logic_vector(31 downto 0);
           overflowEn   : in std_logic;
           opSelect     : in std_logic_vector(3 downto 0);
           zeroOut      : out std_logic; -- 1 when resultOut = 0
           overflow     : out std_logic;
+          carryOut     : out std_logic;
           resultOut    : out std_logic_vector(31 downto 0));
 end ALU_32_bit;
 
@@ -78,28 +80,23 @@ architecture structure of ALU_32_bit is
      end component;
 
 
-    -- 8-1 MUX component declaration for 32-bit inputs
-    component mux32_8_1 is
-        port(i_0, i_1, i_2, i_3, i_4, i_5, i_6, i_7	: in std_logic_vector(31 downto 0);
-             i_S					: std_logic_vector(2 downto 0);
-             o_F					: out std_logic_vector(31 downto 0));
-        end component;
-
         -- Signals for ALU operations
-        signal s_addsub               :  std_logic_vector(31 downto 0);
-        signal s_shift                :  std_logic_vector(31 downto 0);         
+        signal s_addsub               :  std_logic_vector(31 downto 0);     
         signal s_or                   :  std_logic_vector(31 downto 0);
         signal s_and                  :  std_logic_vector(31 downto 0);
         signal s_xor                  :  std_logic_vector(31 downto 0);
         signal s_slt                  :  std_logic_vector(31 downto 0);
         signal s_sll                  :  std_logic_vector(31 downto 0);
         signal s_srl                  :  std_logic_vector(31 downto 0);
+        signal s_sra                  :  std_logic_vector(31 downto 0);
+        signal s_sllv                 :  std_logic_vector(31 downto 0);
+        signal s_srlv                 :  std_logic_vector(31 downto 0);
+        signal s_srav                 :  std_logic_vector(31 downto 0);
         signal s_nor                  :  std_logic_vector(31 downto 0);
         signal s_not                  :  std_logic_vector(31 downto 0);
-        signal s_lui                  : std_logic_vector(31 downto 0);
+        signal s_lui                  :  std_logic_vector(31 downto 0);
         signal s_B                    :  std_logic_vector(31 downto 0);
         signal s_A                    :  std_logic_vector(31 downto 0);
-        signal s_Cout_1               :  std_logic;
         signal s_Cout                 :  std_logic;
         signal s_OF                   :  std_logic;
         
@@ -145,15 +142,31 @@ architecture structure of ALU_32_bit is
                    o_O => s_nor);
 
           -- SLT --
+          ALU_SLT: nbit_adder_sub
+          generic map(32)
+          port map(i_A => inputA,
+                   i_B => inputB,
+                   i_AddSub => '1',
+                   o_Sum => s_hold,
+                   o_C => open);
+          with inputA(31) & inputB(31) & s_hold(31) select
+               s_slt <= x"00000000" when "000" | "110" | "010" | "011", 
+                        x"00000001" when others; 
 
-          -- SLL --
+          -- SLL -- barrel shifter
 
-          -- SRL --
+          -- SRL -- barrel shifter
 
-          -- SRA --
+          -- SRA -- barrel shifter
+
+          -- SLLV -- barrel shifter
+
+          -- SRLV -- barrel shifter
+
+          -- SRAV -- barrel shifter
 
           -- NOT --
-          ALU_NOT: ones_comp
+          ALU_NOT: onesComp
           generic map(32)
           port map(i_D => inputA,
                    o_O => s_not);
@@ -161,22 +174,10 @@ architecture structure of ALU_32_bit is
           -- LUI --
           s_lui <= inputB(15 downto 0)&"0000000000000000";
 
-        
-        mux : mux32_8_1
-        port map(i_0 => s_addsub,
-                 i_1 => s_shift,
-                 i_2 => s_or,
-                 i_3 => s_and,
-                 i_4 => s_xor,
-                 i_5 => s_slt,
-                 i_6 => s_iA,
-                 i_7 => s_iB,
-                 i_S => i_Op,
-                 o_F => o_F);
 
           --Output Selection--
           with opSelect select
-               o_F <= s_addsub when "000000000", --add  --"100000"
+               o_F <= s_addsub when "000000000", --add  
                s_and when "000000011", --and
                s_nor when "000010010", --nor
                s_xor when "000000100", --xor
@@ -184,10 +185,11 @@ architecture structure of ALU_32_bit is
                s_slt when "100000000", --slt
                s_sll when "000000001" , --sll
                s_srl when "000001001", --srl
-               s_sra when "000011", --sra
+               s_sra when "010001001", --sra
                s_sub when "100000000" --sub
-               s_sllv when "000000100", --sllv
-               s_srav when "001001000", --srav
+               s_sllv when "000100001", --sllv
+               s_srlv when "000101001", --srlv
+               s_srav when "010101001", --srav
                "111111111" when others;
 
           resultOut <= s_zero;
