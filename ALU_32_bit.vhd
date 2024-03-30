@@ -32,7 +32,7 @@ architecture structure of ALU_32_bit is
      generic (N : integer := 16);
           port(i_A      : in std_logic_vector(31 downto 0);
           i_B      : in std_logic_vector(31 downto 0);
-          i_AddSub : in std_logic;
+          nAddSub : in std_logic;
           o_Sum    : out std_logic_vector(31 downto 0);
           o_Cm     : out std_logic;
           o_C      : out std_logic
@@ -120,12 +120,13 @@ architecture structure of ALU_32_bit is
           
           -- ADD | SUB --
           adderN : nbit_adder_sub
-          port map(iA => inputA,
-                 iB => inputB,
-                 i_AddSub => i_Op(8),       -- 
-                 iC => i_Op(0),   -- carry in 
-                 oC => s_Cout,    -- carry out
-                 oS => s_addsub); -- sum output
+          port map(
+                 CLK => CLK,
+                 i_A => inputA,
+                 i_B => inputB,
+                 nAddSub => i_Op(8),  -- bit 8 deteremines addition or subtraction
+                 o_Sum => s_addsub,   -- output sum/difference   
+                 o_over => overflow); -- overflow flag
                  
           -- XOR --
           ALU_XOR: for i in 0 to 31 generate
@@ -146,7 +147,7 @@ architecture structure of ALU_32_bit is
           generic map(32)
           port map(i_A => inputA,
                    i_B => inputB,
-                   i_AddSub => '1',
+                   nAddSub => '1',
                    o_Sum => s_hold,
                    o_C => open);
           with inputA(31) & inputB(31) & s_hold(31) select
@@ -192,9 +193,9 @@ architecture structure of ALU_32_bit is
                s_srav when "010101001", --srav
                "111111111" when others;
 
-          resultOut <= s_zero;
+          resultOut <= o_F;
 
-          with s_zero select
+          with o_F select
                zeroOut <= '1' when x"00000000",
                           '0' when others;
 
