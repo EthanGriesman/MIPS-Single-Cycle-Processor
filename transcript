@@ -25,3 +25,122 @@ vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle
 # ** Note: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/nbit_ripple_adder.vhd(66): VHDL Compiler exiting
 # End time: 15:34:22 on Mar 30,2024, Elapsed time: 0:00:00
 # Errors: 1, Warnings: 0
+vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/nbit_ripple_adder.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 15:35:12 on Mar 30,2024
+# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/nbit_ripple_adder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nbit_ripple_adder
+# -- Compiling architecture structural of nbit_ripple_adder
+# End time: 15:35:12 on Mar 30,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/n_bit_adder_sub.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 15:35:25 on Mar 30,2024
+# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/n_bit_adder_sub.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity n_bit_adder_sub
+# -- Compiling architecture structural of n_bit_adder_sub
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/n_bit_adder_sub.vhd(55): (vcom-1136) Unknown identifier "i_AddSub".
+# ** Error (suppressible): /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/n_bit_adder_sub.vhd(61): (vcom-1141) Identifier "mux2to1_N" does not identify a component declaration.
+# ** Note: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/n_bit_adder_sub.vhd(78): VHDL Compiler exiting
+# End time: 15:35:25 on Mar 30,2024, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/n_bit_adder_sub.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 15:36:00 on Mar 30,2024
+# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/n_bit_adder_sub.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity n_bit_adder_sub
+# -- Compiling architecture structural of n_bit_adder_sub
+# ** Error (suppressible): /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/n_bit_adder_sub.vhd(61): (vcom-1141) Identifier "mux2to1_N" does not identify a component declaration.
+# ** Note: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/n_bit_adder_sub.vhd(78): VHDL Compiler exiting
+# End time: 15:36:00 on Mar 30,2024, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/n_bit_adder_sub.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 15:36:33 on Mar 30,2024
+# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/n_bit_adder_sub.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity n_bit_adder_sub
+# -- Compiling architecture structural of n_bit_adder_sub
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/n_bit_adder_sub.vhd(65): Signal [mode IN port] "i_B" is type ieee.std_logic_1164.STD_LOGIC_VECTOR; expecting type ieee.std_logic_1164.STD_LOGIC.
+# ** Note: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/n_bit_adder_sub.vhd(78): VHDL Compiler exiting
+# End time: 15:36:33 on Mar 30,2024, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/n_bit_adder_sub.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 15:40:41 on Mar 30,2024
+# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/n_bit_adder_sub.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity n_bit_adder_sub
+# -- Compiling architecture structural of n_bit_adder_sub
+# End time: 15:40:41 on Mar 30,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/n_bit_adder_sub.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 15:40:41 on Mar 30,2024
+# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/n_bit_adder_sub.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity n_bit_adder_sub
+# -- Compiling architecture structural of n_bit_adder_sub
+# End time: 15:40:41 on Mar 30,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/n_bit_adder_sub.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 15:42:09 on Mar 30,2024
+# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/n_bit_adder_sub.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity n_bit_adder_sub
+# -- Compiling architecture structural of n_bit_adder_sub
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/n_bit_adder_sub.vhd(65): Signal [mode IN port] "i_B" is type ieee.std_logic_1164.STD_LOGIC_VECTOR; expecting type ieee.std_logic_1164.STD_LOGIC.
+# ** Note: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/n_bit_adder_sub.vhd(78): VHDL Compiler exiting
+# End time: 15:42:09 on Mar 30,2024, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/nbit_ripple_adder.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 15:59:13 on Mar 30,2024
+# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/nbit_ripple_adder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nbit_ripple_adder
+# -- Compiling architecture arch of nbit_ripple_adder
+# End time: 15:59:13 on Mar 30,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/n_bit_adder_sub.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 16:03:54 on Mar 30,2024
+# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/n_bit_adder_sub.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity n_bit_adder_sub
+# -- Compiling architecture structural of n_bit_adder_sub
+# End time: 16:03:54 on Mar 30,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/nbit_ripple_adder.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 16:04:47 on Mar 30,2024
+# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/nbit_ripple_adder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nbit_ripple_adder
+# -- Compiling architecture structural of nbit_ripple_adder
+# End time: 16:04:47 on Mar 30,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
