@@ -18,7 +18,7 @@ entity ALU_32_bit is
           inputA       : in std_logic_vector(31 downto 0);
           inputB       : in std_logic_vector(31 downto 0);
           overflowEn   : in std_logic;
-          opSelect     : in std_logic_vector(3 downto 0);
+          opSelect     : in std_logic_vector(8 downto 0);
           zeroOut      : out std_logic; -- 1 when resultOut = 0
           overflow     : out std_logic;
           carryOut     : out std_logic;
@@ -32,7 +32,7 @@ architecture structure of ALU_32_bit is
      generic (N : integer := 16);
           port(i_A      : in std_logic_vector(31 downto 0);
           i_B      : in std_logic_vector(31 downto 0);
-          nAddSub : in std_logic;
+          i_AddSub : in std_logic;
           o_Sum    : out std_logic_vector(31 downto 0);
           o_Cm     : out std_logic;
           o_C      : out std_logic
@@ -49,21 +49,21 @@ architecture structure of ALU_32_bit is
     end component;
 
 
-    ---OR
+    -- OR GATE --
      component org2 is
           port(i_A	: in std_logic;
                i_B	: in std_logic;
                o_F	: out std_logic);
      end component;
      
-     --AND
+     -- AND GATE --
      component andg2 is
           port(i_A	: in std_logic;
                i_B	: in std_logic;
                o_F	: out std_logic);
      end component;
      
-     --XOR
+     -- XOR GATE -- 
      component xorg2 is
           port(i_A          : in std_logic;
                i_B          : in std_logic;
@@ -97,7 +97,10 @@ architecture structure of ALU_32_bit is
         signal s_lui                  :  std_logic_vector(31 downto 0);
         signal s_B                    :  std_logic_vector(31 downto 0);
         signal s_A                    :  std_logic_vector(31 downto 0);
-        signal s_Cout                 :  std_logic;
+        signal add_carryIn            :  std_logic;
+        signal add_carryOut           :  std_logic;
+        signal sub_carryIn            :  std_logic;
+        signal sub_carryOut           :  std_logic;
         signal s_OF                   :  std_logic;
         
         begin
@@ -124,10 +127,12 @@ architecture structure of ALU_32_bit is
                  CLK => CLK,
                  i_A => inputA,
                  i_B => inputB,
-                 nAddSub => i_Op(8),  -- bit 8 deteremines addition or subtraction
+                 i_AddSub => opSelect(8),  -- Determines addition or subtraction
                  o_Sum => s_addsub,   -- output sum/difference   
-                 o_over => overflow); -- overflow flag
-                 
+                 o_Cm    => (others => '0') when opSelect(8) = '0' else (others => sub_borrow_in),  -- Conditional assignment based on operation
+                 o_C     => add_carry_out when opSelect(8) = '0' else sub_carry_out  -- Conditional assignment based on operation
+          );
+
           -- XOR --
           ALU_XOR: for i in 0 to 31 generate
            XORGS: xorg2
