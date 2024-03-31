@@ -215,13 +215,22 @@ architecture structure of ALU_32_bit is
 
 
           --OVERFLOW DETECTION--
-          ALU_OF: xorg2
-          port map(i_A => s_co,
-                   i_B => s_cm,
-                   o_F => s_of_detect);
+          overflow_calc: xorg2
+          port map(
+              i_A => add_carryOut,   -- Carry out from addition
+              i_B => sub_carryOut,   -- Carry out from subtraction
+              o_F => s_overflow      -- Overflow signal    
+          );
      
           overflow <= s_overflow;
           zeroOut <= '1' when resultOut = (others => '0') else '0';
+
+          --Zero Calculation
+          zero_placeholder : std_logic_vector(31 downto 0);
+          zero_placeholder <= resultOut;  -- Placeholder for result
+          with zero_placeholder select
+              zeroOut <= '1' when "00000000",  -- If result is zero
+                         '0' when others;     -- Otherwise
 
         
 end structure;
