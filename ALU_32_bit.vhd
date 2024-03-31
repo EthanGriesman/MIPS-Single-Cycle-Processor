@@ -154,7 +154,7 @@ architecture structure of ALU_32_bit is
                    o_O => s_nor);
                    
           -- SLT --
-          ALU_SLT: nbit_adder_sub
+          ALU_SLT: nbit_addsub
           generic map(32)
           port map(
                     i_A => inputA,
@@ -178,7 +178,7 @@ architecture structure of ALU_32_bit is
 
           -- SRLV -- barrel shifter
 
-          -- SRAV -- barrel shifter
+          -- SRAV -- barrel shifter -- select register instead of immediate add in a mux
 
           -- NOT --
           ALU_NOT: onesComp
@@ -228,10 +228,7 @@ architecture structure of ALU_32_bit is
           --Zero Calculation
           zero_placeholder : std_logic_vector(31 downto 0);
           zero_placeholder <= resultOut;  -- Placeholder for result
-          with zero_placeholder select
-              zeroOut <= '1' when "000000000",  -- If result is zero
-                         '0' when others;     -- Otherwise
-
+          zeroOut <= '1' when zero_placeholder = (others => '0') else '0';
         
 end structure;
         
