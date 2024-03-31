@@ -18,7 +18,7 @@ entity ALU_32_bit is
           inputA       : in std_logic_vector(31 downto 0);
           inputB       : in std_logic_vector(31 downto 0);
           overflowEn   : in std_logic;
-          ishamt      : in std_logic_vector(4 downto 0);
+          i_shamt      : in std_logic_vector
           opSelect     : in std_logic_vector(8 downto 0);
           zeroOut      : out std_logic; -- 1 when resultOut = 0 Zero
           overflow     : out std_logic; -- Overflow
@@ -32,11 +32,11 @@ architecture structure of ALU_32_bit is
      component nbit_addsub is
      generic (N : integer := 16);
           port(i_A      : in std_logic_vector(31 downto 0);
-          i_B      : in std_logic_vector(31 downto 0);
-          i_AddSub : in std_logic;
-          o_Sum    : out std_logic_vector(31 downto 0);
-          o_Cm     : out std_logic;
-          o_C      : out std_logic
+               i_B      : in std_logic_vector(31 downto 0);
+               i_AddSub : in std_logic;
+               o_Sum    : out std_logic_vector(31 downto 0);
+               o_Cm     : out std_logic;
+               o_C      : out std_logic
           ); --Change to add previous carry as output in order to XOR for overflow
      end component;
 
@@ -102,6 +102,7 @@ architecture structure of ALU_32_bit is
         signal s_lui                  :  std_logic_vector(31 downto 0);
         signal s_B                    :  std_logic_vector(31 downto 0);
         signal s_A                    :  std_logic_vector(31 downto 0);
+        signal s_overflow             :  std_logic;
         signal add_carryIn            :  std_logic;
         signal add_carryOut           :  std_logic;
         signal sub_carryIn            :  std_logic;
@@ -122,7 +123,7 @@ architecture structure of ALU_32_bit is
           ALU_OR: for i in 0 to 31 generate
            ORGS: org2
            port map(i_A => inputA(i),
-                    i_B => inputB(i),
+                    i_B => inputB(i), 
                     o_F => s_or(i));
           end generate ALU_OR;
           
@@ -132,7 +133,7 @@ architecture structure of ALU_32_bit is
                  CLK => CLK,
                  i_A => inputA,
                  i_B => inputB,
-                 i_AddSub => opSelect(8),  -- 8th bit determines addition or subtraction
+                 i_AddSub => opSelect(8),  -- Determines addition or subtraction
                  o_Sum => s_addsub,        -- output sum/difference   
                  o_Cm    => (others => '0') when opSelect(8) = '0' else (others => sub_borrow_in),  -- Conditional assignment based on operation
                  o_C     => add_carry_out when opSelect(8) = '0' else sub_carry_out  -- Conditional assignment based on operation
@@ -190,8 +191,8 @@ architecture structure of ALU_32_bit is
 
 
           --Output Selection--
-          with opSelect select
-               o_F <= s_addsub when "000000000", --add  
+          with opSelect select  --diff than add sub
+          o_F <= s_addsub when "000000000", --add/sub  
                s_and when "000000011", --and
                s_nor when "000010010", --nor
                s_xor when "000000100", --xor
@@ -200,7 +201,7 @@ architecture structure of ALU_32_bit is
                s_sll when "000000001" , --sll
                s_srl when "000001001", --srl
                s_sra when "010001001", --sra
-               s_sub when "100000000" --sub
+               s_addsub when "100000000" --sub
                s_sllv when "000100001", --sllv
                s_srlv when "000101001", --srlv
                s_srav when "010101001", --srav
@@ -219,7 +220,8 @@ architecture structure of ALU_32_bit is
                    i_B => s_cm,
                    o_F => s_of_detect);
      
-          overflow <= s_OF and overflowEn;
+          overflow <= s_overflow;
+          zeroOut <= '1' when resultOut = (others => '0') else '0';
 
         
 end structure;
