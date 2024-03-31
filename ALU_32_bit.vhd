@@ -133,7 +133,7 @@ architecture structure of ALU_32_bit is
                  CLK => CLK,
                  i_A => inputA,
                  i_B => inputB,
-                 i_AddSub => opSelect(8),  -- Determines addition or subtraction
+                 i_AddSub => opSelect(9 downto 9),  -- Determines addition or subtraction
                  o_Sum => s_addsub,        -- output sum/difference   
                  o_Cm    => (others => '0') when opSelect(8) = '0' else (others => sub_borrow_in),  -- Conditional assignment based on operation
                  o_C     => add_carry_out when opSelect(8) = '0' else sub_carry_out  -- Conditional assignment based on operation
@@ -229,7 +229,7 @@ architecture structure of ALU_32_bit is
           zero_placeholder : std_logic_vector(31 downto 0);
           zero_placeholder <= resultOut;  -- Placeholder for result
           with zero_placeholder select
-              zeroOut <= '1' when "00000000",  -- If result is zero
+              zeroOut <= '1' when "000000000",  -- If result is zero
                          '0' when others;     -- Otherwise
 
         
