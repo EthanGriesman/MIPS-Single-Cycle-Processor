@@ -8,7 +8,6 @@ use IEEE.NUMERIC_STD.ALL; -- To use unsigned types
 entity add_sub is
     generic (N : integer := 32); -- Replace 4 with the actual bit width you need
     port (
-        i_C         : in std_logic; 
         i_nAdd_Sub  : in std_logic;
         iA          : in std_logic_vector(N-1 downto 0);
         iB          : in std_logic_vector(N-1 downto 0);

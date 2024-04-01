@@ -734,3 +734,14 @@ vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle
 # ** Note: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU_32bit.vhd(234): VHDL Compiler exiting
 # End time: 20:35:17 on Mar 31,2024, Elapsed time: 0:00:00
 # Errors: 3, Warnings: 2
+vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/nbit_addsub.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 21:09:14 on Mar 31,2024
+# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/nbit_addsub.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nbit_addsub
+# -- Compiling architecture structural of nbit_addsub
+# End time: 21:09:14 on Mar 31,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0

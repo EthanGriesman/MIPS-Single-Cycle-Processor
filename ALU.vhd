@@ -15,10 +15,10 @@ use IEEE.std_logic_1164.all;
 
 entity ALU is
    port(
-          inputA       : in std_logic_vector(31 downto 0);
-          inputB       : in std_logic_vector(31 downto 0);
+          inputA       : in std_logic_vector(31 downto 0); -- Operand 1
+          inputB       : in std_logic_vector(31 downto 0); -- Operand 2
           overflowEn   : in std_logic;
-          opSelect     : in std_logic_vector(8 downto 0);
+          opSelect     : in std_logic_vector(2 downto 0); -- Op Select
           zeroOut      : out std_logic; -- 1 when resultOut = 0 Zero
           overflow     : out std_logic; -- Overflow
           carryOut     : out std_logic; -- Carry out
@@ -85,8 +85,8 @@ architecture structure of ALU is
      --Signals--
      -----------
 
-        signal s_add                  :  std_logic_vector(31 downto 0); 
-        signal s_sub                  :  std_logic_vector(31 downto 0);     
+        signal s_addsub                  :  std_logic_vector(31 downto 0); 
+        signal s_zero_out                  :  std_logic_vector(31 downto 0);     
         signal s_or                   :  std_logic_vector(31 downto 0);
         signal s_and                  :  std_logic_vector(31 downto 0);
         signal s_xor                  :  std_logic_vector(31 downto 0);
