@@ -18,7 +18,6 @@ entity ALU_32_bit is
           inputA       : in std_logic_vector(31 downto 0);
           inputB       : in std_logic_vector(31 downto 0);
           overflowEn   : in std_logic;
-          i_shamt      : in std_logic_vector
           opSelect     : in std_logic_vector(8 downto 0);
           zeroOut      : out std_logic; -- 1 when resultOut = 0 Zero
           overflow     : out std_logic; -- Overflow
@@ -103,6 +102,7 @@ architecture structure of ALU_32_bit is
         signal s_B                    :  std_logic_vector(31 downto 0);
         signal s_A                    :  std_logic_vector(31 downto 0);
         signal s_overflow             :  std_logic;
+        signal zero_placeholder       :  std_logic_vector(31 downto 0);
         signal add_carryIn            :  std_logic;
         signal add_carryOut           :  std_logic;
         signal sub_carryIn            :  std_logic;
@@ -133,10 +133,10 @@ architecture structure of ALU_32_bit is
                  CLK => CLK,
                  i_A => inputA,
                  i_B => inputB,
-                 i_AddSub => opSelect(9 downto 9),  -- Determines addition or subtraction
+                 i_AddSub => opSelect(9 downto 9) and not opSelect(8),  -- Determines addition or subtraction
                  o_Sum => s_addsub,        -- output sum/difference   
-                 o_Cm    => (others => '0') when opSelect(8) = '0' else (others => sub_borrow_in),  -- Conditional assignment based on operation
-                 o_C     => add_carry_out when opSelect(8) = '0' else sub_carry_out  -- Conditional assignment based on operation
+                 o_Cm => (others => '0'),  -- Carry in, assuming no initial carry
+                 o_C => add_carryOut       -- Carry out -- Conditional assignment based on operation
           );
 
           -- XOR instruction --
@@ -154,19 +154,20 @@ architecture structure of ALU_32_bit is
                    o_O => s_nor);
                    
           -- SLT --
-          ALU_SLT: nbit_addsub
-          generic map(32)
-          port map(
+          ALU_SLT: nbit_adder_subtractor
+           generic map(32)
+           port map(
                     i_A => inputA,
                     i_B => inputB,
-                    nAddSub => '1',  -- Perform subtraction: inputA - inputB
-                    o_Sum => s_hold, -- The subtraction result
-                    o_over => open   -- Overflow not used here
-          );
+                    i_AddSub => '1',  -- Perform subtraction: inputA - inputB
+                    o_Sum => s_hold,  -- The subtraction result
+                    o_C => open       -- Ignore carry-out
+           );
 
-          -- Determine if inputA is less than inputB by checking the MSB of the subtraction result
-          s_slt <= '1' when s_hold(31) = '1' else  -- If result is negative, inputA is less than inputB
-               '0';                             -- Else, inputA is not less than inputB
+           with inputA(31) & inputB(31) & s_hold(31) select
+               s_slt <= '1' when "100",  -- If result MSB is 1, inputA < inputB
+                        '0' when others;  -- Otherwise, inputA >= inputB
+
 
           -- SLL -- barrel shifter
 
@@ -205,6 +206,7 @@ architecture structure of ALU_32_bit is
                s_sllv when "000100001", --sllv
                s_srlv when "000101001", --srlv
                s_srav when "010101001", --srav
+               s_lui when "001000001", --lui
                "111111111" when others;
 
           resultOut <= o_F;
@@ -226,7 +228,6 @@ architecture structure of ALU_32_bit is
           zeroOut <= '1' when resultOut = (others => '0') else '0';
 
           --Zero Calculation
-          zero_placeholder : std_logic_vector(31 downto 0);
           zero_placeholder <= resultOut;  -- Placeholder for result
           zeroOut <= '1' when zero_placeholder = (others => '0') else '0';
         
