@@ -15,6 +15,7 @@ use IEEE.std_logic_1164.all;
 
 entity barrelShifter is
     port(iDir   : in std_logic; -- 1->right 0->left
+         iSra   : in std_logic; -- 1->signExtend 0->zeroExtend
          ishamt : in std_logic_vector(4 downto 0);
          iInput : in std_logic_vector(31 downto 0);
          oOutput: out std_logic_vector(31 downto 0));
@@ -24,6 +25,7 @@ architecture mixed of barrelShifter is
     
     signal s_l0, s_l1, s_l2, s_l3, s_l4 : std_logic_vector(31 downto 0);
     signal s_r0, s_r1, s_r2, s_r3, s_r4 : std_logic_vector(31 downto 0);
+    signal s_ra0, s_ra1, s_ra2, s_ra3, s_ra4 : std_logic_vector(31 downto 0);
 
     begin
         s_l0 <= (iInput(30 downto 0) & '0') when ishamt(0) = '1' else
@@ -41,9 +43,6 @@ architecture mixed of barrelShifter is
         s_l4 <= (s_l3(15 downto 0) & "0000000000000000") when ishamt(4) = '1' else
                 s_l3(31 downto 0) when ishamt(4) = '0' else
                 (others => '0');
-        -- s_l0 <= (iInput(30 downto 0) & '0') when ishamt(0) = '1' else
-        --         iInput(31 downto 0) when ishamt(0) = '0' else
-        --         (others => '0');
 
         s_r0 <= ('0' & iInput(31 downto 1)) when ishamt(0) = '1' else
                 iInput(31 downto 0) when ishamt(0) = '0' else
@@ -60,9 +59,26 @@ architecture mixed of barrelShifter is
         s_r4 <= ("0000000000000000" & s_r3(31 downto 16)) when ishamt(4) = '1' else
                 s_r3(31 downto 0) when ishamt(4) = '0' else
                 (others => '0');
+
+        s_ra0 <= ('1' & iInput(31 downto 1)) when ishamt(0) = '1' else
+                iInput(31 downto 0) when ishamt(0) = '0' else
+                (others => '0');     
+        s_ra1 <= ("11" & s_ra0(31 downto 2) ) when ishamt(1) = '1' else
+                s_ra0(31 downto 0) when ishamt(1) = '0' else
+                (others => '0');
+        s_ra2 <= ("1111" & s_ra1(31 downto 4)) when ishamt(2) = '1' else
+                s_ra1(31 downto 0) when ishamt(2) = '0' else
+                (others => '0');
+        s_ra3 <= ("11111111" & s_ra2(31 downto 8)) when ishamt(3) = '1' else
+                s_ra2(31 downto 0) when ishamt(3) = '0' else
+                (others => '0');
+        s_ra4 <= ("1111111111111111" & s_ra3(31 downto 16)) when ishamt(4) = '1' else
+                s_ra3(31 downto 0) when ishamt(4) = '0' else
+                (others => '0');
         
         oOutput <= s_r4 when iDir = '1' else
                    s_l4 when iDir = '0' else
+                   s_ra4 when iDir = '1' and iSra = '1' and iInput(31) = '1' else
                    (others => '0');
                 
 end mixed;
