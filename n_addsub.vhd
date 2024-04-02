@@ -23,8 +23,7 @@ entity n_addsub is
         i_B        : in std_logic_vector(N-1 downto 0); -- Input B, a vector of N bits
         i_Add_Sub  : in std_logic; -- Add/Subtract control signal (0 for add, 1 for subtract)
         o_Sum      : out std_logic_vector(N-1 downto 0); -- Output sum/difference, N bits
-        o_Cm       : out std_logic; -- Carry out from the second last bit
-        o_C        : out std_logic  -- Carry out from the last bit
+        oC        : out std_logic  -- Carry out from the last bit
    );
 end n_addsub;
 

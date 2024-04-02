@@ -165,9 +165,15 @@ architecture structure of ALU is
           port map(i_D => s_or,
                    o_O => s_nor);
 
+          -- NOT --
+          ALU_NOT: onesComp
+          generic map(32)
+          port map(i_D => inputA,
+                   o_O => s_not);
+
           
-          -- ADD | SUB --
-          adderN : nbit_adder_sub
+          -- ADD SUB --
+          adderN : n_addsub
            port map(iA => inputA,
                     iB => inputB,
                     i_AddSub => s_minus,       -- 
@@ -194,33 +200,33 @@ architecture structure of ALU is
           ALU_SHIFTER: barrelShifter
            generic map(32)
            port map(
-                    iInput  => i_Bin,
+                    iInput  => inputB,
                     i_shamt => s_shamt,
                     iDir => s_dir,  -- Perform subtraction: inputA - inputB
                     iSra => s_sra,  -- The subtraction result
                     o_C => s_shift       -- Ignore carry-out
                );
 
-           with inputA(31) & inputB(31) & s_hold(31) select
-               s_slt <= "1" when "100",  -- If result MSB is 1, inputA < inputB
-                        "0" when others;  -- Otherwise, inputA >= inputB
+          -- SLT
+          s_sltOverflowCheck <= i_Ain(31) & i_Bin(31) & s_sltSum(31);
+          with s_sltOverflowCheck select
+            s_sltOverflowCheck <= '1' when "001",
+                                  '1' when "100",
+                                  '1' when "101",
+                                  '1' when "111",
+                                  '0' when others;
+
+          ALU_SLT: n_addsub
+          port map(i_A => inputA,
+                    i_B => inputB,
+                    i_AddSub => '1',       -- 
+                    iC => i_Op(0),   -- carry in 
+                    oC => s_sltSum,    -- carry out
+                    oS => s_sltC); -- sum output
 
 
-          -- SLL -- barrel shifter
-
-          -- SRL -- barrel shifter
-
-          -- SRA -- barrel shifter
-
-          -- SLLV -- barrel shifter
-          -- SRLV -- barrel shifter
-          -- SRAV -- barrel shifter -- select register instead of immediate add in a mux
-
-          -- NOT --
-          ALU_NOT: onesComp
-          generic map(32)
-          port map(i_D => inputA,
-                   o_O => s_not);
+          -- signal is 1 or 0
+          s_slt <= "0000000000000000000000000000000" & s_sltOverflow;
           
           -- LUI --
           s_lui <= inputB(15 downto 0)&"0000000000000000";
@@ -228,37 +234,41 @@ architecture structure of ALU is
 
           --Output Selection--
           with opSelect select  --diff than add sub
-          s_zero <= s_add when "000000000", --add/sub  
-               s_and when "000000011", --and
-               s_nor when "000010010", --nor
-               s_xor when "000000100", --xor
-               s_or when "000000010", --or
-               s_slt when "100000101", --slt
-               --s_sll when "000000001" , --sll
-               --s_srl when "000001001", --srl
-               --s_sra when "010001001", --sra
-               s_sub when "100000000", --sub
-              -- s_sllv when "000100001", --sllv
-               --s_srlv when "000101001", --srlv
-              -- s_srav when "010101001", --srav
-              -- s_lui when "001000001", --lui
-               "11111111111111111111111111111111" when others;
+          s_resultout <= s_add when "000000000", --add/sub  
+                         s_and when "000000011", --and
+                         s_nor when "000010010", --nor
+                         s_xor when "000000100", --xor
+                         s_or when "000000010", --or
+                         s_slt when "100000101", --slt
+                         --s_sll when "000000001" , --sll
+                         --s_srl when "000001001", --srl
+                         --s_sra when "010001001", --sra
+                         s_sub when "100000000", --sub
+                         -- s_sllv when "000100001", --sllv
+                         -- s_srlv when "000101001", --srlv
+                         -- s_srav when "010101001", --srav
+                         -- s_lui when "001000001", --lui
+                         "11111111111111111111111111111111" when others;
 
-          resultOut <= s_zero;
+          with s_resultout select
+            s_zero <= '1' when "0000000000000000000000000000000",
+                      '0' when others;
 
-          zeroOut <= '1' when s_zero = (others => '0'), -- Check if s_zero is all zeros
-                     '0' when others;
+          o_aluOut <= s_aluOut;
+          o_zero <= s_zero;
+          o_carry <= s_carry;
 
+          -- Logic for overflow
+          s_overflowCheck <= inputA(31) & inputB(31) & s_minus & s_sum(31);
+          with s_overflowCHeck select
+            s_overflow <= '1' when "001",
+                                  '1' when "0001",
+                                  '1' when "1100",
+                                  '1' when "0111",
+                                  '1' when "1010",
+                                  '0' when others;
 
-
-          --OVERFLOW DETECTION--
-          ALU_OF: xorg2
-           port map(i_A => s_co,
-                    i_B => s_cm,
-                    o_F => s_of_detect);
-
-           overflow <= s_of_detect and overflowEn;
-
+          overflow <= s_overflow AND overflowEn;
 
 end structure;
         
