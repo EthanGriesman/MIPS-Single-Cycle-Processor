@@ -17,12 +17,14 @@ entity ALU is
    port(
           inputA       : in std_logic_vector(31 downto 0); -- Operand 1
           inputB       : in std_logic_vector(31 downto 0); -- Operand 2
-          overflowEn   : in std_logic;
-          opSelect     : in std_logic_vector(2 downto 0); -- Op Select
-          zeroOut      : out std_logic; -- 1 when resultOut = 0 Zero
+          i_shamt      : in std_logic_vector(4 downto 0);
+          opSelect     : in std_logic_vector(3 downto 0); -- Op Select
+          overflowEn   : in std_logic; 
+          resultOut    : out std_logic_vector(31 downto 0); -- Result F
           overflow     : out std_logic; -- Overflow
           carryOut     : out std_logic; -- Carry out
-          resultOut    : out std_logic_vector(31 downto 0)); -- Result F
+          zeroOut      : out std_logic; -- 1 when resultOut = 0 Zero
+     );
 end ALU;
 
 architecture structure of ALU is
@@ -43,6 +45,7 @@ architecture structure of ALU is
      component barrelShifter
           port (
             iDir            : in std_logic;                       -- Right or Left shift
+            iSra            : in std_logic; -- 1->signExtend 0->zeroExtend
             ishamt          : in std_logic_vector(4 downto 0);   -- Shift amount
             iInput          : in std_logic_vector(31 downto 0);  -- Input data
             oOutput         : out std_logic_vector(31 downto 0)  -- Output
@@ -85,31 +88,53 @@ architecture structure of ALU is
      --Signals--
      -----------
 
-        signal s_addsub                  :  std_logic_vector(31 downto 0); 
-        signal s_zero_out                  :  std_logic_vector(31 downto 0);     
-        signal s_or                   :  std_logic_vector(31 downto 0);
+        -- Bitwise signals --
         signal s_and                  :  std_logic_vector(31 downto 0);
+        signal s_or                   :  std_logic_vector(31 downto 0);
         signal s_xor                  :  std_logic_vector(31 downto 0);
+        signal s_not                  :  std_logic_vector(31 downto 0);
+        signal s_nor                  :  std_logic_vector(31 downto 0);
+
+        -- Arithmetic signals --
+        signal s_sum                  :  std_logic_vector(31 downto 0);
+        signal s_minus                :  std_logic;
+        signal s_carry                :  std_logic;
+
+        -- Shifter signals --
+        signal s_shift                :  std_logic_vector(31 downto 0);
+        signal s_sra                  :  std_logic_vector(31 downto 0);
+        signal s_dir                  :  std_logic_vector(31 downto 0);
+        signal s_shamt                :  std_logic_vector(31 downto 0);
+
+        -- Misc signals --    
         signal s_slt                  :  std_logic_vector(31 downto 0);
+        signal s_sltSum               :  std_logic_vector(31 downto 0);
+        signal s_sltC                 :  std_logic_vector(31 downto 0);
+        signal s_sltOverflow          :  std_logic_vector(31 downto 0);
+        signal s_sltOverflowCheck     :  std_logic_vector(31 downto 0);
+
+        -- ALU signal
+        signal s_resultout            :  std_logic_vector(31 downto 0);
+        signal s_zero                 :  std_logic;
+
+        -- Overflow signal --
+        signal s_overflowCheck        :  std_logic_vector(3 downto 0);
+        signal s_overflow             :  std_logic;
+
+
+
         signal s_sll                  :  std_logic_vector(31 downto 0);
         signal s_srl                  :  std_logic_vector(31 downto 0);
         signal s_sra                  :  std_logic_vector(31 downto 0);
         signal s_sllv                 :  std_logic_vector(31 downto 0);
         signal s_srlv                 :  std_logic_vector(31 downto 0);
         signal s_srav                 :  std_logic_vector(31 downto 0);
-        signal s_nor                  :  std_logic_vector(31 downto 0);
-        signal s_not                  :  std_logic_vector(31 downto 0);
         signal s_lui                  :  std_logic_vector(31 downto 0);
-        signal s_zero                 :  std_logic_vector(31 downto 0);
-        signal s_cm                   :  std_logic;
-        signal s_co                   :  std_logic;
-        signal s_of_detect            :  std_logic;
-        signal s_hold                 : std_logic_vector(31 downto 0); --placeholder
 
         
         begin
 
-          -- AND instruction --
+          -- AND --
           ALU_AND: for i in 0 to 31 generate
            ANDGS: andg2
            port map(i_A => inputA(i),
@@ -117,7 +142,7 @@ architecture structure of ALU is
                     o_F => s_and(i));
           end generate ALU_AND;
 
-          -- OR instruction --
+          -- OR --
           ALU_OR: for i in 0 to 31 generate
            ORGS: org2
            port map(i_A => inputA(i),
@@ -125,27 +150,8 @@ architecture structure of ALU is
                     o_F => s_or(i));
           end generate ALU_OR;
 
-          
-          --ADD--
-          ALU_ADD: nbit_addsub
-           generic map(32)
-           port map(i_A => inputA,
-                    i_B => inputB,
-                    i_AddSub => '0',
-                    o_Sum => s_add,
-                    o_Cm  => s_cm,
-                    o_C   => s_co);
 
-          --SUB--
-          ALU_SUB: nbit_addsub
-           generic map(32)
-           port map(i_A => inputA,
-                    i_B => inputB,
-                    i_AddSub => '1',
-                    o_Sum => s_sub,
-                    o_C   => open);
-
-          -- XOR instruction --
+          -- XOR --
           ALU_XOR: for i in 0 to 31 generate
            XORGS: xorg2
            port map(i_A => inputA(i),
@@ -153,22 +159,47 @@ architecture structure of ALU is
                     o_F => s_xor(i));
           end generate ALU_XOR;
           
-          -- NOR instruction --
+          -- NOR --
           ALU_NOR: onesComp
           generic map (32)
           port map(i_D => s_or,
                    o_O => s_nor);
-                   
-          -- SLT --
-          ALU_SLT: nbit_addsub
+
+          
+          -- ADD | SUB --
+          adderN : nbit_adder_sub
+           port map(iA => inputA,
+                    iB => inputB,
+                    i_AddSub => s_minus,       -- 
+                    iC => i_Op(0),   -- carry in 
+                    oC => s_carry,    -- carry out
+                    oS => s_sum); -- sum output
+
+
+          -- 0 for left, 1 for right --          
+          with opSelect select 
+            s_dir <= '0' when "1000" | "1011"
+                     '1' when others;
+          
+          -- 0 for logical, 1 for arithmetic --
+          with opSelect select 
+            s_sra <= '0' when "1000" | "1011"
+                     '1' when others;
+         
+          with opSelect select 
+            s_shamt <= i_shamt when "1000" | "1001" | "1010",
+                      when others;
+
+          -- Barrel Shifter
+          ALU_SHIFTER: barrelShifter
            generic map(32)
            port map(
-                    i_A => inputA,
-                    i_B => inputB,
-                    i_AddSub => '1',  -- Perform subtraction: inputA - inputB
-                    o_Sum => s_hold,  -- The subtraction result
-                    o_C => open       -- Ignore carry-out
-           );
+                    iInput  => i_Bin,
+                    i_shamt => s_shamt,
+                    iDir => s_dir,  -- Perform subtraction: inputA - inputB
+                    iSra => s_sra,  -- The subtraction result
+                    o_C => s_shift       -- Ignore carry-out
+               );
 
            with inputA(31) & inputB(31) & s_hold(31) select
                s_slt <= "1" when "100",  -- If result MSB is 1, inputA < inputB
@@ -182,9 +213,7 @@ architecture structure of ALU is
           -- SRA -- barrel shifter
 
           -- SLLV -- barrel shifter
-
           -- SRLV -- barrel shifter
-
           -- SRAV -- barrel shifter -- select register instead of immediate add in a mux
 
           -- NOT --
