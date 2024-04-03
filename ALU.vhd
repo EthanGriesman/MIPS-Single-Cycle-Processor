@@ -24,7 +24,7 @@ entity ALU is
           opSelect     : in std_logic_vector(8 downto 0); -- Op Select
           overflowEn   : in std_logic; 
           resultOut    : out std_logic_vector(31 downto 0); -- Result F
-          overflow     : out std_logic; 		   -- Overflow
+          overflow     : out std_logic; -- Overflow
           carryOut     : out std_logic; -- Carry out
           zeroOut      : out std_logic -- 1 when resultOut = 0 Zero
      );
@@ -103,12 +103,12 @@ architecture structure of ALU is
         signal s_shamt                :  std_logic_vector(4 downto 0); -- ammount of shifts to perform
 
         -- Misc signals --    
-        signal s_slt                  :  std_logic_vector(31 downto 0);
-        signal s_sltSum               :  std_logic;
-        signal s_sltC                 :  std_logic_vector(31 downto 0);
+        signal s_slt                  :  std_logic_vector(31 downto 0); -- slt
+        signal s_sltSum               :  std_logic;                     -- slt sum
+        signal s_sltC                 :  std_logic_vector(31 downto 0); -- slt carry
 
         -- ALU signal
-        signal s_resultout            :  std_logic_vector(31 downto 0);
+        signal s_resultout            :  std_logic_vector(31 downto 0); -- result out
         signal s_zero                 :  std_logic;
 
         -- Overflow signal --
@@ -116,6 +116,10 @@ architecture structure of ALU is
         signal s_overflow             :  std_logic;
         
         begin
+
+          --------------
+          -- BITWISE ---
+          --------------
 
           -- AND -- --done
           ALU_AND: for i in 0 to 31 generate
@@ -153,6 +157,9 @@ architecture structure of ALU is
           port map(i_D => inputA,
                    o_O => s_not);
                    
+          --------------
+          -- ADD SUB ---
+          --------------
 
           -- generate minus signal --
           with opSelect select
@@ -161,13 +168,15 @@ architecture structure of ALU is
 
           -- ADD SUB --
           adderN : n_addsub
-           port map(i_A => inputA,
-                    i_B => inputB,
-                    i_C => s_minus,       -- 
-                    o_Sum => s_sum,    -- carry out
-                    oC => s_carry); -- sum outpuT
+           port map(i_A => inputA,      -- inputA
+                    i_B => inputB,      -- inputB
+                    i_C => s_minus,     -- control bit to determine 
+                    o_Sum => s_sum,     -- carry out
+                    oC => s_carry);     -- sum output
 
-
+          --------------
+          -- SHIFTING --
+          --------------
 
           -- direction generation: 0 for left, 1 for right --          
           with opSelect select
@@ -199,14 +208,15 @@ architecture structure of ALU is
                     oOutput => s_shift
                );
 
-         -- SLT --
-         ALU_SLT: n_addsub
-         port map(i_A => inputA,
-                   i_B => inputB,
-                   i_C => '1',       -- Subtraction for SLT 
-                   oC => s_sltSum,    
-                   o_Sum => s_sltC); 
+          -- SLT --
+          ALU_SLT: n_addsub
+           port map(i_A => inputA,
+                    i_B => inputB,
+                    i_C => '1',       -- Subtraction for SLT 
+                    oC => s_sltSum,    
+                    o_Sum => s_sltC); 
 
+          
 
           --MUX for output--
           with opSelect select  --diff than add sub
