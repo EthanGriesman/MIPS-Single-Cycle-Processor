@@ -126,10 +126,10 @@ R25
 R20
 R21
 Ealu
-Z26 w1712112544
+Z26 w1712115136
 R10
 R11
-!i122 95
+!i122 113
 R3
 Z27 8/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd
 Z28 F/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd
@@ -139,11 +139,11 @@ V7PCk88:gDVk7A;If:?=751
 !s100 CBdGofa7<09THeZdc`LLc2
 R15
 32
-Z30 !s110 1712112547
+!s110 1712115145
 !i10b 1
-Z31 !s108 1712112547.000000
-Z32 !s90 -reportprogress|300|-work|work|/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd|
-!s107 /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd|
+!s108 1712115145.000000
+Z30 !s90 -reportprogress|300|-work|work|/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd|
+Z31 !s107 /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd|
 !i113 0
 R20
 R21
@@ -158,22 +158,22 @@ Vk23L>`03H^PR<VbXRg`ei2
 !s100 IR2K]SZfM3ZA_`WGc<PNl0
 R15
 32
-R30
+!s110 1712112547
 !i10b 1
+!s108 1712112547.000000
+R30
 R31
-R32
-Z33 !s107 /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd|
 !i113 0
 R20
 R21
 Ealu_32_bit
-Z34 w1711934948
+Z32 w1711934948
 R10
 R11
 !i122 61
 R3
-Z35 8/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU_32_bit.vhd
-Z36 F/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU_32_bit.vhd
+Z33 8/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU_32_bit.vhd
+Z34 F/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU_32_bit.vhd
 l0
 R29
 VP^:73;^gI5MUNTe]DdcKA1
@@ -183,8 +183,8 @@ R15
 !s110 1711934954
 !i10b 1
 !s108 1711934953.000000
-Z37 !s90 -reportprogress|300|-work|work|/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU_32_bit.vhd|
-Z38 !s107 /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU_32_bit.vhd|
+Z35 !s90 -reportprogress|300|-work|work|/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU_32_bit.vhd|
+Z36 !s107 /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU_32_bit.vhd|
 !i113 0
 R20
 R21
@@ -202,8 +202,8 @@ R8
 !s110 1711575625
 !i10b 1
 !s108 1711575625.000000
-R37
-R38
+R35
+R36
 !i113 0
 R13
 R14
@@ -230,65 +230,65 @@ R15
 R20
 R21
 Ealu_shifter
-Z39 w1711488992
+Z37 w1711488992
 R10
 R11
 !i122 19
 R3
-Z40 8/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU_shifter.vhd
-Z41 F/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU_shifter.vhd
+Z38 8/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU_shifter.vhd
+Z39 F/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU_shifter.vhd
 l0
-Z42 L12 1
-Z43 VmYQ4Zc`oFUiWmE2K:iO1o0
-Z44 !s100 CmWUdWdNh2bCl7Va=3@Bc0
+Z40 L12 1
+Z41 VmYQ4Zc`oFUiWmE2K:iO1o0
+Z42 !s100 CmWUdWdNh2bCl7Va=3@Bc0
 R15
 32
-Z45 !s110 1711489000
+Z43 !s110 1711489000
 !i10b 1
-Z46 !s108 1711489000.000000
-Z47 !s90 -reportprogress|300|-work|work|/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU_shifter.vhd|
-Z48 !s107 /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU_shifter.vhd|
+Z44 !s108 1711489000.000000
+Z45 !s90 -reportprogress|300|-work|work|/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU_shifter.vhd|
+Z46 !s107 /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU_shifter.vhd|
 !i113 0
-R35
-R36
+R33
+R34
 Astructural
 R10
 R11
-Z49 DEx4 work 11 alu_shifter 0 22 mYQ4Zc`oFUiWmE2K:iO1o0
+Z47 DEx4 work 11 alu_shifter 0 22 mYQ4Zc`oFUiWmE2K:iO1o0
 !i122 19
 l54
-Z50 L23 59
-Z51 VHQIN<2<<<MeXo73AO5N`Y1
-Z52 !s100 aPUnG7=kR@73;lnoWOC>l3
+Z48 L23 59
+Z49 VHQIN<2<<<MeXo73AO5N`Y1
+Z50 !s100 aPUnG7=kR@73;lnoWOC>l3
 R15
 32
-R45
+R43
 !i10b 1
+R44
+R45
 R46
-R47
-R48
 !i113 0
-R35
-R36
+R33
+R34
 Ealu_shifter
-R39
+R37
 R4
 R5
 !i122 19
 R2
+R38
+R39
+l0
 R40
 R41
-l0
 R42
-R43
-R44
 R8
 32
-R45
+R43
 !i10b 1
+R44
+R45
 R46
-R47
-R48
 !i113 0
 R13
 R14
@@ -296,22 +296,22 @@ R3
 Astructural
 R4
 R5
-R49
+R47
 !i122 19
 l54
+R48
+R49
 R50
-R51
-R52
 R8
 32
-R45
+R43
 !i10b 1
+R44
+R45
 R46
-R47
-R48
 !i113 0
-R35
-R36
+R33
+R34
 Eandg2
 R9
 R10
@@ -321,7 +321,7 @@ R3
 8/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/andg2.vhd
 F/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/andg2.vhd
 l0
-Z53 L23 1
+Z51 L23 1
 VQf>?20ho>9XHGTg4:jo373
 !s100 0e<Rg^QbB^Y@JP[zKSc0[3
 R15
@@ -329,18 +329,18 @@ R15
 R16
 !i10b 1
 R17
-Z54 !s90 -reportprogress|300|-work|work|/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/andg2.vhd|
-Z55 !s107 /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/andg2.vhd|
+Z52 !s90 -reportprogress|300|-work|work|/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/andg2.vhd|
+Z53 !s107 /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/andg2.vhd|
 !i113 0
-R35
-R36
+R33
+R34
 Adataflow
 R10
 R11
 DEx4 work 5 andg2 0 22 Qf>?20ho>9XHGTg4:jo373
 !i122 10
 l32
-Z56 L31 6
+Z54 L31 6
 VHdBJDB9no8cjMZ2eVYWH;1
 !s100 CbBW?3Q;N[15?`QCEQ<@f2
 R15
@@ -348,30 +348,30 @@ R15
 R16
 !i10b 1
 R17
-R54
-R55
+R52
+R53
 !i113 0
-R35
-R36
+R33
+R34
 Ebarrelshifter
-Z57 w1712008576
+Z55 w1712008576
 R10
 R11
 !i122 67
-Z58 d/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor
-Z59 8/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/barrelShifter.vhd
-Z60 F/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/barrelShifter.vhd
+Z56 d/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor
+Z57 8/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/barrelShifter.vhd
+Z58 F/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/barrelShifter.vhd
 l0
 R29
 V78OY5c8:?ij1m344:M>Oh0
 !s100 aZ[GZPM1=mKj1DJz7bJz<1
 R15
 32
-Z61 !s110 1712008612
+Z59 !s110 1712008612
 !i10b 1
-Z62 !s108 1712008612.000000
-Z63 !s90 -reportprogress|300|-work|work|/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/barrelShifter.vhd|
-Z64 !s107 /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/barrelShifter.vhd|
+Z60 !s108 1712008612.000000
+Z61 !s90 -reportprogress|300|-work|work|/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/barrelShifter.vhd|
+Z62 !s107 /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/barrelShifter.vhd|
 !i113 0
 R20
 R21
@@ -386,36 +386,36 @@ VHo1_>_LHg8f`@PSza`ZdU2
 !s100 hN7X;KY:JQhQDaTI1JXYI1
 R15
 32
-R61
+R59
 !i10b 1
+R60
+R61
 R62
-R63
-R64
 !i113 0
 R20
 R21
 Econtrolmodule
-Z65 w1711751538
+Z63 w1711751538
 R10
 R11
 !i122 24
-R58
+R56
 8/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd
 F/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd
 l0
-R40
+R38
 VDQlaKzNFWkaJN?IhNlHe=3
 !s100 9EfV=oIYbVFJf05Sn5Nce0
 R15
 32
-Z66 !s110 1711751541
+Z64 !s110 1711751541
 !i10b 1
-Z67 !s108 1711751541.000000
-Z68 !s90 -reportprogress|300|-work|work|/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd|
-Z69 !s107 /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd|
+Z65 !s108 1711751541.000000
+Z66 !s90 -reportprogress|300|-work|work|/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd|
+Z67 !s107 /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/controlModule.vhd|
 !i113 0
-R35
-R36
+R33
+R34
 Adataflow
 R10
 R11
@@ -427,16 +427,16 @@ VNJ]7c^PSbm=D2?K^mYR;F1
 !s100 =`Qo^BL_cLfg>=fFIafRU0
 R15
 32
-R66
+R64
 !i10b 1
+R65
+R66
 R67
-R68
-R69
 !i113 0
-R35
-R36
+R33
+R34
 Efetch
-Z70 w1711475072
+Z68 w1711475072
 R10
 R11
 !i122 11
@@ -444,7 +444,7 @@ R3
 8/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/fetch.vhd
 F/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/fetch.vhd
 l0
-R40
+R38
 VegYVh<HKIlCEFgQOW`L163
 !s100 YT_@djI2hOkci8U_R3XWV1
 R15
@@ -452,11 +452,11 @@ R15
 R16
 !i10b 1
 R17
-Z71 !s90 -reportprogress|300|-work|work|/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/fetch.vhd|
-Z72 !s107 /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/fetch.vhd|
+Z69 !s90 -reportprogress|300|-work|work|/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/fetch.vhd|
+Z70 !s107 /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/fetch.vhd|
 !i113 0
-R35
-R36
+R33
+R34
 Amixed
 R10
 R11
@@ -471,30 +471,30 @@ R15
 R16
 !i10b 1
 R17
-R71
-R72
+R69
+R70
 !i113 0
-R35
-R36
+R33
+R34
 En_bit_adder_sub
-Z73 w1711832623
+Z71 w1711832623
 R10
 R11
 !i122 34
 R3
-Z74 8/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/n_bit_adder_sub.vhd
-Z75 F/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/n_bit_adder_sub.vhd
+Z72 8/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/n_bit_adder_sub.vhd
+Z73 F/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/n_bit_adder_sub.vhd
 l0
 L4 1
 VU@cWh7^d;DKK`fXb68nEn1
 !s100 <cU0=E2Q5PE^8k5Sf^W@73
 R15
 32
-Z76 !s110 1711832634
+Z74 !s110 1711832634
 !i10b 1
-Z77 !s108 1711832634.000000
-Z78 !s90 -reportprogress|300|-work|work|/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/n_bit_adder_sub.vhd|
-Z79 !s107 /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/n_bit_adder_sub.vhd|
+Z75 !s108 1711832634.000000
+Z76 !s90 -reportprogress|300|-work|work|/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/n_bit_adder_sub.vhd|
+Z77 !s107 /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/n_bit_adder_sub.vhd|
 !i113 0
 R20
 R21
@@ -509,33 +509,33 @@ VNY`>m:G7A9ONI^5h3=7d:3
 !s100 bA7H`^<nzZgKdLm9omFBo3
 R15
 32
-R76
+R74
 !i10b 1
+R75
+R76
 R77
-R78
-R79
 !i113 0
 R20
 R21
 Enbit_addsub
-Z80 w1711832854
+Z78 w1711832854
 R10
 R11
 !i122 66
 R3
-Z81 8/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/nbit_addsub.vhd
-Z82 F/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/nbit_addsub.vhd
+Z79 8/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/nbit_addsub.vhd
+Z80 F/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/nbit_addsub.vhd
 l0
-Z83 L17 1
+Z81 L17 1
 Vi:3081EGh3jB16cG<C<3b0
 !s100 goGOV_=TWH>cfFgKF9D`D0
 R15
 32
-Z84 !s110 1711937354
+Z82 !s110 1711937354
 !i10b 1
-Z85 !s108 1711937354.000000
-Z86 !s90 -reportprogress|300|-work|work|/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/nbit_addsub.vhd|
-Z87 !s107 /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/nbit_addsub.vhd|
+Z83 !s108 1711937354.000000
+Z84 !s90 -reportprogress|300|-work|work|/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/nbit_addsub.vhd|
+Z85 !s107 /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/nbit_addsub.vhd|
 !i113 0
 R20
 R21
@@ -550,33 +550,33 @@ VTW6j1dIDn=01Co:@AeOm51
 !s100 Z<9^SYZAoI@N15f>JQbjo1
 R15
 32
-R84
+R82
 !i10b 1
+R83
+R84
 R85
-R86
-R87
 !i113 0
 R20
 R21
 Enbit_ripple_adder
-Z88 w1711832677
+Z86 w1711832677
 R10
 R11
 !i122 35
 R3
-Z89 8/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/nbit_ripple_adder.vhd
-Z90 F/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/nbit_ripple_adder.vhd
+Z87 8/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/nbit_ripple_adder.vhd
+Z88 F/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/nbit_ripple_adder.vhd
 l0
-R83
+R81
 V8g@g1ohT`RP1ZZL>SPLG;2
 !s100 im@O1Ha^g1oQT:J[C>TV^1
 R15
 32
-Z91 !s110 1711832687
+Z89 !s110 1711832687
 !i10b 1
-Z92 !s108 1711832687.000000
-Z93 !s90 -reportprogress|300|-work|work|/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/nbit_ripple_adder.vhd|
-Z94 !s107 /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/nbit_ripple_adder.vhd|
+Z90 !s108 1711832687.000000
+Z91 !s90 -reportprogress|300|-work|work|/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/nbit_ripple_adder.vhd|
+Z92 !s107 /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/nbit_ripple_adder.vhd|
 !i113 0
 R20
 R21
@@ -591,11 +591,11 @@ VV_cM8Okk:^^5QS]404aSg0
 !s100 fGj5AU=565BoKc263:^PA2
 R15
 32
-R91
+R89
 !i10b 1
+R90
+R91
 R92
-R93
-R94
 !i113 0
 R20
 R21
@@ -613,8 +613,8 @@ R15
 !s110 1711832353
 !i10b 1
 !s108 1711832353.000000
-R93
-R94
+R91
+R92
 !i113 0
 R20
 R21
@@ -628,7 +628,7 @@ R3
 8/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/org2.vhd
 F/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/org2.vhd
 l0
-R53
+R51
 VhOiEZ0HVFKUfoceE;g4CN1
 !s100 hJAZ>EB8bm_e<^5IFaP9e1
 R15
@@ -636,18 +636,18 @@ R15
 R16
 !i10b 1
 R17
-Z95 !s90 -reportprogress|300|-work|work|/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/org2.vhd|
-Z96 !s107 /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/org2.vhd|
+Z93 !s90 -reportprogress|300|-work|work|/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/org2.vhd|
+Z94 !s107 /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/org2.vhd|
 !i113 0
-R35
-R36
+R33
+R34
 Adataflow
 R10
 R11
 DEx4 work 4 org2 0 22 hOiEZ0HVFKUfoceE;g4CN1
 !i122 12
 l32
-R56
+R54
 VeLGLG944lJMT]Df59N0F92
 !s100 nma>Pa=mMW`KzzjeW=1[d1
 R15
@@ -655,18 +655,18 @@ R15
 R16
 !i10b 1
 R17
-R95
-R96
+R93
+R94
 !i113 0
-R35
-R36
+R33
+R34
 Etb_controlmodule
-Z97 w1711579504
-Z98 DPx4 ieee 16 std_logic_textio 0 22 C8j>g0lzF^EAA]5<S6PY32
+Z95 w1711579504
+Z96 DPx4 ieee 16 std_logic_textio 0 22 C8j>g0lzF^EAA]5<S6PY32
 R10
 R11
 !i122 22
-R58
+R56
 8/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/tb_controlModule.vhd
 F/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/tb_controlModule.vhd
 l0
@@ -675,16 +675,16 @@ VU4h[efZV590:A<eHglQQ[2
 !s100 T8]Cz0<=S@7KZFH<FNNLG3
 R15
 32
-Z99 !s110 1711581077
+Z97 !s110 1711581077
 !i10b 1
-Z100 !s108 1711581077.000000
-Z101 !s90 -reportprogress|300|-work|work|/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/tb_controlModule.vhd|
-Z102 !s107 /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/tb_controlModule.vhd|
+Z98 !s108 1711581077.000000
+Z99 !s90 -reportprogress|300|-work|work|/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/tb_controlModule.vhd|
+Z100 !s107 /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/tb_controlModule.vhd|
 !i113 0
-R35
-R36
+R33
+R34
 Amixed
-R98
+R96
 R10
 R11
 DEx4 work 16 tb_controlmodule 0 22 U4h[efZV590:A<eHglQQ[2
@@ -695,16 +695,16 @@ Vz[4TBOmJ2XCKI`9o8@R4>1
 !s100 HA:KBH1i]8J?V]dIM`zXO2
 R15
 32
-R99
+R97
 !i10b 1
+R98
+R99
 R100
-R101
-R102
 !i113 0
-R35
-R36
+R33
+R34
 Etb_fetch
-Z103 w1711401662
+Z101 w1711401662
 R10
 R11
 !i122 13
@@ -720,11 +720,11 @@ R15
 R16
 !i10b 1
 R17
-Z104 !s90 -reportprogress|300|-work|work|/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/tb_fetch.vhd|
-Z105 !s107 /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/tb_fetch.vhd|
+Z102 !s90 -reportprogress|300|-work|work|/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/tb_fetch.vhd|
+Z103 !s107 /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/tb_fetch.vhd|
 !i113 0
-R35
-R36
+R33
+R34
 Atestbench
 R10
 R11
@@ -739,13 +739,13 @@ R15
 R16
 !i10b 1
 R17
-R104
-R105
+R102
+R103
 !i113 0
-R35
-R36
+R33
+R34
 Exorg2
-Z106 w1711238912
+Z104 w1711238912
 R10
 R11
 !i122 14
@@ -753,7 +753,7 @@ R3
 8/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/xorg2.vhd
 F/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/xorg2.vhd
 l0
-R53
+R51
 VA]ncWhoC:fhLS`F>c9^ag2
 !s100 zGkHVGJ]HQ5RboN2N>KzN1
 R15
@@ -761,18 +761,18 @@ R15
 R16
 !i10b 1
 R17
-Z107 !s90 -reportprogress|300|-work|work|/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/xorg2.vhd|
-Z108 !s107 /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/xorg2.vhd|
+Z105 !s90 -reportprogress|300|-work|work|/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/xorg2.vhd|
+Z106 !s107 /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/src/fetch/xorg2.vhd|
 !i113 0
-R35
-R36
+R33
+R34
 Adataflow
 R10
 R11
 DEx4 work 5 xorg2 0 22 A]ncWhoC:fhLS`F>c9^ag2
 !i122 14
 l32
-R56
+R54
 VV`;B_39=:h3bCoQNhV;bn0
 !s100 2<f]d3XziROLh_[:_6mNg2
 R15
@@ -780,8 +780,8 @@ R15
 R16
 !i10b 1
 R17
-R107
-R108
+R105
+R106
 !i113 0
-R35
-R36
+R33
+R34

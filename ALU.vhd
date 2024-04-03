@@ -31,7 +31,7 @@ architecture structure of ALU is
 
      --AddSub
      component n_addsub is
-     generic (N : integer := 16);
+     generic (N : integer := 32);
           port(i_A      : in std_logic_vector(31 downto 0);
                i_B      : in std_logic_vector(31 downto 0);
                i_Add_Sub : in std_logic;
@@ -108,11 +108,11 @@ architecture structure of ALU is
         signal s_shamt                :  std_logic_vector(4 downto 0);
 
         -- Misc signals --    
-        signal s_slt                  :  std_logic_vector(31 downto 0);
+        signal s_slt                  :  std_logic;
         signal s_sltSum               :  std_logic_vector(31 downto 0);
         signal s_sltC                 :  std_logic_vector(31 downto 0);
         signal s_sltOverflow          :  std_logic_vector(31 downto 0);
-        signal s_sltOverflowCheck     :  std_logic_vector(31 downto 0);
+        signal s_sltOverflowCheck     :  std_logic;
 
         -- ALU signal
         signal s_resultout            :  std_logic_vector(31 downto 0);
@@ -179,7 +179,7 @@ architecture structure of ALU is
           -- Determine shift amount and shift type (logical/arithmetic)
           with opSelect select
               s_shamt <= i_shamt when "000000001" | "000001001" | "010001001",  -- SLL, SRL, SRA
-               inputA(31 downto 0) when "000100001" | "000101001" | "010101001",  -- SLLV, SRLV, SRAV
+               inputA(4 downto 0) when "000100001" | "000101001" | "010101001",  -- SLLV, SRLV, SRAV
                          (others => '0') when others;
 
           -- Determine whether to perform an arithmetic shift
@@ -199,14 +199,17 @@ architecture structure of ALU is
                );
 
 
-          -- SLT
-         s_sltOverflowCheck <= i_Ain(31) & i_Bin(31) & s_sltSum(31);
-         with s_sltOverflowCheck select
-           s_sltOverflowCheck <= '1' when "001",
-                                 '1' when "100",
-                                 '1' when "101",
-                                 '1' when "111",
-                                 '0' when others;
+          -- SLT overflow check calculation
+          s_sltOverflowCheck <= (inputA(31) and (not inputB(31))) or
+                                ((inputA(31) xor inputB(31)) and s_sltC(31));
+
+          -- SLT overflow check selection
+          with s_sltOverflowCheck select
+               s_sltOverflowCheck <= '1' when "001",
+                                     '1' when "100",
+                                     '1' when "101",
+                                     '1' when "111",
+                                     '0' when others;
 
          ALU_SLT: n_addsub
          port map(i_A => inputA,
@@ -216,7 +219,7 @@ architecture structure of ALU is
                    o_Sum => s_sltC); -- sum output
 
          -- signal is 1 or 0
-         s_slt <= "0000000000000000000000000000000" & s_sltOverflow;
+         s_slt <= s_sltOverflowCheck;
 
           --Output Selection--
           with opSelect select  --diff than add sub
@@ -233,7 +236,6 @@ architecture structure of ALU is
                          s_shift when "000100001", --sllv
                          s_shift when "000101001", --srlv
                          s_shift when "010101001", --srav
-                         s_lui when "001000001", --lui
                          "11111111111111111111111111111111" when others;
 
           with s_resultout select
@@ -246,7 +248,7 @@ architecture structure of ALU is
 
           -- Logic for overflow
           s_overflowCheck <= inputA(31) & inputB(31) & s_minus & s_sum(31);
-          with s_overflowCHeck select
+          with s_overflowCheck select
             s_overflow <=         '1' when "0001",
                                   '1' when "1100",
                                   '1' when "0111",
