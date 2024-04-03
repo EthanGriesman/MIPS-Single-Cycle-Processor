@@ -18,15 +18,15 @@ use IEEE.NUMERIC_STD.ALL; -- To use unsigned types
 
 entity ALU is
    port(
-          inputA       : in std_logic_vector(31 downto 0); -- Operand 1
-          inputB       : in std_logic_vector(31 downto 0); -- Operand 2
-          i_shamt      : in std_logic_vector(4 downto 0);
-          opSelect     : in std_logic_vector(8 downto 0); -- Op Select
-          overflowEn   : in std_logic; 
+          inputA       : in std_logic_vector(31 downto 0);  -- Operand 1
+          inputB       : in std_logic_vector(31 downto 0);  -- Operand 2
+          i_shamt      : in std_logic_vector(4 downto 0);   -- shift amount
+          opSelect     : in std_logic_vector(8 downto 0);   -- Op Select
+          overflowEn   : in std_logic;                      -- overflow enable
           resultOut    : out std_logic_vector(31 downto 0); -- Result F
-          overflow     : out std_logic; -- Overflow
-          carryOut     : out std_logic; -- Carry out
-          zeroOut      : out std_logic -- 1 when resultOut = 0 Zero
+          overflow     : out std_logic;                     -- Overflow
+          carryOut     : out std_logic;                     -- Carry out
+          zeroOut      : out std_logic  -- 1 when resultOut = 0 Zero
      );
 end ALU;
 
@@ -75,7 +75,7 @@ architecture structure of ALU is
                o_F          : out std_logic);
      end component;
      
-    -- INVERT --
+     -- INVERT --
      component onesComp is
           generic(N : integer := 32);
           port(
@@ -185,13 +185,13 @@ architecture structure of ALU is
                        '0' when others;  -- Default to left shift
 
 
-          -- type generation: 0 for logical, 1 for arithmetic
+          -- 0 for logical, 1 for arithmetic
           with opSelect select
               s_sra <= '0' when "000000001" | "000001001" | "000100001" | "000101001",  -- Logical shifts
                        '1' when "010001001" | "010101001",  -- Arithmetic shifts (SRA, SRAV)
                        '0' when others;
 
-          -- Determine shift amount and shift type (logical/arithmetic)
+          -- shift amount, shift type (logical/arithmetic)
           with opSelect select
               s_shamt <= i_shamt when "000000001" | "000001001" | "010001001",  -- SLL, SRL, SRA
                inputA(4 downto 0) when "000100001" | "000101001" | "010101001",  -- SLLV, SRLV, SRAV
@@ -226,7 +226,7 @@ architecture structure of ALU is
                          s_or when "000000010", --or
                          s_xor when "000000100", --xor
                          s_nor when "000010010", --nor
-                         s_slt when "100000101", --slt
+                         s_slt when   "100000101", --slt
                          s_shift when "000000001" , --sll
                          s_shift when "000001001", --srl
                          s_shift when "010001001", --sra
