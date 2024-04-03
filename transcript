@@ -297,3 +297,38 @@ vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle
 # -- Compiling architecture structure of ALU
 # End time: 17:14:02 on Apr 03,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/tb_barrelShifter.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 17:14:43 on Apr 03,2024
+# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/tb_barrelShifter.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity tb_barrelShifter
+# -- Compiling architecture tb_arch of tb_barrelShifter
+# End time: 17:14:43 on Apr 03,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.tb_barrelshifter -voptargs=+acc
+# vsim work.tb_barrelshifter -voptargs="+acc" 
+# Start time: 17:14:54 on Apr 03,2024
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tb_barrelshifter(tb_arch)#1
+# Loading work.barrelshifter(mixed)#1
+add wave -position insertpoint  \
+sim:/tb_barrelshifter/gCLK_HPER \
+sim:/tb_barrelshifter/CLK \
+sim:/tb_barrelshifter/reset \
+sim:/tb_barrelshifter/iDir_tb \
+sim:/tb_barrelshifter/iSra_tb \
+sim:/tb_barrelshifter/ishamt_tb \
+sim:/tb_barrelshifter/iInput_tb \
+sim:/tb_barrelshifter/oOutput_tb \
+sim:/tb_barrelshifter/cCLK_PER
+run 400

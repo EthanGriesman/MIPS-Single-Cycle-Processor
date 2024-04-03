@@ -216,10 +216,10 @@ architecture structure of ALU is
           with opSelect select  --diff than add sub
           s_resultout <= s_sum when "000000000", --add  
                          s_sum when "100000000", --sub
-                         s_and when "000000011", --and
-                         s_or when "000000010", --or
-                         s_xor when "000000100", --xor
-                         s_nor when "000010010", --nor
+                         s_and when   "000000011", --and
+                         s_or when    "000000010", --or
+                         s_xor when   "000000100", --xor
+                         s_nor when   "000010010", --nor
                          s_slt when   "100000101", --slt
                          s_shift when "000000001" , --sll
                          s_shift when "000001001", --srl
@@ -230,8 +230,6 @@ architecture structure of ALU is
                          "11111111111111111111111111111111" when others;
 
           -- Zero flag logic --
-          -- if two input operands are equal --
-          -- beq bne --
           with s_resultout select
             s_zero <= '1' when "00000000000000000000000000000000",
                       '0' when others;

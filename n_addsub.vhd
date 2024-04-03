@@ -54,8 +54,8 @@ architecture structural of n_addsub is
        generic(N : integer := 32); -- Bit width, defaulting to 32
        port(i_iA        : in std_logic_vector(N-1 downto 0); -- Input A
             i_iB        : in std_logic_vector(N-1 downto 0); -- Input B
-            i_iC        : in std_logic; -- Input carry
-            o_oS        : out std_logic_vector(N-1 downto 0); -- Output sum
+            i_iC         : in std_logic; -- Input carry
+            o_oS         : out std_logic_vector(N-1 downto 0); -- Output sum
             o_oC         : out std_logic); -- Output carry from the last bit
    end component;
   
