@@ -214,3 +214,44 @@ vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle
 # ** Note: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(261): VHDL Compiler exiting
 # End time: 16:38:58 on Apr 03,2024, Elapsed time: 0:00:00
 # Errors: 2, Warnings: 0
+vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 16:50:58 on Apr 03,2024
+# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package NUMERIC_STD
+# -- Compiling entity ALU
+# -- Compiling architecture structure of ALU
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(209): Signal "s_sltSum" is type ieee.std_logic_1164.STD_LOGIC_VECTOR; expecting type ieee.std_logic_1164.STD_LOGIC.
+# ** Note: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(253): VHDL Compiler exiting
+# End time: 16:50:58 on Apr 03,2024, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 16:51:27 on Apr 03,2024
+# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package NUMERIC_STD
+# -- Compiling entity ALU
+# -- Compiling architecture structure of ALU
+# End time: 16:51:27 on Apr 03,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 16:54:43 on Apr 03,2024
+# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package NUMERIC_STD
+# -- Compiling entity ALU
+# -- Compiling architecture structure of ALU
+# End time: 16:54:43 on Apr 03,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0

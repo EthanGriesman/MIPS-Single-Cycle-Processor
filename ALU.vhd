@@ -24,7 +24,7 @@ entity ALU is
           opSelect     : in std_logic_vector(8 downto 0); -- Op Select
           overflowEn   : in std_logic; 
           resultOut    : out std_logic_vector(31 downto 0); -- Result F
-          overflow     : out std_logic; -- Overflow
+          overflow     : out std_logic; 		   -- Overflow
           carryOut     : out std_logic; -- Carry out
           zeroOut      : out std_logic -- 1 when resultOut = 0 Zero
      );
@@ -104,10 +104,8 @@ architecture structure of ALU is
 
         -- Misc signals --    
         signal s_slt                  :  std_logic_vector(31 downto 0);
-        signal s_sltSum               :  std_logic_vector(31 downto 0);
+        signal s_sltSum               :  std_logic;
         signal s_sltC                 :  std_logic_vector(31 downto 0);
-        signal s_sltOverflow          :  std_logic;
-        signal s_sltOverflowCheck     :  std_logic;
 
         -- ALU signal
         signal s_resultout            :  std_logic_vector(31 downto 0);
@@ -200,16 +198,6 @@ architecture structure of ALU is
                     iInput => inputA,  -- Assuming inputA is the value to be shifted
                     oOutput => s_shift
                );
-
-          -- overflow check for SLT operation
-          s_sltOverflowCheck <= (inputA(31) and (not inputB(31))) or
-                                ((inputA(31) xor inputB(31)) and s_sltC(31));
-
-          -- SLT overflow check selection
-          -- selects value of overflow based on overflow check
-          with s_sltOverflowCheck select
-               s_sltOverflow <= '1' when "001", --negative
-                                '0' when others; --positive
 
          -- SLT --
          ALU_SLT: n_addsub

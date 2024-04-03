@@ -13,7 +13,6 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.std_logic_arith.all;
-use std.env.all;
 use std.textio.all;
 use IEEE.NUMERIC_STD.ALL; -- To use unsigned types
 
@@ -61,12 +60,14 @@ architecture structure of ALU is
                i_B	: in std_logic;
                o_F	: out std_logic);
      end component;
+
      -- AND GATE --
      component andg2 is
           port(i_A	: in std_logic;
                i_B	: in std_logic;
                o_F	: out std_logic);
      end component;
+
      -- XOR GATE -- 
      component xorg2 is
           port(i_A          : in std_logic;
@@ -74,7 +75,7 @@ architecture structure of ALU is
                o_F          : out std_logic);
      end component;
      
-    -- ONOT/INVERT --
+    -- INVERT --
      component onesComp is
           generic(N : integer := 32);
           port(
@@ -84,7 +85,7 @@ architecture structure of ALU is
      end component;
 
         -- Bitwise signals --
-        signal s_and                  :  std_logic_vector(31 downto 0); 
+        signal s_and                  :  std_logic_vector(31 downto 0); --done
         signal s_or                   :  std_logic_vector(31 downto 0); 
         signal s_xor                  :  std_logic_vector(31 downto 0);
         signal s_not                  :  std_logic_vector(31 downto 0);
@@ -92,7 +93,7 @@ architecture structure of ALU is
 
         -- Arithmetic signals --
         signal s_sum                  :  std_logic_vector(31 downto 0); -- add or sub depending on control signals
-        signal s_minus                :  std_logic_vector(31 downto 0); -- set to 1 to make adder subtract instead of add
+        signal s_minus                :  std_logic; -- set to 1 to make adder subtract instead of add
         signal s_carry                :  std_logic;                     -- for fullAdder output
 
         -- Shifter signals --
@@ -103,10 +104,8 @@ architecture structure of ALU is
 
         -- Misc signals --    
         signal s_slt                  :  std_logic_vector(31 downto 0);
-        signal s_sltSum               :  std_logic_vector(31 downto 0);
-        signal s_sltC                 :  std_logic;
-        signal s_sltOverflow          :  std_logic;
-        signal s_sltOverflowCheck     :  std_logic_vector(2 downto 0);
+        signal s_sltSum               :  std_logic;
+        signal s_sltC                 :  std_logic_vector(31 downto 0);
 
         -- ALU signal
         signal s_resultout            :  std_logic_vector(31 downto 0);
@@ -166,11 +165,8 @@ architecture structure of ALU is
                     i_B => inputB,
                     i_C => s_minus,       -- 
                     o_Sum => s_sum,    -- carry out
-                    oC => s_carry); -- sum output
+                    oC => s_carry); -- sum outpuT
 
-          s_minus <= '1' when opSelect = "100000000" else  -- Assuming this opSelect value corresponds to subtraction
-                    '0' when others;  -- Default to addition for other cases
- 
 
 
           -- direction generation: 0 for left, 1 for right --          
@@ -203,19 +199,7 @@ architecture structure of ALU is
                     oOutput => s_shift
                );
 
-
-          -- SLT overflow check calculation
-          s_sltOverflowCheck <= (inputA(31) and (not inputB(31))) or
-                                ((inputA(31) xor inputB(31)) and s_sltC(31));
-
-          -- SLT overflow check selection
-          with s_sltOverflowCheck select
-               s_sltOverflowCheck <= '1' when "001",
-                                     '1' when "100",
-                                     '1' when "101",
-                                     '1' when "111",
-                                     '0' when others;
-
+         -- SLT --
          ALU_SLT: n_addsub
          port map(i_A => inputA,
                    i_B => inputB,
@@ -223,10 +207,8 @@ architecture structure of ALU is
                    oC => s_sltSum,    
                    o_Sum => s_sltC); 
 
-         -- signal is 1 or 0
-         s_slt <= s_sltOverflowCheck;
 
-          --Output Selection--
+          --MUX for output--
           with opSelect select  --diff than add sub
           s_resultout <= s_sum when "000000000", --add  
                          s_sum when "100000000", --sub
@@ -244,6 +226,8 @@ architecture structure of ALU is
                          "11111111111111111111111111111111" when others;
 
           -- Zero flag logic --
+          -- if two input operands are equal --
+          -- beq bne --
           with s_resultout select
             s_zero <= '1' when "00000000000000000000000000000000",
                       '0' when others;
@@ -262,7 +246,7 @@ architecture structure of ALU is
                                   '1' when "1010",
                                   '0' when others;
 
-          overflow <= s_overflow AND overflowEn;
+          overflow <= s_overflow AND overflowEn; 
 
 end structure;
         
