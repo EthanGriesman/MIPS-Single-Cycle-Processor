@@ -36,6 +36,6 @@ begin
             i_C => s_Carry(i));
     end generate G_NBit_ADDER;
 
-    o_oC <= s_Carry(N);
+    o_C <= s_Carry(N);
 
 end structural;

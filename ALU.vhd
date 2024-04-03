@@ -90,15 +90,15 @@ architecture structure of ALU is
      -----------
 
         -- Bitwise signals --
-        signal s_and                  :  std_logic_vector(31 downto 0);
-        signal s_or                   :  std_logic_vector(31 downto 0);
+        signal s_and                  :  std_logic_vector(31 downto 0); 
+        signal s_or                   :  std_logic_vector(31 downto 0); 
         signal s_xor                  :  std_logic_vector(31 downto 0);
         signal s_not                  :  std_logic_vector(31 downto 0);
         signal s_nor                  :  std_logic_vector(31 downto 0);
 
         -- Arithmetic signals --
-        signal s_sum                  :  std_logic_vector(31 downto 0);
-        signal s_minus                :  std_logic;
+        signal s_sum                  :  std_logic_vector(31 downto 0); --add
+        signal s_minus                :  std_logic_vector(31 downto 0);
         signal s_carry                :  std_logic;
 
         -- Shifter signals --
@@ -124,7 +124,7 @@ architecture structure of ALU is
         
         begin
 
-          -- AND --
+          -- AND -- --done
           ALU_AND: for i in 0 to 31 generate
            ANDGS: andg2
            port map(i_A => inputA(i),
@@ -132,7 +132,7 @@ architecture structure of ALU is
                     o_F => s_and(i));
           end generate ALU_AND;
 
-          -- OR --
+          -- OR -- --done
           ALU_OR: for i in 0 to 31 generate
            ORGS: org2
            port map(i_A => inputA(i),
@@ -140,7 +140,7 @@ architecture structure of ALU is
                     o_F => s_or(i));
           end generate ALU_OR;
 
-          -- XOR --
+          -- XOR -- --done
           ALU_XOR: for i in 0 to 31 generate
            XORGS: xorg2
            port map(i_A => inputA(i),
@@ -148,13 +148,13 @@ architecture structure of ALU is
                     o_F => s_xor(i));
           end generate ALU_XOR;
           
-          -- NOR --
+          -- NOR -- --done
           ALU_NOR: onesComp
           generic map (32)
           port map(i_D => s_or,
                    o_O => s_nor);
 
-          -- NOT --
+          -- NOT -- --done
           ALU_NOT: onesComp
           generic map(32)
           port map(i_D => inputA,

@@ -72,7 +72,7 @@ architecture structural of n_addsub is
        i_iA => i_A,
        i_iB => mux_Out,
        i_iC => i_C,
-       o_oS => o_Sum,
+       o_iS => o_Sum,
        o_oC => oC
    );
 
