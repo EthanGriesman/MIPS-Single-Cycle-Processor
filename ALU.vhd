@@ -13,7 +13,6 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.std_logic_arith.all;
-use std.env.all;
 use std.textio.all;
 use IEEE.NUMERIC_STD.ALL; -- To use unsigned types
 
@@ -166,11 +165,8 @@ architecture structure of ALU is
                     i_B => inputB,
                     i_C => s_minus,       -- 
                     o_Sum => s_sum,    -- carry out
-                    oC => s_carry); -- sum output
+                    oC => s_carry); -- sum outpuT
 
-          s_minus <= '1' when opSelect = "100000000" else  -- Assuming this opSelect value corresponds to subtraction
-                    '0' when others;  -- Default to addition for other cases
- 
 
 
           -- direction generation: 0 for left, 1 for right --          
@@ -226,7 +222,7 @@ architecture structure of ALU is
          -- signal is 1 or 0
          s_slt <= s_sltOverflowCheck;
 
-          --Output Selection--
+          --big mux for output--
           with opSelect select  --diff than add sub
           s_resultout <= s_sum when "000000000", --add  
                          s_sum when "100000000", --sub
