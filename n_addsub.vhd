@@ -76,7 +76,6 @@ architecture structural of n_addsub is
        o_oC => oC
    );
 
-
    -- Instantiate the multiplexer to select between B and its complement
    mux: mux2t1_N
    generic map(N)
@@ -86,7 +85,6 @@ architecture structural of n_addsub is
        i_D1 => s_Bi,
        o_O => mux_Out
    );
-
 
    -- Instantiate the one's complement component for B
    ones_complementor: onesComp

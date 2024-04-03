@@ -60,12 +60,14 @@ architecture structure of ALU is
                i_B	: in std_logic;
                o_F	: out std_logic);
      end component;
+
      -- AND GATE --
      component andg2 is
           port(i_A	: in std_logic;
                i_B	: in std_logic;
                o_F	: out std_logic);
      end component;
+
      -- XOR GATE -- 
      component xorg2 is
           port(i_A          : in std_logic;
@@ -73,7 +75,7 @@ architecture structure of ALU is
                o_F          : out std_logic);
      end component;
      
-    -- ONOT/INVERT --
+    -- INVERT --
      component onesComp is
           generic(N : integer := 32);
           port(
@@ -83,7 +85,7 @@ architecture structure of ALU is
      end component;
 
         -- Bitwise signals --
-        signal s_and                  :  std_logic_vector(31 downto 0); 
+        signal s_and                  :  std_logic_vector(31 downto 0); --done
         signal s_or                   :  std_logic_vector(31 downto 0); 
         signal s_xor                  :  std_logic_vector(31 downto 0);
         signal s_not                  :  std_logic_vector(31 downto 0);
@@ -199,19 +201,17 @@ architecture structure of ALU is
                     oOutput => s_shift
                );
 
-
-          -- SLT overflow check calculation
+          -- overflow check for SLT operation
           s_sltOverflowCheck <= (inputA(31) and (not inputB(31))) or
                                 ((inputA(31) xor inputB(31)) and s_sltC(31));
 
           -- SLT overflow check selection
+          -- selects value of overflow based on overflow check
           with s_sltOverflowCheck select
-               s_sltOverflowCheck <= '1' when "001",
-                                     '1' when "100",
-                                     '1' when "101",
-                                     '1' when "111",
-                                     '0' when others;
+               s_sltOverflow <= '1' when "001", --negative
+                                '0' when others; --positive
 
+         -- SLT --
          ALU_SLT: n_addsub
          port map(i_A => inputA,
                    i_B => inputB,
@@ -219,10 +219,8 @@ architecture structure of ALU is
                    oC => s_sltSum,    
                    o_Sum => s_sltC); 
 
-         -- signal is 1 or 0
-         s_slt <= s_sltOverflowCheck;
 
-          --big mux for output--
+          --MUX for output--
           with opSelect select  --diff than add sub
           s_resultout <= s_sum when "000000000", --add  
                          s_sum when "100000000", --sub
