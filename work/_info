@@ -126,12 +126,12 @@ R25
 R20
 R21
 Ealu
-Z26 w1712178119
+Z26 w1712178635
 DPx4 ieee 11 numeric_std 0 22 F8@]:i<mFK7<TjIzKcTGi0
 DPx4 ieee 15 std_logic_arith 0 22 B[jVX6I8iRX2o6WYW0BB>3
 R10
 R11
-!i122 138
+!i122 139
 R3
 Z27 8/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd
 Z28 F/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd
@@ -141,9 +141,9 @@ V=1@MGmd<^k<SkEeFOG^NG0
 !s100 NTDc2J_2A2DLF5iAeFbM=2
 R15
 32
-!s110 1712178123
+!s110 1712178644
 !i10b 1
-!s108 1712178123.000000
+!s108 1712178644.000000
 Z29 !s90 -reportprogress|300|-work|work|/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd|
 Z30 !s107 /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd|
 !i113 0
@@ -233,17 +233,17 @@ R20
 R21
 Ealu_shifter
 Z37 w1711488992
-R4
-R5
+R10
+R11
 !i122 19
-R2
+R3
 Z38 8/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU_shifter.vhd
 Z39 F/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU_shifter.vhd
 l0
 Z40 L12 1
 Z41 VmYQ4Zc`oFUiWmE2K:iO1o0
 Z42 !s100 CmWUdWdNh2bCl7Va=3@Bc0
-R8
+R15
 32
 Z43 !s110 1711489000
 !i10b 1
@@ -251,19 +251,18 @@ Z44 !s108 1711489000.000000
 Z45 !s90 -reportprogress|300|-work|work|/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU_shifter.vhd|
 Z46 !s107 /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU_shifter.vhd|
 !i113 0
-R13
-R14
-R3
+R32
+R33
 Astructural
-R4
-R5
+R10
+R11
 Z47 DEx4 work 11 alu_shifter 0 22 mYQ4Zc`oFUiWmE2K:iO1o0
 !i122 19
 l54
 Z48 L23 59
 Z49 VHQIN<2<<<MeXo73AO5N`Y1
 Z50 !s100 aPUnG7=kR@73;lnoWOC>l3
-R8
+R15
 32
 R43
 !i10b 1
@@ -275,17 +274,17 @@ R32
 R33
 Ealu_shifter
 R37
-R10
-R11
+R4
+R5
 !i122 19
-R3
+R2
 R38
 R39
 l0
 R40
 R41
 R42
-R15
+R8
 32
 R43
 !i10b 1
@@ -293,18 +292,19 @@ R44
 R45
 R46
 !i113 0
-R32
-R33
+R13
+R14
+R3
 Astructural
-R10
-R11
+R4
+R5
 R47
 !i122 19
 l54
 R48
 R49
 R50
-R15
+R8
 32
 R43
 !i10b 1

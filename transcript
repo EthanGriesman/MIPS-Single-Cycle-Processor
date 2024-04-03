@@ -134,3 +134,23 @@ vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle
 # ** Note: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(263): VHDL Compiler exiting
 # End time: 16:02:03 on Apr 03,2024, Elapsed time: 0:00:00
 # Errors: 6, Warnings: 0
+vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 16:10:44 on Apr 03,2024
+# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package NUMERIC_STD
+# -- Compiling entity ALU
+# -- Compiling architecture structure of ALU
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(209): String literal found where non-array type ieee.std_logic_1164.STD_ULOGIC was expected.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(210): String literal found where non-array type ieee.std_logic_1164.STD_ULOGIC was expected.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(211): String literal found where non-array type ieee.std_logic_1164.STD_ULOGIC was expected.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(212): String literal found where non-array type ieee.std_logic_1164.STD_ULOGIC was expected.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(219): Signal "s_sltSum" is type ieee.std_logic_1164.STD_LOGIC_VECTOR; expecting type ieee.std_logic_1164.STD_LOGIC.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(223): Signal "s_sltOverflowCheck" is type ieee.std_logic_1164.STD_LOGIC; expecting type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Note: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(265): VHDL Compiler exiting
+# End time: 16:10:44 on Apr 03,2024, Elapsed time: 0:00:00
+# Errors: 6, Warnings: 0
