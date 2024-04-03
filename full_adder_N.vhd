@@ -24,7 +24,7 @@ architecture structural of full_adder_N is
 
 begin
 
-    s_Carry(0) <= i_iC;
+    s_Carry(0) <= i_iC; 
 
     -- Instantiate n mux instances --
     G_NBit_ADDER: for i in 0 to N-1 generate

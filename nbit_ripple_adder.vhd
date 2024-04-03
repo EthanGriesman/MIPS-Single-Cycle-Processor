@@ -21,7 +21,7 @@ entity nbit_ripple_adder is
         i_B   : in std_logic_vector(N - 1 downto 0); 
         i_C   : in std_logic; -- input carry
         o_Sum : out std_logic_vector(N - 1 downto 0); -- output sum
-        o_Cm  : out std_logic;
+        o_Cm  : out std_logic; -- carry second to last bit for xor on overflow
         o_C   : out std_logic -- output carry
     );
 end nbit_ripple_adder;

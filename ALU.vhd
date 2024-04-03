@@ -91,7 +91,7 @@ architecture structure of ALU is
 
         -- Arithmetic signals --
         signal s_sum                  :  std_logic_vector(31 downto 0); -- add or sub depending on control signals
-        signal s_minus                :  std_logic_vector(31 downto 0); -- set to 1 to make adder subtract instead of add
+        signal s_minus                :  std_logic; -- set to 1 to make adder subtract instead of add
         signal s_carry                :  std_logic;                     -- for fullAdder output
 
         -- Shifter signals --
@@ -103,9 +103,9 @@ architecture structure of ALU is
         -- Misc signals --    
         signal s_slt                  :  std_logic_vector(31 downto 0);
         signal s_sltSum               :  std_logic_vector(31 downto 0);
-        signal s_sltC                 :  std_logic;
+        signal s_sltC                 :  std_logic_vector(31 downto 0);
         signal s_sltOverflow          :  std_logic;
-        signal s_sltOverflowCheck     :  std_logic_vector(2 downto 0);
+        signal s_sltOverflowCheck     :  std_logic;
 
         -- ALU signal
         signal s_resultout            :  std_logic_vector(31 downto 0);
@@ -240,6 +240,8 @@ architecture structure of ALU is
                          "11111111111111111111111111111111" when others;
 
           -- Zero flag logic --
+          -- if two input operands are equal --
+          -- beq bne --
           with s_resultout select
             s_zero <= '1' when "00000000000000000000000000000000",
                       '0' when others;
@@ -258,7 +260,7 @@ architecture structure of ALU is
                                   '1' when "1010",
                                   '0' when others;
 
-          overflow <= s_overflow AND overflowEn;
+          overflow <= s_overflow AND overflowEn; 
 
 end structure;
         
