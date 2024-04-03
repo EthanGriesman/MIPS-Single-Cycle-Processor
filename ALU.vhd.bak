@@ -112,7 +112,7 @@ architecture structure of ALU is
         signal s_sltSum               :  std_logic_vector(31 downto 0);
         signal s_sltC                 :  std_logic_vector(31 downto 0);
         signal s_sltOverflow          :  std_logic_vector(31 downto 0);
-        signal s_sltOverflowCheck     :  std_logic_vector;
+        signal s_sltOverflowCheck     :  std_logic;
 
         -- ALU signal
         signal s_resultout            :  std_logic_vector(31 downto 0);
@@ -199,17 +199,17 @@ architecture structure of ALU is
                );
 
 
-          -- SLT --
-          -- since SLT compares thru subtraction, it needs its own overflow check --
-         -- SLT overflow check calculation
-          s_sltOverflowCheck <= inputA(31) and (not inputB(31)) or
-                              (inputA(31) xor inputB(31)) and s_sltC(31);
-         with s_sltOverflowCheck select
-           s_sltOverflowCheck <= '1' when "001",
-                                 '1' when "100",
-                                 '1' when "101",
-                                 '1' when "111",
-                                 '0' when others;
+          -- SLT overflow check calculation
+          s_sltOverflowCheck <= (inputA(31) and (not inputB(31))) or
+                                ((inputA(31) xor inputB(31)) and s_sltC(31));
+
+          -- SLT overflow check selection
+          with s_sltOverflowCheck select
+               s_sltOverflowCheck <= '1' when "001",
+                                     '1' when "100",
+                                     '1' when "101",
+                                     '1' when "111",
+                                     '0' when others;
 
          ALU_SLT: n_addsub
          port map(i_A => inputA,

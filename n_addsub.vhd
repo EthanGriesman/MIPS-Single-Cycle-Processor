@@ -21,9 +21,9 @@ entity n_addsub is
    port(
         i_A        : in std_logic_vector(N-1 downto 0); -- Input A, a vector of N bits
         i_B        : in std_logic_vector(N-1 downto 0); -- Input B, a vector of N bits
-        i_Add_Sub  : in std_logic; -- Add/Subtract control signal (0 for add, 1 for subtract)
+        i_C        : in std_logic; -- Add/Subtract control signal (0 for add, 1 for subtract)
         o_Sum      : out std_logic_vector(N-1 downto 0); -- Output sum/difference, N bits
-        oC        : out std_logic  -- Carry out from the last bit
+        oC         : out std_logic  -- Carry out from the last bit
    );
 end n_addsub;
 
@@ -60,8 +60,8 @@ architecture structural of n_addsub is
             o_C        : out std_logic); -- Output carry from the last bit
    end component;
   
-   -- Declare signals for internal connections
-   signal notB         : std_logic_vector(N-1 downto 0); -- To hold the one's complement of B
+   -- signals to carry things to/from the mux
+   signal s_Bi         : std_logic_vector(N-1 downto 0); -- To hold the one's complement of B
    signal mux_Out      : std_logic_vector(N-1 downto 0); -- Output of the mux, fed into the adder
   
  begin
@@ -72,9 +72,8 @@ architecture structural of n_addsub is
    port map(
        i_A => i_A,
        i_B => mux_Out,
-       i_C => i_Add_Sub,
+       i_C => i_C,
        o_Sum => o_Sum,
-       o_Cm => o_Cm,
        o_C => o_C
    );
 
@@ -83,9 +82,9 @@ architecture structural of n_addsub is
    mux: mux2t1_N
    generic map(N)
    port map(
-       i_S => i_Add_Sub,
+       i_S => i_C,
        i_D0 => i_B,
-       i_D1 => notB,
+       i_D1 => s_Bi,
        o_O => mux_Out
    );
 
@@ -95,7 +94,7 @@ architecture structural of n_addsub is
    generic map(N)
    port map (
        i_D => i_B,
-       o_O => notB
+       o_O => s_Bi
    );
 
 

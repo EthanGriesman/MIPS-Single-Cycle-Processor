@@ -34,7 +34,7 @@ architecture structure of ALU is
      generic (N : integer := 32);
           port(i_A      : in std_logic_vector(31 downto 0);
                i_B      : in std_logic_vector(31 downto 0);
-               i_Add_Sub : in std_logic;
+               i_C      : in std_logic;
                o_Sum    : out std_logic_vector(31 downto 0);
                oC      : out std_logic
           ); --Change to add previous carry as output in order to XOR for overflow
@@ -108,7 +108,7 @@ architecture structure of ALU is
         signal s_shamt                :  std_logic_vector(4 downto 0);
 
         -- Misc signals --    
-        signal s_slt                  :  std_logic;
+        signal s_slt                  :  std_logic_vector(31 downto 0);
         signal s_sltSum               :  std_logic_vector(31 downto 0);
         signal s_sltC                 :  std_logic_vector(31 downto 0);
         signal s_sltOverflow          :  std_logic_vector(31 downto 0);
@@ -164,7 +164,7 @@ architecture structure of ALU is
           adderN : n_addsub
            port map(i_A => inputA,
                     i_B => inputB,
-                    i_Add_Sub => s_minus,       -- 
+                    i_C => s_minus,       -- 
                     o_Sum => s_sum,    -- carry out
                     oC => s_carry); -- sum output
 
@@ -214,7 +214,7 @@ architecture structure of ALU is
          ALU_SLT: n_addsub
          port map(i_A => inputA,
                    i_B => inputB,
-                   i_Add_Sub => '1',       -- 
+                   i_C => '1',       -- 
                    oC => s_sltSum,    -- carry out
                    o_Sum => s_sltC); -- sum output
 
