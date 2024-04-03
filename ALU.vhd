@@ -52,7 +52,7 @@ architecture structure of ALU is
             iInput          : in std_logic_vector(31 downto 0);  -- Input data
             oOutput         : out std_logic_vector(31 downto 0)  -- Output
           );
-    end component;
+     end component;
 
      -- OR GATE --
      component org2 is
@@ -78,10 +78,8 @@ architecture structure of ALU is
      -- INVERT --
      component onesComp is
           generic(N : integer := 32);
-          port(
-               i_D: in std_logic_vector(N-1 downto 0);
-               o_O: out std_logic_vector(N-1 downto 0)
-          );
+          port(i_D: in std_logic_vector(N-1 downto 0);
+               o_O: out std_logic_vector(N-1 downto 0));
      end component;
 
         -- Bitwise signals --
@@ -178,12 +176,21 @@ architecture structure of ALU is
           -- SHIFTING --
           --------------
 
+           -- Connect the barrel shifter
+           ALU_SHIFTER: barrelShifter
+           port map(
+                    iDir   => s_dir,
+                    iSra   => s_sra,
+                    ishamt => s_shamt,
+                    iInput => inputA,  -- Assuming inputA is the value to be shifted
+                    oOutput => s_shift
+               );
+
           -- direction generation: 0 for left, 1 for right --          
           with opSelect select
               s_dir <= '0' when "000000001" | "000100001",  -- SLL, SLLV
                        '1' when "000001001" | "000101001" | "010001001" | "010101001",  -- SRL, SRLV, SRA, SRAV
                        '0' when others;  -- Default to left shift
-
 
           -- 0 for logical, 1 for arithmetic
           with opSelect select
@@ -197,26 +204,13 @@ architecture structure of ALU is
                inputA(4 downto 0) when "000100001" | "000101001" | "010101001",  -- SLLV, SRLV, SRAV
                          (others => '0') when others;
 
-
-          -- Connect the barrel shifter
-          ALU_SHIFTER: barrelShifter
-           port map(
-                    iDir   => s_dir,
-                    iSra   => s_sra,
-                    ishamt => s_shamt,
-                    iInput => inputA,  -- Assuming inputA is the value to be shifted
-                    oOutput => s_shift
-               );
-
           -- SLT --
           ALU_SLT: n_addsub
            port map(i_A => inputA,
                     i_B => inputB,
                     i_C => '1',       -- Subtraction for SLT 
                     oC => s_sltSum,    
-                    o_Sum => s_sltC); 
-
-          
+                    o_Sum => s_sltC);
 
           --MUX for output--
           with opSelect select  --diff than add sub
