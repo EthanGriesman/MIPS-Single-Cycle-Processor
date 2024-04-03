@@ -27,6 +27,7 @@ port(iOpcode    : in std_logic_vector(5 downto 0); --opcode
      oBranch    : out std_logic; --done
      oLb        : out std_logic_vector(1 downto 0); --done
      oEqual     : out std_logic; --done
+     oSignExt   : out std_logic;
      oHalt      : out std_logic;
      oOverflowEn: out std_logic);
 end controlModule;
@@ -208,5 +209,9 @@ with iOpCode select
 with iOpCode select
      oAl <= '1' when "000011",
             '0' when others;
+
+with iOpCode select
+     oSignExt <= '1' when "100100" | "100101",
+                 '0' when others;
 
 end dataflow;
