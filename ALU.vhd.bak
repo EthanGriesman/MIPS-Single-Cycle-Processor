@@ -12,6 +12,10 @@
 
 library IEEE;
 use IEEE.std_logic_1164.all;
+use IEEE.std_logic_arith.all;
+use std.env.all;
+use std.textio.all;
+use IEEE.NUMERIC_STD.ALL; -- To use unsigned types
 
 entity ALU is
    port(
@@ -34,7 +38,7 @@ architecture structure of ALU is
      generic (N : integer := 32);
           port(i_A      : in std_logic_vector(31 downto 0);
                i_B      : in std_logic_vector(31 downto 0);
-               i_Add_Sub : in std_logic;
+               i_C      : in std_logic;
                o_Sum    : out std_logic_vector(31 downto 0);
                oC      : out std_logic
           ); --Change to add previous carry as output in order to XOR for overflow
@@ -90,15 +94,15 @@ architecture structure of ALU is
      -----------
 
         -- Bitwise signals --
-        signal s_and                  :  std_logic_vector(31 downto 0);
-        signal s_or                   :  std_logic_vector(31 downto 0);
+        signal s_and                  :  std_logic_vector(31 downto 0); 
+        signal s_or                   :  std_logic_vector(31 downto 0); 
         signal s_xor                  :  std_logic_vector(31 downto 0);
         signal s_not                  :  std_logic_vector(31 downto 0);
         signal s_nor                  :  std_logic_vector(31 downto 0);
 
         -- Arithmetic signals --
-        signal s_sum                  :  std_logic_vector(31 downto 0);
-        signal s_minus                :  std_logic;
+        signal s_sum                  :  std_logic_vector(31 downto 0); --add
+        signal s_minus                :  std_logic_vector(31 downto 0);
         signal s_carry                :  std_logic;
 
         -- Shifter signals --
@@ -108,7 +112,7 @@ architecture structure of ALU is
         signal s_shamt                :  std_logic_vector(4 downto 0);
 
         -- Misc signals --    
-        signal s_slt                  :  std_logic;
+        signal s_slt                  :  std_logic_vector(31 downto 0);
         signal s_sltSum               :  std_logic_vector(31 downto 0);
         signal s_sltC                 :  std_logic_vector(31 downto 0);
         signal s_sltOverflow          :  std_logic_vector(31 downto 0);
@@ -124,7 +128,7 @@ architecture structure of ALU is
         
         begin
 
-          -- AND --
+          -- AND -- --done
           ALU_AND: for i in 0 to 31 generate
            ANDGS: andg2
            port map(i_A => inputA(i),
@@ -132,7 +136,7 @@ architecture structure of ALU is
                     o_F => s_and(i));
           end generate ALU_AND;
 
-          -- OR --
+          -- OR -- --done
           ALU_OR: for i in 0 to 31 generate
            ORGS: org2
            port map(i_A => inputA(i),
@@ -140,7 +144,7 @@ architecture structure of ALU is
                     o_F => s_or(i));
           end generate ALU_OR;
 
-          -- XOR --
+          -- XOR -- --done
           ALU_XOR: for i in 0 to 31 generate
            XORGS: xorg2
            port map(i_A => inputA(i),
@@ -148,25 +152,30 @@ architecture structure of ALU is
                     o_F => s_xor(i));
           end generate ALU_XOR;
           
-          -- NOR --
+          -- NOR -- --done
           ALU_NOR: onesComp
           generic map (32)
           port map(i_D => s_or,
                    o_O => s_nor);
 
-          -- NOT --
+          -- NOT -- --done
           ALU_NOT: onesComp
           generic map(32)
           port map(i_D => inputA,
                    o_O => s_not);
-          
+                   
+
           -- ADD SUB --
           adderN : n_addsub
            port map(i_A => inputA,
                     i_B => inputB,
-                    i_Add_Sub => s_minus,       -- 
+                    i_C => s_minus,       -- 
                     o_Sum => s_sum,    -- carry out
                     oC => s_carry); -- sum output
+
+          s_minus <= '1' when opSelect = "100000000" else  -- Assuming this opSelect value corresponds to subtraction
+                    '0' when others;  -- Default to addition for other cases
+ 
 
 
           -- 0 for left, 1 for right --          
@@ -214,9 +223,9 @@ architecture structure of ALU is
          ALU_SLT: n_addsub
          port map(i_A => inputA,
                    i_B => inputB,
-                   i_Add_Sub => '1',       -- 
-                   oC => s_sltSum,    -- carry out
-                   o_Sum => s_sltC); -- sum output
+                   i_C => '1',       -- Subtraction for SLT 
+                   oC => s_sltSum,    
+                   o_Sum => s_sltC); 
 
          -- signal is 1 or 0
          s_slt <= s_sltOverflowCheck;
@@ -238,15 +247,17 @@ architecture structure of ALU is
                          s_shift when "010101001", --srav
                          "11111111111111111111111111111111" when others;
 
+          -- Zero flag logic --
           with s_resultout select
             s_zero <= '1' when "00000000000000000000000000000000",
                       '0' when others;
 
+          -- Assign outputs --
           resultOut <= s_resultout;
           zeroOut <= s_zero;
           carryOut <= s_carry;
 
-          -- Logic for overflow
+          -- Logic for overflow --
           s_overflowCheck <= inputA(31) & inputB(31) & s_minus & s_sum(31);
           with s_overflowCheck select
             s_overflow <=         '1' when "0001",

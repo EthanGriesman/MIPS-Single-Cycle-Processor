@@ -12,6 +12,10 @@
 
 library IEEE;
 use IEEE.std_logic_1164.all;
+use IEEE.std_logic_arith.all;
+use std.env.all;
+use std.textio.all;
+use IEEE.NUMERIC_STD.ALL; -- To use unsigned types
 
 entity ALU is
    port(
@@ -29,7 +33,7 @@ end ALU;
 
 architecture structure of ALU is
 
-     --AddSub
+     -- 32-bit add/sub module 
      component n_addsub is
      generic (N : integer := 32);
           port(i_A      : in std_logic_vector(31 downto 0);
@@ -40,7 +44,7 @@ architecture structure of ALU is
           ); --Change to add previous carry as output in order to XOR for overflow
      end component;
 
-     -- 32 bit barrelShifter
+     -- 32-bit barrelShifter
      component barrelShifter
           port (
             iDir            : in std_logic;                       -- Right or Left shift
@@ -51,23 +55,18 @@ architecture structure of ALU is
           );
     end component;
 
-    
-    -- BIT-WISE 
-
-    -- OR GATE --
+     -- OR GATE --
      component org2 is
           port(i_A	: in std_logic;
                i_B	: in std_logic;
                o_F	: out std_logic);
      end component;
-     
      -- AND GATE --
      component andg2 is
           port(i_A	: in std_logic;
                i_B	: in std_logic;
                o_F	: out std_logic);
      end component;
-     
      -- XOR GATE -- 
      component xorg2 is
           port(i_A          : in std_logic;
@@ -75,19 +74,14 @@ architecture structure of ALU is
                o_F          : out std_logic);
      end component;
      
-    -- One's Complement/NOT --
+    -- ONOT/INVERT --
      component onesComp is
-          generic(n: positive);
+          generic(N : integer := 32);
           port(
-               i_D: in std_logic_vector(n-1 downto 0);
-               o_O: out std_logic_vector(n-1 downto 0)
+               i_D: in std_logic_vector(N-1 downto 0);
+               o_O: out std_logic_vector(N-1 downto 0)
           );
      end component;
-
-
-     -----------
-     --Signals--
-     -----------
 
         -- Bitwise signals --
         signal s_and                  :  std_logic_vector(31 downto 0); 
@@ -97,22 +91,22 @@ architecture structure of ALU is
         signal s_nor                  :  std_logic_vector(31 downto 0);
 
         -- Arithmetic signals --
-        signal s_sum                  :  std_logic_vector(31 downto 0); --add
-        signal s_minus                :  std_logic_vector(31 downto 0);
-        signal s_carry                :  std_logic;
+        signal s_sum                  :  std_logic_vector(31 downto 0); -- add or sub depending on control signals
+        signal s_minus                :  std_logic_vector(31 downto 0); -- set to 1 to make adder subtract instead of add
+        signal s_carry                :  std_logic;                     -- for fullAdder output
 
         -- Shifter signals --
         signal s_shift                :  std_logic_vector(31 downto 0);
         signal s_sra                  :  std_logic;
         signal s_dir                  :  std_logic;
-        signal s_shamt                :  std_logic_vector(4 downto 0);
+        signal s_shamt                :  std_logic_vector(4 downto 0); -- ammount of shifts to perform
 
         -- Misc signals --    
         signal s_slt                  :  std_logic_vector(31 downto 0);
         signal s_sltSum               :  std_logic_vector(31 downto 0);
-        signal s_sltC                 :  std_logic_vector(31 downto 0);
-        signal s_sltOverflow          :  std_logic_vector(31 downto 0);
-        signal s_sltOverflowCheck     :  std_logic;
+        signal s_sltC                 :  std_logic;
+        signal s_sltOverflow          :  std_logic;
+        signal s_sltOverflowCheck     :  std_logic_vector(2 downto 0);
 
         -- ALU signal
         signal s_resultout            :  std_logic_vector(31 downto 0);
@@ -159,7 +153,13 @@ architecture structure of ALU is
           generic map(32)
           port map(i_D => inputA,
                    o_O => s_not);
-          
+                   
+
+          -- generate minus signal --
+          with opSelect select
+          s_minus <= '1' when "100000000",  -- Assuming this opSelect value corresponds to subtraction
+                     '0' when others;  -- Default to addition for other cases
+
           -- ADD SUB --
           adderN : n_addsub
            port map(i_A => inputA,
@@ -168,13 +168,23 @@ architecture structure of ALU is
                     o_Sum => s_sum,    -- carry out
                     oC => s_carry); -- sum output
 
+          s_minus <= '1' when opSelect = "100000000" else  -- Assuming this opSelect value corresponds to subtraction
+                    '0' when others;  -- Default to addition for other cases
+ 
 
-          -- 0 for left, 1 for right --          
-          -- Update opSelect to properly configure the barrel shifter
+
+          -- direction generation: 0 for left, 1 for right --          
           with opSelect select
               s_dir <= '0' when "000000001" | "000100001",  -- SLL, SLLV
                        '1' when "000001001" | "000101001" | "010001001" | "010101001",  -- SRL, SRLV, SRA, SRAV
                        '0' when others;  -- Default to left shift
+
+
+          -- type generation: 0 for logical, 1 for arithmetic
+          with opSelect select
+              s_sra <= '0' when "000000001" | "000001001" | "000100001" | "000101001",  -- Logical shifts
+                       '1' when "010001001" | "010101001",  -- Arithmetic shifts (SRA, SRAV)
+                       '0' when others;
 
           -- Determine shift amount and shift type (logical/arithmetic)
           with opSelect select
@@ -182,11 +192,6 @@ architecture structure of ALU is
                inputA(4 downto 0) when "000100001" | "000101001" | "010101001",  -- SLLV, SRLV, SRAV
                          (others => '0') when others;
 
-          -- Determine whether to perform an arithmetic shift
-          with opSelect select
-              s_sra <= '0' when "000000001" | "000001001" | "000100001" | "000101001",  -- Logical shifts
-                       '1' when "010001001" | "010101001",  -- Arithmetic shifts (SRA, SRAV)
-                       '0' when others;
 
           -- Connect the barrel shifter
           ALU_SHIFTER: barrelShifter
@@ -214,9 +219,9 @@ architecture structure of ALU is
          ALU_SLT: n_addsub
          port map(i_A => inputA,
                    i_B => inputB,
-                   i_C => '1',       -- 
-                   oC => s_sltSum,    -- carry out
-                   o_Sum => s_sltC); -- sum output
+                   i_C => '1',       -- Subtraction for SLT 
+                   oC => s_sltSum,    
+                   o_Sum => s_sltC); 
 
          -- signal is 1 or 0
          s_slt <= s_sltOverflowCheck;
@@ -238,15 +243,17 @@ architecture structure of ALU is
                          s_shift when "010101001", --srav
                          "11111111111111111111111111111111" when others;
 
+          -- Zero flag logic --
           with s_resultout select
             s_zero <= '1' when "00000000000000000000000000000000",
                       '0' when others;
 
+          -- Assign outputs --
           resultOut <= s_resultout;
           zeroOut <= s_zero;
           carryOut <= s_carry;
 
-          -- Logic for overflow
+          -- Logic for overflow --
           s_overflowCheck <= inputA(31) & inputB(31) & s_minus & s_sum(31);
           with s_overflowCheck select
             s_overflow <=         '1' when "0001",

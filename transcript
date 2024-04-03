@@ -2004,3 +2004,135 @@ vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle
 # ** Note: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(260): VHDL Compiler exiting
 # End time: 23:07:26 on Apr 02,2024, Elapsed time: 0:00:00
 # Errors: 8, Warnings: 0
+vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 23:34:41 on Apr 02,2024
+# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ALU
+# -- Compiling architecture structure of ALU
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(167): Signal "s_minus" is type ieee.std_logic_1164.STD_LOGIC_VECTOR; expecting type ieee.std_logic_1164.STD_LOGIC.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(208): String literal found where non-array type ieee.std_logic_1164.STD_ULOGIC was expected.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(209): String literal found where non-array type ieee.std_logic_1164.STD_ULOGIC was expected.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(210): String literal found where non-array type ieee.std_logic_1164.STD_ULOGIC was expected.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(211): String literal found where non-array type ieee.std_logic_1164.STD_ULOGIC was expected.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(218): Signal "s_sltSum" is type ieee.std_logic_1164.STD_LOGIC_VECTOR; expecting type ieee.std_logic_1164.STD_LOGIC.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(222): Signal "s_sltOverflowCheck" is type ieee.std_logic_1164.STD_LOGIC; expecting type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error (suppressible): /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(250): (vcom-1272) Length of expected is 4; length of actual is 35.
+# ** Note: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(260): VHDL Compiler exiting
+# End time: 23:34:41 on Apr 02,2024, Elapsed time: 0:00:00
+# Errors: 8, Warnings: 0
+vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 01:03:55 on Apr 03,2024
+# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ALU
+# -- Compiling architecture structure of ALU
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(163): Enumeration literal '1' is not of type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(164): Enumeration literal '0' is not of type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(164): near "others": syntax error
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(170): Signal "s_minus" is type ieee.std_logic_1164.STD_LOGIC_VECTOR; expecting type ieee.std_logic_1164.STD_LOGIC.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(174): Enumeration literal '1' is not of type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(175): Enumeration literal '0' is not of type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(175): near "others": syntax error
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(215): String literal found where non-array type ieee.std_logic_1164.STD_ULOGIC was expected.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(216): String literal found where non-array type ieee.std_logic_1164.STD_ULOGIC was expected.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(217): String literal found where non-array type ieee.std_logic_1164.STD_ULOGIC was expected.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(218): String literal found where non-array type ieee.std_logic_1164.STD_ULOGIC was expected.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(225): Signal "s_sltSum" is type ieee.std_logic_1164.STD_LOGIC_VECTOR; expecting type ieee.std_logic_1164.STD_LOGIC.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(229): Signal "s_sltOverflowCheck" is type ieee.std_logic_1164.STD_LOGIC; expecting type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error (suppressible): /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(259): (vcom-1272) Length of expected is 4; length of actual is 35.
+# ** Note: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(269): VHDL Compiler exiting
+# End time: 01:03:55 on Apr 03,2024, Elapsed time: 0:00:00
+# Errors: 14, Warnings: 0
+vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 01:04:22 on Apr 03,2024
+# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ALU
+# -- Compiling architecture structure of ALU
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(168): Signal "s_minus" is type ieee.std_logic_1164.STD_LOGIC_VECTOR; expecting type ieee.std_logic_1164.STD_LOGIC.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(172): Enumeration literal '1' is not of type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(173): Enumeration literal '0' is not of type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(173): near "others": syntax error
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(213): String literal found where non-array type ieee.std_logic_1164.STD_ULOGIC was expected.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(214): String literal found where non-array type ieee.std_logic_1164.STD_ULOGIC was expected.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(215): String literal found where non-array type ieee.std_logic_1164.STD_ULOGIC was expected.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(216): String literal found where non-array type ieee.std_logic_1164.STD_ULOGIC was expected.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(223): Signal "s_sltSum" is type ieee.std_logic_1164.STD_LOGIC_VECTOR; expecting type ieee.std_logic_1164.STD_LOGIC.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(227): Signal "s_sltOverflowCheck" is type ieee.std_logic_1164.STD_LOGIC; expecting type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error (suppressible): /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(257): (vcom-1272) Length of expected is 4; length of actual is 35.
+# ** Note: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(267): VHDL Compiler exiting
+# End time: 01:04:22 on Apr 03,2024, Elapsed time: 0:00:00
+# Errors: 11, Warnings: 0
+vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 01:05:00 on Apr 03,2024
+# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package ENV
+# ** Warning: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(16): (vcom-1516) Package "STD.ENV" does not exist in this language version.
+# -- Loading package NUMERIC_STD
+# -- Compiling entity ALU
+# -- Compiling architecture structure of ALU
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(172): Signal "s_minus" is type ieee.std_logic_1164.STD_LOGIC_VECTOR; expecting type ieee.std_logic_1164.STD_LOGIC.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(176): Enumeration literal '1' is not of type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(177): Enumeration literal '0' is not of type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(177): near "others": syntax error
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(217): String literal found where non-array type ieee.std_logic_1164.STD_ULOGIC was expected.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(218): String literal found where non-array type ieee.std_logic_1164.STD_ULOGIC was expected.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(219): String literal found where non-array type ieee.std_logic_1164.STD_ULOGIC was expected.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(220): String literal found where non-array type ieee.std_logic_1164.STD_ULOGIC was expected.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(227): Signal "s_sltSum" is type ieee.std_logic_1164.STD_LOGIC_VECTOR; expecting type ieee.std_logic_1164.STD_LOGIC.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(231): Signal "s_sltOverflowCheck" is type ieee.std_logic_1164.STD_LOGIC; expecting type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error (suppressible): /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(261): (vcom-1272) Length of expected is 4; length of actual is 35.
+# ** Note: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(271): VHDL Compiler exiting
+# End time: 01:05:00 on Apr 03,2024, Elapsed time: 0:00:00
+# Errors: 11, Warnings: 1
+vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 01:05:41 on Apr 03,2024
+# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package ENV
+# ** Warning: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(16): (vcom-1516) Package "STD.ENV" does not exist in this language version.
+# -- Loading package NUMERIC_STD
+# -- Compiling entity ALU
+# -- Compiling architecture structure of ALU
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(172): Signal "s_minus" is type ieee.std_logic_1164.STD_LOGIC_VECTOR; expecting type ieee.std_logic_1164.STD_LOGIC.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(176): Enumeration literal '1' is not of type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(177): Enumeration literal '0' is not of type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(177): near "others": syntax error
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(213): Type error resolving infix expression "or" as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(217): Enumeration literal '1' is not of type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(218): Enumeration literal '1' is not of type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(219): Enumeration literal '1' is not of type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(220): Enumeration literal '1' is not of type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(221): Enumeration literal '0' is not of type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(227): Signal "s_sltSum" is type ieee.std_logic_1164.STD_LOGIC_VECTOR; expecting type ieee.std_logic_1164.STD_LOGIC.
+# ** Error (suppressible): /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(217): (vcom-1272) Length of expected is 32; length of actual is 3.
+# ** Error (suppressible): /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(218): (vcom-1272) Length of expected is 32; length of actual is 3.
+# ** Error (suppressible): /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(219): (vcom-1272) Length of expected is 32; length of actual is 3.
+# ** Error (suppressible): /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(220): (vcom-1272) Length of expected is 32; length of actual is 3.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(217): (vcom-1319) Selected waveforms choice (string literal) length 3 is not equal to required length 32.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(218): (vcom-1319) Selected waveforms choice (string literal) length 3 is not equal to required length 32.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(219): (vcom-1319) Selected waveforms choice (string literal) length 3 is not equal to required length 32.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(220): (vcom-1319) Selected waveforms choice (string literal) length 3 is not equal to required length 32.
+# ** Error (suppressible): /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(261): (vcom-1272) Length of expected is 4; length of actual is 35.
+# ** Note: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(271): VHDL Compiler exiting
+# End time: 01:05:41 on Apr 03,2024, Elapsed time: 0:00:00
+# Errors: 20, Warnings: 1

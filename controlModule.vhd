@@ -52,7 +52,7 @@ signal s_ofe1     : std_logic;
 signal s_ofe2     : std_logic;
 
 --Uses spreadsheet to write select statements
-
+ 
 begin
 
 --ALUSrc--
