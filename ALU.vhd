@@ -213,6 +213,7 @@ architecture structure of ALU is
                     o_Sum => s_sltC);
 
           -- Extract the most significant bit (sign bit) from the subtraction result
+          -- least significant
           s_slt(31 downto 1) <= (others => '0');  -- Initialize to all zeros
           s_slt(0) <= s_sltC(31);   -- Set the sign bit
 

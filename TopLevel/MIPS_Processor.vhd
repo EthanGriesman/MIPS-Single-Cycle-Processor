@@ -265,15 +265,14 @@ begin
             inputA     => s_rs,
             inputB     => s_rt,
             i_shamt    => s_shamt,
-            opSelect    => s_AluOp
-            overflowEn  => s_Ovfl
-            resultOut   => s_ALUResultOut
-            overflow    => 
-            carryOut    =>
-            zeroOut     => s_DMemAddr
+            opSelect    => s_ALUControl,
+            overflowEn  => s_OverflowEn,
+            resultOut   => s_DMemAddr,
+            overflow    => s_Ovfl,
+            carryOut    => open,
+            zeroOut     => s_ALUZero
       );
             
-
   with s_ALUResultOut(1 downto 0) select   --Byte selector from DMem
     s_Byte <= s_DMemOut(31 downto 24) when "11",
               s_DMemOut(23 downto 16) when "10",
@@ -306,10 +305,6 @@ begin
     s_RegWrData <=  s_ALUResultOut when '0',
                     s_DMemLoad     when '1',
                     x"00000000"    when others;
-
-
-  
-  
 
 end structure;
 
