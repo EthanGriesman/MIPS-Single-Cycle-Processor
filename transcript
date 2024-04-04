@@ -14,7 +14,7 @@
 # //
 vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd
 # QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
-# Start time: 15:42:30 on Apr 03,2024
+# Start time: 15:55:39 on Apr 04,2024
 # vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -23,164 +23,11 @@ vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle
 # -- Loading package NUMERIC_STD
 # -- Compiling entity ALU
 # -- Compiling architecture structure of ALU
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(159): Enumeration literal '1' is not of type ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(160): Enumeration literal '0' is not of type ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(166): Signal "s_minus" is type ieee.std_logic_1164.STD_LOGIC_VECTOR; expecting type ieee.std_logic_1164.STD_LOGIC.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(205): (vcom-1348) Prefix (signal "s_sltC") of indexed name is not an array.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(205): (vcom-1590) Bad expression in right operand of infix expression 'or'.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(205): Type error resolving infix expression "or" as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(209): Enumeration literal '1' is not of type ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(210): Enumeration literal '1' is not of type ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(211): Enumeration literal '1' is not of type ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(212): Enumeration literal '1' is not of type ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(213): Enumeration literal '0' is not of type ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(220): Signal "s_sltC" is type ieee.std_logic_1164.STD_LOGIC; expecting type ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(219): Signal "s_sltSum" is type ieee.std_logic_1164.STD_LOGIC_VECTOR; expecting type ieee.std_logic_1164.STD_LOGIC.
-# ** Error (suppressible): /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(223): (vcom-1272) Length of expected is 32; length of actual is 3.
-# ** Error (suppressible): /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(253): (vcom-1272) Length of expected is 4; length of actual is 35.
-# ** Note: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(263): VHDL Compiler exiting
-# End time: 15:42:30 on Apr 03,2024, Elapsed time: 0:00:00
-# Errors: 15, Warnings: 0
-vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd
-# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
-# Start time: 16:00:56 on Apr 03,2024
-# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package std_logic_arith
-# -- Loading package NUMERIC_STD
-# -- Compiling entity ALU
-# -- Compiling architecture structure of ALU
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(205): (vcom-1348) Prefix (signal "s_sltC") of indexed name is not an array.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(205): (vcom-1590) Bad expression in right operand of infix expression 'or'.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(205): Type error resolving infix expression "or" as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(209): Enumeration literal '1' is not of type ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(210): Enumeration literal '1' is not of type ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(211): Enumeration literal '1' is not of type ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(212): Enumeration literal '1' is not of type ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(213): Enumeration literal '0' is not of type ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(220): Signal "s_sltC" is type ieee.std_logic_1164.STD_LOGIC; expecting type ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(219): Signal "s_sltSum" is type ieee.std_logic_1164.STD_LOGIC_VECTOR; expecting type ieee.std_logic_1164.STD_LOGIC.
-# ** Error (suppressible): /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(223): (vcom-1272) Length of expected is 32; length of actual is 3.
-# ** Note: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(263): VHDL Compiler exiting
-# End time: 16:00:56 on Apr 03,2024, Elapsed time: 0:00:00
-# Errors: 11, Warnings: 0
-vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd
-# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
-# Start time: 16:01:24 on Apr 03,2024
-# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package std_logic_arith
-# -- Loading package NUMERIC_STD
-# -- Compiling entity ALU
-# -- Compiling architecture structure of ALU
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(205): (vcom-1348) Prefix (signal "s_sltC") of indexed name is not an array.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(205): (vcom-1590) Bad expression in right operand of infix expression 'or'.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(205): Type error resolving infix expression "or" as type ieee.std_logic_1164.STD_LOGIC.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(209): String literal found where non-array type ieee.std_logic_1164.STD_ULOGIC was expected.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(210): String literal found where non-array type ieee.std_logic_1164.STD_ULOGIC was expected.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(211): String literal found where non-array type ieee.std_logic_1164.STD_ULOGIC was expected.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(212): String literal found where non-array type ieee.std_logic_1164.STD_ULOGIC was expected.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(220): Signal "s_sltC" is type ieee.std_logic_1164.STD_LOGIC; expecting type ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(219): Signal "s_sltSum" is type ieee.std_logic_1164.STD_LOGIC_VECTOR; expecting type ieee.std_logic_1164.STD_LOGIC.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(223): Signal "s_sltOverflowCheck" is type ieee.std_logic_1164.STD_LOGIC; expecting type ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Note: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(263): VHDL Compiler exiting
-# End time: 16:01:24 on Apr 03,2024, Elapsed time: 0:00:00
-# Errors: 10, Warnings: 0
-vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd
-# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
-# Start time: 16:01:25 on Apr 03,2024
-# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package std_logic_arith
-# -- Loading package NUMERIC_STD
-# -- Compiling entity ALU
-# -- Compiling architecture structure of ALU
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(205): (vcom-1348) Prefix (signal "s_sltC") of indexed name is not an array.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(205): (vcom-1590) Bad expression in right operand of infix expression 'or'.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(205): Type error resolving infix expression "or" as type ieee.std_logic_1164.STD_LOGIC.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(209): String literal found where non-array type ieee.std_logic_1164.STD_ULOGIC was expected.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(210): String literal found where non-array type ieee.std_logic_1164.STD_ULOGIC was expected.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(211): String literal found where non-array type ieee.std_logic_1164.STD_ULOGIC was expected.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(212): String literal found where non-array type ieee.std_logic_1164.STD_ULOGIC was expected.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(220): Signal "s_sltC" is type ieee.std_logic_1164.STD_LOGIC; expecting type ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(219): Signal "s_sltSum" is type ieee.std_logic_1164.STD_LOGIC_VECTOR; expecting type ieee.std_logic_1164.STD_LOGIC.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(223): Signal "s_sltOverflowCheck" is type ieee.std_logic_1164.STD_LOGIC; expecting type ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Note: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(263): VHDL Compiler exiting
-# End time: 16:01:25 on Apr 03,2024, Elapsed time: 0:00:00
-# Errors: 10, Warnings: 0
-vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd
-# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
-# Start time: 16:02:03 on Apr 03,2024
-# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package std_logic_arith
-# -- Loading package NUMERIC_STD
-# -- Compiling entity ALU
-# -- Compiling architecture structure of ALU
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(209): String literal found where non-array type ieee.std_logic_1164.STD_ULOGIC was expected.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(210): String literal found where non-array type ieee.std_logic_1164.STD_ULOGIC was expected.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(211): String literal found where non-array type ieee.std_logic_1164.STD_ULOGIC was expected.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(212): String literal found where non-array type ieee.std_logic_1164.STD_ULOGIC was expected.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(219): Signal "s_sltSum" is type ieee.std_logic_1164.STD_LOGIC_VECTOR; expecting type ieee.std_logic_1164.STD_LOGIC.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(223): Signal "s_sltOverflowCheck" is type ieee.std_logic_1164.STD_LOGIC; expecting type ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Note: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(263): VHDL Compiler exiting
-# End time: 16:02:03 on Apr 03,2024, Elapsed time: 0:00:00
-# Errors: 6, Warnings: 0
-vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd
-# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
-# Start time: 16:10:44 on Apr 03,2024
-# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package std_logic_arith
-# -- Loading package NUMERIC_STD
-# -- Compiling entity ALU
-# -- Compiling architecture structure of ALU
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(209): String literal found where non-array type ieee.std_logic_1164.STD_ULOGIC was expected.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(210): String literal found where non-array type ieee.std_logic_1164.STD_ULOGIC was expected.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(211): String literal found where non-array type ieee.std_logic_1164.STD_ULOGIC was expected.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(212): String literal found where non-array type ieee.std_logic_1164.STD_ULOGIC was expected.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(219): Signal "s_sltSum" is type ieee.std_logic_1164.STD_LOGIC_VECTOR; expecting type ieee.std_logic_1164.STD_LOGIC.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(223): Signal "s_sltOverflowCheck" is type ieee.std_logic_1164.STD_LOGIC; expecting type ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Note: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(265): VHDL Compiler exiting
-# End time: 16:10:44 on Apr 03,2024, Elapsed time: 0:00:00
-# Errors: 6, Warnings: 0
-vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/tb_barrelShifter.vhd
-# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
-# Start time: 16:27:06 on Apr 03,2024
-# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/tb_barrelShifter.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity tb_barrelShifter
-# -- Compiling architecture tb_arch of tb_barrelShifter
-# End time: 16:27:06 on Apr 03,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/tb_barrelShifter.vhd
-# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
-# Start time: 16:37:57 on Apr 03,2024
-# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/tb_barrelShifter.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity tb_barrelShifter
-# -- Compiling architecture tb_arch of tb_barrelShifter
-# End time: 16:37:57 on Apr 03,2024, Elapsed time: 0:00:00
+# End time: 15:55:40 on Apr 04,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd
 # QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
-# Start time: 16:37:59 on Apr 03,2024
+# Start time: 15:58:12 on Apr 04,2024
 # vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -189,62 +36,11 @@ vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle
 # -- Loading package NUMERIC_STD
 # -- Compiling entity ALU
 # -- Compiling architecture structure of ALU
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(209): String literal found where non-array type ieee.std_logic_1164.STD_ULOGIC was expected.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(210): String literal found where non-array type ieee.std_logic_1164.STD_ULOGIC was expected.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(211): String literal found where non-array type ieee.std_logic_1164.STD_ULOGIC was expected.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(212): String literal found where non-array type ieee.std_logic_1164.STD_ULOGIC was expected.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(219): Signal "s_sltSum" is type ieee.std_logic_1164.STD_LOGIC_VECTOR; expecting type ieee.std_logic_1164.STD_LOGIC.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(223): Signal "s_sltOverflowCheck" is type ieee.std_logic_1164.STD_LOGIC; expecting type ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Note: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(265): VHDL Compiler exiting
-# End time: 16:37:59 on Apr 03,2024, Elapsed time: 0:00:00
-# Errors: 6, Warnings: 0
-vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd
-# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
-# Start time: 16:38:58 on Apr 03,2024
-# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package std_logic_arith
-# -- Loading package NUMERIC_STD
-# -- Compiling entity ALU
-# -- Compiling architecture structure of ALU
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(209): String literal found where non-array type ieee.std_logic_1164.STD_ULOGIC was expected.
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(217): Signal "s_sltSum" is type ieee.std_logic_1164.STD_LOGIC_VECTOR; expecting type ieee.std_logic_1164.STD_LOGIC.
-# ** Note: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(261): VHDL Compiler exiting
-# End time: 16:38:58 on Apr 03,2024, Elapsed time: 0:00:00
-# Errors: 2, Warnings: 0
-vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd
-# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
-# Start time: 16:50:58 on Apr 03,2024
-# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package std_logic_arith
-# -- Loading package NUMERIC_STD
-# -- Compiling entity ALU
-# -- Compiling architecture structure of ALU
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(209): Signal "s_sltSum" is type ieee.std_logic_1164.STD_LOGIC_VECTOR; expecting type ieee.std_logic_1164.STD_LOGIC.
-# ** Note: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(253): VHDL Compiler exiting
-# End time: 16:50:58 on Apr 03,2024, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 0
-vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd
-# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
-# Start time: 16:51:27 on Apr 03,2024
-# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package std_logic_arith
-# -- Loading package NUMERIC_STD
-# -- Compiling entity ALU
-# -- Compiling architecture structure of ALU
-# End time: 16:51:27 on Apr 03,2024, Elapsed time: 0:00:00
+# End time: 15:58:12 on Apr 04,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd
 # QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
-# Start time: 16:54:43 on Apr 03,2024
+# Start time: 16:03:42 on Apr 04,2024
 # vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -253,11 +49,11 @@ vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle
 # -- Loading package NUMERIC_STD
 # -- Compiling entity ALU
 # -- Compiling architecture structure of ALU
-# End time: 16:54:43 on Apr 03,2024, Elapsed time: 0:00:00
+# End time: 16:03:42 on Apr 04,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd
 # QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
-# Start time: 17:10:37 on Apr 03,2024
+# Start time: 16:04:19 on Apr 04,2024
 # vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -266,71 +62,5 @@ vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle
 # -- Loading package NUMERIC_STD
 # -- Compiling entity ALU
 # -- Compiling architecture structure of ALU
-# End time: 17:10:37 on Apr 03,2024, Elapsed time: 0:00:00
+# End time: 16:04:19 on Apr 04,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd
-# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
-# Start time: 17:13:33 on Apr 03,2024
-# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package std_logic_arith
-# -- Loading package NUMERIC_STD
-# -- Compiling entity ALU
-# -- Compiling architecture structure of ALU
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(215): (vcom-1136) Unknown identifier "s_sltOverflow".
-# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(215): Type error resolving infix expression "&" as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
-# ** Note: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd(257): VHDL Compiler exiting
-# End time: 17:13:33 on Apr 03,2024, Elapsed time: 0:00:00
-# Errors: 2, Warnings: 0
-vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd
-# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
-# Start time: 17:14:02 on Apr 03,2024
-# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/ALU.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package std_logic_arith
-# -- Loading package NUMERIC_STD
-# -- Compiling entity ALU
-# -- Compiling architecture structure of ALU
-# End time: 17:14:02 on Apr 03,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/tb_barrelShifter.vhd
-# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
-# Start time: 17:14:43 on Apr 03,2024
-# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/tb_barrelShifter.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Compiling entity tb_barrelShifter
-# -- Compiling architecture tb_arch of tb_barrelShifter
-# End time: 17:14:43 on Apr 03,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-vsim work.tb_barrelshifter -voptargs=+acc
-# vsim work.tb_barrelshifter -voptargs="+acc" 
-# Start time: 17:14:54 on Apr 03,2024
-# ** Note: (vsim-3812) Design is being optimized...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.tb_barrelshifter(tb_arch)#1
-# Loading work.barrelshifter(mixed)#1
-add wave -position insertpoint  \
-sim:/tb_barrelshifter/gCLK_HPER \
-sim:/tb_barrelshifter/CLK \
-sim:/tb_barrelshifter/reset \
-sim:/tb_barrelshifter/iDir_tb \
-sim:/tb_barrelshifter/iSra_tb \
-sim:/tb_barrelshifter/ishamt_tb \
-sim:/tb_barrelshifter/iInput_tb \
-sim:/tb_barrelshifter/oOutput_tb \
-sim:/tb_barrelshifter/cCLK_PER
-run 400
-# End time: 18:07:11 on Apr 03,2024, Elapsed time: 0:52:17
-# Errors: 0, Warnings: 1

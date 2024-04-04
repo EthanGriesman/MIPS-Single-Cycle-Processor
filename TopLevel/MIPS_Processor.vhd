@@ -71,6 +71,8 @@ architecture structure of MIPS_Processor is
   -- TODO: You may add any additional signals or components your implementation 
   --       requires below this comment
 
+  -- COMPONENTS --
+
   component ALU is
     port(inputA       : in std_logic_vector(31 downto 0);  -- Operand 1
          inputB       : in std_logic_vector(31 downto 0);  -- Operand 2
@@ -133,6 +135,7 @@ architecture structure of MIPS_Processor is
           ors	  : out std_logic_vector(31 downto 0);
           ort	  : out std_logic_vector(31 downto 0));
 
+        
   signal s_Byte                   : std_logic_vector(7 downto 0);
   signal s_ByteExt                : std_logic_vector(31 downto 0);
   signal s_HW                     : std_logic_vector(16 downto 0);
@@ -264,10 +267,10 @@ begin
             i_shamt    => s_shamt,
             opSelect    => s_AluOp
             overflowEn  =>
-            resultOut   => 
+            resultOut   => s_ALUResultOut
             overflow    =>
             carryOut    =>
-            zeroOut     =>
+            zeroOut     => 
       );
             
 

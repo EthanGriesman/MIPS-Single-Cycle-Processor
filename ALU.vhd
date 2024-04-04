@@ -110,7 +110,7 @@ architecture structure of ALU is
         signal s_zero                 :  std_logic;
 
         -- Overflow signal --
-        signal s_overflowCheck        :  std_logic_vector(3 downto 0);
+        signal s_overflowCheck        :  std_logic;
         signal s_overflow             :  std_logic;
         
         begin
@@ -168,7 +168,7 @@ architecture structure of ALU is
           adderN : n_addsub
            port map(i_A => inputA,      -- inputA
                     i_B => inputB,      -- inputB
-                    i_C => s_minus,     -- control bit to determine 
+                    i_C => s_minus,     -- control bit to determine add or sub
                     o_Sum => s_sum,     -- carry out
                     oC => s_carry);     -- sum output
 
@@ -210,7 +210,7 @@ architecture structure of ALU is
                     i_B => inputB,
                     i_C => '1',       -- Subtraction for SLT 
                     oC => s_sltSum,    
-                    o_Sum => s_sltC);
+                    o_Sum => s_sltC); --sign bit
 
           --MUX for output--
           with opSelect select  --diff than add sub
@@ -239,16 +239,12 @@ architecture structure of ALU is
           zeroOut <= s_zero;
           carryOut <= s_carry;
 
-          -- Logic for overflow --
-          s_overflowCheck <= inputA(31) & inputB(31) & s_minus & s_sum(31);
-          with s_overflowCheck select
-            s_overflow <=         '1' when "0001",
-                                  '1' when "1100",
-                                  '1' when "0111",
-                                  '1' when "1010",
-                                  '0' when others;
+          -- XOR to detect different signs, AND to check overflow --
+          s_overflowCheck <= (inputA(31) xnor inputB(31)) and (inputA(31) xor s_sum(31));
+          s_overflow <= s_overflowCheck;
 
-          overflow <= s_overflow AND overflowEn; 
+          overflow <= s_overflow;
+
 
 end structure;
         
