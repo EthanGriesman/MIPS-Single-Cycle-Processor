@@ -332,3 +332,5 @@ sim:/tb_barrelshifter/iInput_tb \
 sim:/tb_barrelshifter/oOutput_tb \
 sim:/tb_barrelshifter/cCLK_PER
 run 400
+# End time: 18:07:11 on Apr 03,2024, Elapsed time: 0:52:17
+# Errors: 0, Warnings: 1

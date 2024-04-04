@@ -72,7 +72,15 @@ architecture structure of MIPS_Processor is
   --       requires below this comment
 
   component ALU is
-
+    port(inputA       : in std_logic_vector(31 downto 0);  -- Operand 1
+         inputB       : in std_logic_vector(31 downto 0);  -- Operand 2
+         i_shamt      : in std_logic_vector(4 downto 0);   -- shift amount
+         opSelect     : in std_logic_vector(8 downto 0);   -- Op Select
+         overflowEn   : in std_logic;                      -- overflow enable
+         resultOut    : out std_logic_vector(31 downto 0); -- Result F
+         overflow     : out std_logic;                     -- Overflow
+         carryOut     : out std_logic;                     -- Carry out
+         zeroOut      : out std_logic);  -- 1 when resultOut = 0 Zero
   end component;
 
   component fetch is
@@ -162,6 +170,7 @@ begin
       iInstAddr when others;
 
 
+  -- Instruction memory
   IMem: mem
     generic map(ADDR_WIDTH => ADDR_WIDTH,
                 DATA_WIDTH => N)
@@ -170,7 +179,8 @@ begin
              data => iInstExt,
              we   => iInstLd,
              q    => s_Inst);
-  
+
+  -- Data Memory
   DMem: mem
     generic map(ADDR_WIDTH => ADDR_WIDTH,
                 DATA_WIDTH => N)
@@ -248,9 +258,18 @@ begin
                 x"00000000"  when others;
   
   ALU: ALU
-    port map(
-
-    );
+     port map(
+            inputA     => s_RegOutA,
+            inputB     => s_immMuxOut,
+            i_shamt    => s_shamt,
+            opSelect    => s_AluOp
+            overflowEn  =>
+            resultOut   => 
+            overflow    =>
+            carryOut    =>
+            zeroOut     =>
+      );
+            
 
   with s_ALUResultOut(1 downto 0) select   --Byte selector from DMem
     s_Byte <= s_DMemOut(31 downto 24) when "11",
