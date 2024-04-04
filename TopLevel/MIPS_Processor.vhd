@@ -134,7 +134,7 @@ architecture structure of MIPS_Processor is
           iRST	: in std_logic;
           ors	  : out std_logic_vector(31 downto 0);
           ort	  : out std_logic_vector(31 downto 0));
-
+  end component;
         
   signal s_Byte                   : std_logic_vector(7 downto 0);
   signal s_ByteExt                : std_logic_vector(31 downto 0);
@@ -262,15 +262,15 @@ begin
   
   ALU: ALU
      port map(
-            inputA     => s_RegOutA,
-            inputB     => s_immMuxOut,
+            inputA     => s_rs,
+            inputB     => s_rt,
             i_shamt    => s_shamt,
             opSelect    => s_AluOp
-            overflowEn  =>
+            overflowEn  => s_Ovfl
             resultOut   => s_ALUResultOut
-            overflow    =>
+            overflow    => 
             carryOut    =>
-            zeroOut     => 
+            zeroOut     => s_DMemAddr
       );
             
 

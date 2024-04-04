@@ -169,8 +169,8 @@ architecture structure of ALU is
            port map(i_A => inputA,      -- inputA
                     i_B => inputB,      -- inputB
                     i_C => s_minus,     -- control bit to determine add or sub
-                    o_Sum => s_sum,     -- carry out
-                    oC => s_carry);     -- sum output
+                    o_Sum => s_sum,     -- sum output
+                    oC => s_carry);     -- carry
 
           --------------
           -- SHIFTING --
@@ -208,9 +208,14 @@ architecture structure of ALU is
           ALU_SLT: n_addsub
            port map(i_A => inputA,
                     i_B => inputB,
-                    i_C => '1',       -- Subtraction for SLT 
-                    oC => s_sltSum,    
-                    o_Sum => s_sltC); --sign bit
+                    i_C => '1',           -- Subtraction for SLT
+                    oC => s_sltSum,
+                    o_Sum => s_sltC);
+
+          -- Extract the most significant bit (sign bit) from the subtraction result
+          s_slt(31 downto 1) <= (others => '0');  -- Initialize to all zeros
+          s_slt(0) <= s_sltC(31);   -- Set the sign bit
+
 
           --MUX for output--
           with opSelect select  --diff than add sub
