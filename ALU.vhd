@@ -104,6 +104,7 @@ architecture structure of ALU is
         signal s_slt                  :  std_logic_vector(31 downto 0); -- slt
         signal s_sltSum               :  std_logic;                     -- slt sum
         signal s_sltC                 :  std_logic_vector(31 downto 0); -- slt carry
+        signal s_lui                  :  std_logic_vector(31 downto 0); -- lui result
 
         -- ALU signal
         signal s_resultout            :  std_logic_vector(31 downto 0); -- result out
@@ -201,8 +202,11 @@ architecture structure of ALU is
           -- shift amount, shift type (logical/arithmetic)
           with opSelect select
               s_shamt <= i_shamt when "000000001" | "000001001" | "010001001",  -- SLL, SRL, SRA
-               inputA(4 downto 0) when "000100001" | "000101001" | "010101001",  -- SLLV, SRLV, SRAV
+                         inputA(4 downto 0) when "000100001" | "000101001" | "010101001",  -- SLLV, SRLV, SRAV
+                         "10000" when "001000001",                                        -- LUI
                          (others => '0') when others;
+
+          s_lui <= inputB(15 downto 0) & x"0000";
 
           -- SLT --
           ALU_SLT: n_addsub
@@ -233,6 +237,7 @@ architecture structure of ALU is
                          s_shift when "000100001", --sllv
                          s_shift when "000101001", --srlv
                          s_shift when "010101001", --srav
+                         s_lui when "001000001", --lui
                          "11111111111111111111111111111111" when others;
 
           -- Zero flag logic --

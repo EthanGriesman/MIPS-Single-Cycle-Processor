@@ -31,9 +31,9 @@ begin
         ADDER: full_adder port map(
             i_A => i_iA(i),
             i_B => i_iB(i),
+            i_C => s_Carry(i),
             o_S => o_oS(i),
-            o_C => s_Carry(i+1),
-            i_C => s_Carry(i));
+            o_C => s_Carry(i+1));
     end generate G_NBit_ADDER;
 
     o_oC <= s_Carry(N);

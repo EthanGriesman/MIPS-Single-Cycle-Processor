@@ -6,7 +6,7 @@ entity full_adder is
         i_A   : in std_logic;
         i_B   : in std_logic;
         i_C   : in std_logic;
-        o_Sum : out std_logic;
+        o_S : out std_logic;
         o_C   : out std_logic
     );
 end full_adder;
@@ -54,7 +54,7 @@ begin
         port map (
             i_A => i_C,
             i_B => sum_xor_1_out,
-            o_F => o_Sum
+            o_F => o_S
         );
     
 

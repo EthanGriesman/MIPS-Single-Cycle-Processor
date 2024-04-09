@@ -1,0 +1,33 @@
+[N
+4
+2
+8 tb_fetch
+3
+4 arch
+1
+68 /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/testing/work
+4
+9 gCLK_HPER
+]
+[G
+1
+2
+3
+1
+4
+0
+0
+0
+0
+8 8
+-128
+-16
+-6
+2
+0
+0
+0
+0
+0
+0
+]

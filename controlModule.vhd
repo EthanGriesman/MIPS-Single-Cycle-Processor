@@ -116,8 +116,8 @@ with iOpCode select
 -- oMemtoReg --
 -- writes to memory --
 with iOpCode select
---lui, lw, lb, lh, lbu, lhu
-     oMemtoReg <= '1' when "001111" | "100011" | "100000" | "100001" | "100100" | "100101", --lui, lw, lb, lh, lbu, lhu
+--lw, lb, lh, lbu, lhu
+     oMemtoReg <= '1' when "100011" | "100000" | "100001" | "100100" | "100101", --lui, lw, lb, lh, lbu, lhu
                  '0' when others;
 
 -- oDMemWr --
