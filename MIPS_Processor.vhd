@@ -152,7 +152,7 @@ architecture structure of MIPS_Processor is
   signal s_Branch                 : std_logic;
   signal s_Lb                     : std_logic_vector(1 downto 0);
   signal s_Equal                  : std_logic;
-  signal s_SignExt                : std_logic;
+  signal s_SignExt                : std_logic_vector(1 downto 0);
   signal s_OverflowEn             : std_logic;
   signal s_ExtendImm              : std_logic;
 
@@ -160,6 +160,7 @@ architecture structure of MIPS_Processor is
   signal s_SignExtImm             : std_logic_vector(31 downto 0);
   
   signal s_ALUZero                : std_logic;
+  signal s_UpdtZero               : std_logic; -- inverted ALUZero if bne, otherwise unchanged
   signal s_ALUIn2                 : std_logic_vector(31 downto 0);
   signal s_ALUResultOut           : std_logic_vector(31 downto 0);
 
@@ -225,7 +226,7 @@ begin
             iAddr          => s_Inst(25 downto 0),
             iSignExtendImm => s_SignExtImm,
             iBranch        => s_Branch,
-            iALUZero       => s_ALUZero,
+            iALUZero       => s_UpdtZero,
             iJump          => s_Jump,
             irs            => s_rs,
             oPC            => s_NextInstAddr,
@@ -276,6 +277,10 @@ begin
             zeroOut     => s_ALUZero
       );
 
+  with s_Equal select
+    s_UpdtZero <= NOT(s_ALUZero) when '0',
+                  s_ALUZero      when others;
+
   s_DMemAddr <= s_ALUResultOut;
   s_DMemData <= s_rt;
   oALUOut <= s_ALUResultOut;
@@ -292,14 +297,26 @@ begin
             s_DMemOut(15 downto 0)  when '0',
             "0000000000000000"  when others;
           
+  with s_Lb select
+    s_SignExt(0) <= s_Byte(7) when "10",
+                    s_HW(15)  when "01",
+                    '0'       when others;
+
+  s_SignExt(1)  <= s_Inst(28); --unsigned/signed for load
+  
+
   with s_SignExt select
-    s_ByteExt <= x"FFFFFF" & s_Byte when '1',
-                 x"000000" & s_Byte when '0',
+    s_ByteExt <= x"FFFFFF" & s_Byte when "01", --sign extend one
+                 x"000000" & s_Byte when "00", --sign extend zero
+                 x"000000" & s_Byte when "11", --unsigned
+                 x"000000" & s_Byte when "10", --unsigned
                  x"00000000" when others;
   
   with s_SignExt select
-    s_HWExt <=  x"FFFF" & s_HW when '1',
-                x"0000" & s_HW when '0',
+    s_HWExt <=  x"FFFF" & s_HW when "01", --sign extend one
+                x"0000" & s_HW when "00", --sign extend zero
+                x"0000" & s_HW when "11", --unsigned
+                x"0000" & s_HW when "10", --unsigned
                 x"00000000" when others;
 
   with s_Lb select  --DMem output to MemToRegMUX

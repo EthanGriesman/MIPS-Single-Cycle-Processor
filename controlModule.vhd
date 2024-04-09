@@ -89,6 +89,10 @@ with iOpCode select
                  "100000000" when "000100", --beq
                  "100000000" when "000101", --bne
                  "100000101" when "001010", --slti
+                 "000000000" when "100000", --lb
+                 "000000000" when "100001", --lh
+                 "000000000" when "100100", --lbu
+                 "000000000" when "100101", --lhu
                  "111111111" when others;
 
 with iFunct select
