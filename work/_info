@@ -113,12 +113,12 @@ R21
 R15
 R16
 Ealu
-Z22 w1712609033
+Z22 w1712685742
 R3
 R5
 R6
 R7
-!i122 41
+!i122 46
 R1
 Z23 8/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/ALU.vhd
 Z24 F/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/ALU.vhd
@@ -128,11 +128,11 @@ V=1@MGmd<^k<SkEeFOG^NG0
 !s100 NTDc2J_2A2DLF5iAeFbM=2
 R10
 32
-R11
+Z26 !s110 1712685784
 !i10b 1
-R12
-Z26 !s90 -reportprogress|300|-work|work|/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/ALU.vhd|
-Z27 !s107 /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/ALU.vhd|
+Z27 !s108 1712685783.000000
+Z28 !s90 -reportprogress|300|-work|work|/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/ALU.vhd|
+Z29 !s107 /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/ALU.vhd|
 !i113 0
 R15
 R16
@@ -141,32 +141,32 @@ R3
 R5
 R6
 R7
-DEx4 work 3 alu 0 22 =1@MGmd<^k<SkEeFOG^NG0
-!i122 41
-l116
-L33 225
-VK3k[0UR?0^WMd4g<Rh@6:2
-!s100 z]8iX9<PeN4zB`<YlEE>N3
+Z30 DEx4 work 3 alu 0 22 =1@MGmd<^k<SkEeFOG^NG0
+!i122 46
+l117
+L33 228
+V:G39<AgGghg1WV>f>^H3I2
+!s100 2U9D7XN9nX0NG?d1J]R_A1
 R10
 32
-R11
-!i10b 1
-R12
 R26
+!i10b 1
 R27
+R28
+R29
 !i113 0
 R15
 R16
 Eandg2
-Z28 w1705520868
+Z31 w1705520868
 R6
 R7
 !i122 42
 R1
-Z29 8/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/andg2.vhd
-Z30 F/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/andg2.vhd
+Z32 8/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/andg2.vhd
+Z33 F/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/andg2.vhd
 l0
-Z31 L23 1
+Z34 L23 1
 VQf>?20ho>9XHGTg4:jo373
 !s100 0e<Rg^QbB^Y@JP[zKSc0[3
 R10
@@ -174,8 +174,8 @@ R10
 R11
 !i10b 1
 R12
-Z32 !s90 -reportprogress|300|-work|work|/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/andg2.vhd|
-Z33 !s107 /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/andg2.vhd|
+Z35 !s90 -reportprogress|300|-work|work|/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/andg2.vhd|
+Z36 !s107 /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/andg2.vhd|
 !i113 0
 R15
 R16
@@ -185,7 +185,7 @@ R7
 DEx4 work 5 andg2 0 22 Qf>?20ho>9XHGTg4:jo373
 !i122 42
 l32
-Z34 L31 6
+Z37 L31 6
 VHdBJDB9no8cjMZ2eVYWH;1
 !s100 CbBW?3Q;N[15?`QCEQ<@f2
 R10
@@ -193,20 +193,20 @@ R10
 R11
 !i10b 1
 R12
-R32
-R33
+R35
+R36
 !i113 0
 R15
 R16
 Eextender
-Z35 w1711577692
+Z38 w1711577692
 R3
 R6
 R7
 !i122 33
 R1
-Z36 8/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/extender.vhd
-Z37 F/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/extender.vhd
+Z39 8/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/extender.vhd
+Z40 F/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/extender.vhd
 l0
 L5 1
 VPk114@cQm@nghNcR96KO21
@@ -216,8 +216,8 @@ R10
 R11
 !i10b 1
 R12
-Z38 !s90 -reportprogress|300|-work|work|/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/extender.vhd|
-Z39 !s107 /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/extender.vhd|
+Z41 !s90 -reportprogress|300|-work|work|/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/extender.vhd|
+Z42 !s107 /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/extender.vhd|
 !i113 0
 R15
 R16
@@ -236,30 +236,30 @@ R10
 R11
 !i10b 1
 R12
-R38
-R39
+R41
+R42
 !i113 0
 R15
 R16
 Efetch
-Z40 w1712623817
+Z43 w1712623817
 R6
 R7
 !i122 45
 R1
-Z41 8/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/fetch.vhd
-Z42 F/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/fetch.vhd
+Z44 8/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/fetch.vhd
+Z45 F/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/fetch.vhd
 l0
-Z43 L16 1
+Z46 L16 1
 VkVlb?2O^B618Rm=2nf6WF2
 !s100 j58874ND<O]PfT@[^^ka:2
 R10
 32
-Z44 !s110 1712623924
+Z47 !s110 1712623924
 !i10b 1
-Z45 !s108 1712623924.000000
-Z46 !s90 -reportprogress|300|-work|work|/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/fetch.vhd|
-!s107 /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/fetch.vhd|
+Z48 !s108 1712623924.000000
+Z49 !s90 -reportprogress|300|-work|work|/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/fetch.vhd|
+Z50 !s107 /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/fetch.vhd|
 !i113 0
 R15
 R16
@@ -274,33 +274,33 @@ V07b[KdR7^<n^5X6Dj[fnD2
 !s100 1Y:QNnM>z;DGOj:lbLK4l3
 R10
 32
-R44
+R47
 !i10b 1
-R45
-R46
-Z47 !s107 /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/fetch.vhd|
+R48
+R49
+R50
 !i113 0
 R15
 R16
 Efull_adder
-Z48 w1712619143
+Z51 w1712619143
 R6
 R7
 !i122 32
 R1
-Z49 8/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/full_adder.vhd
-Z50 F/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/full_adder.vhd
+Z52 8/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/full_adder.vhd
+Z53 F/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/full_adder.vhd
 l0
 L4 1
 V8mCBXMJmh]83eFhLaiR<90
 !s100 CF?MWmgb06SH6GoKQ?CRE1
 R10
 32
-Z51 !s110 1712619540
+Z54 !s110 1712619540
 !i10b 1
-Z52 !s108 1712619540.000000
-Z53 !s90 -reportprogress|300|-work|work|/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/full_adder.vhd|
-Z54 !s107 /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/full_adder.vhd|
+Z55 !s108 1712619540.000000
+Z56 !s90 -reportprogress|300|-work|work|/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/full_adder.vhd|
+Z57 !s107 /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/full_adder.vhd|
 !i113 0
 R15
 R16
@@ -315,33 +315,33 @@ V7;zS4YeN@d1[Ngc^ReIY;1
 !s100 ;^HGURQ_<c^ZG1f7Pb1DV1
 R10
 32
-R51
-!i10b 1
-R52
-R53
 R54
+!i10b 1
+R55
+R56
+R57
 !i113 0
 R15
 R16
 Efull_adder_n
-Z55 w1712618992
+Z58 w1712618992
 R6
 R7
 !i122 31
 R1
-Z56 8/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/full_adder_N.vhd
-Z57 F/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/full_adder_N.vhd
+Z59 8/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/full_adder_N.vhd
+Z60 F/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/full_adder_N.vhd
 l0
 L4 1
 VLPzh:XS4XbBK;l]f:@^>k2
 !s100 [WOY_W`fmZc@9QLoXcBVU1
 R10
 32
-R51
+R54
 !i10b 1
-R52
-Z58 !s90 -reportprogress|300|-work|work|/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/full_adder_N.vhd|
-Z59 !s107 /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/full_adder_N.vhd|
+R55
+Z61 !s90 -reportprogress|300|-work|work|/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/full_adder_N.vhd|
+Z62 !s107 /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/full_adder_N.vhd|
 !i113 0
 R15
 R16
@@ -356,33 +356,33 @@ Ve6RNfT;FL5OIVZmf^UO[c0
 !s100 n9BF9jC1?1_<R_o1ASO^e2
 R10
 32
-R51
+R54
 !i10b 1
-R52
-R58
-R59
+R55
+R61
+R62
 !i113 0
 R15
 R16
 Einvg
-R28
+R31
 R6
 R7
 !i122 27
 R1
-Z60 8/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/invg.vhd
-Z61 F/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/invg.vhd
+Z63 8/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/invg.vhd
+Z64 F/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/invg.vhd
 l0
-R31
+R34
 V]eXOe]3lZ=l7S8@9?:L9T1
 !s100 5^0jfQ^dVk:bl_Za_KajG0
 R10
 32
-R51
+R54
 !i10b 1
-R52
-Z62 !s90 -reportprogress|300|-work|work|/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/invg.vhd|
-Z63 !s107 /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/invg.vhd|
+R55
+Z65 !s90 -reportprogress|300|-work|work|/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/invg.vhd|
+Z66 !s107 /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/invg.vhd|
 !i113 0
 R15
 R16
@@ -397,22 +397,22 @@ Ve`;fA[BQP?1Y52gl`N_a?3
 !s100 Q?`9^ToWC]zk1[=<LdPdE3
 R10
 32
-R51
+R54
 !i10b 1
-R52
-R62
-R63
+R55
+R65
+R66
 !i113 0
 R15
 R16
 Emux2t1_n
-R35
+R38
 R6
 R7
 !i122 35
 R1
-Z64 8/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/mux2t1_N.vhd
-Z65 F/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/mux2t1_N.vhd
+Z67 8/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/mux2t1_N.vhd
+Z68 F/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/mux2t1_N.vhd
 l0
 L21 1
 VmY^3Z`LOeH:?DS5zXOWi]0
@@ -422,8 +422,8 @@ R10
 R11
 !i10b 1
 R12
-Z66 !s90 -reportprogress|300|-work|work|/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/mux2t1_N.vhd|
-Z67 !s107 /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/mux2t1_N.vhd|
+Z69 !s90 -reportprogress|300|-work|work|/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/mux2t1_N.vhd|
+Z70 !s107 /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/mux2t1_N.vhd|
 !i113 0
 R15
 R16
@@ -441,30 +441,30 @@ R10
 R11
 !i10b 1
 R12
-R66
-R67
+R69
+R70
 !i113 0
 R15
 R16
 Emux2to1
-Z68 w1711751801
+Z71 w1711751801
 R6
 R7
 !i122 30
 R1
-Z69 8/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/mux2t1.vhd
-Z70 F/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/mux2t1.vhd
+Z72 8/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/mux2t1.vhd
+Z73 F/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/mux2t1.vhd
 l0
 L15 1
 VV[NPLY[k=bkDl@k;R7z111
 !s100 3AMSMX6g^TJAk3ITNRJfN2
 R10
 32
-R51
+R54
 !i10b 1
-R52
-Z71 !s90 -reportprogress|300|-work|work|/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/mux2t1.vhd|
-Z72 !s107 /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/mux2t1.vhd|
+R55
+Z74 !s90 -reportprogress|300|-work|work|/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/mux2t1.vhd|
+Z75 !s107 /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/mux2t1.vhd|
 !i113 0
 R15
 R16
@@ -479,22 +479,22 @@ VZaEN16h?:__94XYF[:khm1
 !s100 1=`O8MYI6=mF1<DXCXlGV3
 R10
 32
-R51
+R54
 !i10b 1
-R52
-R71
-R72
+R55
+R74
+R75
 !i113 0
 R15
 R16
 En_addsub
-Z73 w1712187641
+Z76 w1712187641
 R6
 R7
 !i122 36
 R1
-Z74 8/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/n_addsub.vhd
-Z75 F/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/n_addsub.vhd
+Z77 8/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/n_addsub.vhd
+Z78 F/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/n_addsub.vhd
 l0
 R25
 V6f[>>3DMLN9=e;]AnW1LE0
@@ -504,8 +504,8 @@ R10
 R11
 !i10b 1
 R12
-Z76 !s90 -reportprogress|300|-work|work|/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/n_addsub.vhd|
-Z77 !s107 /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/n_addsub.vhd|
+Z79 !s90 -reportprogress|300|-work|work|/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/n_addsub.vhd|
+Z80 !s107 /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/n_addsub.vhd|
 !i113 0
 R15
 R16
@@ -523,19 +523,19 @@ R10
 R11
 !i10b 1
 R12
-R76
-R77
+R79
+R80
 !i113 0
 R15
 R16
 Enbit_ripple_adder
-Z78 w1712180740
+Z81 w1712180740
 R6
 R7
 !i122 37
 R1
-Z79 8/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/nbit_ripple_adder.vhd
-Z80 F/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/nbit_ripple_adder.vhd
+Z82 8/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/nbit_ripple_adder.vhd
+Z83 F/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/nbit_ripple_adder.vhd
 l0
 L17 1
 V8g@g1ohT`RP1ZZL>SPLG;2
@@ -545,8 +545,8 @@ R10
 R11
 !i10b 1
 R12
-Z81 !s90 -reportprogress|300|-work|work|/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/nbit_ripple_adder.vhd|
-Z82 !s107 /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/nbit_ripple_adder.vhd|
+Z84 !s90 -reportprogress|300|-work|work|/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/nbit_ripple_adder.vhd|
+Z85 !s107 /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/nbit_ripple_adder.vhd|
 !i113 0
 R15
 R16
@@ -564,21 +564,21 @@ R10
 R11
 !i10b 1
 R12
-R81
-R82
+R84
+R85
 !i113 0
 R15
 R16
 Eonescomp
-R35
+R38
 R3
 R6
 R7
 R4
 !i122 38
 R1
-Z83 8/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/onesComp.vhd
-Z84 F/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/onesComp.vhd
+Z86 8/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/onesComp.vhd
+Z87 F/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/onesComp.vhd
 l0
 L8 1
 V?=UMVV4Rob8=B?_<Q=WV:2
@@ -588,8 +588,8 @@ R10
 R11
 !i10b 1
 R12
-Z85 !s90 -reportprogress|300|-work|work|/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/onesComp.vhd|
-Z86 !s107 /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/onesComp.vhd|
+Z88 !s90 -reportprogress|300|-work|work|/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/onesComp.vhd|
+Z89 !s107 /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/onesComp.vhd|
 !i113 0
 R15
 R16
@@ -609,30 +609,30 @@ R10
 R11
 !i10b 1
 R12
-R85
-R86
+R88
+R89
 !i113 0
 R15
 R16
 Eorg2
-R28
+R31
 R6
 R7
 !i122 29
 R1
-Z87 8/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/org2.vhd
-Z88 F/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/org2.vhd
+Z90 8/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/org2.vhd
+Z91 F/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/org2.vhd
 l0
-R31
+R34
 VhOiEZ0HVFKUfoceE;g4CN1
 !s100 hJAZ>EB8bm_e<^5IFaP9e1
 R10
 32
-R51
+R54
 !i10b 1
-R52
-Z89 !s90 -reportprogress|300|-work|work|/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/org2.vhd|
-Z90 !s107 /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/org2.vhd|
+R55
+Z92 !s90 -reportprogress|300|-work|work|/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/org2.vhd|
+Z93 !s107 /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/org2.vhd|
 !i113 0
 R15
 R16
@@ -642,38 +642,38 @@ R7
 DEx4 work 4 org2 0 22 hOiEZ0HVFKUfoceE;g4CN1
 !i122 29
 l32
-R34
+R37
 VeLGLG944lJMT]Df59N0F92
 !s100 nma>Pa=mMW`KzzjeW=1[d1
 R10
 32
-R51
+R54
 !i10b 1
-R52
-R89
-R90
+R55
+R92
+R93
 !i113 0
 R15
 R16
 Epc
-Z91 w1712622607
+Z94 w1712622607
 R6
 R7
 !i122 43
 R1
-Z92 8/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/pc.vhd
-Z93 F/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/pc.vhd
+Z95 8/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/pc.vhd
+Z96 F/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/pc.vhd
 l0
-R43
+R46
 VU]3=[^TKWC`X47F^36Xdf1
 !s100 nQ?LzTS`?ZNAoHe8z94<93
 R10
 32
-Z94 !s110 1712623919
+Z97 !s110 1712623919
 !i10b 1
-Z95 !s108 1712623919.000000
-Z96 !s90 -reportprogress|300|-work|work|/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/pc.vhd|
-Z97 !s107 /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/pc.vhd|
+Z98 !s108 1712623919.000000
+Z99 !s90 -reportprogress|300|-work|work|/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/pc.vhd|
+Z100 !s107 /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/pc.vhd|
 !i113 0
 R15
 R16
@@ -688,33 +688,33 @@ V[SK@<2HIQQgOI4R8`Xi1d0
 !s100 4z>8m<oaYH9S_T9`iMK`E3
 R10
 32
-R94
-!i10b 1
-R95
-R96
 R97
+!i10b 1
+R98
+R99
+R100
 !i113 0
 R15
 R16
 Epc_full
-R91
+R94
 R6
 R7
 !i122 44
 R1
-Z98 8/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/pc_Full.vhd
-Z99 F/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/pc_Full.vhd
+Z101 8/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/pc_Full.vhd
+Z102 F/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/pc_Full.vhd
 l0
-R43
+R46
 VFM3K@KTKPf:<OK71m7LVW2
 !s100 H`zUEVOhW>h_fGaQG?A_z2
 R10
 32
-Z100 !s110 1712623920
+Z103 !s110 1712623920
 !i10b 1
-Z101 !s108 1712623920.000000
-Z102 !s90 -reportprogress|300|-work|work|/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/pc_Full.vhd|
-Z103 !s107 /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/pc_Full.vhd|
+Z104 !s108 1712623920.000000
+Z105 !s90 -reportprogress|300|-work|work|/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/pc_Full.vhd|
+Z106 !s107 /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/pc_Full.vhd|
 !i113 0
 R15
 R16
@@ -729,23 +729,23 @@ VaJLk[VdPHJzVoW:Jif_j<2
 !s100 KYQTVNAG@@b?ami`^i^:d1
 R10
 32
-R100
-!i10b 1
-R101
-R102
 R103
+!i10b 1
+R104
+R105
+R106
 !i113 0
 R15
 R16
 Etb_alu
-Z104 w1712613882
-Z105 DPx4 ieee 16 std_logic_textio 0 22 C8j>g0lzF^EAA]5<S6PY32
+Z107 w1712613882
+Z108 DPx4 ieee 16 std_logic_textio 0 22 C8j>g0lzF^EAA]5<S6PY32
 R6
 R7
 !i122 34
 R1
-Z106 8/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/tb_ALU.vhd
-Z107 F/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/tb_ALU.vhd
+Z109 8/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/tb_ALU.vhd
+Z110 F/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/tb_ALU.vhd
 l0
 R25
 V_WC<2^9EZ96l;5C<C:J[>0
@@ -755,13 +755,13 @@ R10
 R11
 !i10b 1
 R12
-Z108 !s90 -reportprogress|300|-work|work|/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/tb_ALU.vhd|
-Z109 !s107 /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/tb_ALU.vhd|
+Z111 !s90 -reportprogress|300|-work|work|/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/tb_ALU.vhd|
+Z112 !s107 /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/tb_ALU.vhd|
 !i113 0
 R15
 R16
 Amixed
-R105
+R108
 R6
 R7
 DEx4 work 6 tb_alu 0 22 _WC<2^9EZ96l;5C<C:J[>0
@@ -775,30 +775,30 @@ R10
 R11
 !i10b 1
 R12
-R108
-R109
+R111
+R112
 !i113 0
 R15
 R16
 Exorg2
-R28
+R31
 R6
 R7
 !i122 28
 R1
-Z110 8/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/xorg2.vhd
-Z111 F/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/xorg2.vhd
+Z113 8/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/xorg2.vhd
+Z114 F/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/xorg2.vhd
 l0
-R31
+R34
 VA]ncWhoC:fhLS`F>c9^ag2
 !s100 zGkHVGJ]HQ5RboN2N>KzN1
 R10
 32
-R51
+R54
 !i10b 1
-R52
-Z112 !s90 -reportprogress|300|-work|work|/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/xorg2.vhd|
-Z113 !s107 /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/xorg2.vhd|
+R55
+Z115 !s90 -reportprogress|300|-work|work|/home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/xorg2.vhd|
+Z116 !s107 /home/hpeacher/cpr381/Proj1/Single-Cycle-MIPS-Processor/xorg2.vhd|
 !i113 0
 R15
 R16
@@ -808,16 +808,16 @@ R7
 DEx4 work 5 xorg2 0 22 A]ncWhoC:fhLS`F>c9^ag2
 !i122 28
 l32
-R34
+R37
 VV`;B_39=:h3bCoQNhV;bn0
 !s100 2<f]d3XziROLh_[:_6mNg2
 R10
 32
-R51
+R54
 !i10b 1
-R52
-R112
-R113
+R55
+R115
+R116
 !i113 0
 R15
 R16

@@ -196,16 +196,16 @@ with iOpCode select
 -- oOverflowEn --
 -- all except addu, addiu, subu, --
 with iFunct select
-     s_ofe1 <= '0' when "100001" | "100011",
-     '1' when others;
+     s_ofe1 <= '1' when "100000" | "100010",
+               '0' when others;
 
 with iOpCode select
-     s_ofe2 <= '0' when "001001" | "100100" | "100101",
-     '1' when others;
+     s_ofe2 <= '1' when "001000",
+               '0' when others;
 
 with iOpCode select
      oOverflowEn <= s_ofe1 when "000000",
-     s_ofe2 when others;
+                    s_ofe2 when others;
 
 with iOpCode select
      oAl <= '1' when "000011",

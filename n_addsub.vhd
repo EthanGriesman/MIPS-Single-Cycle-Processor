@@ -23,7 +23,8 @@ entity n_addsub is
         i_B        : in std_logic_vector(N-1 downto 0); -- Input B, a vector of N bits
         i_C        : in std_logic; -- Add/Subtract control signal (0 for add, 1 for subtract)
         o_Sum      : out std_logic_vector(N-1 downto 0); -- Output sum/difference, N bits
-        oC         : out std_logic  -- Carry out from the last bit
+        oC         : out std_logic;  -- Carry out from the last bit
+        oOF        : out std_logic
    );
 end n_addsub;
 
@@ -56,12 +57,15 @@ architecture structural of n_addsub is
             i_iB        : in std_logic_vector(N-1 downto 0); -- Input B
             i_iC         : in std_logic; -- Input carry
             o_oS         : out std_logic_vector(N-1 downto 0); -- Output sum
+            o_oCprev     : out std_logic;
             o_oC         : out std_logic); -- Output carry from the last bit
    end component;
   
    -- signals to carry things to/from the mux
    signal s_Bi         : std_logic_vector(N-1 downto 0); -- To hold the one's complement of B
    signal mux_Out      : std_logic_vector(N-1 downto 0); -- Output of the mux, fed into the adder
+   signal s_prevCarry  : std_logic;
+   signal s_carry      : std_logic;
   
  begin
   
@@ -69,12 +73,15 @@ architecture structural of n_addsub is
    adder: full_adder_N
    generic map(N)
    port map(
-       i_iA => i_A,
-       i_iB => mux_Out,
-       i_iC => i_C,
-       o_oS => o_Sum,
-       o_oC => oC
+       i_iA         => i_A,
+       i_iB         => mux_Out,
+       i_iC         => i_C,
+       o_oS         => o_Sum,
+       o_oCprev     => s_prevCarry,
+       o_oC         => s_carry
    );
+
+   oC <= s_carry;
 
    -- Instantiate the multiplexer to select between B and its complement
    mux: mux2t1_N
@@ -93,6 +100,8 @@ architecture structural of n_addsub is
        i_D => i_B,
        o_O => s_Bi
    );
+
+   oOF <= s_carry XOR s_prevCarry;
 
 
 end structural;

@@ -3,11 +3,12 @@ use IEEE.std_logic_1164.all;
 
 entity full_adder_N is
     generic(n : integer := 32);
-    port(i_iA  : in std_logic_vector(N-1 downto 0);
-         i_iB  : in std_logic_vector(N-1 downto 0);
-         i_iC  : in std_logic;
-         o_oS  : out std_logic_vector(N-1 downto 0);
-         o_oC  : out std_logic);
+    port(i_iA       : in std_logic_vector(N-1 downto 0);
+         i_iB       : in std_logic_vector(N-1 downto 0);
+         i_iC       : in std_logic;
+         o_oS       : out std_logic_vector(N-1 downto 0);
+         o_oCprev   : out std_logic;
+         o_oC       : out std_logic);
 
 end full_adder_N;
 
@@ -37,5 +38,6 @@ begin
     end generate G_NBit_ADDER;
 
     o_oC <= s_Carry(N);
+    o_oCprev <= s_Carry(N-1);
 
 end structural;

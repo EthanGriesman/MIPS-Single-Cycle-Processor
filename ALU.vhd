@@ -39,7 +39,8 @@ architecture structure of ALU is
                i_B      : in std_logic_vector(31 downto 0);
                i_C      : in std_logic;
                o_Sum    : out std_logic_vector(31 downto 0);
-               oC      : out std_logic
+               oC      : out std_logic;
+               oOF      : out std_logic
           ); --Change to add previous carry as output in order to XOR for overflow
      end component;
 
@@ -171,7 +172,8 @@ architecture structure of ALU is
                     i_B => inputB,      -- inputB
                     i_C => s_minus,     -- control bit to determine add or sub
                     o_Sum => s_sum,     -- sum output
-                    oC => s_carry);     -- carry
+                    oC => s_carry,      -- carry
+                    oOF => s_overflow); -- carry30 xor carry31     
 
           --------------
           -- SHIFTING --
@@ -183,7 +185,7 @@ architecture structure of ALU is
                     iDir   => s_dir,
                     iSra   => s_sra,
                     ishamt => s_shamt,
-                    iInput => inputA,  -- Assuming inputA is the value to be shifted
+                    iInput => inputB,
                     oOutput => s_shift
                );
 
@@ -214,7 +216,8 @@ architecture structure of ALU is
                     i_B => inputB,
                     i_C => '1',           -- Subtraction for SLT
                     oC => s_sltSum,
-                    o_Sum => s_sltC);
+                    o_Sum => s_sltC,
+                    oOF   => open);
 
           -- Extract the most significant bit (sign bit) from the subtraction result
           -- least significant
@@ -250,11 +253,8 @@ architecture structure of ALU is
           zeroOut <= s_zero;
           carryOut <= s_carry;
 
-          -- XOR to detect different signs, AND to check overflow --
-          s_overflowCheck <= (inputA(31) xnor inputB(31)) and (inputA(31) xor s_sum(31));
-          s_overflow <= s_overflowCheck;
 
-          overflow <= s_overflow;
+          overflow <= s_overflow AND overflowEN;
 
 
 end structure;
