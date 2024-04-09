@@ -29,7 +29,8 @@ port(iOpcode    : in std_logic_vector(5 downto 0); --opcode
      oEqual     : out std_logic; --done
      oSignExt   : out std_logic;
      oHalt      : out std_logic;
-     oOverflowEn: out std_logic);
+     oOverflowEn: out std_logic;
+     oExtendImm : out std_logic); -- 1-> zero extend  0-> sign extend
 end controlModule;
 
 architecture dataflow of controlModule is
@@ -116,7 +117,7 @@ with iOpCode select
 -- oMemtoReg --
 -- writes to memory --
 with iOpCode select
---lw, lb, lh, lbu, lhu
+--   lw, lb, lh, lbu, lhu
      oMemtoReg <= '1' when "100011" | "100000" | "100001" | "100100" | "100101", --lui, lw, lb, lh, lbu, lhu
                  '0' when others;
 
@@ -130,11 +131,11 @@ with iOpCode select
 -- writes back to register --
 -- all except sra, sub, subu, beq, bne, j, jr --
 with iOpCode select
-     s_rw1 <= '1' when "001000" | "001001" | "001100" | "001111" | "100011" | "001110" | "001010" | "000011" | "100000" | "100001" | "100100" | "100101",
+     s_rw1 <= '1' when "001000" | "001001" | "001100" | "001111" | "100011" | "001110" | "001101" | "001010" | "000011" | "100000" | "100001" | "100100" | "100101",
               '0' when others;
 
 with iFunct select
-     s_rw2 <= '1' when "100000" | "100001" | "100100" | "100111" | "100110" | "100101" | "101010" | "000000" | "000010" | "000100" | "000110" | "000111" | "100010" | "100011",
+     s_rw2 <= '1' when "100000" | "100001" | "100100" | "100111" | "100110" | "100101" | "101010" | "000000" | "000010" | "000011" | "000100" | "000110" | "000111" | "100010" | "100011",
               '0' when others;
 
 with iOpCode select
@@ -213,5 +214,9 @@ with iOpCode select
 with iOpCode select
      oSignExt <= '1' when "100100" | "100101",
                  '0' when others;
+
+with iOpCode select
+     oExtendImm <= '0' when "001100" | "001101" | "001110",
+                   '1' when others;
 
 end dataflow;

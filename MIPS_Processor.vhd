@@ -86,8 +86,8 @@ architecture structure of MIPS_Processor is
   end component;
 
   component fetch is
-    port(iRST    : in std_logic;
-        iRSTVAL : in std_logic_vector(31 downto 0);
+    port(iCLK   : in std_logic;
+        iRST    : in std_logic;
         iAddr   : in std_logic_vector(25 downto 0);
         iSignExtendImm  : in std_logic_vector(31 downto 0);
         iBranch     : in std_logic;
@@ -98,11 +98,10 @@ architecture structure of MIPS_Processor is
         oPCPlus4    : out std_logic_vector(31 downto 0));
   end component;
 
-  component extender is
-    generic(Y : integer := 16);
-    port(input : in std_logic_vector(Y-1 downto 0);
-         sign  : in std_logic;
-         output: out std_logic_vector(31 downto 0));
+  component extender16t32 is
+    port( iD	  : in std_logic_vector(15 downto 0);
+	        iSel	: in std_logic;
+	        oO	  : out std_logic_vector(31 downto 0));
   end component;
 
   component controlModule is
@@ -121,7 +120,8 @@ architecture structure of MIPS_Processor is
         oEqual     : out std_logic; --done
         oSignExt   : out std_logic;
         oHalt      : out std_logic;
-        oOverflowEn: out std_logic);
+        oOverflowEn: out std_logic;
+        oExtendImm : out std_logic);
   end component;
 
   component regFile is
@@ -138,7 +138,7 @@ architecture structure of MIPS_Processor is
         
   signal s_Byte                   : std_logic_vector(7 downto 0);
   signal s_ByteExt                : std_logic_vector(31 downto 0);
-  signal s_HW                     : std_logic_vector(16 downto 0);
+  signal s_HW                     : std_logic_vector(15 downto 0);
   signal s_HWExt                  : std_logic_vector(31 downto 0);
   signal s_DMemLoad               : std_logic_vector(31 downto 0);
 
@@ -154,6 +154,7 @@ architecture structure of MIPS_Processor is
   signal s_Equal                  : std_logic;
   signal s_SignExt                : std_logic;
   signal s_OverflowEn             : std_logic;
+  signal s_ExtendImm              : std_logic;
 
   signal s_PCPlus4                : std_logic_vector(31 downto 0);
   signal s_SignExtImm             : std_logic_vector(31 downto 0);
@@ -214,12 +215,13 @@ begin
                  oLb          => s_Lb,
                  oEqual       => s_Equal,
                  oHalt        => s_Halt,
-                 oOverflowEn  => s_OverflowEn);
+                 oOverflowEn  => s_OverflowEn,
+                 oExtendImm   => s_ExtendImm);
   
   FetchLog: fetch
     port map (
+            iCLK           => iCLK,
             iRST           => iRST,
-            iRSTVAL        => x"00400000",
             iAddr          => s_Inst(25 downto 0),
             iSignExtendImm => s_SignExtImm,
             iBranch        => s_Branch,
@@ -231,7 +233,7 @@ begin
     );
 
 
-  RegFile: regFile
+  RegisterFile: regFile
     port map( iR1          => s_Inst(25 downto 21),
               iR2          => s_Inst(20 downto 16),
               iW           => s_RegWrAddr,
@@ -250,12 +252,10 @@ begin
                     "11111"              when "10",
                     "00000"              when others;
 
-  SignExt16: extender
-    port map(
-            input         => s_Inst(15 downto 0),
-            sign          => s_Inst(15),
-            output        => s_SignExtImm
-    );
+  extend: extender16t32
+      port map( iD	  => s_Inst(15 downto 0),
+                iSel	=> s_ExtendImm,
+                oO	  => s_SignExtImm);
   
   with s_ALUSrc select
     s_ALUIn2 <= s_rt         when '0',
@@ -263,7 +263,7 @@ begin
                 x"00000000"  when others;
   
 
-  ALU: ALU
+  cALU: ALU
      port map(
             inputA     => s_rs,
             inputB     => s_ALUIn2,
