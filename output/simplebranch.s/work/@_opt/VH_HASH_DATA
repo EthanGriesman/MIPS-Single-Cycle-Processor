@@ -1,0 +1,142 @@
+[N
+14
+1
+119 /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/containers/sim_container_0/work
+9
+8 iInstExt
+5
+10 ADDR_WIDTH
+8
+1 N
+12
+5 mixed
+3
+3 rtl
+7
+9 structure
+6
+14 mips_processor
+14
+12 OUTPUT_TRACE
+11
+2 tb
+4
+10 DATA_WIDTH
+2
+3 mem
+13
+9 gCLK_HPER
+10
+9 iInstAddr
+]
+[G
+1
+6
+7
+1
+8
+1
+0
+32
+0
+0 0
+0
+0
+]
+[G
+1
+2
+3
+1
+4
+1
+0
+32
+0
+0 0
+0
+0
+]
+[G
+1
+11
+12
+1
+14
+0
+0
+0
+0
+8 8
+109
+115
+46
+116
+114
+97
+99
+101
+1
+1
+1 8 1 1
+]
+[G
+1
+2
+3
+1
+5
+1
+0
+10
+0
+0 0
+0
+0
+]
+[G
+1
+11
+12
+1
+13
+0
+0
+0
+0
+8 8
+-128
+-106
+-104
+0
+0
+0
+0
+0
+0
+0
+]
+[G
+1
+11
+12
+1
+8
+1
+0
+32
+0
+0 0
+0
+0
+]
+[P
+1
+6
+7
+9
+10
+1
+0
+0
+]
