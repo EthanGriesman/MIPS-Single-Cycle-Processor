@@ -60,4 +60,3 @@ nop   		 #3
 nop
 nop
 
-repl.qb $t2, $t0   	 # replicate '01111100' into all 32 bits
