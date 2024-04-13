@@ -38,7 +38,7 @@ def main():
 
     config, env = config_parser.read_config(options.config)
 
-    Updater();
+    #Updater();
 
 
     missing_file = check_project_files_exist()
