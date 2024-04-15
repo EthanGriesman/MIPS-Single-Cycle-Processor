@@ -76,8 +76,8 @@ architecture mixed of barrelShifter is
                 s_ra3(31 downto 0) when ishamt(4) = '0' else
                 (others => '0');
         
-        oOutput <= s_r4 when iDir = '1' else
-                   s_l4 when iDir = '0' else
+        oOutput <= s_r4 when (iDir = '1' and iSra = '0') or (iDir = '1' and iInput(31) = '0') else
+                   s_l4 when iDir = '0' and iSra = '0' else
                    s_ra4 when iDir = '1' and iSra = '1' and iInput(31) = '1' else
                    (others => '0');
                 
