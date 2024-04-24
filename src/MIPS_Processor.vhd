@@ -177,7 +177,7 @@ begin
       iInstAddr when others;
 
 
-  -- Instruction memory
+  -- Instruction memory --
   IMem: mem
     generic map(ADDR_WIDTH => ADDR_WIDTH,
                 DATA_WIDTH => N)

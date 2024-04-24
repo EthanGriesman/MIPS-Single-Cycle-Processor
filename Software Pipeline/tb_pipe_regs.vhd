@@ -22,7 +22,7 @@ architecture mixed of tb_pipe_regs is
     );
   end component;
 
-  component id_ex_reg is
+  component ID_EX is
     port (
       i_CLK : in std_logic;
       i_RST : in std_logic;
@@ -71,7 +71,7 @@ architecture mixed of tb_pipe_regs is
     );
   end component;
 
-  component ex_mem_reg is
+  component EX_MEM is
     port (
       -- Clock and reset
       i_CLK           : in std_logic;
@@ -108,7 +108,7 @@ architecture mixed of tb_pipe_regs is
     );
   end component;
 
-  component mem_wb_reg is
+  component MEM_WB is
     port (
       i_CLK           : in std_logic;
       i_RST           : in std_logic;
@@ -378,7 +378,7 @@ begin
     s_flush_EXMEM <= '0';
     s_flush_MEMWB <= '0';
 
-    -- All 5 stages can have values
+    -- All 5 stages can have values --
     s_IF_PCP4 <= x"12345678";
     wait until rising_edge(s_iCLK);
     s_IF_PCP4 <= x"890ABCDE";
@@ -390,7 +390,7 @@ begin
     s_IF_PCP4 <= x"CCCCCCCC";
     wait until rising_edge(s_iCLK);
 
-    -- Flush each stage
+    -- Flush each stage -- 
     s_flush_IFID <= '1';
     s_flush_IDEX <= '1';
     s_flush_EXMEM <= '1';

@@ -2,7 +2,6 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.std_logic_arith.all;
 use std.env.all;
-use std.textio.all;
 use IEEE.NUMERIC_STD.ALL; -- To use unsigned types
 
 entity add_sub is

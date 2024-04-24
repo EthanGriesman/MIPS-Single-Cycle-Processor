@@ -56,7 +56,6 @@ begin
             i_B => sum_xor_1_out,
             o_F => o_S
         );
-    
 
     carry_xor_1: xorg2
         port map (
