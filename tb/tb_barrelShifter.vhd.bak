@@ -135,13 +135,6 @@ begin
         iDir_tb   <= '1';          -- Right shift
         iSra_tb   <= '0';          -- Zero extension
         wait for cCLK_PER;         -- Wait for one clock cycle
-        
-	-- Test case 11 (Arithmetic Shift)
-        iInput_tb <= x"FFFFFFF0";  -- Input data with MSBs as 1s
-        ishamt_tb <= "00001";      -- Shift by 1 to the left
-        iDir_tb   <= '0';          -- Left shift
-        iSra_tb   <= '1';          -- Sign extension
-        wait for cCLK_PER;         -- Wait for one clock cycle
 
     end process;
 

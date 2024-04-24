@@ -97,10 +97,10 @@ architecture mixed of tb_ALU is
             wait for cCLK_PER;
 
         -- (subu)
-                s_inputA    <= x"00000003";
-                s_inputB    <= x"00000002";
-                s_opSelect  <= "100000000";
-                s_overflowEn <= '0';
+            s_inputA    <= x"00000003";
+            s_inputB    <= x"00000002";
+            s_opSelect  <= "100000000";
+            s_overflowEn <= '0';
             wait for cCLK_PER;
 
         -- (subu)
