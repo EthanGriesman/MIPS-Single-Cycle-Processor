@@ -1,227 +1,53 @@
--- Ethan Griesman
+# Ethan Griesman
+# Spring 2024
+# Department of Electrical and Computer Engineering
+# Iowa State University
+#
+# This optimized MIPS assembly code sorts an array of integers using the Bubble Sort algorithm.
+# It iteratively compares and swaps adjacent elements if they are in the wrong order,
+# ensuring the largest elements bubble to the end of the array after each iteration.
+
 .data
-array:
-   	.word   10, 5, 27, 2, 1, 12
-  	 
+list: .word 5, 7, 9, 2, 3, 6, 11
+size: .word 7
+
 .text
-# 4 no-ops or other instructions required between each instruction with read/write dependencies, 5 pipeline stages
+.globl main
 
 main:
-    #Set the number of elements we want to sort into $a0
-    addiu   $4, $0, 6
-    jal bubblesort
-    # Prevent halt from entering the pipeline pre-mature bubblesort completion
-    nop
-    nop
-    nop
-    nop
-    halt
+    add $t0, $zero, $zero         # Initialize outer loop counter i to 0
+    lasw $s0, list                # Load base address of the list into $s0 with safe load address instruction
+    lw $s1, size                  # Load the size of the list into $s1
+    addi $t7, $zero, 0            # Initialize inner loop upper bound
 
-bubblesort:
-   	addiu   $sp,$sp,-32
-   	nop
-   	nop
-   	nop
-   	sw  	$fp,28($sp)
-   	#move	$fp,$sp
-   	add 	$fp, $sp, $0
-   	nop
-   	nop
-   	nop
-   	sw  	$4,32($fp)
-   	sw  	$0,8($fp)
-   	b   	$L2 # begin loop
-   	nop
-   	nop
-   	nop
-   	nop
+outer_loop:
+    beq $t0, $s1, exit            # Exit loop if i == size
+    sub $t7, $s1, $t0             # Calculate upper bound of inner loop = size - i
+    addi $t7, $t7, -1             # Decrement upper bound to use zero-indexed array access
 
-$L6:
-   	sw  	$0,12($fp)
-   	b   	$L3
-   	nop
-   	nop
-   	nop
-   	nop
+    add $t1, $zero, $zero         # Initialize inner loop counter j to 0
 
-$L5:
-   	lw  	$3,12($fp) # 4 instructions between $3 dependency
-   	lasw  	$2, array  # 4 instructions between $2 dependency
-   	nop
-   	nop
-   	nop
-   	sll 	$3,$3,2
-   	nop
-   	nop
-   	nop
-   	addu	$2,$3,$2
-   	nop
-   	nop
-   	nop
-   	lw  	$3,0($2)
-   	lw  	$2,12($fp)
-   	nop
-   	nop
-   	nop
-   	addiu   $4,$2,1
-   	lasw  	$2, array
-   	nop
-   	nop
-   	sll 	$4,$4,2
-   	nop
-   	nop
-   	nop
-   	addu	$2,$4,$2
-   	nop
-   	nop
-   	nop
-   	lw  	$2,0($2)
-   	nop
-   	nop
-   	nop
-   	slt 	$2,$2,$3
-   	nop
-   	nop
-   	nop
-   	beq 	$2,$0,$L4
-   	nop
-   	nop
-   	nop
-   	nop
+inner_loop:
+    beq $t1, $t7, continue        # If j == upper bound, continue to increment i
+    sll $t6, $t1, 2               # $t6 = j * 4 (offset for word access)
+    add $t6, $s0, $t6             # $t6 = address of list[j]
 
-   	lw  	$3,12($fp)
-   	lasw  $2, array
-   	nop
-   	nop
-   	nop
-   	sll 	$3,$3,2
-   	nop
-   	nop
-   	nop
-   	addu	$2,$3,$2
-   	nop
-   	nop
-   	nop
-   	lw  	$2,0($2)
-   	nop
-   	nop
-   	nop
-   	sw  	$2,16($fp)
-   	lw  	$2,12($fp)
-   	nop
-   	nop
-   	nop
-   	addiu   $3,$2,1
-   	lasw  	$2, array
-   	nop
-   	nop
-   	sll 	$3,$3,2
-   	nop
-   	nop
-   	nop
-   	addu	$2,$3,$2
-   	nop
-   	nop
-   	lw  	$4,12($fp)
-   	lw  	$3,0($2)
-   	lasw  $2, array
-   	nop
-   	sll 	$4,$4,2
-   	nop
-   	nop
-   	nop
-   	addu	$2,$4,$2
-   	nop
-   	nop
-   	nop
-   	sw  	$3,0($2)
-   	lw  	$2,12($fp)
-   	nop
-   	nop
-   	nop
-   	addiu   $3,$2,1
-   	lasw  	$2, array
-   	nop
-   	nop
-   	nop
-   	sll 	$3,$3,2
-   	nop
-   	nop
-   	nop
-   	addu	$2,$3,$2
-   	lw  	$3,16($fp)
-   	nop
-   	nop
-   	nop
-   	sw  	$3,0($2)
-   	nop
-   	nop
-   	nop
-$L4:
-   	lw  	$2,12($fp)
-   	nop
-   	nop
-   	nop
-   	addiu   $2,$2,1
-   	nop
-   	nop
-   	nop
-   	sw  	$2,12($fp)
-   	nop
-   	nop
-   	nop
-$L3:
-   	lw  	$3,32($fp)
-   	lw  	$2,8($fp)
-   	nop
-   	nop
-   	nop
-   	subu	$2,$3,$2
-   	lw  	$3,12($fp)
-   	nop
-   	nop
-   	nop
-   	slt 	$2,$3,$2
-   	nop
-   	nop
-   	nop
-   	bne 	$2,$0,$L5
-   	nop
-   	nop
-   	nop
-   	nop
+    lw $s2, 0($t6)                # Load list[j] into $s2
+    lw $s3, 4($t6)                # Load list[j+1] into $s3
+    nop                           # NOP to avoid load-use hazard with $s3
 
-   	lw  	$2,8($fp)
-   	nop
-   	nop
-   	nop
-   	addiu   $2,$2,1
-   	nop
-   	nop
-   	nop
-   	sw  	$2,8($fp)
-   	nop
-   	nop
-   	nop
-$L2:
-   	lw  	$3,8($fp)
-   	lw  	$2,32($fp)
-   	nop
-   	nop
-   	nop
-   	slt 	$2,$3,$2
-   	nop
-   	nop
-   	nop
-   	bne 	$2,$0,$L6
-   	nop
-   	nop
-   	nop
-   	nop
-   	lw  	$fp,28($sp)
-   	addiu   $sp,$sp,32
-   	jr $31
-   	nop
-   	nop
-   	nop
-   	nop
+    slt $t2, $s3, $s2             # Set $t2 if list[j+1] < list[j]
+    beq $t2, $zero, sorted        # If not less, jump to sorted, i.e., do not swap
+    sw $s3, 0($t6)                # Swap elements: list[j] = list[j+1]
+    sw $s2, 4($t6)                # Swap elements: list[j+1] = list[j]
+
+sorted:
+    addi $t1, $t1, 1              # Increment inner loop counter j
+    j inner_loop                  # Jump back to the start of inner loop
+
+continue:
+    addi $t0, $t0, 1              # Increment outer loop counter i
+    j outer_loop                  # Jump back to the start of outer loop
+
+exit:
+    halt                          # Exit the program
