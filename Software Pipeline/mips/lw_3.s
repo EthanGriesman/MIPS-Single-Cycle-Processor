@@ -5,19 +5,19 @@ temp: .word -23 # declare storage for temp: initial value is -23
 
 main:
     # Start Test
-    	   lw $t0,temp # load contents of RAM locatrion into register $t0 = temp
+    lw $t0,temp # load contents of RAM locatrion into register $t0 = temp
 	NOP
 	NOP
 	NOP
-    	   li $t1, 5   # $t1 = 5
+    li $t1, 5   # $t1 = 5
 	NOP
 	NOP
 	NOP
-    	   sw $t1,temp # store contents of register $t1 into RAM: temp = $t1
+    sw $t1,temp # store contents of register $t1 into RAM: temp = $t1
 	NOP
 	NOP
 	NOP
-    	   lw $t1,temp # load contens of RAM locatrion into register $t1 = temp
+    lw $t1,temp # load contens of RAM locatrion into register $t1 = temp
 	NOP
 	NOP
 	NOP
