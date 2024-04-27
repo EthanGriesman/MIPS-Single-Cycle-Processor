@@ -44,7 +44,7 @@ bubblesort:
    	nop
    	nop
 
--- begin outer loop
+# begin outer loop
 $L6:
    	sw  	$0,12($fp) # reset inner loop counter to 0
    	b   	$L3 # branch to beginning of loop
@@ -53,7 +53,7 @@ $L6:
    	nop
    	nop
 
--- inner loop, performs element comparison and swap if needed
+# inner loop, performs element comparison and swap if needed
 $L5: 
    	lw  	$3,12($fp) # 4 instructions between $3 dependency
    	lasw  	$2, array  # 4 instructions between $2 dependency
@@ -213,7 +213,7 @@ $L3:
    	nop
    	nop
    	nop
-$L2: --outer loop, iterates over the array
+$L2: # outer loop, iterates over the array
    	lw  	$3,8($fp)
    	lw  	$2,32($fp)
    	nop
