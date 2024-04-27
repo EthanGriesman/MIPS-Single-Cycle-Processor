@@ -26,36 +26,38 @@ main:
     halt
 
 bubblesort:
-   	addiu   $sp,$sp,-32
+   	addiu   $sp,$sp,-32 # allocate space on the stack for the function frame
    	nop
    	nop
    	nop
-   	sw  	$fp,28($sp)
-   	#move	$fp,$sp
-   	add 	$fp, $sp, $0
+   	sw  	$fp,28($sp) # store old frame pointer on the stack
+   	#move	$fp,$sp     
+   	add 	$fp, $sp, $0 # set up new frame pointer
    	nop
    	nop
    	nop
-   	sw  	$4,32($fp)
-   	sw  	$0,8($fp)
-   	b   	$L2 # begin loop
+   	sw  	$4,32($fp)  # store number of elements on top of the frame
+   	sw  	$0,8($fp)   # initialize outer loop counter to 0
+   	b   	$L2 # begin loop 
    	nop
    	nop
    	nop
    	nop
 
+-- begin outer loop
 $L6:
-   	sw  	$0,12($fp)
-   	b   	$L3
+   	sw  	$0,12($fp) # reset inner loop counter to 0
+   	b   	$L3 # branch to beginning of loop
    	nop
    	nop
    	nop
    	nop
 
-$L5:
+-- inner loop, performs element comparison and swap if needed
+$L5: 
    	lw  	$3,12($fp) # 4 instructions between $3 dependency
    	lasw  	$2, array  # 4 instructions between $2 dependency
-   	nop
+   	nop 
    	nop
    	nop
    	sll 	$3,$3,2
@@ -211,7 +213,7 @@ $L3:
    	nop
    	nop
    	nop
-$L2:
+$L2: --outer loop, iterates over the array
    	lw  	$3,8($fp)
    	lw  	$2,32($fp)
    	nop

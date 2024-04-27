@@ -1,3 +1,7 @@
+# Ethan Griesman
+# Spring 2024
+# Department of Electrical and Computer Engineering
+# Iowa State University
 #
 # Topological sort using an adjacency matrix. Maximum 4 nodes.
 # 
