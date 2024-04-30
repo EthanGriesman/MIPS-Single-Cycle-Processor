@@ -549,7 +549,7 @@ begin
 
   
   with s_ALUSrcEX select
-    s_ALUIn2 <= s_selrt        when '0',
+    s_ALUIn2 <= s_rtEX         when '0',
                 s_SignExtImmEX when '1',
                 x"00000000"  when others;
   
