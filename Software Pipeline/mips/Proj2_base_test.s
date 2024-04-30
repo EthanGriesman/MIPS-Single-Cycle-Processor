@@ -1,4 +1,4 @@
-	-- Ethan Griesman
+	# Ethan Griesman
 	addi $s0, $s1, 4
 	NOP
 	NOP
@@ -59,5 +59,6 @@
 	NOP
 	NOP
 	subu $s2, $s2, $s3
-	repl.qb $t7, 0x0000000F
+
+        lb $t6, 0($a0)             # Load byte: Load a byte from memory address 0($a0) into $t6
 	halt
