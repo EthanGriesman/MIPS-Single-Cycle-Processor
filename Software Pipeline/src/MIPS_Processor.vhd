@@ -55,6 +55,8 @@ architecture structure of MIPS_Processor is
 
   -- Required overflow signal -- for overflow exception detection
   signal s_Ovfl         : std_logic;  -- TODO: this signal indicates an overflow exception would have been initiated
+  signal s_OvflEX       : std_logic;
+  signal s_OvflMEM	    : std_logic;
 
   component mem is
     generic(ADDR_WIDTH : integer;
@@ -562,7 +564,7 @@ begin
             opSelect    => s_ALUControlEX,
             overflowEn  => s_OverflowEnEX,
             resultOut   => s_ALUResultOut,
-            overflow    => s_Ovfl,
+            overflow    => s_OvflEX,
             carryOut    => open,
             zeroOut     => s_ALUZero
       );
@@ -592,7 +594,7 @@ begin
           iRegWrAddr  => s_RegWrAddrEX,
           iNewPc      => s_newPCEX,
           iZero       => s_UpdtZero,
-          iOF         => s_Ovfl,
+          iOF         => s_OvflEX,
           iLb         => s_LbEX,
           iAl         => s_AlEX,
           iPcPlus4    => s_PcPlus4EX,
@@ -605,7 +607,7 @@ begin
           oRegWrAddr  => s_RegWrAddrMEM,
           oNewPc      => s_NewPCMEM,
           oZero       => s_ZeroMEM,
-          oOF         => s_OFMEM,
+          oOF         => s_OvflMEM,
           oLb         => s_LbMEM,
           oAl         => s_AlMEM,
           oPcPlus4    => s_PcPlus4MEM
@@ -674,6 +676,7 @@ begin
               iALUResult  => s_ALUResultMEM,
               iRegWrAddr  => s_RegWrAddrMEM,
               iPcPlus4    => s_PcPlus4MEM,
+	            iOF	        => s_OvflMEM
               iAl         => s_AlMEM,
               iNewPc      => s_newPcMEM,
               oMemToReg   => s_MemToRegWB,
@@ -681,10 +684,12 @@ begin
               oHalt       => s_HaltWB,
               oDMemOut    => s_DMemLoadWB,
               oALUResult  => s_ALUResultWB,
+	            oOF         => s_Ovfl
               oRegWrAddr  => s_RegWrAddrWB,
               oPcPlus4    => s_PcPlus4WB,
               oAl         => s_AlWB,
-              oNewPc      => s_newPcWB);
+              oNewPc      => s_newPcWB
+    );
 
 
 
