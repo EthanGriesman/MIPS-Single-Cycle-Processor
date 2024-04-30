@@ -684,8 +684,7 @@ begin
               oRegWrAddr  => s_RegWrAddrWB,
               oPcPlus4    => s_PcPlus4WB,
               oAl         => s_AlWB,
-              oNewPc      => s_newPcWB
-    );
+              oNewPc      => s_newPcWB);
 
 
 
@@ -715,4 +714,3 @@ begin
 
 
 end structure;
-

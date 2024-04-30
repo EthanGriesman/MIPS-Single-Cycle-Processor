@@ -59,6 +59,5 @@
 	NOP
 	NOP
 	subu $s2, $s2, $s3
-
-        lb $t6, 0($a0)             # Load byte: Load a byte from memory address 0($a0) into $t6
+	lb $t6, 0($a0)             # Load byte: Load a byte from memory address 0($a0) into $t6
 	halt
