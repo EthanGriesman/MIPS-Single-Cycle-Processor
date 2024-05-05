@@ -8,7 +8,7 @@ entity tb_pipe_regs is
 end tb_pipe_regs;
 
 architecture mixed of tb_pipe_regs is
-  component if_id_reg is
+  component IF_ID is
     port (
       -- Inputs from Fetch
       i_CLK : in std_logic;
@@ -23,122 +23,68 @@ architecture mixed of tb_pipe_regs is
   end component;
 
   component ID_EX is
-    port (
-      i_CLK : in std_logic;
-      i_RST : in std_logic;
-
-      -- Inputs from IF/ID
-      i_PCP4 : in std_logic_vector(31 downto 0);
-      i_new_pc : in std_logic_vector(31 downto 0);
-      i_do_branch : in std_logic;
-      i_CntrlRegWrite : in std_logic;
-      i_RegDst : in std_logic_vector(1 downto 0);
-      i_jump : in std_logic_vector(1 downto 0);
-      i_memSel : in std_logic_vector(1 downto 0);
-      i_ALUSrc : in std_logic;
-      i_ALUOp : in std_logic_vector(2 downto 0);
-      i_DMemWr : in std_logic;
-      i_Halt : in std_logic;
-      i_dsrc1 : in std_logic_vector(31 downto 0);
-      i_dsrc2 : in std_logic_vector(31 downto 0);
-      i_sign_ext_imm : in std_logic_vector(31 downto 0);
-      i_Inst_rt : in std_logic_vector(4 downto 0);
-      i_Inst_rd : in std_logic_vector(4 downto 0);
-      i_Inst_funct : in std_logic_vector(5 downto 0);
-      i_Inst_lui : in std_logic_vector(15 downto 0);
-      i_Inst_shamt : in std_logic_vector(4 downto 0);
-
-      -- Outputs to EX/MEM
-      o_PCP4 : out std_logic_vector(31 downto 0);
-      o_new_pc : out std_logic_vector(31 downto 0);
-      o_do_branch : out std_logic;
-      o_CntrlRegWrite : out std_logic;
-      o_RegDst : out std_logic_vector(1 downto 0);
-      o_jump : out std_logic_vector(1 downto 0);
-      o_memSel : out std_logic_vector(1 downto 0);
-      o_ALUSrc : out std_logic;
-      o_ALUOp : out std_logic_vector(2 downto 0);
-      o_DMemWr : out std_logic;
-      o_Halt : out std_logic;
-      o_dsrc1 : out std_logic_vector(31 downto 0);
-      o_dsrc2 : out std_logic_vector(31 downto 0);
-      o_sign_ext_imm : out std_logic_vector(31 downto 0);
-      o_Inst_rt : out std_logic_vector(4 downto 0);
-      o_Inst_rd : out std_logic_vector(4 downto 0);
-      o_Inst_funct : out std_logic_vector(5 downto 0);
-      o_Inst_lui : out std_logic_vector(15 downto 0);
-      o_Inst_shamt : out std_logic_vector(4 downto 0)
-    );
+    port (iCLK        : in std_logic;
+          iRST        : in std_logic;
+          iPcPlus4    : in std_logic_vector(31 downto 0);
+          iInst       : in std_logic_vector(31 downto 0);
+          oPcPlus4    : out std_logic_vector(31 downto 0);
+          oInst       : out std_logic_vector(31 downto 0));
   end component;
 
   component EX_MEM is
-    port (
-      -- Clock and reset
-      i_CLK           : in std_logic;
-      i_RST           : in std_logic;
-      -- Inputs from ID/EX
-      i_PCP4          : in std_logic_vector(31 downto 0);
-      i_new_pc        : in std_logic_vector(31 downto 0);
-      i_do_branch     : in std_logic;
-      i_memSel        : in std_logic_vector(1 downto 0);
-      i_CntrlRegWrite : in std_logic;
-      i_RegDst        : in std_logic_vector(1 downto 0);
-      i_DMemWr        : in std_logic;
-      i_jump          : in std_logic_vector(1 downto 0);
-      i_dsrc2         : in std_logic_vector(31 downto 0);
-      i_Halt          : in std_logic;
-      i_ALUOut        : in std_logic_vector(31 downto 0);
-      i_lui_val       : in std_logic_vector(31 downto 0);
-      i_Inst_rt       : in std_logic_vector(4 downto 0);
-      i_Inst_rd       : in std_logic_vector(4 downto 0);
-      o_PCP4          : out std_logic_vector(31 downto 0);
-      o_new_pc        : out std_logic_vector(31 downto 0);
-      o_do_branch     : out std_logic;
-      o_memSel        : out std_logic_vector(1 downto 0);
-      o_CntrlRegWrite : out std_logic;
-      o_RegDst        : out std_logic_vector(1 downto 0);
-      o_DMemWr        : out std_logic;
-      o_jump          : out std_logic_vector(1 downto 0);
-      o_dsrc2         : out std_logic_vector(31 downto 0);
-      o_Halt          : out std_logic;
-      o_ALUOut        : out std_logic_vector(31 downto 0);
-      o_Inst_lui      : out std_logic_vector(31 downto 0);
-      o_Inst_rt       : out std_logic_vector(4 downto 0);
-      o_Inst_rd       : out std_logic_vector(4 downto 0)
-    );
+    port (iCLK            : in std_logic;
+          iRST            : in std_logic;
+          iMemToReg       : in std_logic;
+          iRegWr          : in std_logic;
+          iDMemWr         : in std_logic;
+          iHalt           : in std_logic;
+          irt             : in std_logic_vector(31 downto 0);
+          iALUResult      : in std_logic_vector(31 downto 0);
+          iRegWrAddr      : in std_logic_vector(4 downto 0);
+          iNewPc          : in std_logic_vector(31 downto 0);
+          iZero           : in std_logic;
+          iOF             : in std_logic;
+          iLb             : in std_logic_vector(1 downto 0);
+          iAl             : in std_logic;
+          iPcPlus4        : in std_logic_vector(31 downto 0);
+          oMemToReg       : out std_logic;
+          oRegWr          : out std_logic;
+          oDMemWr         : out std_logic;
+          oHalt           : out std_logic;
+          ort             : out std_logic_vector(31 downto 0);
+          oALUResult      : out std_logic_vector(31 downto 0);
+          oRegWrAddr      : out std_logic_vector(4 downto 0);
+          oNewPc          : out std_logic_vector(31 downto 0);
+          oZero           : out std_logic;
+          oOF             : out std_logic;
+          oLb             : out std_logic_vector(1 downto 0);
+          oAl             : out std_logic;
+          oPcPlus4        : out std_logic_vector(31 downto 0));
   end component;
 
   component MEM_WB is
-    port (
-      i_CLK           : in std_logic;
-      i_RST           : in std_logic;
-      i_PCP4          : in std_logic_vector(31 downto 0);
-      i_new_pc        : in std_logic_vector(31 downto 0);
-      i_do_branch     : in std_logic;
-      i_memSel        : in std_logic_vector(1 downto 0);
-      i_CntrlRegWrite : in std_logic;
-      i_RegDst        : in std_logic_vector(1 downto 0);
-      i_jump          : in std_logic_vector(1 downto 0);
-      i_Halt          : in std_logic;
-      i_DMemOut       : in std_logic_vector(31 downto 0);
-      i_ALUOut        : in std_logic_vector(31 downto 0);
-      i_lui_val       : in std_logic_vector(31 downto 0);
-      i_Inst_rt       : in std_logic_vector(4 downto 0);
-      i_Inst_rd       : in std_logic_vector(4 downto 0);
-      o_PCP4          : out std_logic_vector(31 downto 0);
-      o_new_pc        : out std_logic_vector(31 downto 0);
-      o_do_branch     : out std_logic;
-      o_memSel        : out std_logic_vector(1 downto 0);
-      o_CntrlRegWrite : out std_logic;
-      o_RegDst        : out std_logic_vector(1 downto 0);
-      o_jump          : out std_logic_vector(1 downto 0);
-      o_Halt          : out std_logic;
-      o_DMemOut       : out std_logic_vector(31 downto 0);
-      o_ALUOut        : out std_logic_vector(31 downto 0);
-      o_lui_val       : out std_logic_vector(31 downto 0);
-      o_Inst_rt       : out std_logic_vector(4 downto 0);
-      o_Inst_rd       : out std_logic_vector(4 downto 0)
-    );
+    port (iCLK            : in std_logic;
+          iRST            : in std_logic;
+          iMemToReg       : in std_logic;
+          iRegWr          : in std_logic;
+          iHalt           : in std_logic;
+          iDMemOut        : in std_logic_vector(31 downto 0);
+          iALUResult      : in std_logic_vector(31 downto 0);
+          iRegWrAddr      : in std_logic_vector(4 downto 0);
+          iPcPlus4        : in std_logic_vector(31 downto 0);
+          iNewPc          : in std_logic_vector(31 downto 0);
+          iAl             : in std_logic;
+          iOF             : in std_logic;
+          oMemToReg       : out std_logic;
+          oRegWr          : out std_logic;
+          oHalt           : out std_logic;
+          oDMemOut        : out std_logic_vector(31 downto 0);
+          oALUResult      : out std_logic_vector(31 downto 0);
+          oRegWrAddr      : out std_logic_vector(4 downto 0);
+          oPcPlus4        : out std_logic_vector(31 downto 0);
+          oAl             : out std_logic;
+          oNewPc          : out std_logic_vector(31 downto 0);
+          oOF             : out std_logic);
   end component;
 
   -- Test bench signals
