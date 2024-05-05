@@ -93,11 +93,11 @@ architecture mixed of tb_pipe_regs is
 
   -- IF/ID inputs
   signal s_flush_IFID : std_logic;
-  signal s_IF_PCP4 : std_logic_vector(31 downto 0);
+  signal s_IF_PCPlus4 : std_logic_vector(31 downto 0);
   signal s_IF_Inst : std_logic_vector(31 downto 0);
 
   -- IF/ID outputs
-  signal s_ID_PCP4 : std_logic_vector(31 downto 0);
+  signal s_ID_PCPlus4 : std_logic_vector(31 downto 0);
   signal s_ID_Inst : std_logic_vector(31 downto 0);
 
   -- ID/EX inputs
@@ -286,7 +286,6 @@ begin
     s_MEM_Inst_rt,
     s_MEM_Inst_rd,
 
-
     s_WB_PCP4,
     s_WB_Inst,
     s_WB_doBranch,
@@ -314,56 +313,70 @@ begin
   -- Test cases
   P_TEST : process
   begin
-    s_flush_IFID <= '1';
-    s_flush_IDEX <= '1';
-    s_flush_EXMEM <= '1';
-    s_flush_MEMWB <= '1';
-    wait until rising_edge(s_iCLK);
-    s_flush_IFID <= '0';
-    s_flush_IDEX <= '0';
-    s_flush_EXMEM <= '0';
-    s_flush_MEMWB <= '0';
+        -- Branch taken, flush the pipeline
+        s_flush_IFID <= '1';
+        s_flush_IDEX <= '1';
+        s_flush_EXMEM <= '1';
+        s_flush_MEMWB <= '1';
+        wait until rising_edge(s_iCLK);
+        s_flush_IFID <= '0';
+        s_flush_IDEX <= '0';
+        s_flush_EXMEM <= '0';
+        s_flush_MEMWB <= '0';
 
-    -- All 5 stages can have values --
-    s_IF_PCP4 <= x"12345678";
-    wait until rising_edge(s_iCLK);
-    s_IF_PCP4 <= x"890ABCDE";
-    wait until rising_edge(s_iCLK);
-    s_IF_PCP4 <= x"AAAAAAAA";
-    wait until rising_edge(s_iCLK);
-    s_IF_PCP4 <= x"BBBBBBBB";
-    wait until rising_edge(s_iCLK);
-    s_IF_PCP4 <= x"CCCCCCCC";
-    wait until rising_edge(s_iCLK);
+        -- Inject a branch taken scenario
+        s_IF_PCPlus4 <= x"10000000";
+        s_IF_Inst <= x"08000004"; -- Assuming a jump instruction
+        wait until rising_edge(s_iCLK);
 
-    -- Flush each stage -- 
-    s_flush_IFID <= '1';
-    s_flush_IDEX <= '1';
-    s_flush_EXMEM <= '1';
-    s_flush_MEMWB <= '1';
-    wait until rising_edge(s_iCLK);
-    s_flush_IFID <= '0';
-    s_flush_IDEX <= '0';
-    s_flush_EXMEM <= '0';
-    s_flush_MEMWB <= '0';
+        -- Expected pipeline flush, no operations should continue
+        s_IF_PCPlus4 <= x"10000004"; -- Next sequential instruction that should not execute
+        wait until rising_edge(s_iCLK);
 
-    s_IF_PCP4 <= x"12345678";
-    wait until rising_edge(s_iCLK);
-    s_IF_PCP4 <= x"890ABCDE";
-    wait until rising_edge(s_iCLK);
-    s_IF_PCP4 <= x"AAAAAAAA";
-    wait until rising_edge(s_iCLK);
-    s_IF_PCP4 <= x"BBBBBBBB";
-    wait until rising_edge(s_iCLK);
-    s_IF_PCP4 <= x"CCCCCCCC";
-    wait until rising_edge(s_iCLK);
+        -- Prepare data forwarding scenario
+        s_IF_PCPlus4 <= x"10000000";
+        s_IF_Inst <= x"00850018"; -- Some operation
+        wait until rising_edge(s_iCLK);
+        s_IF_PCPlus4 <= x"10000004";
+        s_IF_Inst <= x"00A60018"; -- Some dependent operation requiring result of previous instruction
+        wait until rising_edge(s_iCLK);
 
-    --Stall a stage for a couple cycles
-    s_flush_EXMEM <= '1';
-    wait until rising_edge(s_iCLK);
-    wait until rising_edge(s_iCLK);
-    s_flush_EXMEM <= '0';
+        -- Forwarding should occur here
+        s_flush_EXMEM <= '1'; -- Stall EX/MEM to simulate delay in data availability
+        wait for 2 * gCLK_HPER;
+        s_flush_EXMEM <= '0';
 
+        -- Clear entire pipeline and reset signals
+        s_flush_IFID <= '1';
+        s_flush_IDEX <= '1';
+        s_flush_EXMEM <= '1';
+        s_flush_MEMWB <= '1';
+        wait until rising_edge(s_iCLK);
+        s_flush_IFID <= '0';
+        s_flush_IDEX <= '0';
+        s_flush_EXMEM <= '0';
+        s_flush_MEMWB <= '0';
+
+        -- Reinitialize the pipeline with new instructions
+        s_IF_PCPlus4 <= x"20000000";
+        s_IF_Inst <= x"3C010000"; -- Load word instruction
+        wait until rising_edge(s_iCLK);
+        s_IF_PCPlus4 <= x"20000004";
+        s_IF_Inst <= x"34210000"; -- Immediate operation
+        wait until rising_edge(s_iCLK);
+
+        -- Load followed by a dependent compute instruction
+        s_IF_PCPlus4 <= x"30000000";
+        s_IF_Inst <= x"8C220000"; -- Load word into register $2
+        wait until rising_edge(s_iCLK);
+        s_IF_PCPlus4 <= x"30000004";
+        s_IF_Inst <= x"00441020"; -- Add $2 and $4, result in $8, data not ready without stall
+
+        -- Inject stall
+        s_flush_IDEX <= '1'; -- Stall ID/EX until data is ready from memory
+        wait until rising_edge(s_iCLK);
+        wait until rising_edge(s_iCLK); -- Assume memory latency
+        s_flush_IDEX <= '0';
     wait;
   end process;
 end architecture;
