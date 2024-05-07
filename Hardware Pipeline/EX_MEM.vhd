@@ -13,99 +13,99 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 
-entity EX_MEM is
-   port(iCLK            : in std_logic;
+entity MEM_WB is
+    port (
+        iCLK            : in std_logic;
         iRST            : in std_logic;
+        iFlush          : in std_logic; -- New input for flushing
         iMemToReg       : in std_logic;
         iRegWr          : in std_logic;
-        iDMemWr         : in std_logic;
         iHalt           : in std_logic;
-        irt             : in std_logic_vector(31 downto 0);
+        iDMemOut        : in std_logic_vector(31 downto 0);
         iALUResult      : in std_logic_vector(31 downto 0);
         iRegWrAddr      : in std_logic_vector(4 downto 0);
-        iNewPc          : in std_logic_vector(31 downto 0);
-        iZero           : in std_logic;
-        iOF             : in std_logic;
-        iLb             : in std_logic_vector(1 downto 0);
-        iAl             : in std_logic;
         iPcPlus4        : in std_logic_vector(31 downto 0);
+        iNewPc          : in std_logic_vector(31 downto 0);
+        iAl             : in std_logic;
+        iOF             : in std_logic;
         oMemToReg       : out std_logic;
         oRegWr          : out std_logic;
-        oDMemWr         : out std_logic;
         oHalt           : out std_logic;
-        ort             : out std_logic_vector(31 downto 0);
+        oDMemOut        : out std_logic_vector(31 downto 0);
         oALUResult      : out std_logic_vector(31 downto 0);
         oRegWrAddr      : out std_logic_vector(4 downto 0);
-        oNewPc          : out std_logic_vector(31 downto 0);
-        oZero           : out std_logic;
-        oOF             : out std_logic;
-        oLb             : out std_logic_vector(1 downto 0);
+        oPcPlus4        : out std_logic_vector(31 downto 0);
         oAl             : out std_logic;
-        oPcPlus4        : out std_logic_vector(31 downto 0));
-end EX_MEM;
+        oNewPc          : out std_logic_vector(31 downto 0);
+        oOF             : out std_logic
+    );
+end MEM_WB;
 
-architecture mixed of EX_MEM is
+architecture mixed of MEM_WB is
     signal s_MemToReg   : std_logic;
     signal s_RegWr      : std_logic;
-    signal s_DMemWr     : std_logic;
     signal s_Halt       : std_logic;
-    signal s_rt         : std_logic_vector(31 downto 0);
+    signal s_DMemOut    : std_logic_vector(31 downto 0);
     signal s_ALUResult  : std_logic_vector(31 downto 0);
     signal s_RegWrAddr  : std_logic_vector(4 downto 0);
-    signal s_newPC      : std_logic_vector(31 downto 0);
-    signal s_zero       : std_logic;
-    signal s_OF         : std_logic;
-    signal s_Lb         : std_logic_vector(1 downto 0);
-    signal s_Al         : std_logic;
     signal s_PcPlus4    : std_logic_vector(31 downto 0);
+    signal s_Al         : std_logic;
+    signal s_newPC      : std_logic_vector(31 downto 0);
+    signal s_OF         : std_logic;
 
+begin
+    oMemToReg   <= s_MemToReg;
+    oRegWr      <= s_RegWr;
+    oHalt       <= s_Halt;
+    oDMemOut    <= s_DMemOut;
+    oALUResult  <= s_ALUResult;
+    oRegWrAddr  <= s_RegWrAddr;
+    oPcPlus4    <= s_PcPlus4;
+    oAl         <= s_Al;
+    oNewPc      <= s_newPC;
+    oOF         <= s_OF;
+
+    process(iCLK, iRST)
     begin
-        oMemToReg   <= s_MemToReg;
-        oRegWr      <= s_RegWr;
-        oDMemWr     <= s_DMemWr;
-        oHalt       <= s_Halt;
-        ort         <= s_rt;
-        oALUResult  <= s_ALUResult;
-        oRegWrAddr  <= s_RegWrAddr;
-        oNewPc      <= s_newPC;
-        oZero       <= s_zero;
-        oOF         <= s_OF;
-        oLb         <= s_Lb;
-        oAl         <= s_Al;
-        oPcPlus4    <= s_PcPlus4;
-
-        process(iCLK, iRST)
-        begin
-            if(iRST = '1') then
-                s_MemToReg  <= '0';
-                s_RegWr     <= '0';
-                s_DMemWr    <= '0';
-                s_Halt      <= '0';
-                s_rt        <= x"00000000";
-                s_ALUResult <= x"00000000";
-                s_RegWrAddr <= "00000";
-                s_newPC     <= x"00000000";
-                s_zero      <= '0';
-                s_OF        <= '0';
-                s_Lb        <= "00";
-                s_Al        <= '0';
-                s_PcPlus4   <= x"00000000";
-            elsif (rising_edge(iCLK)) then
-                s_MemToReg  <= iMemToReg;
-                s_RegWr     <= iRegWr;
-                s_DMemWr    <= iDMemWr;
-                s_Halt      <= iHalt;
-                s_rt        <= irt;
-                s_ALUResult <= iALUResult;
-                s_RegWrAddr <= iRegWrAddr;
-                s_newPC     <= iNewPc;
-                s_zero      <= iZero;
-                s_OF        <= iOF;
-                s_Lb        <= iLb;
-                s_Al        <= iAl;
-                s_PcPlus4   <= iPcPlus4;
+        if iRST = '1' then
+            reset_registers; -- Reset all registers to initial state
+        elsif rising_edge(iCLK) then
+            if iFlush = '1' then -- Check if flushing signal is asserted
+                reset_registers; -- Reset all registers to initial state
+            else
+                update_registers; -- Update registers with new values
             end if;
+        end if;
+    end process;
 
-        end process;
+    -- Subroutine to reset all registers to their initial state
+    procedure reset_registers is
+    begin
+        s_MemToReg      <= '0';
+        s_RegWr         <= '0';
+        s_Halt          <= '0';
+        s_DMemOut       <= x"00000000";
+        s_ALUResult     <= x"00000000";
+        s_RegWrAddr     <= "00000";
+        s_PcPlus4       <= x"00000000";
+        s_Al            <= '0';
+        s_newPC         <= x"00000000";
+        s_OF            <= '0';
+    end reset_registers;
+
+    -- Subroutine to update registers with new values
+    procedure update_registers is
+    begin
+        s_MemToReg      <= iMemToReg;
+        s_RegWr         <= iRegWr;
+        s_Halt          <= iHalt;
+        s_DMemOut       <= iDMemOut;
+        s_ALUResult     <= iALUResult;
+        s_RegWrAddr     <= iRegWrAddr;
+        s_PcPlus4       <= iPcPlus4;
+        s_Al            <= iAl;
+        s_newPC         <= iNewPc;
+        s_OF            <= iOF;
+    end update_registers;
 
 end mixed;

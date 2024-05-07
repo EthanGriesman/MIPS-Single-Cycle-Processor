@@ -3,22 +3,23 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 
-entity tb_pipe_regs is
+entity tb_MIPS_Processor is
   generic (gCLK_HPER : time := 5 ns);
-end tb_pipe_regs;
+end tb_MIPS_Processor;
 
-architecture mixed of tb_pipe_regs is
+architecture mixed of tb_MIPS_Processor is
   component IF_ID is
     port (
       -- Inputs from Fetch
-      i_CLK : in std_logic;
-      i_RST : in std_logic;
-      i_PCP4 : in std_logic_vector(31 downto 0);
-      i_Inst : in std_logic_vector(31 downto 0);
+      iCLK : in std_logic;
+      iRST : in std_logic;
+      iPCPlus4 : in std_logic_vector(31 downto 0);
+      iInst : in std_logic_vector(31 downto 0);
+      iFlush      : in std_logic; -- New input for flushing
 
       -- Outputs to ID/EX
-      o_PCP4 : out std_logic_vector(31 downto 0);
-      o_Inst : out std_logic_vector(31 downto 0)
+      oPCPlus4 : out std_logic_vector(31 downto 0);
+      oInst : out std_logic_vector(31 downto 0)
     );
   end component;
 
@@ -182,94 +183,80 @@ architecture mixed of tb_pipe_regs is
   signal s_WB_Inst_rd : std_logic_vector(4 downto 0);
 
 begin
-  IFID_REG : if_id_reg port map(
-    s_iCLK,
-    s_flush_IFID,
-    s_IF_PCP4,
-    s_IF_Inst,
+  IFID_REG : IF_ID port map(
+    iCLK => s_iCLK,
+    iRST => s_flush_IFID,
+    iPCP4 => s_IF_PCPlus4,
+    iInst => s_IF_Inst,
+    oPCP4 => s_ID_PCPlus4,
+    oInst => s_ID_Inst
+    );
 
-    s_ID_PCP4,
-    s_ID_Inst);
 
-  IDEX_REG : id_ex_reg port map(
-    s_iCLK,
-    s_flush_IDEX,
-    s_ID_PCP4,
-    s_ID_Inst,
-    s_ID_doBranch,
-    s_ID_CntrlRegWrite,
-    s_ID_RegDst,
-    s_ID_jump,
-    s_ID_memSel,
-    s_ID_ALUSrc,
-    s_ID_ALUOp,
-    s_ID_DMemWr,
-    s_ID_Halt,
-    s_ID_dsrc1,
-    s_ID_dsrc2,
-    s_ID_sign_ext_imm,
-    s_ID_Inst_rt,
-    s_ID_Inst_rd,
-    s_ID_Inst_funct,
-    s_ID_lui_val,
-    s_ID_Inst_shamt,
-
-    s_EX_PCP4,
-    s_EX_Inst,
-    s_EX_doBranch,
-    s_EX_CntrlRegWrite,
-    s_EX_RegDst,
-    s_EX_jump,
-    s_EX_memSel,
-    s_EX_ALUSrc,
-    s_EX_ALUOp,
-    s_EX_DMemWr,
-    s_EX_Halt,
-    s_EX_dsrc1,
-    s_EX_dsrc2,
-    s_EX_sign_ext_imm,
-    s_EX_Inst_rt,
-    s_EX_Inst_rd,
-    s_EX_Inst_funct,
-    s_EX_lui_out,
-    s_EX_Inst_shamt
+    IDEX_REG : ID_EX port map(
+      iCLK => s_iCLK,
+      iRST => s_flush_IDEX,
+      iPcPlus4 => s_ID_PCPlus4,
+      iInst => s_ID_Inst,
+      oPcPlus4 => s_EX_PCP4,
+      oInst => s_EX_Inst,
+      oDoBranch => s_EX_doBranch,
+      oCntrlRegWrite => s_EX_CntrlRegWrite,
+      oRegDst => s_EX_RegDst,
+      oJump => s_EX_jump,
+      oMemSel => s_EX_memSel,
+      oALUSrc => s_EX_ALUSrc,
+      oALUOp => s_EX_ALUOp,
+      oDMemWr => s_EX_DMemWr,
+      oHalt => s_EX_Halt,
+      oDsrc1 => s_EX_dsrc1,
+      oDsrc2 => s_EX_dsrc2,
+      oSignExtImm => s_EX_sign_ext_imm,
+      oInst_rt => s_EX_Inst_rt,
+      oInst_rd => s_EX_Inst_rd,
+      oInst_funct => s_EX_Inst_funct,
+      oLuiOut => s_EX_lui_out,
+      oLuiVal => s_EX_lui_val,
+      oInst_shamt => s_EX_Inst_shamt
   );
+  
 
-  EXMEM_REG : ex_mem_reg port map(
-    s_iCLK,
-    s_flush_EXMEM,
-    s_EX_PCP4,
-    s_EX_Inst,
-    s_EX_doBranch,
-    s_EX_memSel,
-    s_EX_CntrlRegWrite,
-    s_EX_RegDst,
-    s_EX_DMemWr,
-    s_EX_jump,
-    s_EX_dsrc2,
-    s_EX_Halt,
-    s_EX_ALUOut,
-    s_EX_lui_val,
-    s_EX_Inst_rt,
-    s_EX_Inst_rd,
+  EXMEM_REG : EX_MEM port map(
+    iCLK => s_iCLK,
+    iRST => s_flush_EXMEM,
+    iPCPlus4 => s_EX_PCP4,
+    iInst => s_EX_Inst,
+    iDoBranch => s_EX_doBranch,
+    iMemSel => s_EX_memSel,
+    iCntrlRegWrite => s_EX_CntrlRegWrite,
+    iRegDst => s_EX_RegDst,
+    iDMemWr => s_EX_DMemWr,
+    iJump => s_EX_jump,
+    iDsrc2 => s_EX_dsrc2,
+    iHalt => s_EX_Halt,
+    iALUResult => s_EX_ALUOut,
+    iLuiVal => s_EX_lui_val,
+    iInst_rt => s_EX_Inst_rt,
+    iInst_rd => s_EX_Inst_rd,
 
-    s_MEM_PCP4,
-    s_MEM_Inst,
-    s_MEM_doBranch,
-    s_MEM_memSel,
-    s_MEM_CntrlRegWrite,
-    s_MEM_RegDst,
-    s_MEM_DMemWr,
-    s_MEM_jump,
-    s_MEM_dsrc2,
-    s_MEM_Halt,
-    s_MEM_ALUOut,
-    s_MEM_lui_val,
-    s_MEM_Inst_rt,
-    s_MEM_Inst_rd
-  );
+    oPCPlus4 => s_MEM_PCP4,
+    oInst => s_MEM_Inst,
+    oDoBranch => s_MEM_doBranch,
+    oMemSel => s_MEM_memSel,
+    oCntrlRegWrite => s_MEM_CntrlRegWrite,
+    oRegDst => s_MEM_RegDst,
+    oDMemWr => s_MEM_DMemWr,
+    oJump => s_MEM_jump,
+    oDsrc2 => s_MEM_dsrc2,
+    oHalt => s_MEM_Halt,
+    oALUResult => s_MEM_ALUOut,
+    oLuiVal => s_MEM_lui_val,
+    oInst_rt => s_MEM_Inst_rt,
+    oInst_rd => s_MEM_Inst_rd
+);
 
-  MEMWB_REG : mem_wb_reg port map(
+
+  MEMWB_REG : MEM_WB port map(
     s_iCLK,
     s_flush_MEMWB,
     s_MEM_PCP4,

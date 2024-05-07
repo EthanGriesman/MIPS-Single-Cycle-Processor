@@ -14,8 +14,10 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 
 entity ID_EX is
-   port(iCLK            : in std_logic;
+    port (
+        iCLK            : in std_logic;
         iRST            : in std_logic;
+        iFlush          : in std_logic; -- New input for flushing
         iMemToReg       : in std_logic;
         iRegWr          : in std_logic;
         iRegDst         : in std_logic_vector(1 downto 0);
@@ -25,9 +27,9 @@ entity ID_EX is
         irs             : in std_logic_vector(31 downto 0);
         irt             : in std_logic_vector(31 downto 0);
         iSignExtImm     : in std_logic_vector(31 downto 0);
-        iRegrsAddr      : in std_logic_vector(4 downto 0);  --read address  Inst[25-21](rs)
-        iRegWrAddr1     : in std_logic_vector(4 downto 0);  --write address Inst[20-16](rt)
-        iRegWrAddr2     : in std_logic_vector(4 downto 0);  --write address Inst[15-11](rd)
+        iRegrsAddr      : in std_logic_vector(4 downto 0);  
+        iRegWrAddr1     : in std_logic_vector(4 downto 0);  
+        iRegWrAddr2     : in std_logic_vector(4 downto 0);  
         iAl             : in std_logic;
         iLb             : in std_logic_vector(1 downto 0);
         iShamt          : in std_logic_vector(4 downto 0);
@@ -48,9 +50,9 @@ entity ID_EX is
         ors             : out std_logic_vector(31 downto 0);
         ort             : out std_logic_vector(31 downto 0);
         oSignExtImm     : out std_logic_vector(31 downto 0);
-        oRegrsAddr      : out std_logic_vector(4 downto 0);  --read address  Inst[25-21](rs)
-        oRegWrAddr1     : out std_logic_vector(4 downto 0);  --write address Inst[20-16](rt)
-        oRegWrAddr2     : out std_logic_vector(4 downto 0);  --write address Inst[15-11](rd)
+        oRegrsAddr      : out std_logic_vector(4 downto 0);  
+        oRegWrAddr1     : out std_logic_vector(4 downto 0);  
+        oRegWrAddr2     : out std_logic_vector(4 downto 0);  
         oAl             : out std_logic;
         oLb             : out std_logic_vector(1 downto 0);
         oShamt          : out std_logic_vector(4 downto 0);
@@ -61,8 +63,8 @@ entity ID_EX is
         oBranch         : out std_logic;
         oPcPlus4        : out std_logic_vector(31 downto 0);
         oEqual          : out std_logic;
-        oBranchAddr     : out std_logic_vector(31 downto 0));  
-        
+        oBranchAddr     : out std_logic_vector(31 downto 0)
+    );
 end ID_EX;
 
 architecture mixed of ID_EX is
@@ -90,83 +92,98 @@ architecture mixed of ID_EX is
     signal s_Equal      : std_logic;
     signal s_BranchAddr : std_logic_vector(31 downto 0);
 
+begin
+    oMemToReg   <= s_MemToReg;
+    oRegWr      <= s_RegWr;
+    oRegDst     <= s_RegDst;
+    oDMemWr     <= s_DMemWr;
+    oHalt       <= s_Halt;
+    oALUSrc     <= s_ALUSrc;
+    ors         <= s_rs;
+    ort         <= s_rt;
+    oSignExtImm <= s_SignExtImm;
+    oRegrsAddr  <= s_RegrsAddr;
+    oRegWrAddr1 <= s_RegWr1;
+    oRegWrAddr2 <= s_RegWr2;
+    oAl         <= s_Al;
+    oLb         <= s_Lb;
+    oShamt      <= s_shamt;
+    oALUControl <= s_ALUControl;
+    oOverflowEn <= s_OverflowEn;
+    oJump       <= s_Jump;
+    oJumpAddr   <= s_JumpAddr;
+    oBranch     <= s_Branch;
+    oPcPlus4    <= s_PcPlus4;
+    oEqual      <= s_Equal;
+    oBranchAddr <= s_BranchAddr;
+
+    process(iCLK, iRST)
     begin
-        oMemToReg   <= s_MemToReg;
-        oRegWr      <= s_RegWr;
-        oRegDst     <= s_RegDst;
-        oDMemWr     <= s_DMemWr;
-        oHalt       <= s_Halt;
-        oALUSrc     <= s_ALUSrc;
-        ors         <= s_rs;
-        ort         <= s_rt;
-        oSignExtImm <= s_SignExtImm;
-        oRegrsAddr  <= s_RegrsAddr;
-        oRegWrAddr1 <= s_RegWr1;
-        oRegWrAddr2 <= s_RegWr2;
-        oAl         <= s_Al;
-        oLb         <= s_Lb;
-        oShamt      <= s_shamt;
-        oALUControl <= s_ALUControl;
-        oOverflowEn <= s_OverflowEn;
-        oJump       <= s_Jump;
-        oJumpAddr   <= s_JumpAddr;
-        oBranch     <= s_Branch;
-        oPcPlus4    <= s_PcPlus4;
-        oEqual      <= s_Equal;
-        oBranchAddr <= s_BranchAddr;
-
-        process(iCLK, iRST)
-        begin
-            if(iRST = '1') then
-                s_MemToReg      <= '0';
-                s_RegWr         <= '0';
-                s_RegDst        <= "00";
-                s_DMemWr        <= '0';
-                s_Halt          <= '0';
-                s_ALUSrc        <= '0';
-                s_rs            <= x"00000000";
-                s_rt            <= x"00000000";
-                s_SignExtImm    <= x"00000000";
-                s_RegrsAddr     <= "00000";
-                s_RegWr1        <= "00000";
-                s_RegWr2        <= "00000";
-                s_Al            <= '0';
-                s_Lb            <= "00";
-                s_shamt         <= "00000";
-                s_ALUControl    <= "000000000";
-                s_OverflowEn    <= '0';
-                s_Jump          <= "00";
-                s_JumpAddr      <= x"00000000";
-                s_Branch        <= '0';
-                s_PcPlus4       <= x"00000000"; 
-                s_Equal         <= '0'; 
-                s_BranchAddr    <= x"00000000";
-            elsif (rising_edge(iCLK)) then
-                s_MemToReg      <= iMemToReg;
-                s_RegWr         <= iRegWr;
-                s_RegDst        <= iRegDst;
-                s_DMemWr        <= iDMemWr;
-                s_Halt          <= iHalt;
-                s_ALUSrc        <= iALUSrc;
-                s_rs            <= irs;
-                s_rt            <= irt;
-                s_SignExtImm    <= iSignExtImm;
-                s_RegrsAddr     <= iRegrsAddr;
-                s_RegWr1        <= iRegWrAddr1;
-                s_RegWr2        <= iRegWrAddr2;
-                s_Al            <= iAl;
-                s_Lb            <= iLb;
-                s_shamt         <= iShamt;
-                s_ALUControl    <= iALUControl;
-                s_OverflowEn    <= iOverflowEn;
-                s_Jump          <= iJump;
-                s_JumpAddr      <= iJumpAddr;
-                s_Branch        <= iBranch;
-                s_PcPlus4       <= iPcPlus4;
-                s_Equal         <= iEqual;
-                s_BranchAddr    <= iBranchAddr;
+        if iRST = '1' then
+            reset_registers; -- Reset all registers to initial state
+        elsif rising_edge(iCLK) then
+            if iFlush = '1' then -- Check if flushing signal is asserted
+                reset_registers; -- Reset all registers to initial state
+            else
+                update_registers; -- Update registers with new values
             end if;
+        end if;
+    end process;
 
-        end process;
+    -- Subroutine to reset all registers to their initial state
+    procedure reset_registers is
+    begin
+        s_MemToReg      <= '0';
+        s_RegWr         <= '0';
+        s_RegDst        <= "00";
+        s_DMemWr        <= '0';
+        s_Halt          <= '0';
+        s_ALUSrc        <= '0';
+        s_rs            <= x"00000000";
+        s_rt            <= x"00000000";
+        s_SignExtImm    <= x"00000000";
+        s_RegrsAddr     <= "00000";
+        s_RegWr1        <= "00000";
+        s_RegWr2        <= "00000";
+        s_Al            <= '0';
+        s_Lb            <= "00";
+        s_shamt         <= "00000";
+        s_ALUControl    <= "000000000";
+        s_OverflowEn    <= '0';
+        s_Jump          <= "00";
+        s_JumpAddr      <= x"00000000";
+        s_Branch        <= '0';
+        s_PcPlus4       <= x"00000000"; 
+        s_Equal         <= '0'; 
+        s_BranchAddr    <= x"00000000";
+    end reset_registers;
+
+    -- Subroutine to update registers with new values
+    procedure update_registers is
+    begin
+        s_MemToReg      <= iMemToReg;
+        s_RegWr         <= iRegWr;
+        s_RegDst        <= iRegDst;
+        s_DMemWr        <= iDMemWr;
+        s_Halt          <= iHalt;
+        s_ALUSrc        <= iALUSrc;
+        s_rs            <= irs;
+        s_rt            <= irt;
+        s_SignExtImm    <= iSignExtImm;
+        s_RegrsAddr     <= iRegrsAddr;
+        s_RegWr1        <= iRegWrAddr1;
+        s_RegWr2        <= iRegWrAddr2;
+        s_Al            <= iAl;
+        s_Lb            <= iLb;
+        s_shamt         <= iShamt;
+        s_ALUControl    <= iALUControl;
+        s_OverflowEn    <= iOverflowEn;
+        s_Jump          <= iJump;
+        s_JumpAddr      <= iJumpAddr;
+        s_Branch        <= iBranch;
+        s_PcPlus4       <= iPcPlus4;
+        s_Equal         <= iEqual;
+        s_BranchAddr    <= iBranchAddr;
+    end update_registers;
 
 end mixed;
