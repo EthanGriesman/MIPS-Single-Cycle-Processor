@@ -1,0 +1,76 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline
+Eex_mem
+w1715101883
+Z1 DPx3 std 6 textio 0 22 LS[?81n5ZHWBI9JkBZTV<2
+Z2 DPx4 ieee 14 std_logic_1164 0 22 6<US`=mgl_dFdCEFF7J=m1
+!i122 4
+R0
+Z3 8/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/EX_MEM.vhd
+Z4 F/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/EX_MEM.vhd
+l0
+L4 1
+V?2N1aF:I38GiJ[fYnh9kj1
+!s100 T`QG=7H[<Al;;eG4:]za70
+Z5 OL;C;2023.2_2;77
+32
+!s110 1715101889
+!i10b 1
+!s108 1715101889.000000
+Z6 !s90 -reportprogress|300|-work|work|/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/EX_MEM.vhd|
+Z7 !s107 /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/EX_MEM.vhd|
+!i113 0
+Z8 o-work work
+Z9 tExplicit 1 CvgOpt 0
+Emem_wb
+w1715101288
+R1
+R2
+!i122 2
+R0
+R3
+R4
+l0
+L16 1
+V0ezY=aWz9mk_^[hGh7VWL2
+!s100 72DHBYk:b5;152lEf_fzI1
+R5
+32
+!s110 1715101763
+!i10b 1
+!s108 1715101763.000000
+R6
+R7
+!i113 0
+R8
+R9
+Etb_mips_processor
+w1715101631
+R1
+R2
+!i122 1
+R0
+8/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd
+F/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd
+l0
+L6 1
+V`zMGRWzC@4nO_P3WOOzoe1
+!s100 OJ^z0>WKD_Qod8_UIG6LL0
+R5
+32
+!s110 1715101634
+!i10b 1
+!s108 1715101634.000000
+!s90 -reportprogress|300|-work|work|/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd|
+!s107 /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd|
+!i113 0
+R8
+R9

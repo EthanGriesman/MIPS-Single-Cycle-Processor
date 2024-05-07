@@ -193,7 +193,7 @@ begin
     );
 
 
-  IDEX_REG : ID_EX port map(
+    IDEX_REG : ID_EX port map(
       iCLK => s_iCLK,
       iRST => s_flush_IDEX,
       iPcPlus4 => s_ID_PCPlus4,

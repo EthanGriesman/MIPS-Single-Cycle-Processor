@@ -1,0 +1,188 @@
+# //  Questa Sim-64
+# //  Version 2023.2_2 linux_x86_64 Jun  9 2023
+# //
+# //  Copyright 1991-2023 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+vlib work
+vcom -reportprogress 300 -work work {/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd}
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 12:05:49 on May 07,2024
+# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity tb_MIPS_Processor
+# -- Compiling architecture mixed of tb_MIPS_Processor
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(189): (vcom-1484) Unknown formal identifier "iPCP4".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(191): (vcom-1484) Unknown formal identifier "oPCP4".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(203): (vcom-1484) Unknown formal identifier "oDoBranch".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(204): (vcom-1484) Unknown formal identifier "oCntrlRegWrite".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(205): (vcom-1484) Unknown formal identifier "oRegDst".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(206): (vcom-1484) Unknown formal identifier "oJump".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(207): (vcom-1484) Unknown formal identifier "oMemSel".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(208): (vcom-1484) Unknown formal identifier "oALUSrc".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(209): (vcom-1484) Unknown formal identifier "oALUOp".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(210): (vcom-1484) Unknown formal identifier "oDMemWr".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(211): (vcom-1484) Unknown formal identifier "oHalt".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(212): (vcom-1484) Unknown formal identifier "oDsrc1".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(213): (vcom-1484) Unknown formal identifier "oDsrc2".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(214): (vcom-1484) Unknown formal identifier "oSignExtImm".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(215): (vcom-1484) Unknown formal identifier "oInst_rt".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(216): (vcom-1484) Unknown formal identifier "oInst_rd".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(217): (vcom-1484) Unknown formal identifier "oInst_funct".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(218): (vcom-1484) Unknown formal identifier "oLuiOut".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(219): (vcom-1484) Unknown formal identifier "oLuiVal".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(220): (vcom-1484) Unknown formal identifier "oInst_shamt".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(228): (vcom-1484) Unknown formal identifier "iInst".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(229): (vcom-1484) Unknown formal identifier "iDoBranch".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(230): (vcom-1484) Unknown formal identifier "iMemSel".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(231): (vcom-1484) Unknown formal identifier "iCntrlRegWrite".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(232): (vcom-1484) Unknown formal identifier "iRegDst".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(234): (vcom-1484) Unknown formal identifier "iJump".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(235): (vcom-1484) Unknown formal identifier "iDsrc2".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(238): (vcom-1484) Unknown formal identifier "iLuiVal".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(239): (vcom-1484) Unknown formal identifier "iInst_rt".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(240): (vcom-1484) Unknown formal identifier "iInst_rd".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(243): (vcom-1484) Unknown formal identifier "oInst".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(244): (vcom-1484) Unknown formal identifier "oDoBranch".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(245): (vcom-1484) Unknown formal identifier "oMemSel".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(246): (vcom-1484) Unknown formal identifier "oCntrlRegWrite".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(247): (vcom-1484) Unknown formal identifier "oRegDst".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(249): (vcom-1484) Unknown formal identifier "oJump".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(250): (vcom-1484) Unknown formal identifier "oDsrc2".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(253): (vcom-1484) Unknown formal identifier "oLuiVal".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(254): (vcom-1484) Unknown formal identifier "oInst_rt".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(255): (vcom-1484) Unknown formal identifier "oInst_rd".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(283): (vcom-1027) Number of positional association elements (28) exceeds number of formals (22).
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(193): (vcom-1035) Formal port "iPCPlus4" has OPEN or no actual associated with it.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(193): (vcom-1035) Formal port "iFlush" has OPEN or no actual associated with it.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(256): (vcom-1035) Formal port "iMemToReg" has OPEN or no actual associated with it.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(256): (vcom-1035) Formal port "iRegWr" has OPEN or no actual associated with it.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(256): (vcom-1035) Formal port "irt" has OPEN or no actual associated with it.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(256): (vcom-1035) Formal port "iRegWrAddr" has OPEN or no actual associated with it.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(256): (vcom-1035) Formal port "iNewPc" has OPEN or no actual associated with it.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(256): (vcom-1035) Formal port "iZero" has OPEN or no actual associated with it.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(256): (vcom-1035) Formal port "iOF" has OPEN or no actual associated with it.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(256): (vcom-1035) Formal port "iLb" has OPEN or no actual associated with it.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(256): (vcom-1035) Formal port "iAl" has OPEN or no actual associated with it.
+# ** Note: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(369): VHDL Compiler exiting
+# End time: 12:05:49 on May 07,2024, Elapsed time: 0:00:00
+# Errors: 52, Warnings: 0
+vcom -reportprogress 300 -work work {/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd}
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 12:07:14 on May 07,2024
+# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity tb_MIPS_Processor
+# -- Compiling architecture mixed of tb_MIPS_Processor
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(203): near ")": syntax error
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(206): Statement cannot be labeled.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(210): (vcom-1484) Unknown formal identifier "iInst".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(211): (vcom-1484) Unknown formal identifier "iDoBranch".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(212): (vcom-1484) Unknown formal identifier "iMemSel".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(213): (vcom-1484) Unknown formal identifier "iCntrlRegWrite".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(214): (vcom-1484) Unknown formal identifier "iRegDst".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(216): (vcom-1484) Unknown formal identifier "iJump".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(217): (vcom-1484) Unknown formal identifier "iDsrc2".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(220): (vcom-1484) Unknown formal identifier "iLuiVal".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(221): (vcom-1484) Unknown formal identifier "iInst_rt".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(222): (vcom-1484) Unknown formal identifier "iInst_rd".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(225): (vcom-1484) Unknown formal identifier "oInst".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(226): (vcom-1484) Unknown formal identifier "oDoBranch".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(227): (vcom-1484) Unknown formal identifier "oMemSel".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(228): (vcom-1484) Unknown formal identifier "oCntrlRegWrite".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(229): (vcom-1484) Unknown formal identifier "oRegDst".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(231): (vcom-1484) Unknown formal identifier "oJump".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(232): (vcom-1484) Unknown formal identifier "oDsrc2".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(235): (vcom-1484) Unknown formal identifier "oLuiVal".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(236): (vcom-1484) Unknown formal identifier "oInst_rt".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(237): (vcom-1484) Unknown formal identifier "oInst_rd".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(265): (vcom-1027) Number of positional association elements (28) exceeds number of formals (22).
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(193): (vcom-1035) Formal port "iFlush" has OPEN or no actual associated with it.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(238): (vcom-1035) Formal port "iMemToReg" has OPEN or no actual associated with it.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(238): (vcom-1035) Formal port "iRegWr" has OPEN or no actual associated with it.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(238): (vcom-1035) Formal port "irt" has OPEN or no actual associated with it.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(238): (vcom-1035) Formal port "iRegWrAddr" has OPEN or no actual associated with it.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(238): (vcom-1035) Formal port "iNewPc" has OPEN or no actual associated with it.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(238): (vcom-1035) Formal port "iZero" has OPEN or no actual associated with it.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(238): (vcom-1035) Formal port "iOF" has OPEN or no actual associated with it.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(238): (vcom-1035) Formal port "iLb" has OPEN or no actual associated with it.
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(238): (vcom-1035) Formal port "iAl" has OPEN or no actual associated with it.
+# ** Note: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/tb_MIPS_Processor.vhd(351): VHDL Compiler exiting
+# End time: 12:07:14 on May 07,2024, Elapsed time: 0:00:00
+# Errors: 33, Warnings: 0
+vcom -reportprogress 300 -work work {/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/EX_MEM.vhd}
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 12:09:23 on May 07,2024
+# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/EX_MEM.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity MEM_WB
+# -- Compiling architecture mixed of MEM_WB
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/EX_MEM.vhd(71): (vcom-1136) Unknown identifier "reset_registers".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/EX_MEM.vhd(74): (vcom-1136) Unknown identifier "reset_registers".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/EX_MEM.vhd(76): (vcom-1136) Unknown identifier "update_registers".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/EX_MEM.vhd(82): near "procedure": syntax error
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/EX_MEM.vhd(94): Labels do not match: 'mixed' and 'reset_registers'.
+# ** Note: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/EX_MEM.vhd(94): VHDL Compiler exiting
+# End time: 12:09:23 on May 07,2024, Elapsed time: 0:00:00
+# Errors: 5, Warnings: 0
+vcom -reportprogress 300 -work work {/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/EX_MEM.vhd}
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 12:10:33 on May 07,2024
+# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/EX_MEM.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity EX_MEM
+# -- Compiling architecture mixed of EX_MEM
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/EX_MEM.vhd(59): (vcom-1136) Unknown identifier "reset_registers".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/EX_MEM.vhd(62): (vcom-1136) Unknown identifier "reset_registers".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/EX_MEM.vhd(64): (vcom-1136) Unknown identifier "update_registers".
+# ** Note: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/EX_MEM.vhd(69): VHDL Compiler exiting
+# End time: 12:10:33 on May 07,2024, Elapsed time: 0:00:00
+# Errors: 3, Warnings: 0
+vcom -reportprogress 300 -work work {/home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/EX_MEM.vhd}
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 12:11:29 on May 07,2024
+# vcom -reportprogress 300 -work work /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/EX_MEM.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity EX_MEM
+# -- Compiling architecture mixed of EX_MEM
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/EX_MEM.vhd(47): Cannot drive signal "s_MemToReg" from procedure "reset_registers".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/EX_MEM.vhd(48): Cannot drive signal "s_RegWr" from procedure "reset_registers".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/EX_MEM.vhd(49): Cannot drive signal "s_Halt" from procedure "reset_registers".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/EX_MEM.vhd(50): Cannot drive signal "s_DMemOut" from procedure "reset_registers".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/EX_MEM.vhd(51): Cannot drive signal "s_ALUResult" from procedure "reset_registers".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/EX_MEM.vhd(52): Cannot drive signal "s_RegWrAddr" from procedure "reset_registers".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/EX_MEM.vhd(53): Cannot drive signal "s_PcPlus4" from procedure "reset_registers".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/EX_MEM.vhd(54): Cannot drive signal "s_Al" from procedure "reset_registers".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/EX_MEM.vhd(55): Cannot drive signal "s_newPC" from procedure "reset_registers".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/EX_MEM.vhd(56): Cannot drive signal "s_OF" from procedure "reset_registers".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/EX_MEM.vhd(61): Cannot drive signal "s_MemToReg" from procedure "update_registers".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/EX_MEM.vhd(62): Cannot drive signal "s_RegWr" from procedure "update_registers".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/EX_MEM.vhd(63): Cannot drive signal "s_Halt" from procedure "update_registers".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/EX_MEM.vhd(64): Cannot drive signal "s_DMemOut" from procedure "update_registers".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/EX_MEM.vhd(65): Cannot drive signal "s_ALUResult" from procedure "update_registers".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/EX_MEM.vhd(66): Cannot drive signal "s_RegWrAddr" from procedure "update_registers".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/EX_MEM.vhd(67): Cannot drive signal "s_PcPlus4" from procedure "update_registers".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/EX_MEM.vhd(68): Cannot drive signal "s_Al" from procedure "update_registers".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/EX_MEM.vhd(69): Cannot drive signal "s_newPC" from procedure "update_registers".
+# ** Error: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/EX_MEM.vhd(70): Cannot drive signal "s_OF" from procedure "update_registers".
+# ** Note: /home/egriesma/cpre381/Project1/Single-Cycle-MIPS-Processor/Single-Cycle-MIPS-Processor/Hardware Pipeline/EX_MEM.vhd(98): VHDL Compiler exiting
+# End time: 12:11:29 on May 07,2024, Elapsed time: 0:00:00
+# Errors: 20, Warnings: 0
